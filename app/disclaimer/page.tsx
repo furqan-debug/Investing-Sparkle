@@ -84,7 +84,7 @@ export default function DisclaimerPage() {
       <h2>Questions</h2>
       <p>
         If anything here is unclear, write to{' '}
-        <a href={`mailto:${site.contact.emailGeneral}`}>{site.contact.emailGeneral}</a> and we will
+        <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a> and we will
         explain it in plain terms.
       </p>
     </LegalPage>

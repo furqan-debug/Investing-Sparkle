@@ -82,7 +82,7 @@ export const faqGroups: FaqGroup[] = [
     items: [
       {
         q: 'Who is behind Investing Sparkle?',
-        a: 'Two Pakistani founders who started the company in May 2025. Our names, faces, and backgrounds are on the About page — we think you should know exactly who you are learning from.',
+        a: 'Two Pakistani founders who started the company in May 2025 after watching too many friends lose money on tips they could not evaluate. What matters more than who we are is what we will and will not do — that is set out in full on the About page.',
       },
       {
         q: 'How do you make money?',

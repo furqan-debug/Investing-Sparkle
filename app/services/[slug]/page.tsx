@@ -11,7 +11,6 @@ import { PhilosophyStrip } from '@/components/PhilosophyStrip';
 import { CalendlyEmbed } from '@/components/CalendlyEmbed';
 
 import { services, getService, advisoryTestimonials } from '@/content/services';
-import { founders } from '@/content/about';
 import { site, paymentMethods } from '@/content/site';
 import { whatsappLink, whatsappMessages } from '@/content/whatsapp';
 
@@ -251,27 +250,6 @@ export default async function ServiceDetailPage({ params }: Params) {
         </div>
       </Section>
 
-      {/* Team */}
-      <Section tone="white">
-        <SectionHeading eyebrow="Who you will talk to" title="No account managers." />
-        <ul className="mt-9 grid gap-6 md:grid-cols-2">
-          {founders.map((f) => (
-            <li key={f.name} className="flex gap-5 rounded-2xl border border-line bg-paper p-6">
-              <span
-                className="grid h-16 w-16 shrink-0 place-items-center rounded-full bg-green-100 font-display text-2xl text-green-800"
-                aria-hidden
-              >
-                {f.name.charAt(0)}
-              </span>
-              <div>
-                <h3 className="font-sans text-lg font-semibold text-ink">{f.name}</h3>
-                <p className="text-sm text-green-700">{f.role}</p>
-                <p className="mt-2 text-sm leading-relaxed text-muted">{f.bio}</p>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </Section>
 
       <PhilosophyStrip />
 

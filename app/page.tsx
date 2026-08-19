@@ -13,7 +13,7 @@ import { CTABand } from '@/components/CTABand';
 
 import { site } from '@/content/site';
 import { bootcamp } from '@/content/bootcamp';
-import { problems, journey, journeyNote, founders } from '@/content/about';
+import { problems, journey, journeyNote } from '@/content/about';
 import { publishedArticles } from '@/content/insights';
 import { tools } from '@/content/tools';
 import { learningTestimonials } from '@/content/testimonials';
@@ -74,12 +74,6 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/*
-              Hero visual.
-              TODO: replace this panel with a founder photograph (you + Masab)
-              at /public/team/founders.jpg. Real faces outperform illustration
-              for trust, and the plan calls for it explicitly.
-            */}
             <div className="relative">
               <div className="rounded-3xl border border-white/10 bg-white/5 p-7 backdrop-blur">
                 <p className="eyebrow text-sparkle-400">The path</p>
@@ -283,18 +277,13 @@ export default function HomePage() {
 
       {/* 11 — About preview */}
       <Section tone="paper">
-        <div className="grid items-center gap-10 rounded-3xl border border-line bg-white p-8 md:grid-cols-[auto_1fr] md:p-10">
-          <div className="flex -space-x-3">
-            {founders.map((f) => (
-              <span
-                key={f.name}
-                className="grid h-16 w-16 place-items-center rounded-full border-4 border-white bg-green-100 font-display text-2xl text-green-800"
-                aria-hidden
-              >
-                {f.name.charAt(0)}
-              </span>
-            ))}
-          </div>
+        {/*
+          Deliberately no founder photographs or bios anywhere on this site.
+          The trust argument rests on what the company will and will not do —
+          public pricing, never touching client money, and an honest account of
+          the SECP position — rather than on personal profiles.
+        */}
+        <div className="grid gap-8 rounded-3xl border border-line bg-white p-8 md:grid-cols-[1fr_1.2fr] md:p-10">
           <div>
             <p className="eyebrow text-green-600">Who we are</p>
             <p className="mt-3 text-lg leading-relaxed text-ink">
@@ -307,6 +296,15 @@ export default function HomePage() {
             >
               Read our story <ArrowRight className="h-4 w-4" aria-hidden />
             </Link>
+          </div>
+
+          <div className="border-t border-line pt-6 md:border-l md:border-t-0 md:pl-8 md:pt-0">
+            <p className="text-sm font-semibold text-ink">Where we stand, plainly</p>
+            <p className="mt-2 text-sm leading-relaxed text-muted">
+              We are not SECP-licensed investment advisors. We earn from course and advisory fees
+              only — no commission on your trades, no payment from brokers, no referral fees.
+              Nothing we teach is influenced by what we would earn if you acted on it.
+            </p>
           </div>
         </div>
       </Section>

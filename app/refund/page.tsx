@@ -51,7 +51,7 @@ export default function RefundPage() {
       <p>
         There is no minimum commitment beyond the first month and no cancellation fee. Cancel by
         messaging us on WhatsApp or emailing{' '}
-        <a href={`mailto:${site.contact.emailSupport}`}>{site.contact.emailSupport}</a> — no
+        <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a> — no
         retention call, no friction.
       </p>
 
@@ -72,7 +72,7 @@ export default function RefundPage() {
       <h2>How to request a refund</h2>
       <p>
         Message us on WhatsApp at {site.contact.whatsapp} or email{' '}
-        <a href={`mailto:${site.contact.emailSupport}`}>{site.contact.emailSupport}</a> with your
+        <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a> with your
         name and what you paid for. You do not need to give a reason.
       </p>
     </LegalPage>

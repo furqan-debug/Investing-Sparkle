@@ -55,7 +55,7 @@ export const services: Service[] = [
     duration: '60–90 minute session, plus 1 week for your written plan',
     includes: [
       'A structured risk-profile assessment before the call',
-      'A 60–90 minute one-on-one session with a founder',
+      'A 60–90 minute one-on-one session',
       'A personalized written investment plan, delivered within a week',
       'Coaching on the fundamentals behind every recommendation in your plan',
       'Answers to your specific questions about your own situation',
@@ -387,7 +387,7 @@ export const advisoryProcess = [
   {
     step: '03',
     title: 'Live session',
-    detail: 'A 60–90 minute one-on-one call with a founder. No scripts, no upsell.',
+    detail: 'A 60–90 minute one-on-one call. No scripts, no upsell.',
   },
   {
     step: '04',

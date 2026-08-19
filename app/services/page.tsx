@@ -18,7 +18,6 @@ import {
   advisoryFaq,
   advisoryTestimonials,
 } from '@/content/services';
-import { founders } from '@/content/about';
 import { paymentMethods } from '@/content/site';
 import { whatsappLink, whatsappMessages } from '@/content/whatsapp';
 
@@ -290,37 +289,6 @@ export default function ServicesPage() {
         </div>
       </Section>
 
-      {/* 8 — Team */}
-      <Section tone="white">
-        <SectionHeading
-          eyebrow="Who you will actually talk to"
-          title="No account managers. Just us."
-        />
-        <ul className="mt-10 grid gap-6 md:grid-cols-2">
-          {founders.map((f) => (
-            <li key={f.name} className="flex gap-5 rounded-2xl border border-line bg-paper p-6">
-              <span
-                className="grid h-16 w-16 shrink-0 place-items-center rounded-full bg-green-100 font-display text-2xl text-green-800"
-                aria-hidden
-              >
-                {f.name.charAt(0)}
-              </span>
-              <div>
-                <h3 className="font-sans text-lg font-semibold text-ink">{f.name}</h3>
-                <p className="text-sm text-green-700">{f.role}</p>
-                <p className="mt-2 text-sm leading-relaxed text-muted">{f.bio}</p>
-              </div>
-            </li>
-          ))}
-        </ul>
-        <p className="mt-6 text-sm text-muted">
-          Full backgrounds on the{' '}
-          <a href="/about" className="font-semibold text-green-700 underline underline-offset-2">
-            About page
-          </a>
-          .
-        </p>
-      </Section>
 
       {/* 9 — FAQ */}
       <Section tone="paper">

@@ -333,10 +333,10 @@ export default function BootcampPage() {
             <Mail className="h-4 w-4" aria-hidden />
             Prefer email? Write to{' '}
             <a
-              href={`mailto:${site.contact.emailSupport}`}
+              href={`mailto:${site.contact.email}`}
               className="underline underline-offset-2 hover:text-sparkle-400"
             >
-              {site.contact.emailSupport}
+              {site.contact.email}
             </a>{' '}
             — we reply within 24 hours.
           </p>

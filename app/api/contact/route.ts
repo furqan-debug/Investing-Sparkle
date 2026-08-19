@@ -14,7 +14,7 @@ import { NextResponse } from 'next/server';
  *     },
  *     body: JSON.stringify({
  *       from: 'website@investingsparkle.com',
- *       to: 'hello@investingsparkle.com',
+ *       to: 'support@investingsparkle.com',
  *       reply_to: email,
  *       subject: `[${interest}] Website enquiry from ${name}`,
  *       text: message,

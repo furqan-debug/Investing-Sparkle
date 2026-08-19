@@ -97,7 +97,7 @@ export default function PrivacyPage() {
         <li>Stop sending you email — every newsletter has a one-click unsubscribe link.</li>
       </ul>
       <p>
-        Email <a href={`mailto:${site.contact.emailGeneral}`}>{site.contact.emailGeneral}</a> and we
+        Email <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a> and we
         will respond within 30 days.
       </p>
 
@@ -122,7 +122,7 @@ export default function PrivacyPage() {
 
       <h2>Contact</h2>
       <p>
-        Questions about privacy: <a href={`mailto:${site.contact.emailGeneral}`}>{site.contact.emailGeneral}</a>
+        Questions about privacy: <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>
         , or WhatsApp {site.contact.whatsapp}.
       </p>
     </LegalPage>

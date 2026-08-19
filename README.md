@@ -80,7 +80,7 @@ there. Change a phone number once, it changes everywhere.
 | `content/testimonials.ts` | Testimonials — **read the notes at the top first** |
 | `content/tools.ts` | Free tools index |
 | `content/faq.ts` | Site-wide FAQ |
-| `content/about.ts` | Story, values, founder bios |
+| `content/about.ts` | Story, mission, vision, values |
 | `content/whatsapp.ts` | Every pre-filled WhatsApp message |
 | `content/integrations.ts` | Calendly and payment gateway switches |
 | `content/nav.ts` | Header and footer navigation |
@@ -114,6 +114,11 @@ careless edit later:
   `registrationCloses` holds a real value, so a permanent "only 2 seats left!"
   cannot ship by accident.
 - **The cohort archive** 404s until a cohort has actually finished.
+- **No founder profiles anywhere** — no bios, headshots, team sections, or named
+  instructor blocks, by decision. The trust argument rests on what the company
+  will and will not do, not on personal profiles. Do not reintroduce them.
+- **One email address.** Everything goes to `support@investingsparkle.com`.
+  A second address is only worth adding if it is actually monitored.
 - **Case studies** are labelled as illustrative on the index, on every detail
   page, and in the source file — they are worked examples, never client stories.
 - **Analytics and the Meta pixel** load only after a visitor accepts cookies.
@@ -152,15 +157,6 @@ throughout.
 Search for `TODO:` — each is a decision the master plan left open. The
 significant ones:
 
-- **Bootcamp price.** The plan gives `PKR 2,999` in the hero but leaves the
-  pricing section as a placeholder. `2,999` is the working figure.
-- **Bootcamp timing.** The plan lists 3:00–5:00 PM PKT but also describes
-  "~3 hours/day" and "~9 hours over 3 days". Those do not agree — pick one and
-  update `time`, `sessionLength`, and `commitment` together.
-- **Delivery format** — marked unresolved in the plan, currently set to Zoom.
-- **Founder names, bios, and headshots** in `content/about.ts`. The placeholders
-  are deliberately unusable so they cannot ship unnoticed. Photos go in
-  `public/team/`.
 - **Trust-bar numbers**, class cap, seat counts, office address, business hours.
 - **Course price** for PSX Foundations.
 - **Social profile URLs** in `content/site.ts` — unset ones are hidden.
@@ -182,8 +178,8 @@ Copy `.env.example` to `.env.local` and fill in what you use.
 - **Contact form** — wire `app/api/contact/route.ts` to Resend, Postmark, or
   SendGrid.
 - **Email deliverability** — configure SPF, DKIM, and DMARC on
-  `investingsparkle.com`, then send a test from both `hello@` and `support@` and
-  confirm neither lands in spam. Without this, everything above goes to junk.
+  `investingsparkle.com`, then send a test from `support@` and confirm it does
+  not land in spam. Without this, everything above goes to junk.
 - **Analytics** — set the Plausible domain or GA4 ID, and the Meta pixel ID.
 - **Calendly** *(optional)* — set `NEXT_PUBLIC_CALENDLY_URL` to offer
   self-scheduling alongside WhatsApp.

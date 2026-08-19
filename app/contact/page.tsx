@@ -10,7 +10,7 @@ import { faqGroups } from '@/content/faq';
 
 export const metadata: Metadata = {
   title: 'Contact — reach us on WhatsApp or email',
-  description: `Get in touch with ${site.name}. WhatsApp ${site.contact.whatsapp} or email ${site.contact.emailGeneral}.`,
+  description: `Get in touch with ${site.name}. WhatsApp ${site.contact.whatsapp} or email ${site.contact.email}.`,
   alternates: { canonical: '/contact' },
 };
 
@@ -65,19 +65,13 @@ export default function ContactPage() {
                   <dt className="text-sm font-semibold text-ink">Email</dt>
                   <dd className="mt-0.5 text-sm text-muted">
                     <a
-                      href={`mailto:${site.contact.emailGeneral}`}
+                      href={`mailto:${site.contact.email}`}
                       className="hover:text-green-700 hover:underline"
                     >
-                      {site.contact.emailGeneral}
+                      {site.contact.email}
                     </a>
                     <br />
-                    <a
-                      href={`mailto:${site.contact.emailSupport}`}
-                      className="hover:text-green-700 hover:underline"
-                    >
-                      {site.contact.emailSupport}
-                    </a>{' '}
-                    — for course and payment queries
+                    Enquiries, bookings, and support all go here.
                   </dd>
                 </div>
               </div>

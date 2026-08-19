@@ -112,7 +112,7 @@ export default function TermsPage() {
       <h2>13. Resolving problems</h2>
       <p>
         If something goes wrong, contact us first at{' '}
-        <a href={`mailto:${site.contact.emailSupport}`}>{site.contact.emailSupport}</a>. We would
+        <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>. We would
         much rather fix it directly than have either of us end up in a formal process.
       </p>
     </LegalPage>

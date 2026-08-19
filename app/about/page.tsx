@@ -1,18 +1,17 @@
 import type { Metadata } from 'next';
-import { Linkedin } from 'lucide-react';
 
 import { Section, SectionHeading } from '@/components/ui/Section';
 import { PhilosophyStrip } from '@/components/PhilosophyStrip';
 import { TrustBar } from '@/components/TrustBar';
 import { CTABand } from '@/components/CTABand';
 
-import { founders, story, mission, vision, values } from '@/content/about';
+import { story, mission, vision, values } from '@/content/about';
 import { site } from '@/content/site';
 
 export const metadata: Metadata = {
-  title: 'About — two Pakistani builders making investing normal',
+  title: 'About — making investing in Pakistan normal, not intimidating',
   description:
-    'Why Investing Sparkle exists, who runs it, and the four principles we do not bend on. Founded in Karachi, May 2025.',
+    'Why Investing Sparkle exists, the four principles we do not bend on, and an honest account of our licensing status. Founded in Karachi, May 2025.',
   alternates: { canonical: '/about' },
 };
 
@@ -77,44 +76,6 @@ export default function AboutPage() {
         </ul>
       </Section>
 
-      {/* Team */}
-      <Section tone="white">
-        <SectionHeading
-          eyebrow="The team"
-          title="Who you are actually learning from."
-          lede="Both of us teach, and both of us take advisory calls. There is no one else behind the curtain."
-        />
-        <ul className="mt-10 grid gap-6 md:grid-cols-2">
-          {founders.map((f) => (
-            <li key={f.name} className="rounded-3xl border border-line bg-paper p-7 md:p-8">
-              <div className="flex items-center gap-5">
-                {/* TODO: swap for a real headshot at /public/team/. */}
-                <span
-                  className="grid h-20 w-20 shrink-0 place-items-center rounded-full bg-green-100 font-display text-3xl text-green-800"
-                  aria-hidden
-                >
-                  {f.name.charAt(0)}
-                </span>
-                <div>
-                  <h3 className="font-sans text-xl font-semibold text-ink">{f.name}</h3>
-                  <p className="text-sm text-green-700">{f.role}</p>
-                  {f.linkedin && (
-                    <a
-                      href={f.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mt-1.5 inline-flex items-center gap-1.5 text-sm text-muted hover:text-green-700"
-                    >
-                      <Linkedin className="h-4 w-4" aria-hidden /> LinkedIn
-                    </a>
-                  )}
-                </div>
-              </div>
-              <p className="mt-5 leading-relaxed text-muted">{f.bio}</p>
-            </li>
-          ))}
-        </ul>
-      </Section>
 
       {/* Honest position */}
       <Section tone="paper">

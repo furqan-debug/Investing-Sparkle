@@ -85,7 +85,7 @@ const organizationSchema = {
     '@type': 'ContactPoint',
     telephone: site.contact.whatsapp,
     contactType: 'customer service',
-    email: site.contact.emailGeneral,
+    email: site.contact.email,
     areaServed: 'PK',
     availableLanguage: ['Urdu', 'English'],
   },

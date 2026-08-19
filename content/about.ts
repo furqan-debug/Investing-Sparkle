@@ -1,38 +1,13 @@
-/**
- * About-page content and the founder records used across the site
- * (About page, bootcamp instructor block, advisory team block).
- */
+/** About-page content: story, mission, vision, values, and the home-page copy. */
 
-export type Founder = {
-  name: string;
-  role: string;
-  bio: string;
-  photo: string | null;
-  linkedin: string | null;
-};
-
-/**
- * TODO: replace the bios below with real, specific ones, and drop headshots
- * into /public/team/. The plan lists "vague founder bios" as a trust
- * anti-pattern — "financial expert with years of experience" is exactly the
- * kind of line to avoid. Name what each of you actually did.
+/*
+ * There are deliberately no founder profiles on this site.
+ *
+ * The trust argument is carried by what the company will and will not do —
+ * public pricing, the "we never touch your money" position, and an honest
+ * account of the SECP licensing status — rather than by personal bios. Do not
+ * reintroduce a team section, headshots, or named instructor blocks.
  */
-export const founders: Founder[] = [
-  {
-    name: 'TODO: Founder name',
-    role: 'Co-founder',
-    bio: 'TODO: A specific bio — what you built or did before this, what you teach in the bootcamp, and why you started Investing Sparkle. Two or three sentences, concrete throughout.',
-    photo: null,
-    linkedin: null,
-  },
-  {
-    name: 'Masab',
-    role: 'Co-founder',
-    bio: 'TODO: A specific bio — background, what Masab teaches or leads, and the part of the mission he owns.',
-    photo: null,
-    linkedin: null,
-  },
-];
 
 export const story = [
   'Investing Sparkle started in May 2025, out of a frustration two of us kept running into: friends and family in Pakistan who wanted to invest, had the savings to do it, and kept losing money anyway — not because they were careless, but because the only guidance available to them came from a WhatsApp group or a broker with a stake in their trades.',

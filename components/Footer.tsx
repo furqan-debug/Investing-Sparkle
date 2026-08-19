@@ -86,11 +86,11 @@ export function Footer() {
             WhatsApp {site.contact.whatsapp}
           </a>
           <a
-            href={`mailto:${site.contact.emailGeneral}`}
+            href={`mailto:${site.contact.email}`}
             className="flex items-center gap-2 transition-colors hover:text-sparkle-400"
           >
             <Mail className="h-4 w-4" aria-hidden />
-            {site.contact.emailGeneral}
+            {site.contact.email}
           </a>
           <span className="flex items-center gap-2">
             <MapPin className="h-4 w-4" aria-hidden />

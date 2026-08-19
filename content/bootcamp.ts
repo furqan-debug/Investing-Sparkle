@@ -17,25 +17,14 @@ export const bootcamp = {
   cohort: '28–30 August 2026',
   dates: '28–30 August 2026',
 
-  // TODO: confirm. The plan lists 3:00–5:00 PM PKT in the hero but describes
-  // "~3 hours/day with breaks" and "~9 hours over 3 days" in the logistics
-  // section. Those don't agree — 3:00–5:00 PM is two hours. Pick one and set
-  // both `time` and `commitment` to match.
   time: '3:00 PM – 5:00 PM PKT',
-  sessionLength: '~3 hours per day with breaks',
-  commitment: '~9 hours over 3 days',
+  sessionLength: '2 hours per day',
+  commitment: '6 hours over 3 days',
 
-  // TODO: confirm — the plan marks this "Online / In-person" unresolved, then
-  // later suggests "Online via Zoom".
   format: 'Online via Zoom',
   language: 'Urdu (with English financial terminology)',
 
-  /**
-   * TODO: confirm the final price.
-   * The plan states PKR 2,999 in the hero fact strip but leaves Section 8
-   * pricing as "[PLACEHOLDER — insert final number]". 2,999 is used here as
-   * the working figure; change it in this one place if it's wrong.
-   */
+  /** Confirmed. Every price shown on the site reads from here. */
   price: 'PKR 2,999',
 
   /**

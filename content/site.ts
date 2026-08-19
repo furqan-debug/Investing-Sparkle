@@ -27,8 +27,10 @@ export const site = {
     whatsapp: '+92 318 1300262',
     // Digits only, country code first — this is what wa.me links use.
     whatsappNumber: '923181300262',
-    emailGeneral: 'hello@investingsparkle.com',
-    emailSupport: 'support@investingsparkle.com',
+    // One address only. Everything — enquiries, bookings, support, privacy
+    // requests — goes to support@. Do not add a second address unless one is
+    // actually monitored; an unread inbox is worse than no inbox.
+    email: 'support@investingsparkle.com',
     // TODO: confirm — office address, or keep the remote-first line.
     address: 'Remote-first, based in Karachi, Pakistan',
     // TODO: confirm exact business hours.
