@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Linkedin, Instagram, Facebook, Youtube, Mail, MessageCircle, MapPin } from 'lucide-react';
+import { Logo } from './Logo';
 import { site, footerDisclaimer } from '@/content/site';
 import { footerNav, legalNav } from '@/content/nav';
 import { whatsappLink, whatsappMessages } from '@/content/whatsapp';
@@ -26,14 +27,7 @@ export function Footer() {
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           {/* Column 1 — brand */}
           <div>
-            <Link href="/" className="flex items-center gap-2.5">
-              <span className="grid h-9 w-9 place-items-center rounded-lg bg-sparkle-400 font-display text-xl text-green-950">
-                IS
-              </span>
-              <span className="font-display text-xl leading-none tracking-wide text-white">
-                Investing<span className="text-sparkle-400"> Sparkle</span>
-              </span>
-            </Link>
+            <Logo />
             <p className="mt-4 max-w-xs text-sm leading-relaxed">{site.tagline}</p>
 
             {socials.length > 0 && (

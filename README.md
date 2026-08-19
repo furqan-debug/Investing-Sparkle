@@ -22,6 +22,37 @@ Then open http://localhost:3000.
 > `.next`, and the build will break the running dev server with confusing
 > `Cannot find module './611.js'` errors. Stop the dev server first.
 
+## Brand
+
+The logo lives in `public/brand/`:
+
+| File | Use |
+| --- | --- |
+| `investing-sparkle-logo.png` | Full stacked lockup — print, email signatures, anywhere with vertical room |
+| `investing-sparkle-mark.png` | Cropped graphic mark — header, favicon, share image, author box |
+
+The palette is **derived from the logo itself**, sampled pixel-by-pixel rather
+than eyeballed:
+
+| Token | Hex | Where it comes from |
+| --- | --- | --- |
+| `green-500` | `#00B578` | The arrow, the bars, the "INVESTING" wordmark |
+| `sparkle-500` | `#C49820` | The sparkle and the "SPARKLE" wordmark |
+
+Every other step in `app/globals.css` is derived from those two hues. The
+contrast notes at the top of that file record which pairings were checked and
+what they measure — 261 colour and size combinations across six page types pass
+WCAG AA with no failures.
+
+One trap worth knowing: **`green-500` is the brand emerald but only reaches
+2.7:1 on white**, so it must not be used for small text on a light background.
+Use `green-700` there. The header and footer use it freely because they sit on
+`green-950`.
+
+The header pairs the cropped mark with the wordmark set in HTML rather than
+using the stacked image, because the full lockup is far too tall for a 64px
+header. See `components/Logo.tsx`.
+
 ## How this is organised
 
 Content is separated from presentation. **Almost nothing you will want to change

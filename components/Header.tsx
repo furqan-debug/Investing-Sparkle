@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X, ChevronDown, MessageCircle } from 'lucide-react';
+import { Logo } from './Logo';
 import { mainNav } from '@/content/nav';
 import { site } from '@/content/site';
 import { whatsappLink, whatsappMessages } from '@/content/whatsapp';
@@ -48,14 +49,7 @@ export function Header() {
     >
       <div className="container-page">
         <div className="flex h-16 items-center justify-between gap-4 md:h-20">
-          <Link href="/" className="flex items-center gap-2.5" aria-label={`${site.name} home`}>
-            <span className="grid h-9 w-9 place-items-center rounded-lg bg-sparkle-400 font-display text-xl text-green-950">
-              IS
-            </span>
-            <span className="font-display text-xl leading-none tracking-wide md:text-2xl">
-              Investing<span className="text-sparkle-400"> Sparkle</span>
-            </span>
-          </Link>
+          <Logo />
 
           {/* Desktop navigation */}
           <nav className="hidden items-center gap-1 lg:flex" aria-label="Main">

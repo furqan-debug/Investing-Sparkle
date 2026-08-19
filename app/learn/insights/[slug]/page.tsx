@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { ArrowLeft, MessageCircle, Info } from 'lucide-react';
 
 import { Section, SectionHeading } from '@/components/ui/Section';
+import { LogoMark } from '@/components/Logo';
 import { ArticleCard } from '@/components/ArticleCard';
 import { Newsletter } from '@/components/Newsletter';
 import { articles, getArticle, relatedArticles, type Block } from '@/content/insights';
@@ -132,10 +133,10 @@ export default async function ArticlePage({ params }: Params) {
           {/* Author box */}
           <div className="mx-auto mt-12 flex max-w-3xl gap-5 rounded-2xl border border-line bg-white p-6">
             <span
-              className="grid h-14 w-14 shrink-0 place-items-center rounded-full bg-green-100 font-display text-2xl text-green-800"
+              className="grid h-14 w-14 shrink-0 place-items-center rounded-full bg-green-50"
               aria-hidden
             >
-              IS
+              <LogoMark className="h-8 w-auto" />
             </span>
             <div>
               <p className="font-sans font-semibold text-ink">{article.author}</p>

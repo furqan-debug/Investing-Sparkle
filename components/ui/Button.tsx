@@ -8,8 +8,9 @@ const base =
   'inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-colors duration-150 disabled:opacity-50 disabled:pointer-events-none text-center';
 
 const variants: Record<Variant, string> = {
-  // Yellow is the action colour throughout — it should mean "this is the thing to click".
-  primary: 'bg-sparkle-400 text-green-950 hover:bg-sparkle-500',
+  // The logo's gold is the action colour throughout — it should mean "this is the
+  // thing to click". Hover lightens rather than darkens, which suits the brand.
+  primary: 'bg-sparkle-500 text-green-950 hover:bg-sparkle-400',
   secondary: 'bg-green-800 text-white hover:bg-green-700',
   ghost: 'border-2 border-current text-current hover:bg-current/10',
   whatsapp: 'bg-[#25D366] text-green-950 hover:bg-[#1eb857]',
