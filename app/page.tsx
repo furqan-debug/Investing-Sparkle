@@ -16,6 +16,7 @@ import { bootcamp } from '@/content/bootcamp';
 import { problems, journey, journeyNote, founders } from '@/content/about';
 import { publishedArticles } from '@/content/insights';
 import { tools } from '@/content/tools';
+import { learningTestimonials } from '@/content/testimonials';
 
 export const metadata: Metadata = {
   title: 'Learn to invest in Pakistan — with confidence, not guesswork',
@@ -254,7 +255,7 @@ export default function HomePage() {
         <SectionHeading eyebrow="In their words" title="What students say." />
         <div className="mt-10">
           <Testimonials
-            items={[]}
+            items={learningTestimonials.slice(0, 3)}
             emptyMessage="Our first cohorts have just finished. We would rather show you nothing here than write testimonials ourselves — real ones are coming."
           />
         </div>

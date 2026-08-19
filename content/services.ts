@@ -1,6 +1,7 @@
 import { refundPolicy } from './site';
 import { whatsappMessages } from './whatsapp';
 import type { Testimonial } from './bootcamp';
+import { clientTestimonials } from './testimonials';
 
 /**
  * The three advisory tiers.
@@ -26,6 +27,19 @@ export type Service = {
   refund: string;
   ctaLabel: string;
   whatsappMessage: string;
+
+  /* --- Detail-page fields (used by /services/[slug]) --- */
+
+  /** Two or three paragraphs expanding on what the service is really for. */
+  detail: string[];
+  /** Honest fit signals — the "not for you" list filters out mismatched buyers. */
+  rightForYou: string[];
+  notForYou: string[];
+  /** Stage-by-stage walkthrough of the engagement. */
+  steps: { step: string; title: string; detail: string }[];
+  /** What you hold at the end. */
+  deliverables: string[];
+  faq: { q: string; a: string }[];
 };
 
 export const services: Service[] = [
@@ -57,6 +71,86 @@ export const services: Service[] = [
     refund: refundPolicy.launchpad,
     ctaLabel: 'Book via WhatsApp',
     whatsappMessage: whatsappMessages.launchpad,
+
+    detail: [
+      'The Launchpad call exists for a specific situation: you have money to invest, you are reasonably intelligent about most things, and you have no idea where to start with PSX — and every source of guidance available to you has an interest in what you decide.',
+      'It is one session, one written plan, and no ongoing relationship unless you want one. We deliberately designed it that way. A service you have to keep buying is a service with an incentive to leave you dependent, and that incentive shapes advice whether anyone intends it to or not.',
+      'What makes it worth the fee is not the recommendations. It is that you leave able to make the next fifty decisions without us.',
+    ],
+    rightForYou: [
+      'You have savings ready to invest and want a considered plan before you start',
+      'You have been investing on tips and want to restart on a proper footing',
+      'You want to understand the reasoning, not just receive an instruction',
+      'You are comfortable executing trades yourself once you know what you are doing',
+    ],
+    notForYou: [
+      'You want stock picks — we will not give them, in the call or in the plan',
+      'You want someone to manage the portfolio for you',
+      'You have no emergency fund yet — we will only tell you to build one first',
+      'You are looking for a short-term trading system',
+    ],
+    steps: [
+      {
+        step: '01',
+        title: 'Intake form',
+        detail:
+          'A ten-minute form covering income stability, savings, debts, dependants, horizon, and what you are actually trying to achieve. It means the session starts with context rather than background questions.',
+      },
+      {
+        step: '02',
+        title: 'Your situation',
+        detail:
+          'The first part of the call is about your circumstances, not the market. If the honest answer is that investing should wait, this is where we say so.',
+      },
+      {
+        step: '03',
+        title: 'Risk, both kinds',
+        detail:
+          'We separate your financial capacity for risk from your behavioural tolerance for it. The mismatch between the two is where most damage happens.',
+      },
+      {
+        step: '04',
+        title: 'The framework',
+        detail:
+          'How to evaluate a company, which ratios matter and what each can hide, how to think about sector exposure, and how to size a position. Worked through with real examples.',
+      },
+      {
+        step: '05',
+        title: 'Written plan',
+        detail:
+          'Delivered within a week, written so you can act on it alone. No follow-on service is required to make it useful.',
+      },
+    ],
+    deliverables: [
+      'Your risk profile, with the reasoning behind it',
+      'A recommended asset allocation for your situation',
+      'Portfolio structure and position-sizing rules',
+      'Selection criteria you can apply to any company yourself',
+      'A review schedule, and what to check at each review',
+      'The specific first actions to take, in order',
+    ],
+    faq: [
+      {
+        q: 'Will I get stock recommendations?',
+        a: 'No. Not in the call, not in the written plan, and not if you ask directly. You will get criteria precise enough to pick your own, which is worth considerably more the second time you need it.',
+      },
+      {
+        q: 'What if you tell me not to invest yet?',
+        a: 'That happens, and it is a legitimate outcome of the session. If you have no emergency fund or expensive short-term debt, the highest-return action available to you is not a stock. You still receive the written plan, covering what to do first and when to revisit.',
+      },
+      {
+        q: 'Do I need to have a brokerage account already?',
+        a: 'No. The plan covers what to look for in a broker. If you want to be walked through opening one, that is Guided Start.',
+      },
+      {
+        q: 'Can I ask about shares I already own?',
+        a: 'Yes, and most people do. We will work through your reasoning for holding them rather than issuing a verdict on each.',
+      },
+      {
+        q: 'What if I want ongoing help afterwards?',
+        a: 'Membership exists for that, and we will mention it only if it genuinely fits. If you can run the plan alone — which most people can — we would rather you did.',
+      },
+    ],
   },
   {
     slug: 'guided-start',
@@ -87,6 +181,85 @@ export const services: Service[] = [
     refund: refundPolicy.guidedStart,
     ctaLabel: 'Get Started via WhatsApp',
     whatsappMessage: whatsappMessages.guidedStart,
+
+    detail: [
+      'A large number of people never actually start investing. Not because they decided against it, but because the account-opening process defeated them, or because they got as far as a live account and then could not bring themselves to place the first order.',
+      'Guided Start is for exactly that gap. It is the Launchpad plan, plus someone alongside you through brokerage selection, account opening, funding, and your first trades — which you place, while we explain what each one does and why.',
+      'The distinction matters and we hold it absolutely: we never touch your account. You will not give us credentials, and we would refuse them if offered. Every order is entered by you.',
+    ],
+    rightForYou: [
+      'You want to invest but the practical steps keep stopping you',
+      'You have opened an account and then not used it',
+      'You want someone to explain each step as it happens rather than in advance',
+      'You would rather ask a question mid-process than research it alone',
+    ],
+    notForYou: [
+      'You are comfortable with the mechanics and only need the plan — Launchpad is cheaper and sufficient',
+      'You want someone to place trades for you. We do not, at any price',
+      'You want ongoing management after the first positions are in',
+    ],
+    steps: [
+      {
+        step: '01',
+        title: 'Everything in Launchpad',
+        detail:
+          'Intake, the advisory session, and your written investment plan. The foundation is identical.',
+      },
+      {
+        step: '02',
+        title: 'Choosing a broker',
+        detail:
+          'We compare options against how you actually intend to invest — cost structure, platform reliability, withdrawal speed, and support that answers.',
+      },
+      {
+        step: '03',
+        title: 'Account opening',
+        detail:
+          'Walked through the documentation and the CDC sub-account, step by step, including the details that most commonly stall applications.',
+      },
+      {
+        step: '04',
+        title: 'Funding and first trades',
+        detail:
+          'You fund the account and place your first orders while we talk through order types, sizing, and what you are committing to. You enter every trade.',
+      },
+      {
+        step: '05',
+        title: 'Follow-up review',
+        detail:
+          'Once the first positions are in place, a session to review what you did, record the thesis for each holding, and set your review schedule.',
+      },
+    ],
+    deliverables: [
+      'Everything in the Launchpad written plan',
+      'A completed broker comparison for your situation',
+      'A live, funded brokerage and CDC account in your own name',
+      'Your first positions, placed by you',
+      'A written thesis for each holding, and the sell conditions for each',
+      'A review schedule you can run alone',
+    ],
+    faq: [
+      {
+        q: 'Will you place trades for me?',
+        a: 'No. You place every trade. We explain what you are doing while you do it. This is not a technicality — it is the difference between learning to invest and outsourcing it.',
+      },
+      {
+        q: 'Do you need access to my account?',
+        a: 'Never. We will not ask for credentials, and if you offer them we will decline. Anyone in this industry who asks for your login should end the relationship for you.',
+      },
+      {
+        q: 'How long does it take?',
+        a: 'Typically two to three weeks, most of which is waiting for account approval rather than anything we control.',
+      },
+      {
+        q: 'What if I already paid for Launchpad?',
+        a: 'Your PKR 5,000 applies as credit toward Guided Start within 30 days of the call.',
+      },
+      {
+        q: 'Do you get anything from the broker I choose?',
+        a: 'No. No commission, no referral fee, no arrangement of any kind. That is precisely why our comparison is worth having.',
+      },
+    ],
   },
   {
     slug: 'sparkle-membership',
@@ -115,6 +288,78 @@ export const services: Service[] = [
     refund: refundPolicy.membership,
     ctaLabel: 'Join via WhatsApp',
     whatsappMessage: whatsappMessages.membership,
+
+    detail: [
+      'Most investing mistakes are not analytical. They are behavioural, and they happen in the gap between knowing what you should do and doing it while a position is down 30% and everyone around you is certain.',
+      'Membership is scheduled accountability for that gap. Regular calls, a periodic review of your portfolio against your own written plan, and somewhere to take a question before you act on it rather than afterwards.',
+      'It is a subscription we would like you to cancel. If you are still here in three years having the same conversations, we have failed at the thing we claim to do.',
+    ],
+    rightForYou: [
+      'You have a portfolio and a plan, and you want help sticking to it',
+      'You tend to act impulsively when markets move sharply',
+      'You want a second opinion on your reasoning before you commit',
+      'You value a fixed review date you cannot quietly skip',
+    ],
+    notForYou: [
+      'You want us to manage the money. We never will',
+      'You want frequent trade ideas — this is review and coaching, not a signal service',
+      'You have not yet built a portfolio. Start with Launchpad or Guided Start',
+      'You would find a monthly fee a strain. Cancel-friendly does not make it free',
+    ],
+    steps: [
+      {
+        step: '01',
+        title: 'Onboarding review',
+        detail:
+          'We start by going through your existing portfolio and plan, so the reviews that follow measure against something specific.',
+      },
+      {
+        step: '02',
+        title: 'Scheduled calls',
+        detail:
+          'Two to three private calls each month, at times fixed in advance. The fixed date is much of the value — it is the one you cannot postpone indefinitely.',
+      },
+      {
+        step: '03',
+        title: 'Portfolio review',
+        detail:
+          'Periodic review of holdings, weights, and sector exposure against your written plan. We ask the awkward question: would you buy each of these today?',
+      },
+      {
+        step: '04',
+        title: 'Questions between calls',
+        detail:
+          'WhatsApp support for the moments that do not wait for the next scheduled session — particularly when markets are moving and the urge to act is strongest.',
+      },
+    ],
+    deliverables: [
+      'A standing review of your portfolio against your own plan',
+      'Notes from each call, so decisions are recorded rather than remembered',
+      'An updated thesis and sell conditions for holdings as things change',
+      'Somewhere to check your reasoning before you act on it',
+    ],
+    faq: [
+      {
+        q: 'Is this portfolio management?',
+        a: 'No. We never hold your money, never place trades, and never take account access. This is scheduled coaching and review. Every decision and every execution remains yours.',
+      },
+      {
+        q: 'Will you tell me what to buy each month?',
+        a: 'No. We will work through your reasoning on anything you are considering, and tell you honestly where we think it is weak.',
+      },
+      {
+        q: 'How do I cancel?',
+        a: 'Message us. No retention call, no notice period, no friction. You keep access until the end of the month you have paid for.',
+      },
+      {
+        q: 'Is there a minimum commitment?',
+        a: 'One month. After that, cancel whenever you like.',
+      },
+      {
+        q: 'How would I know when I no longer need this?',
+        a: 'When the calls stop producing anything you had not already worked out. We will tell you when we notice it, which is a strange thing for a subscription business to promise and the reason we designed it this way.',
+      },
+    ],
   },
 ];
 
@@ -178,5 +423,12 @@ export const advisoryFaq = [
   },
 ];
 
-/** Advisory-client testimonials, kept separate from learning testimonials. */
-export const advisoryTestimonials: Testimonial[] = [];
+/**
+ * Advisory-client testimonials. Sourced from content/testimonials.ts, which is
+ * the single place real testimonials are added — see the instructions there.
+ */
+export const advisoryTestimonials: Testimonial[] = clientTestimonials;
+
+export function getService(slug: string): Service | undefined {
+  return services.find((s) => s.slug === slug);
+}

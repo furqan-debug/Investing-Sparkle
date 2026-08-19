@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
-import { Check, X, MessageCircle } from 'lucide-react';
+import Link from 'next/link';
+import { Check, X, MessageCircle, ArrowRight } from 'lucide-react';
 
 import { Section, SectionHeading } from '@/components/ui/Section';
 import { Button } from '@/components/ui/Button';
@@ -206,14 +207,17 @@ export default function ServicesPage() {
                     </div>
                   </dl>
 
-                  <Button
-                    href={whatsappLink(s.whatsappMessage)}
-                    variant="whatsapp"
-                    size="lg"
-                    className="mt-7 w-full sm:w-auto"
-                  >
-                    <MessageCircle className="h-4 w-4" aria-hidden /> {s.ctaLabel}
-                  </Button>
+                  <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
+                    <Button href={whatsappLink(s.whatsappMessage)} variant="whatsapp" size="lg">
+                      <MessageCircle className="h-4 w-4" aria-hidden /> {s.ctaLabel}
+                    </Button>
+                    <Link
+                      href={`/services/${s.slug}`}
+                      className="inline-flex items-center gap-1.5 px-2 py-2 font-semibold text-green-700 hover:text-green-600"
+                    >
+                      See full details <ArrowRight className="h-4 w-4" aria-hidden />
+                    </Link>
+                  </div>
                 </div>
 
                 <div className="grid gap-6 sm:grid-cols-2 lg:border-l lg:border-line lg:pl-10">

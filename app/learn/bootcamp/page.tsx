@@ -23,6 +23,7 @@ import { Newsletter } from '@/components/Newsletter';
 import { bootcamp } from '@/content/bootcamp';
 import { site, refundPolicy, paymentMethods } from '@/content/site';
 import { whatsappLink, whatsappMessages } from '@/content/whatsapp';
+import { learningTestimonials } from '@/content/testimonials';
 
 export const metadata: Metadata = {
   title: `Stock Market Investor Boot Camp — ${bootcamp.dates}`,
@@ -298,7 +299,7 @@ export default function BootcampPage() {
         <SectionHeading eyebrow="Past students" title="What previous cohorts said." />
         <div className="mt-10">
           <Testimonials
-            items={bootcamp.testimonials}
+            items={learningTestimonials.filter((t) => t.source.toLowerCase().includes('bootcamp'))}
             emptyMessage="This is one of our first cohorts. Be part of the founding batch — real testimonials will appear here once students have finished and had time to invest."
           />
         </div>

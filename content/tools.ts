@@ -1,9 +1,9 @@
 /**
  * Free tools index.
  *
- * Phase 1 ships the Risk Profile Quiz and the Compounding Calculator as live
- * tools. The rest are listed with `status: 'soon'` so the index page is honest
- * about what exists rather than linking to dead routes.
+ * All five tools from the master plan are now live. Anything added later with
+ * `status: 'soon'` renders as a disabled card rather than a dead link, and is
+ * excluded from the sitemap until it ships.
  */
 
 export type ToolStatus = 'live' | 'soon';
@@ -32,7 +32,7 @@ export const tools: Tool[] = [
     name: 'Compounding Calculator',
     blurb:
       'See what a one-time investment becomes over time, and how much of it is growth rather than your own money.',
-    outcome: 'Future value, total growth, and the year-by-year curve.',
+    outcome: 'Future value, total growth, and the split between contributions and growth.',
     status: 'live',
     featured: true,
   },
@@ -40,25 +40,31 @@ export const tools: Tool[] = [
     slug: 'sip-calculator',
     name: 'SIP Calculator',
     blurb:
-      'Work out what investing a fixed amount every month builds up to, and what it costs you to start late.',
-    outcome: 'Projected corpus from a monthly contribution.',
-    status: 'soon',
+      'Work out what investing a fixed amount every month builds up to — and exactly what starting late costs you.',
+    outcome: 'Projected corpus from a monthly contribution, and the price of waiting.',
+    status: 'live',
     featured: true,
   },
   {
     slug: 'zakat-calculator',
     name: 'Zakat Calculator',
-    blurb: 'Calculate zakat due on shares, dividends, and cash holdings under common rulings.',
-    outcome: 'Your zakat liability on an investment portfolio.',
-    status: 'soon',
+    blurb:
+      'Calculate zakat due on shares, dividends, and cash holdings, with the reasoning shown rather than hidden.',
+    outcome: 'Your zakat liability across an investment portfolio.',
+    status: 'live',
   },
   {
     slug: 'roi-calculator',
     name: 'ROI Calculator',
-    blurb: 'Measure what a position actually returned, including dividends and holding period.',
-    outcome: 'Absolute return and annualised return on any holding.',
-    status: 'soon',
+    blurb:
+      'Measure what a position actually returned — including dividends and costs, not just the price difference.',
+    outcome: 'Total return, annualised return, and where the return came from.',
+    status: 'live',
   },
 ];
 
 export const liveTools = tools.filter((t) => t.status === 'live');
+
+export function getTool(slug: string): Tool | undefined {
+  return tools.find((t) => t.slug === slug);
+}

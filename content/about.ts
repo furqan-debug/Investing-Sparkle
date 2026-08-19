@@ -106,19 +106,19 @@ export const journey = [
     step: '02',
     title: 'Get a plan',
     detail: 'Book a Launchpad Advisory Call and leave with a written plan built around your goals.',
-    href: '/services#launchpad',
+    href: '/services/launchpad',
   },
   {
     step: '03',
     title: 'Get set up',
     detail: 'Guided Start walks you through brokerage setup and your first investments.',
-    href: '/services#guided-start',
+    href: '/services/guided-start',
   },
   {
     step: '04',
     title: 'Stay on track',
     detail: 'Sparkle Membership gives you periodic accountability — entirely optional.',
-    href: '/services#sparkle-membership',
+    href: '/services/sparkle-membership',
   },
 ];
 

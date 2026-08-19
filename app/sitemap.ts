@@ -3,11 +3,15 @@ import { site } from '@/content/site';
 import { articles } from '@/content/insights';
 import { courses } from '@/content/courses';
 import { tools } from '@/content/tools';
+import { services } from '@/content/services';
+import { caseStudies } from '@/content/case-studies';
+import { pastCohorts } from '@/content/bootcamp';
 
 /**
- * XML sitemap, generated from the content files — so a new article or course
- * appears in the sitemap the moment it is added, with no separate step to
- * forget. Tools that are not live yet are excluded.
+ * XML sitemap, generated from the content files — so a new article, course,
+ * tool, or case study appears the moment it is added, with no separate step to
+ * forget. Tools that are not live and pages that hide themselves when empty
+ * (the cohort archive) are excluded.
  */
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = site.url;
@@ -23,6 +27,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/learn/courses`, priority: 0.8, changeFrequency: 'monthly' },
     { url: `${base}/learn/tools`, priority: 0.8, changeFrequency: 'monthly' },
     { url: `${base}/learn/insights`, priority: 0.8, changeFrequency: 'weekly' },
+    { url: `${base}/case-studies`, priority: 0.7, changeFrequency: 'monthly' },
     { url: `${base}/about`, priority: 0.7, changeFrequency: 'monthly' },
     { url: `${base}/contact`, priority: 0.7, changeFrequency: 'monthly' },
     { url: `${base}/faq`, priority: 0.6, changeFrequency: 'monthly' },
@@ -57,5 +62,40 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     }));
 
-  return [...staticPages, ...articlePages, ...coursePages, ...toolPages];
+  const servicePages: MetadataRoute.Sitemap = services.map((s) => ({
+    url: `${base}/services/${s.slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly',
+    priority: 0.8,
+  }));
+
+  const caseStudyPages: MetadataRoute.Sitemap = caseStudies.map((c) => ({
+    url: `${base}/case-studies/${c.slug}`,
+    lastModified: now,
+    changeFrequency: 'yearly',
+    priority: 0.6,
+  }));
+
+  // Only listed once a cohort has actually finished — the page 404s until then.
+  const archivePages: MetadataRoute.Sitemap =
+    pastCohorts.length > 0
+      ? [
+          {
+            url: `${base}/learn/bootcamp/archive`,
+            lastModified: now,
+            changeFrequency: 'monthly',
+            priority: 0.5,
+          },
+        ]
+      : [];
+
+  return [
+    ...staticPages,
+    ...articlePages,
+    ...coursePages,
+    ...toolPages,
+    ...servicePages,
+    ...caseStudyPages,
+    ...archivePages,
+  ];
 }

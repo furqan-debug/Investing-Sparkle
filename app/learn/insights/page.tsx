@@ -1,23 +1,24 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 
 import { Section, SectionHeading } from '@/components/ui/Section';
-import { ArticleCard } from '@/components/ArticleCard';
+import { InsightsBrowser } from '@/components/InsightsBrowser';
 import { Newsletter } from '@/components/Newsletter';
 import { CTABand } from '@/components/CTABand';
-import { publishedArticles } from '@/content/insights';
+import { publishedArticles, activeCategories } from '@/content/insights';
 
 export const metadata: Metadata = {
   title: 'Insights — honest writing about investing in Pakistan',
   description:
-    'Explainers on PSX mechanics, fundamental and technical analysis, Shariah-compliant investing, and the mistakes that cost new investors the most.',
+    'Explainers on PSX mechanics, fundamental and technical analysis, Shariah-compliant investing, zakat and tax, and the mistakes that cost new investors the most.',
   alternates: { canonical: '/learn/insights' },
 };
 
 export default function InsightsPage() {
-  // The category filter is deliberately deferred until there are enough
-  // articles for filtering to be useful — a filter bar over five posts is
-  // furniture, not navigation. Add it when the archive passes ~15 articles.
-  const [lead, ...rest] = publishedArticles;
+  // The newest article is highlighted above, and also stays in the archive
+  // below. Excluding it from the grid would make it unreachable by filter or
+  // search — which is how the sole Advisory article became invisible.
+  const [lead] = publishedArticles;
 
   return (
     <>
@@ -43,9 +44,9 @@ export default function InsightsPage() {
                 {lead.category}
               </span>
               <h2 className="h3 mt-4">
-                <a href={`/learn/insights/${lead.slug}`} className="hover:text-green-700">
+                <Link href={`/learn/insights/${lead.slug}`} className="hover:text-green-700">
                   {lead.title}
-                </a>
+                </Link>
               </h2>
               <p className="mt-3 text-muted">{lead.description}</p>
               <p className="mt-4 text-sm text-muted">{lead.readingMinutes} min read</p>
@@ -61,18 +62,10 @@ export default function InsightsPage() {
       )}
 
       <Section tone="white">
-        <SectionHeading eyebrow="All articles" title="The archive." />
-        <ul className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {rest.map((article) => (
-            <li key={article.slug}>
-              <ArticleCard article={article} />
-            </li>
-          ))}
-        </ul>
-
-        {rest.length === 0 && (
-          <p className="mt-8 text-muted">More articles are being written. Check back soon.</p>
-        )}
+        <SectionHeading eyebrow="The archive" title="Browse everything." />
+        <div className="mt-10">
+          <InsightsBrowser articles={publishedArticles} categories={activeCategories()} />
+        </div>
       </Section>
 
       <CTABand />

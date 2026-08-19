@@ -14,6 +14,7 @@ import { tools } from '@/content/tools';
 import { courses } from '@/content/courses';
 import { publishedArticles } from '@/content/insights';
 import { faqGroups } from '@/content/faq';
+import { learningTestimonials } from '@/content/testimonials';
 
 export const metadata: Metadata = {
   title: 'Learn — everything you need to invest in PSX',
@@ -194,7 +195,7 @@ export default function LearnPage() {
         <SectionHeading eyebrow="Students" title="What people say after learning with us." />
         <div className="mt-10">
           <Testimonials
-            items={[]}
+            items={learningTestimonials.slice(0, 3)}
             emptyMessage="Our first cohorts have only just finished. Real, attributed testimonials will appear here — we will not write them ourselves in the meantime."
           />
         </div>

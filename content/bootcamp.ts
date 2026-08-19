@@ -188,3 +188,47 @@ export type Testimonial = {
   source: string;
   photo?: string;
 };
+
+/**
+ * Past cohorts.
+ *
+ * When a cohort finishes, add an entry here. The archive page and the
+ * "cohorts run" count both read from this list, so the number on the site is
+ * always the real number — it cannot drift from reality by being typed in a
+ * second place.
+ *
+ * The archive page hides itself entirely while this list is empty, rather than
+ * shipping a page that says "no past cohorts".
+ */
+export type PastCohort = {
+  cohort: string;
+  /** ISO date of the final day — used for ordering. */
+  endedOn: string;
+  format: string;
+  language: string;
+  /** Real attendance figure, or null if you would rather not publish it. */
+  attendees: number | null;
+  /** Anything notable about this cohort — what changed, what was added. */
+  note?: string;
+  testimonials: Testimonial[];
+};
+
+export const pastCohorts: PastCohort[] = [
+  // Example shape, kept as a comment so the first real entry is easy to add:
+  // {
+  //   cohort: '24–26 July 2026',
+  //   endedOn: '2026-07-26',
+  //   format: 'Online via Zoom',
+  //   language: 'Urdu (with English financial terminology)',
+  //   attendees: 18,
+  //   note: 'Added the take-home investment plan template after feedback from this group.',
+  //   testimonials: [],
+  // },
+];
+
+export const sortedPastCohorts = [...pastCohorts].sort((a, b) =>
+  a.endedOn < b.endedOn ? 1 : -1
+);
+
+/** Every published testimonial across all past cohorts. */
+export const allCohortTestimonials: Testimonial[] = pastCohorts.flatMap((c) => c.testimonials);

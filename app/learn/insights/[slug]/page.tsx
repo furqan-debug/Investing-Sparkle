@@ -6,7 +6,7 @@ import { ArrowLeft, MessageCircle, Info } from 'lucide-react';
 import { Section, SectionHeading } from '@/components/ui/Section';
 import { ArticleCard } from '@/components/ArticleCard';
 import { Newsletter } from '@/components/Newsletter';
-import { articles, getArticle, publishedArticles, type Block } from '@/content/insights';
+import { articles, getArticle, relatedArticles, type Block } from '@/content/insights';
 import { site } from '@/content/site';
 import { whatsappLink, whatsappMessages } from '@/content/whatsapp';
 import { formatDate } from '@/lib/format';
@@ -80,7 +80,7 @@ export default async function ArticlePage({ params }: Params) {
   const article = getArticle(slug);
   if (!article) notFound();
 
-  const related = publishedArticles.filter((a) => a.slug !== article.slug).slice(0, 3);
+  const related = relatedArticles(article);
 
   const articleSchema = {
     '@context': 'https://schema.org',

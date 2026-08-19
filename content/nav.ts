@@ -18,10 +18,11 @@ export const mainNav: NavItem[] = [
     label: 'Services',
     href: '/services',
     children: [
-      { label: 'Launchpad Advisory Call', href: '/services#launchpad' },
-      { label: 'Guided Start', href: '/services#guided-start' },
-      { label: 'Sparkle Membership', href: '/services#sparkle-membership' },
+      { label: 'Launchpad Advisory Call', href: '/services/launchpad' },
+      { label: 'Guided Start', href: '/services/guided-start' },
+      { label: 'Sparkle Membership', href: '/services/sparkle-membership' },
       { label: 'Compare All', href: '/services#compare' },
+      { label: 'Worked Examples', href: '/case-studies' },
     ],
   },
   { label: 'Insights', href: '/learn/insights' },
@@ -42,10 +43,11 @@ export const footerNav = [
   {
     heading: 'Services',
     links: [
-      { label: 'Launchpad Advisory Call', href: '/services#launchpad' },
-      { label: 'Guided Start', href: '/services#guided-start' },
-      { label: 'Sparkle Membership', href: '/services#sparkle-membership' },
+      { label: 'Launchpad Advisory Call', href: '/services/launchpad' },
+      { label: 'Guided Start', href: '/services/guided-start' },
+      { label: 'Sparkle Membership', href: '/services/sparkle-membership' },
       { label: 'Compare All', href: '/services#compare' },
+      { label: 'Worked Examples', href: '/case-studies' },
     ],
   },
   {
