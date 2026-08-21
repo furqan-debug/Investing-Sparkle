@@ -41,9 +41,9 @@ export const site = {
   social: {
     // TODO: replace with the real profile URLs. Any entry left as null is
     // omitted from the footer rather than rendering a dead icon.
-    linkedin: null as string | null,
-    instagram: null as string | null,
-    facebook: null as string | null,
+    linkedin: 'https://www.linkedin.com/company/investing-sparkle',
+    instagram: 'https://www.instagram.com/investingsparkle',
+    facebook: 'https://www.facebook.com/InvestingSparkle',
     youtube: null as string | null,
     x: null as string | null,
   },
