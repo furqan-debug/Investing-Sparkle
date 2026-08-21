@@ -17,9 +17,9 @@ export const bootcamp = {
   cohort: '28–30 August 2026',
   dates: '28–30 August 2026',
 
-  time: '3:00 PM – 5:00 PM PKT',
-  sessionLength: '2 hours per day',
-  commitment: '6 hours over 3 days',
+  time: '3:00 PM – 6:00 PM PKT',
+  sessionLength: '3 hours per day',
+  commitment: '9 hours over 3 days',
 
   format: 'Online via Zoom',
   language: 'Urdu (with English financial terminology)',
