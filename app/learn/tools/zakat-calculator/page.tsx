@@ -7,7 +7,7 @@ import { ZakatCalculator } from '@/components/tools/ZakatCalculator';
 import { CTABand } from '@/components/CTABand';
 
 export const metadata: Metadata = {
-  title: 'Zakat Calculator — zakat on shares and investments',
+  title: 'Zakat Calculator | zakat on shares and investments',
   description:
     'Calculate zakat on a share portfolio, dividends, and cash holdings. Shows the reasoning, and says where scholars differ instead of picking for you.',
   alternates: { canonical: '/learn/tools/zakat-calculator' },
@@ -26,7 +26,7 @@ export default function ZakatPage() {
           </Link>
           <h1 className="h1 mt-5 max-w-3xl">Zakat Calculator</h1>
           <p className="lede mt-4 max-w-2xl text-green-100">
-            For shares, dividends, and the cash people forget — the balance sitting idle in a
+            For shares, dividends, and the cash people forget, the balance sitting idle in a
             trading account.
           </p>
         </div>
@@ -43,7 +43,7 @@ export default function ZakatPage() {
             <p>
               Nisab is derived from prevailing gold or silver prices, so it moves constantly. A
               calculator with the threshold baked in gives a confidently wrong answer the moment
-              prices shift — so we ask you to enter the current figure from a source you trust.
+              prices shift, so we ask you to enter the current figure from a source you trust.
             </p>
             <p>
               The rate applied is 2.5%, the widely used figure for a lunar year.
@@ -53,7 +53,7 @@ export default function ZakatPage() {
               The distinction that matters is intent. Shares bought to sell for gain are generally
               treated like trade goods, and zakat is calculated on full market value. Shares held as
               long-term investments are, on a common view, zakatable on your proportional share of
-              the company’s zakatable assets — its cash, receivables, and inventory — rather than on
+              the company’s zakatable assets (its cash, receivables, and inventory) rather than on
               the whole market value.
             </p>
             <p>
@@ -70,7 +70,7 @@ export default function ZakatPage() {
             <h2>Where we stop</h2>
             <p>
               We teach the calculation, not the ruling. On the treatment of long-term holdings and on
-              which liabilities are deductible, scholars differ — and we would rather tell you that
+              which liabilities are deductible, scholars differ, and we would rather tell you that
               than quietly adopt one position and present it as settled. If your situation is unusual
               or the amount is significant, ask a qualified scholar.
             </p>

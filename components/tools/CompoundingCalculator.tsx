@@ -169,7 +169,7 @@ export function CompoundingCalculator() {
 
             <p className="mt-5 text-sm leading-relaxed text-green-100">
               {Math.round(result.growthShare)}% of that final figure is growth rather than money you
-              contributed. Lengthen the time horizon and watch that share move — it moves far more
+              contributed. Lengthen the time horizon and watch that share move, it moves far more
               than the return rate does.
             </p>
           </div>
@@ -189,7 +189,7 @@ export function CompoundingCalculator() {
         </a>
 
         <p className="text-xs leading-relaxed text-muted">
-          This is arithmetic, not a forecast. The return rate is the figure you chose — we are not
+          This is arithmetic, not a forecast. The return rate is the figure you chose: we are not
           projecting it, and no market delivers the same return every year. Real returns arrive
           unevenly, which is exactly why the behavioural side of investing matters more than the
           spreadsheet.

@@ -7,7 +7,7 @@ import { RiskProfileQuiz } from '@/components/tools/RiskProfileQuiz';
 import { PhilosophyStrip } from '@/components/PhilosophyStrip';
 
 export const metadata: Metadata = {
-  title: 'Risk Profile Quiz — what kind of investor are you?',
+  title: 'Risk Profile Quiz | what kind of investor are you?',
   description:
     'Eight questions that tell you what kind of investor you actually are, and what that means for how you should build a portfolio. Free, no signup.',
   alternates: { canonical: '/learn/tools/risk-profile' },
@@ -58,7 +58,7 @@ export default function RiskProfilePage() {
             </p>
             <p>
               The quiz asks about both, because a mismatch between them is where the damage occurs.
-              Someone with high capacity and low tolerance sells at the bottom of every correction —
+              Someone with high capacity and low tolerance sells at the bottom of every correction, 
               the worst outcome available, and one that no amount of stock-picking skill can offset.
             </p>
             <p>

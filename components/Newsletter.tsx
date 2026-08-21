@@ -4,22 +4,6 @@ import { useState } from 'react';
 import { Mail, Check } from 'lucide-react';
 import { cn } from '@/lib/cn';
 
-/**
- * Reusable newsletter signup.
- *
- * Appears in the footer, at the end of articles, after tool completion, and
- * mid-page on the blog listing.
- *
- * TODO — wire this to your email provider (ConvertKit / Mailchimp / Buttondown).
- * Two options:
- *   1. Point `action` at the provider's hosted form endpoint and let the browser
- *      POST to it directly. Simplest, no server code.
- *   2. Keep this handler and add app/api/subscribe/route.ts that calls the
- *      provider API with a server-side key.
- * Either way, turn on DOUBLE OPT-IN in the provider — the pre-launch checklist
- * requires it, and it keeps the list clean.
- */
-
 export function Newsletter({
   variant = 'light',
   compact,
@@ -53,13 +37,13 @@ export function Newsletter({
     return (
       <div
         className={cn(
-          'flex items-center gap-3 rounded-2xl p-5',
+          'flex items-center gap-3 rounded-2xl p-5 animate-scale-in',
           dark ? 'bg-white/10 text-white' : 'bg-green-50 text-ink'
         )}
       >
         <Check className={cn('h-5 w-5 shrink-0', dark ? 'text-sparkle-400' : 'text-green-600')} />
         <p className="text-sm">
-          Almost there — check your inbox and confirm your subscription. If it is not there in a
+          Almost there! Check your inbox and confirm your subscription. If it is not there in a
           few minutes, look in spam and mark it as safe.
         </p>
       </div>
@@ -101,25 +85,25 @@ export function Newsletter({
             placeholder="you@example.com"
             autoComplete="email"
             className={cn(
-              'w-full rounded-full border py-3 pl-10 pr-4 text-sm outline-none transition-colors',
+              'w-full rounded-full border py-3 pl-10 pr-4 text-sm outline-none transition-all duration-200',
               dark
-                ? 'border-white/20 bg-white/10 text-white placeholder:text-green-200 focus:border-sparkle-400'
-                : 'border-line bg-white text-ink placeholder:text-muted focus:border-green-600'
+                ? 'border-white/20 bg-white/10 text-white placeholder:text-green-200 focus:border-sparkle-400 focus:ring-2 focus:ring-sparkle-400/30'
+                : 'border-line bg-white text-ink placeholder:text-muted focus:border-green-500 focus:ring-2 focus:ring-green-500/20'
             )}
           />
         </div>
         <button
           type="submit"
           disabled={state === 'loading'}
-          className="rounded-full bg-sparkle-400 px-6 py-3 text-sm font-semibold text-green-950 transition-colors hover:bg-sparkle-500 disabled:opacity-60"
+          className="btn-liquid btn-liquid--primary rounded-full bg-sparkle-500 px-6 py-3 text-sm font-semibold text-green-950 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md active:translate-y-0 disabled:opacity-60"
         >
-          {state === 'loading' ? 'Subscribing…' : 'Subscribe'}
+          {state === 'loading' ? 'Subscribing...' : 'Subscribe'}
         </button>
       </form>
 
       {state === 'error' && (
         <p className="mt-2 text-sm text-danger">
-          That didn’t go through. Try again, or email us directly.
+          That didn&apos;t go through. Try again, or email us directly.
         </p>
       )}
     </div>

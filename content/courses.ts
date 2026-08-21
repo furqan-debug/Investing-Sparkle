@@ -30,7 +30,7 @@ export const courses: Course[] = [
     slug: 'psx-foundations',
     title: 'PSX Foundations',
     outcome:
-      'Go from never having bought a share to placing your first informed trade — and knowing why you placed it.',
+      'Go from never having bought a share to placing your first informed trade, and knowing why you placed it.',
     level: 'Beginner',
     duration: 'Self-paced · roughly 6 hours',
     // TODO: confirm delivery format once course hosting is decided (Phase 3 LMS).
@@ -54,7 +54,7 @@ export const courses: Course[] = [
     ],
     curriculum: [
       {
-        module: 'Module 1 — How PSX works',
+        module: 'Module 1: How PSX works',
         topics: [
           'Market structure and participants',
           'KSE-100, KMI-30, and sector indices',
@@ -62,7 +62,7 @@ export const courses: Course[] = [
         ],
       },
       {
-        module: 'Module 2 — Getting access',
+        module: 'Module 2: Getting access',
         topics: [
           'Comparing brokers on cost, platform, and service',
           'CDC accounts explained',
@@ -70,7 +70,7 @@ export const courses: Course[] = [
         ],
       },
       {
-        module: 'Module 3 — Your first trade',
+        module: 'Module 3: Your first trade',
         topics: [
           'Reading a quote and an order book',
           'Order types and when each one is right',
@@ -78,7 +78,7 @@ export const courses: Course[] = [
         ],
       },
       {
-        module: 'Module 4 — Owning shares',
+        module: 'Module 4: Owning shares',
         topics: [
           'Dividends, bonus issues, and splits',
           'Tax treatment basics for PSX investors',

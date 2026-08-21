@@ -3,20 +3,14 @@ import { bootcamp } from '@/content/bootcamp';
 import { Button } from './ui/Button';
 import { Newsletter } from './Newsletter';
 
-/**
- * "Currently enrolling" card, shared by the Home page and the Learn hub.
- *
- * When no cohort is open, this flips to a waitlist state automatically — so a
- * closed cohort never leaves a dead "Reserve your seat" button on the site.
- */
 export function BootcampCard() {
   if (bootcamp.status !== 'enrolling') {
     return (
-      <div className="rounded-3xl border border-line bg-white p-8 md:p-10">
+      <div className="card p-8 md:p-10">
         <p className="eyebrow text-green-600">Next cohort</p>
         <h3 className="h3 mt-3">Next bootcamp announcing soon</h3>
         <p className="mt-3 max-w-xl text-muted">
-          Join the list and you will hear about the next cohort before it goes public — cohorts are
+          Join the list and you will hear about the next cohort before it goes public. Cohorts are
           small and the last one filled quickly.
         </p>
         <div className="mt-6">
@@ -35,7 +29,8 @@ export function BootcampCard() {
   ];
 
   return (
-    <div className="overflow-hidden rounded-3xl bg-green-900 text-white">
+    <div className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-green-900 via-green-900 to-green-800 text-white transition-shadow duration-500 hover:shadow-xl hover:shadow-green-900/30">
+      <div className="pointer-events-none absolute right-0 top-0 h-32 w-32 rounded-bl-full bg-sparkle-400/[0.06]" aria-hidden />
       <div className="grid gap-8 p-8 md:grid-cols-[1.4fr_1fr] md:items-center md:p-10">
         <div>
           <p className="eyebrow text-sparkle-400">Currently enrolling · 3-day bootcamp</p>
@@ -49,7 +44,6 @@ export function BootcampCard() {
                 {label}
               </li>
             ))}
-            {/* Only rendered when the number is real — see content/bootcamp.ts. */}
             {bootcamp.seatsRemaining !== null && (
               <li className="flex items-center gap-2 font-semibold text-sparkle-400">
                 {bootcamp.seatsRemaining} seats remaining

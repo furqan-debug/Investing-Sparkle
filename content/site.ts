@@ -12,9 +12,9 @@
 
 export const site = {
   name: 'Investing Sparkle',
-  tagline: 'Learn to invest in Pakistan — with confidence, not guesswork.',
+  tagline: 'Learn to invest in Pakistan, with confidence, not guesswork.',
   description:
-    'Structured financial education and personal advisory for Pakistani retail investors. We teach, you execute — your account, your decisions.',
+    'Structured financial education and personal advisory for Pakistani retail investors. We teach, you execute: your account, your decisions.',
 
   // Used for canonical URLs, sitemap, and og-images. Update if the domain changes.
   url: 'https://investingsparkle.com',

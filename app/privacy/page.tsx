@@ -25,7 +25,7 @@ export default function PrivacyPage() {
           Your name, email, optional WhatsApp number, and message, if you use the contact form.
         </li>
         <li>
-          Information you share when you book a service — including details about your financial
+          Information you share when you book a service, including details about your financial
           situation and goals that you choose to tell us during an advisory engagement.
         </li>
       </ul>
@@ -64,7 +64,7 @@ export default function PrivacyPage() {
       <h2>Cookies</h2>
       <p>
         Analytics cookies load only after you accept them in the banner. Choosing “Reject” means no
-        analytics or advertising scripts run at all — it is a real rejection, not a dismissal. You
+        analytics or advertising scripts run at all, it is a real rejection, not a dismissal. You
         can change your mind by clearing this site’s data in your browser.
       </p>
 
@@ -74,7 +74,7 @@ export default function PrivacyPage() {
         <li>Our website host, which processes requests and keeps server logs.</li>
         <li>Our email newsletter provider, which stores subscriber addresses.</li>
         <li>Our analytics provider, if you accepted cookies.</li>
-        <li>WhatsApp, when you choose to message us — governed by WhatsApp’s own privacy terms.</li>
+        <li>WhatsApp, when you choose to message us, governed by WhatsApp’s own privacy terms.</li>
       </ul>
       <p>
         We do not sell your data. We do not share it with brokers, and we receive no payment from
@@ -94,7 +94,7 @@ export default function PrivacyPage() {
         <li>Tell you what data we hold about you.</li>
         <li>Correct anything that is wrong.</li>
         <li>Delete your data, where we are not required to keep it.</li>
-        <li>Stop sending you email — every newsletter has a one-click unsubscribe link.</li>
+        <li>Stop sending you email, every newsletter has a one-click unsubscribe link.</li>
       </ul>
       <p>
         Email <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a> and we
@@ -104,7 +104,7 @@ export default function PrivacyPage() {
       <h2>Security</h2>
       <p>
         The site is served over HTTPS and we limit access to any personal data to the two of us. No
-        system is perfectly secure, so we collect as little as we can get away with — that is the
+        system is perfectly secure, so we collect as little as we can get away with, that is the
         most effective protection available.
       </p>
 

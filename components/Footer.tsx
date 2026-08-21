@@ -55,7 +55,7 @@ export function Footer() {
           {/* Columns 2–4 */}
           {footerNav.map((col) => (
             <div key={col.heading}>
-              <h2 className="font-display text-lg tracking-wide text-white">{col.heading}</h2>
+              <h2 className="font-display text-lg text-white">{col.heading}</h2>
               <ul className="mt-4 space-y-2.5">
                 {col.links.map((link) => (
                   <li key={link.href + link.label}>

@@ -10,7 +10,7 @@ import type { Article } from '../types';
 export const analysisArticles: Article[] = [
   {
     slug: 'reading-a-pakistani-annual-report',
-    title: 'How to read a Pakistani company’s annual report',
+    title: "How to read a Pakistani company's annual report",
     description:
       'Where to look first in a 200-page document, what the three statements actually tell you, and the sections most people skip that matter most.',
     category: 'Intermediate',
@@ -26,16 +26,16 @@ export const analysisArticles: Article[] = [
       { type: 'h2', text: 'Read it backwards' },
       {
         type: 'p',
-        text: 'The front of the report is marketing — glossy photographs, a chairman’s message, and a narrative written by people whose bonuses depend on how it reads. The back is audited. Start at the back.',
+        text: "The front of the report is marketing: glossy photographs, a chairman's message, and a narrative written by people whose bonuses depend on how it reads. The back is audited. Start at the back.",
       },
       {
         type: 'p',
-        text: 'Specifically, start with the auditor’s report, then the financial statements, then the notes to the accounts. Once you know what the numbers say, go forward and read the management commentary. You will find it a much more interesting document when you can see which parts of the story the numbers support.',
+        text: "Specifically, start with the auditor's report, then the financial statements, then the notes to the accounts. Once you know what the numbers say, go forward and read the management commentary. You will find it a much more interesting document when you can see which parts of the story the numbers support.",
       },
-      { type: 'h2', text: 'The auditor’s report, in thirty seconds' },
+      { type: 'h2', text: "The auditor's report, in thirty seconds" },
       {
         type: 'p',
-        text: 'You are looking for one thing: whether the opinion is unqualified. An unqualified — sometimes called a clean — opinion means the auditors are satisfied the statements present a true and fair view.',
+        text: 'You are looking for one thing: whether the opinion is unqualified. An unqualified (sometimes called a clean) opinion means the auditors are satisfied the statements present a true and fair view.',
       },
       {
         type: 'p',
@@ -43,13 +43,13 @@ export const analysisArticles: Article[] = [
       },
       {
         type: 'callout',
-        text: 'Also check the key audit matters section. It names the areas the auditors found hardest to verify — which is a free list of where the accounting risk sits.',
+        text: 'Also check the key audit matters section. It names the areas the auditors found hardest to verify, which is a free list of where the accounting risk sits.',
       },
       { type: 'h2', text: 'The three statements, and what each answers' },
       { type: 'h3', text: 'The profit and loss account' },
       {
         type: 'p',
-        text: 'Answers: did the company make money this year? Work down it rather than jumping to the bottom line. Revenue tells you whether the business is growing. Gross profit tells you whether it has pricing power. Operating profit tells you whether it controls its costs. Finance cost tells you what its debt is doing to it — a very live question for Pakistani companies in a high-rate environment.',
+        text: 'Answers: did the company make money this year? Work down it rather than jumping to the bottom line. Revenue tells you whether the business is growing. Gross profit tells you whether it has pricing power. Operating profit tells you whether it controls its costs. Finance cost tells you what its debt is doing to it, a very live question for Pakistani companies in a high-rate environment.',
       },
       {
         type: 'p',
@@ -58,7 +58,7 @@ export const analysisArticles: Article[] = [
       { type: 'h3', text: 'The balance sheet' },
       {
         type: 'p',
-        text: 'Answers: what does the company own, and what does it owe? The line that matters most for a beginner is debt — particularly short-term borrowings, which have to be refinanced soon and at whatever rate prevails then.',
+        text: 'Answers: what does the company own, and what does it owe? The line that matters most for a beginner is debt, particularly short-term borrowings, which have to be refinanced soon and at whatever rate prevails then.',
       },
       {
         type: 'p',
@@ -71,7 +71,7 @@ export const analysisArticles: Article[] = [
       },
       {
         type: 'p',
-        text: 'Compare cash generated from operations against reported profit. If a company reports healthy profits year after year while operating cash flow stays weak, something is wrong with the quality of those earnings — and you want to understand what before you invest.',
+        text: 'Compare cash generated from operations against reported profit. If a company reports healthy profits year after year while operating cash flow stays weak, something is wrong with the quality of those earnings, and you want to understand what before you invest.',
       },
       { type: 'h2', text: 'The notes are the actual document' },
       {
@@ -81,16 +81,16 @@ export const analysisArticles: Article[] = [
       {
         type: 'ul',
         items: [
-          'Related-party transactions — what the company buys from and sells to businesses owned by its own directors or sponsors, and on what terms.',
-          'Contingencies and commitments — tax disputes, litigation, and guarantees that do not appear on the balance sheet but could.',
-          'The breakdown of borrowings — how much, at what rate, and when it matures.',
-          'Segment information — which part of the business actually makes the money, which is often not the part the company talks about.',
+          'Related-party transactions: what the company buys from and sells to businesses owned by its own directors or sponsors, and on what terms.',
+          'Contingencies and commitments: tax disputes, litigation, and guarantees that do not appear on the balance sheet but could.',
+          'The breakdown of borrowings: how much, at what rate, and when it matures.',
+          'Segment information: which part of the business actually makes the money, which is often not the part the company talks about.',
         ],
       },
       { type: 'h2', text: 'Pattern of ownership' },
       {
         type: 'p',
-        text: 'Listed Pakistani companies disclose their shareholding pattern. It tells you who controls the company, how much of it the sponsors hold, and how much genuinely floats. A very small free float means the price can move sharply on modest volume — worth knowing before you take a position you may want to exit.',
+        text: 'Listed Pakistani companies disclose their shareholding pattern. It tells you who controls the company, how much of it the sponsors hold, and how much genuinely floats. A very small free float means the price can move sharply on modest volume, worth knowing before you take a position you may want to exit.',
       },
       { type: 'h2', text: 'What you are actually looking for' },
       {
@@ -99,7 +99,7 @@ export const analysisArticles: Article[] = [
       },
       {
         type: 'p',
-        text: 'If you cannot write that in a paragraph after reading the report, you do not understand the company well enough to own it yet. That is a perfectly good outcome for an afternoon’s work — knowing what you do not know is most of the discipline.',
+        text: "If you cannot write that in a paragraph after reading the report, you do not understand the company well enough to own it yet. That is a perfectly good outcome for an afternoon's work, and knowing what you do not know is most of the discipline.",
       },
     ],
   },
@@ -130,11 +130,11 @@ export const analysisArticles: Article[] = [
       },
       {
         type: 'p',
-        text: 'A P/E of 8 means you are paying eight times what the company earned last year. Whether that is cheap depends entirely on what happens to earnings next. A cyclical business at the top of its cycle can look cheap on a P/E precisely because its earnings are about to fall — this is one of the most reliable traps in the market.',
+        text: 'A P/E of 8 means you are paying eight times what the company earned last year. Whether that is cheap depends entirely on what happens to earnings next. A cyclical business at the top of its cycle can look cheap on a P/E precisely because its earnings are about to fall, and this is one of the most reliable traps in the market.',
       },
       {
         type: 'p',
-        text: 'Use it comparatively, never absolutely: against the company’s own history, and against its direct peers. A P/E in isolation is not information.',
+        text: "Use it comparatively, never absolutely: against the company's own history, and against its direct peers. A P/E in isolation is not information.",
       },
       {
         type: 'callout',
@@ -143,7 +143,7 @@ export const analysisArticles: Article[] = [
       { type: 'h2', text: 'Return on equity (ROE)' },
       {
         type: 'p',
-        text: 'Net profit divided by shareholders’ equity. It measures how efficiently the company turns the owners’ capital into profit — and it is arguably the single most informative ratio about business quality.',
+        text: "Net profit divided by shareholders' equity. It measures how efficiently the owners' capital into profit, and it is arguably the single most informative ratio about business quality.",
       },
       {
         type: 'p',
@@ -156,11 +156,11 @@ export const analysisArticles: Article[] = [
       { type: 'h2', text: 'Debt-to-equity (D/E)' },
       {
         type: 'p',
-        text: 'Total debt divided by shareholders’ equity. How much of the business is funded by borrowing rather than by its owners.',
+        text: "Total debt divided by shareholders' equity. How much of the business is funded by borrowing rather than by its owners.",
       },
       {
         type: 'p',
-        text: 'This ratio carries particular weight in Pakistan, where interest rates have moved sharply and often. A company comfortable with heavy debt at one policy rate can find its entire profit consumed by finance costs at another. When rates rise, leveraged companies are hit twice — higher costs, and usually a weaker economy at the same time.',
+        text: 'This ratio carries particular weight in Pakistan, where interest rates have moved sharply and often. A company comfortable with heavy debt at one policy rate can find its entire profit consumed by finance costs at another. When rates rise, leveraged companies are hit twice: higher costs, and usually a weaker economy at the same time.',
       },
       {
         type: 'p',
@@ -169,7 +169,7 @@ export const analysisArticles: Article[] = [
       { type: 'h2', text: 'Dividend yield' },
       {
         type: 'p',
-        text: 'Annual dividend per share divided by share price. What you are paid, in cash, for owning the stock at today’s price.',
+        text: "Annual dividend per share divided by share price. What you are paid, in cash, for owning the stock at today's price.",
       },
       {
         type: 'p',
@@ -177,7 +177,7 @@ export const analysisArticles: Article[] = [
       },
       {
         type: 'p',
-        text: 'The trap is the yield that rises because the price fell. A yield that suddenly looks generous often means the market expects the dividend to be cut. Check the payout ratio — the share of earnings being paid out — and ask whether it is sustainable.',
+        text: 'The trap is the yield that rises because the price fell. A yield that suddenly looks generous often means the market expects the dividend to be cut. Check the payout ratio (the share of earnings being paid out) and ask whether it is sustainable.',
       },
       { type: 'h2', text: 'Reading them together' },
       {
@@ -187,10 +187,10 @@ export const analysisArticles: Article[] = [
       {
         type: 'ul',
         items: [
-          'High ROE with low debt — genuine quality. Worth understanding why the company earns it.',
-          'High ROE with high debt — leverage doing the work, and fragile if rates rise.',
-          'Low P/E with falling earnings — probably not cheap. This is a value trap.',
-          'High dividend yield with a payout ratio near or above 100% — the dividend is likely to be cut.',
+          'High ROE with low debt: genuine quality. Worth understanding why the company earns it.',
+          'High ROE with high debt: leverage doing the work, and fragile if rates rise.',
+          'Low P/E with falling earnings: probably not cheap. This is a value trap.',
+          'High dividend yield with a payout ratio near or above 100%: the dividend is likely to be cut.',
         ],
       },
       { type: 'h2', text: 'What ratios cannot tell you' },
@@ -218,11 +218,11 @@ export const analysisArticles: Article[] = [
     body: [
       {
         type: 'p',
-        text: 'People come to valuation expecting a calculation that outputs a number, which they then compare to the market price to see whether to buy. That is not what valuation does, and treating it that way produces false confidence — the most expensive commodity in investing.',
+        text: 'People come to valuation expecting a calculation that outputs a number, which they then compare to the market price to see whether to buy. That is not what valuation does, and treating it that way produces false confidence, the most expensive commodity in investing.',
       },
       {
         type: 'p',
-        text: 'What valuation actually does is force you to state, in numbers, what you believe about a business. The output is only as good as those beliefs, and its real value is that it makes them explicit enough to be challenged — including by you, later, when things change.',
+        text: 'What valuation actually does is force you to state, in numbers, what you believe about a business. The output is only as good as those beliefs, and its real value is that it makes them explicit enough to be challenged, including by you, later, when things change.',
       },
       { type: 'h2', text: 'The only idea underneath all of it' },
       {
@@ -236,11 +236,11 @@ export const analysisArticles: Article[] = [
       { type: 'h2', text: 'Method one: relative valuation' },
       {
         type: 'p',
-        text: 'The most practical starting point. You compare the company against similar companies on a common measure — usually P/E, sometimes price-to-book for banks, sometimes EV/EBITDA for capital-heavy businesses.',
+        text: 'The most practical starting point. You compare the company against similar companies on a common measure, usually P/E, sometimes price-to-book for banks, sometimes EV/EBITDA for capital-heavy businesses.',
       },
       {
         type: 'p',
-        text: 'The procedure: identify genuine peers, calculate the multiple for each, find the range, and then ask why your company sits where it does within that range. The answer is the analysis. If a company trades at a discount to its peers, either the market is wrong or it is right — and articulating which requires you to know the business.',
+        text: 'The procedure: identify genuine peers, calculate the multiple for each, find the range, and then ask why your company sits where it does within that range. The answer is the analysis. If a company trades at a discount to its peers, either the market is wrong or it is right, and articulating which requires you to know the business.',
       },
       {
         type: 'p',
@@ -266,7 +266,7 @@ export const analysisArticles: Article[] = [
       { type: 'h2', text: 'Method three: earnings power' },
       {
         type: 'p',
-        text: 'Rather than forecasting growth, estimate what the business earns in a normal year — not a boom, not a trough — and ask what you would pay for that stream.',
+        text: 'Rather than forecasting growth, estimate what the business earns in a normal year (not a boom, not a trough) and ask what you would pay for that stream.',
       },
       {
         type: 'p',
@@ -289,7 +289,7 @@ export const analysisArticles: Article[] = [
       },
       {
         type: 'p',
-        text: 'Then insist on a margin of safety — a gap between your estimate and the price you will pay, sized to your uncertainty. That gap is not timidity. It is the acknowledgement that some of your assumptions are wrong and you do not yet know which ones.',
+        text: 'Then insist on a margin of safety: a gap between your estimate and the price you will pay, sized to your uncertainty. That gap is not timidity. It is the acknowledgement that some of your assumptions are wrong and you do not yet know which ones.',
       },
     ],
   },
@@ -298,7 +298,7 @@ export const analysisArticles: Article[] = [
     slug: 'reading-a-stock-chart-basics',
     title: 'Reading a stock chart without fooling yourself',
     description:
-      'Trend, volume, moving averages, and RSI — the small set of chart tools worth learning, and the large set of ways charts mislead.',
+      'Trend, volume, moving averages, and RSI, the small set of chart tools worth learning, and the large set of ways charts mislead.',
     category: 'Beginner',
     publishedAt: '2026-08-22',
     readingMinutes: 7,
@@ -320,16 +320,16 @@ export const analysisArticles: Article[] = [
       },
       {
         type: 'p',
-        text: 'Most beginners do the opposite — they open the daily chart and start interpreting. The daily chart of an individual stock is mostly noise, and noise is where imagination fills the gaps.',
+        text: 'Most beginners do the opposite: they open the daily chart and start interpreting. The daily chart of an individual stock is mostly noise, and noise is where imagination fills the gaps.',
       },
       { type: 'h2', text: 'Volume, which most people ignore' },
       {
         type: 'p',
-        text: 'Volume tells you how much conviction sits behind a move. A price rising on heavy volume means many participants are acting. The same rise on thin volume means very few are — and it is far easier to reverse.',
+        text: 'Volume tells you how much conviction sits behind a move. A price rising on heavy volume means many participants are acting. The same rise on thin volume means very few are, and it is far easier to reverse.',
       },
       {
         type: 'p',
-        text: 'This matters especially on PSX, where a meaningful number of listed companies trade thinly. In a low-volume stock, a modest order moves the price noticeably, chart patterns are far less reliable, and — the part people discover too late — exiting a position takes longer than entering it.',
+        text: 'This matters especially on PSX, where a meaningful number of listed companies trade thinly. In a low-volume stock, a modest order moves the price noticeably, chart patterns are far less reliable, and (the part people discover too late) exiting a position takes longer than entering it.',
       },
       {
         type: 'callout',
@@ -346,7 +346,7 @@ export const analysisArticles: Article[] = [
       },
       {
         type: 'p',
-        text: 'Treat crossover signals with scepticism. They are widely known, widely traded, and generate a great many false signals in choppy markets — which is most markets, most of the time.',
+        text: 'Treat crossover signals with scepticism. They are widely known, widely traded, and generate a great many false signals in choppy markets, which is most markets, most of the time.',
       },
       { type: 'h2', text: 'RSI' },
       {
@@ -392,13 +392,13 @@ export const analysisArticles: Article[] = [
     body: [
       {
         type: 'p',
-        text: 'A single piece of news — a change in the policy rate, a currency move, a shift in commodity prices — will help some listed companies and hurt others. If you hold five stocks and they all react the same way to the same news, you are less diversified than you think, whatever the number of holdings suggests.',
+        text: 'A single piece of news (a change in the policy rate, a currency move, a shift in commodity prices) will help some listed companies and hurt others. If you hold five stocks and they all react the same way to the same news, you are less diversified than you think, whatever the number of holdings suggests.',
       },
       {
         type: 'p',
         text: 'Sector analysis is how you find that out before the market demonstrates it to you.',
       },
-      { type: 'h2', text: 'The main drivers in Pakistan’s market' },
+      { type: 'h2', text: "The main drivers in Pakistan's market" },
       {
         type: 'p',
         text: 'Four forces explain a great deal of what moves PSX sectors:',
@@ -406,17 +406,17 @@ export const analysisArticles: Article[] = [
       {
         type: 'ul',
         items: [
-          'Interest rates — the policy rate affects borrowing costs, consumer demand, and the relative attractiveness of holding equities at all.',
-          'The exchange rate — a weaker rupee helps exporters and hurts importers, and it raises the local-currency cost of imported inputs and foreign debt.',
-          'Commodity prices — oil, coal, cotton, and fertiliser inputs feed directly into the cost base of large parts of the market.',
-          'Government policy — subsidies, tariffs, tax measures, and regulation can reprice an entire sector overnight.',
+          'Interest rates: the policy rate affects borrowing costs, consumer demand, and the relative attractiveness of holding equities at all.',
+          'The exchange rate: a weaker rupee helps exporters and hurts importers, and it raises the local-currency cost of imported inputs and foreign debt.',
+          'Commodity prices: oil, coal, cotton, and fertiliser inputs feed directly into the cost base of large parts of the market.',
+          'Government policy: subsidies, tariffs, tax measures, and regulation can reprice an entire sector overnight.',
         ],
       },
       { type: 'h2', text: 'How the same event splits the market' },
       { type: 'h3', text: 'When interest rates rise' },
       {
         type: 'p',
-        text: 'Banks generally benefit, because they earn more on the spread between what they pay depositors and what they charge borrowers. Highly leveraged companies suffer, because their finance costs rise directly. Consumer-facing businesses can suffer twice — once through their own borrowing costs, and again as customers who buy on credit hold back.',
+        text: 'Banks generally benefit, because they earn more on the spread between what they pay depositors and what they charge borrowers. Highly leveraged companies suffer, because their finance costs rise directly. Consumer-facing businesses can suffer twice: once through their own borrowing costs, and again as customers who buy on credit hold back.',
       },
       {
         type: 'p',
@@ -425,7 +425,7 @@ export const analysisArticles: Article[] = [
       { type: 'h3', text: 'When the rupee weakens' },
       {
         type: 'p',
-        text: 'Exporters — textiles most prominently — receive more rupees for the same foreign-currency sale. Importers pay more for the same input. Companies with foreign-currency debt see the rupee value of that debt rise, which can hit reported profits hard even when the underlying operations are unchanged.',
+        text: 'Exporters (textiles most prominently) receive more rupees for the same foreign-currency sale. Importers pay more for the same input. Companies with foreign-currency debt see the rupee value of that debt rise, which can hit reported profits hard even when the underlying operations are unchanged.',
       },
       {
         type: 'p',
@@ -434,12 +434,12 @@ export const analysisArticles: Article[] = [
       { type: 'h3', text: 'When energy costs rise' },
       {
         type: 'p',
-        text: 'Energy-intensive manufacturing — cement, steel, chemicals — sees margins compress unless it can pass costs on. Whether it can is a question about pricing power and competitive structure, which is exactly the sort of question the annual report and the segment note help you answer.',
+        text: 'Energy-intensive manufacturing (cement, steel, chemicals) sees margins compress unless it can pass costs on. Whether it can is a question about pricing power and competitive structure, which is exactly the sort of question the annual report and the segment note help you answer.',
       },
       { type: 'h2', text: 'The cyclicals problem' },
       {
         type: 'p',
-        text: 'A large share of PSX by market value sits in cyclical sectors — cement, steel, autos, fertiliser, banking. Cyclical businesses have a specific and counterintuitive trap: they look cheapest on a P/E basis at exactly the wrong moment.',
+        text: 'A large share of PSX by market value sits in cyclical sectors: cement, steel, autos, fertiliser, banking. Cyclical businesses have a specific and counterintuitive trap: they look cheapest on a P/E basis at exactly the wrong moment.',
       },
       {
         type: 'p',
@@ -447,7 +447,7 @@ export const analysisArticles: Article[] = [
       },
       {
         type: 'callout',
-        text: 'For cyclicals, ask what the company earns in an average year across a full cycle — not what it earned last year. Valuing a cyclical on peak earnings is one of the most consistently expensive mistakes available.',
+        text: 'For cyclicals, ask what the company earns in an average year across a full cycle, not what it earned last year. Valuing a cyclical on peak earnings is one of the most consistently expensive mistakes available.',
       },
       { type: 'h2', text: 'Using this practically' },
       {
@@ -456,7 +456,7 @@ export const analysisArticles: Article[] = [
       },
       {
         type: 'p',
-        text: 'If the same sentence appears on every card — "a weaker rupee helps this" — you have concentration risk regardless of how many companies you hold. Real diversification means holding businesses that respond to different things, not simply holding more things.',
+        text: 'If the same sentence appears on every card ("a weaker rupee helps this"), you have concentration risk regardless of how many companies you hold. Real diversification means holding businesses that respond to different things, not simply holding more things.',
       },
     ],
   },

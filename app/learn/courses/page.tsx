@@ -8,7 +8,7 @@ import { CTABand } from '@/components/CTABand';
 import { courses } from '@/content/courses';
 
 export const metadata: Metadata = {
-  title: 'Courses — structured learning for PSX investors',
+  title: 'Courses | structured learning for PSX investors',
   description:
     'Self-paced courses covering PSX fundamentals, analysis, and portfolio building. Written for people starting from zero.',
   alternates: { canonical: '/learn/courses' },
@@ -71,8 +71,8 @@ export default function CoursesPage() {
         </ul>
 
         <p className="mt-9 max-w-2xl text-sm leading-relaxed text-muted">
-          More courses are in production. The bootcamp covers the full arc — foundations, analysis,
-          and portfolio construction — in three live days if you would rather not wait.
+          More courses are in production. The bootcamp covers the full arc (foundations, analysis,
+          and portfolio construction) in three live days if you would rather not wait.
         </p>
       </Section>
 

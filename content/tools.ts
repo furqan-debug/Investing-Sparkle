@@ -22,7 +22,7 @@ export const tools: Tool[] = [
     slug: 'risk-profile',
     name: 'Risk Profile Quiz',
     blurb:
-      'Eight questions that tell you what kind of investor you actually are — before you put money at risk.',
+      'Eight questions that tell you what kind of investor you actually are, before you put money at risk.',
     outcome: 'Your risk profile, and what it means for how you should build a portfolio.',
     status: 'live',
     featured: true,
@@ -40,7 +40,7 @@ export const tools: Tool[] = [
     slug: 'sip-calculator',
     name: 'SIP Calculator',
     blurb:
-      'Work out what investing a fixed amount every month builds up to — and exactly what starting late costs you.',
+      'Work out what investing a fixed amount every month builds up to, and exactly what starting late costs you.',
     outcome: 'Projected corpus from a monthly contribution, and the price of waiting.',
     status: 'live',
     featured: true,
@@ -57,7 +57,7 @@ export const tools: Tool[] = [
     slug: 'roi-calculator',
     name: 'ROI Calculator',
     blurb:
-      'Measure what a position actually returned — including dividends and costs, not just the price difference.',
+      'Measure what a position actually returned, including dividends and costs, not just the price difference.',
     outcome: 'Total return, annualised return, and where the return came from.',
     status: 'live',
   },

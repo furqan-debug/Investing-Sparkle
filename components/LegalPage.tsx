@@ -39,7 +39,7 @@ export function LegalPage({
             <div className="mb-10 flex gap-3 rounded-2xl border-l-4 border-warning bg-sparkle-100 p-5">
               <AlertTriangle className="mt-0.5 h-5 w-5 shrink-0 text-warning" aria-hidden />
               <p className="text-sm leading-relaxed text-ink">
-                <strong>Internal note — remove before launch.</strong> This is a working draft
+                <strong>Internal note, remove before launch.</strong> This is a working draft
                 written to cover the right ground, not legal advice. Have a Pakistani lawyer review
                 and adapt it to your actual operations before the site goes live, then set{' '}
                 <code className="rounded bg-white px-1.5 py-0.5 text-xs">reviewed</code> on this

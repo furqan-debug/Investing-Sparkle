@@ -41,34 +41,34 @@ export const bootcamp = {
   registrationCloses: null as string | null,
 
   pitch:
-    'Three days from PSX basics to portfolio construction — with a real plan to take home.',
+    'Three days from PSX basics to portfolio construction, with a real plan to take home.',
 
   subhead:
-    "Understand PSX end-to-end in three days — from opening your first brokerage account to reading a company's financials to building a portfolio you can actually stick with.",
+    "Understand PSX end-to-end in three days, from opening your first brokerage account to reading a company's financials to building a portfolio you can actually stick with.",
 
   whyItExists: [
-    'Most people in Pakistan who want to invest in PSX get stuck in the same loop: WhatsApp tips they can’t verify, YouTube videos with no structure, and brokers whose advice serves the broker. So they either don’t start — or they start and lose money.',
-    'This bootcamp breaks that loop in three days. You’ll learn how PSX actually works, how to read a company’s real financial health, and how to make investment decisions using a framework, not a tip. You leave with a plan and the confidence to run it yourself.',
+    "Most people in Pakistan who want to invest in PSX get stuck in the same loop: WhatsApp tips they can't verify, YouTube videos with no structure, and brokers whose advice serves the broker. So they either don't start, or they start and lose money.",
+    "This bootcamp breaks that loop in three days. You'll learn how PSX actually works, how to read a company's real financial health, and how to make investment decisions using a framework, not a tip. You leave with a plan and the confidence to run it yourself.",
   ],
 
   rightForYou: [
-    'You’ve never invested in PSX but want to start intelligently',
-    'You’ve dabbled on tips, lost money, and want to restart properly',
-    'You’re a working professional or business owner with savings to grow',
-    'You’re a recent graduate building wealth from your first paycheck',
-    'You’ve watched YouTube courses but still feel structurally lost',
+    "You've never invested in PSX but want to start intelligently",
+    "You've dabbled on tips, lost money, and want to restart properly",
+    "You're a working professional or business owner with savings to grow",
+    "You're a recent graduate building wealth from your first paycheck",
+    "You've watched YouTube courses but still feel structurally lost",
   ],
 
   notForYou: [
-    'You want stock tips — we teach frameworks',
-    'You want someone to manage your money — we teach you to do it yourself',
-    'You expect to day-trade after three days — this is investing, not gambling',
+    'You want stock tips, we teach frameworks',
+    'You want someone to manage your money, we teach you to do it yourself',
+    'You expect to day-trade after three days, this is investing, not gambling',
   ],
 
   outcomes: [
     'Explain how PSX works and what actually moves prices',
     'Pick a brokerage with your eyes open',
-    'Read a company’s annual report and know what to look for',
+    "Read a company's annual report and know what to look for",
     'Value a stock using real fundamentals',
     'Read a basic technical chart to time entries and exits',
     'Build a diversified portfolio matched to your risk profile',
@@ -94,7 +94,7 @@ export const bootcamp = {
       topics: [
         'Reading financial statements',
         'Ratios that matter: P/E, ROE, D/E, dividend yield',
-        'Sector analysis in Pakistan’s context',
+        "Sector analysis in Pakistan's context",
         'Valuation basics',
         'A repeatable stock selection framework',
       ],
@@ -115,7 +115,7 @@ export const bootcamp = {
 
   included: [
     'All 3 live sessions',
-    'Session recordings — 30 days access',
+    'Session recordings, 30 days access',
     'Slides, framework templates, and checklists',
     'Private WhatsApp group with your cohort',
     '1-hour post-bootcamp Q&A session',
@@ -123,7 +123,7 @@ export const bootcamp = {
   ],
 
   notIncluded: [
-    'Personal portfolio review — that’s the Launchpad Advisory Call',
+    "Personal portfolio review, that's the Launchpad Advisory Call",
     'Specific stock recommendations',
     'Brokerage or transaction fees',
   ],
@@ -147,7 +147,7 @@ export const bootcamp = {
     },
     {
       q: 'What if I miss a day?',
-      a: 'The recording covers you, but attending live is strongly recommended — the Q&A and cohort discussion are a large part of the value.',
+      a: 'The recording covers you, but attending live is strongly recommended, the Q&A and cohort discussion are a large part of the value.',
     },
     {
       q: 'Do you cover Shariah-compliant investing?',
@@ -155,11 +155,11 @@ export const bootcamp = {
     },
     {
       q: 'Will you recommend specific stocks?',
-      a: 'No. We teach frameworks so you can pick your own — that is the entire point of the bootcamp.',
+      a: 'No. We teach frameworks so you can pick your own, that is the entire point of the bootcamp.',
     },
     {
       q: 'What happens after the bootcamp?',
-      a: 'You’ll have the knowledge to invest independently. Advisory services are available if you want ongoing guidance, but they are entirely optional.',
+      a: "You'll have the knowledge to invest independently. Advisory services are available if you want ongoing guidance, but they are entirely optional.",
     },
   ],
 

@@ -16,7 +16,6 @@ export function Header() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const pathname = usePathname();
 
-  // Close the mobile menu whenever navigation happens.
   useEffect(() => {
     setOpen(false);
     setOpenDropdown(null);
@@ -29,7 +28,6 @@ export function Header() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  // Prevent background scroll while the full-screen mobile menu is open.
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : '';
     return () => {
@@ -43,15 +41,16 @@ export function Header() {
   return (
     <header
       className={cn(
-        'sticky top-0 z-50 bg-green-950 text-white transition-shadow',
-        scrolled && 'shadow-lg shadow-green-950/20'
+        'sticky top-0 z-50 text-white transition-all duration-300',
+        scrolled
+          ? 'bg-green-950/90 shadow-lg shadow-green-950/20 backdrop-blur-xl'
+          : 'bg-green-950'
       )}
     >
       <div className="container-page">
         <div className="flex h-16 items-center justify-between gap-4 md:h-20">
           <Logo />
 
-          {/* Desktop navigation */}
           <nav className="hidden items-center gap-1 lg:flex" aria-label="Main">
             {mainNav.map((item) => (
               <div
@@ -73,13 +72,13 @@ export function Header() {
                 </Link>
 
                 {item.children && openDropdown === item.label && (
-                  <div className="absolute left-0 top-full w-60 pt-2">
-                    <ul className="overflow-hidden rounded-2xl border border-line bg-white py-2 text-ink shadow-xl">
+                  <div className="absolute left-0 top-full w-60 pt-2 animate-slide-down">
+                    <ul className="overflow-hidden rounded-2xl border border-line bg-white py-2 text-ink shadow-lg">
                       {item.children.map((child) => (
                         <li key={child.href}>
                           <Link
                             href={child.href}
-                            className="block px-4 py-2.5 text-sm hover:bg-green-50"
+                            className="block px-4 py-2.5 text-sm transition-colors hover:bg-green-50"
                           >
                             {child.label}
                           </Link>
@@ -97,7 +96,7 @@ export function Header() {
               href={whatsappLink(whatsappMessages.float)}
               target="_blank"
               rel="noopener noreferrer"
-              className="group hidden items-center gap-2 rounded-full bg-sparkle-400 px-4 py-2.5 text-sm font-semibold text-green-950 transition-colors hover:bg-sparkle-500 md:inline-flex"
+              className="hidden items-center gap-2 rounded-full bg-sparkle-500 px-4 py-2.5 text-sm font-semibold text-green-950 transition-colors hover:bg-sparkle-600 md:inline-flex"
             >
               <MessageCircle className="h-4 w-4" aria-hidden />
               <span className="hidden xl:inline">{site.contact.whatsapp}</span>
@@ -117,16 +116,14 @@ export function Header() {
         </div>
       </div>
 
-      {/* Mobile full-screen menu */}
       {open && (
-        <div className="fixed inset-x-0 bottom-0 top-16 z-50 overflow-y-auto bg-green-950 lg:hidden">
+        <div className="animate-fade-in fixed inset-x-0 bottom-0 top-16 z-50 overflow-y-auto bg-green-950/95 backdrop-blur-xl lg:hidden">
           <div className="container-page py-6">
-            {/* WhatsApp pinned at the top, per the plan. */}
             <a
               href={whatsappLink(whatsappMessages.float)}
               target="_blank"
               rel="noopener noreferrer"
-              className="mb-6 flex items-center justify-center gap-2 rounded-full bg-sparkle-400 px-5 py-3.5 font-semibold text-green-950"
+              className="mb-6 flex items-center justify-center gap-2 rounded-full bg-sparkle-500 px-5 py-3.5 font-semibold text-green-950"
             >
               <MessageCircle className="h-5 w-5" aria-hidden />
               WhatsApp {site.contact.whatsapp}
@@ -138,7 +135,7 @@ export function Header() {
                   <li key={item.label} className="py-1">
                     <Link
                       href={item.href}
-                      className="block py-3 font-display text-2xl tracking-wide"
+                      className="block py-3 font-display text-2xl"
                     >
                       {item.label}
                     </Link>

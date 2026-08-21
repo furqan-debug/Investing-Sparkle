@@ -7,7 +7,7 @@ import { SipCalculator } from '@/components/tools/SipCalculator';
 import { CTABand } from '@/components/CTABand';
 
 export const metadata: Metadata = {
-  title: 'SIP Calculator — what monthly investing builds up to',
+  title: 'SIP Calculator | what monthly investing builds up to',
   description:
     'Work out what a fixed monthly investment becomes over time, and exactly what starting a few years late costs you. Free, no signup.',
   alternates: { canonical: '/learn/tools/sip-calculator' },
@@ -58,7 +58,7 @@ export default function SipPage() {
             <p>
               The main benefit is not the averaging arithmetic, which is modest. It is that a fixed
               schedule removes the decision at exactly the moments your judgement is least reliable
-              — after a long rise, when buying feels safe, and after a fall, when it feels dangerous.
+              , after a long rise, when buying feels safe, and after a fall, when it feels dangerous.
               Both instincts are backwards and both are very strong.
             </p>
             <p>
@@ -69,7 +69,7 @@ export default function SipPage() {
             <p>
               It does not protect you from loss. Investing regularly into a business that
               deteriorates permanently just means buying more of something falling. And it does not
-              beat investing a lump sum on average, if you happen to have one — markets rise more
+              beat investing a lump sum on average, if you happen to have one, markets rise more
               often than they fall, so earlier money usually has more time to work.
             </p>
             <p>

@@ -84,7 +84,7 @@ export function SipCalculator() {
       max: 20,
       step: 1,
       format: (v) => (v === 0 ? 'No delay' : `${v} ${v === 1 ? 'year' : 'years'} late`),
-      hint: 'Move this to see what waiting costs — it is usually far more than people expect.',
+      hint: 'Move this to see what waiting costs. It is usually far more than people expect.',
     },
   ];
 
@@ -125,8 +125,8 @@ export function SipCalculator() {
               PKR {formatPKR(result.cost)}
             </p>
             <p className="mt-2 text-sm leading-relaxed text-ink">
-              Starting {delay} {delay === 1 ? 'year' : 'years'} later — same monthly amount, same
-              assumed return — leaves you with PKR {formatPKR(result.delayed)} instead. The
+              Starting {delay} {delay === 1 ? 'year' : 'years'} later (same monthly amount, same
+              assumed return) leaves you with PKR {formatPKR(result.delayed)} instead. The
               difference is {Math.round((result.cost / result.onTime) * 100)}% of the total, and you
               only skipped {delay * 12} contributions.
             </p>

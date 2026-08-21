@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   if (!service) return {};
 
   return {
-    title: `${service.name} — ${service.price}`,
+    title: `${service.name} | ${service.price}`,
     description: service.summary,
     alternates: { canonical: `/services/${service.slug}` },
   };
@@ -206,7 +206,7 @@ export default async function ServiceDetailPage({ params }: Params) {
             </ul>
             <p className="mt-7 text-sm leading-relaxed text-muted">
               We are not licensed investment advisors under the SECP. We provide education and
-              general guidance — every decision and every execution stays with you.
+              general guidance, every decision and every execution stays with you.
             </p>
           </div>
         </div>
@@ -245,7 +245,7 @@ export default async function ServiceDetailPage({ params }: Params) {
             >
               Ask us
             </a>{' '}
-            — we will say so if it is not.
+            , and we will say so if it is not.
           </p>
         </div>
       </Section>
@@ -259,7 +259,7 @@ export default async function ServiceDetailPage({ params }: Params) {
         <div className="mt-10">
           <Testimonials
             items={advisoryTestimonials.filter((t) => t.source.includes(service.shortName))}
-            emptyMessage="No published testimonials for this service yet. We will add them — with names and faces — once clients have had time to run their plans and form a real view."
+            emptyMessage="No published testimonials for this service yet. We will add them (with names and faces) once clients have had time to run their plans and form a real view."
           />
         </div>
       </Section>

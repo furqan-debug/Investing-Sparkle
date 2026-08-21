@@ -36,7 +36,7 @@ const questions: Question[] = [
     question:
       'Your portfolio falls 25% over two months. Nothing has changed about the companies you own. What do you do?',
     options: [
-      { label: 'Sell everything — I could not sit through that', score: 1 },
+      { label: 'Sell everything. I could not sit through that', score: 1 },
       { label: 'Sell some of it to stop the bleeding', score: 2 },
       { label: 'Hold and wait it out', score: 3 },
       { label: 'Buy more, if my original reasoning still holds', score: 4 },
@@ -56,7 +56,7 @@ const questions: Question[] = [
     id: 'experience',
     question: 'How much investing experience do you have?',
     options: [
-      { label: 'None — I have never bought a share', score: 1 },
+      { label: 'None. I have never bought a share', score: 1 },
       { label: 'I have bought a few things on tips', score: 2 },
       { label: 'I invest regularly and follow the market', score: 3 },
       { label: 'I analyse companies myself before buying', score: 4 },
@@ -96,7 +96,7 @@ const questions: Question[] = [
     id: 'reaction',
     question: 'Someone you trust tells you a stock is about to move. What happens next?',
     options: [
-      { label: 'I buy it — a good tip is a good tip', score: 1 },
+      { label: "I buy it. A good tip is a good tip", score: 1 },
       { label: 'I buy a small amount to test it', score: 2 },
       { label: 'I look into the company before deciding', score: 3 },
       { label: 'I ignore it unless it passes my own criteria', score: 4 },
@@ -119,13 +119,13 @@ function profileFor(score: number): Profile {
 
   if (pct < 0.3) {
     return {
-      name: 'Conservative — not ready yet',
+      name: 'Conservative: not ready yet',
       summary:
         'Your answers suggest the groundwork is not in place. That is not a criticism; it is the most useful thing this quiz can tell you. Investing before the foundation is set is how people end up selling at the worst possible moment.',
       guidance: [
         'Build an emergency fund covering at least three to six months of expenses, in cash, before any of it goes into shares.',
         'Do not invest money you will need within the next three years.',
-        'Spend the waiting time learning — it costs nothing and it is the part that compounds.',
+        'Spend the waiting time learning. It costs nothing and it is the part that compounds.',
         'Be especially wary of anyone promising quick returns while you are in this position.',
       ],
       nextStep: 'Start with our free material and the bootcamp. Advisory can wait.',
@@ -140,7 +140,7 @@ function profileFor(score: number): Profile {
       guidance: [
         'Start smaller than you think you should. Your first drawdown teaches you more about your risk tolerance than any quiz.',
         'Favour established, dividend-paying companies you can research and understand.',
-        'Decide in advance what would make you sell — and write it down before you buy.',
+        'Decide in advance what would make you sell, and write it down before you buy.',
         'Avoid leverage and short-term trading entirely at this stage.',
       ],
       nextStep: 'The bootcamp is the right fit. A Launchpad call helps if you want a plan built with you.',
@@ -154,7 +154,7 @@ function profileFor(score: number): Profile {
         'You have a reasonable foundation, a sensible time horizon, and enough composure to hold through a fall. That combination is most of what long-term investing actually requires.',
       guidance: [
         'Diversify across sectors rather than concentrating in the ones you know best.',
-        'Set a review schedule — quarterly, or at results — instead of watching prices daily.',
+        'Set a review schedule (quarterly, or at results) instead of watching prices daily.',
         'Keep a written thesis for every holding, so you can tell a broken thesis from a falling price.',
         'Rebalance on a rule, not on a feeling.',
       ],
@@ -165,7 +165,7 @@ function profileFor(score: number): Profile {
   return {
     name: 'Growth-oriented',
     summary:
-      'Long horizon, stable income, an emergency fund in place, and the temperament to buy when others are selling. The main risk for you is not fear — it is overconfidence.',
+      'Long horizon, stable income, an emergency fund in place, and the temperament to buy when others are selling. The main risk for you is not fear: it is overconfidence.',
     guidance: [
       'Position sizing matters more than stock picking at your stage. One concentrated mistake undoes a lot of good decisions.',
       'Keep a written record of why you bought each holding, and review it honestly against what actually happened.',
@@ -222,7 +222,7 @@ export function RiskProfileQuiz() {
         <div className="mt-8 rounded-2xl border border-line bg-paper p-6">
           <Newsletter compact />
           <p className="mt-3 text-xs text-muted">
-            Get the weekly email — one PSX explainer, one market update. Unsubscribe in one click.
+            Get the weekly email: one PSX explainer, one market update. Unsubscribe in one click.
           </p>
         </div>
 

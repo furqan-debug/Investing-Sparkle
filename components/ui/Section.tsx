@@ -30,7 +30,6 @@ export function Section({
   );
 }
 
-/** Standard section heading block: eyebrow, headline, optional supporting line. */
 export function SectionHeading({
   eyebrow,
   title,

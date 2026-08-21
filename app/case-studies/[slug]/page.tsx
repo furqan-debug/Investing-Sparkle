@@ -157,8 +157,8 @@ export default async function CaseStudyPage({ params }: Params) {
           <div className="rounded-3xl bg-green-900 p-8 text-white">
             <h2 className="h3">Your numbers, not these ones</h2>
             <p className="mt-4 text-green-100">
-              A Launchpad call works through your actual situation — income, savings, debts,
-              horizon — and produces a written plan you own and execute yourself.
+              A Launchpad call works through your actual situation (income, savings, debts,
+              horizon) and produces a written plan you own and execute yourself.
             </p>
             <Button
               href={whatsappLink(whatsappMessages.launchpad)}

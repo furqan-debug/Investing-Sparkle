@@ -5,15 +5,13 @@ type Variant = 'primary' | 'secondary' | 'ghost' | 'whatsapp';
 type Size = 'md' | 'lg';
 
 const base =
-  'inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-colors duration-150 disabled:opacity-50 disabled:pointer-events-none text-center';
+  'btn-liquid btn-shimmer inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 active:shadow-sm disabled:opacity-50 disabled:pointer-events-none text-center';
 
 const variants: Record<Variant, string> = {
-  // The logo's gold is the action colour throughout — it should mean "this is the
-  // thing to click". Hover lightens rather than darkens, which suits the brand.
-  primary: 'bg-sparkle-500 text-green-950 hover:bg-sparkle-400',
-  secondary: 'bg-green-800 text-white hover:bg-green-700',
-  ghost: 'border-2 border-current text-current hover:bg-current/10',
-  whatsapp: 'bg-[#25D366] text-green-950 hover:bg-[#1eb857]',
+  primary: 'btn-liquid--primary bg-sparkle-500 text-green-950',
+  secondary: 'btn-liquid--secondary bg-green-800 text-white',
+  ghost: 'btn-liquid--ghost border border-current text-current',
+  whatsapp: 'btn-liquid--whatsapp bg-[#25D366] text-green-950',
 };
 
 const sizes: Record<Size, string> = {
@@ -27,7 +25,6 @@ type Props = {
   variant?: Variant;
   size?: Size;
   className?: string;
-  /** WhatsApp and other off-site links open in a new tab. */
   external?: boolean;
 };
 

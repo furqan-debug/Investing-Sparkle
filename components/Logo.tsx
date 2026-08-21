@@ -46,10 +46,10 @@ export function Logo({
         and tight, "SPARKLE" is lighter and widely letterspaced beneath it.
       */}
       <span className="flex flex-col leading-none">
-        <span className="font-display text-xl tracking-wide text-green-500 md:text-2xl">
+        <span className="text-xl font-bold uppercase tracking-wider text-green-500 md:text-2xl">
           INVESTING
         </span>
-        <span className="mt-0.5 font-display text-[0.7rem] tracking-[0.34em] text-sparkle-400 md:text-xs">
+        <span className="mt-0.5 text-[0.7rem] font-semibold uppercase tracking-[0.34em] text-sparkle-400 md:text-xs">
           SPARKLE
         </span>
       </span>
@@ -63,7 +63,7 @@ export function Logo({
   }
 
   return (
-    <Link href={href} className={classes} aria-label="Investing Sparkle — home">
+    <Link href={href} className={classes} aria-label="Investing Sparkle, home">
       {inner}
     </Link>
   );

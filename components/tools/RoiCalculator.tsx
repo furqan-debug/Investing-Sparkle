@@ -186,7 +186,7 @@ export function RoiCalculator() {
 
         <ToolFooter
           calculatorName="ROI Calculator"
-          disclaimer="This measures a realised return before tax. Capital gains tax and the tax already deducted from dividends are not included — add them for a true after-tax figure. Past returns on one position tell you nothing about future ones."
+          disclaimer="This measures a realised return before tax. Capital gains tax and the tax already deducted from dividends are not included. Add them for a true after-tax figure. Past returns on one position tell you nothing about future ones."
         />
       </div>
     </div>

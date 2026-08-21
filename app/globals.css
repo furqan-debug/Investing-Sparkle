@@ -1,80 +1,120 @@
 @import 'tailwindcss';
 
-/**
- * Investing Sparkle design system.
- *
- * The logo's emerald and gold do all the work. A third colour only ever appears
- * for state feedback (error/warning), never for decoration.
- */
-
-/*
- * Palette derived from the logo itself (public/brand/investing-sparkle-logo.png),
- * sampled pixel-by-pixel rather than eyeballed:
- *
- *   Emerald  #00B578  — the arrow, the bars, and the "INVESTING" wordmark
- *   Gold     #C49820  — the sparkle and the "SPARKLE" wordmark
- *
- * Both sit at exactly green-500 and gold-500 below. Every other step is derived
- * from those two hues, so the whole site stays in the logo's colour family.
- *
- * Contrast, checked against WCAG AA rather than assumed:
- *   green-700 on white ....... 6.0:1   (link and accent text on light)
- *   green-800 on white ....... 10.3:1  (headings on light)
- *   green-600 on paper ....... 4.7:1   (small bold eyebrow text on light)
- *   muted on paper ........... 4.7:1   (body copy on light)
- *   gold-500 with green-950 .. 6.2:1   (button fill with dark text, either way)
- *   green-200 on green-950 ... 12.2:1  (muted text on dark)
- *
- * green-500 is the brand emerald and is deliberately NOT used for small text on
- * white — it only reaches 2.7:1 there. Use green-700 for that.
- */
 @theme {
-  /* Primary — the logo's emerald, with a dark ramp for surfaces. */
   --color-green-950: #04241a;
   --color-green-900: #063325;
   --color-green-800: #084b36;
   --color-green-700: #06714e;
   --color-green-600: #008055;
-  --color-green-500: #00b578; /* exact logo emerald */
+  --color-green-500: #00b578;
   --color-green-400: #26c88f;
   --color-green-300: #6fdcb4;
   --color-green-200: #a9ebd2;
   --color-green-100: #d6f6e9;
   --color-green-50: #eefbf5;
 
-  /* Accent — the logo's gold. CTAs, highlights, the sparkle itself. */
   --color-sparkle-600: #a17b15;
-  --color-sparkle-500: #c49820; /* exact logo gold */
+  --color-sparkle-500: #c49820;
   --color-sparkle-400: #ddaf33;
   --color-sparkle-300: #e9c765;
   --color-sparkle-200: #f2de9f;
   --color-sparkle-100: #faf1d6;
+  --color-sparkle-50: #fdf8eb;
 
-  /* Neutrals — very slightly green-tinted so they sit with the emerald. */
   --color-ink: #0d1a14;
   --color-ink-soft: #1a1a1a;
   --color-muted: #61756c;
   --color-line: #e2ebe6;
   --color-paper: #f6faf8;
 
-  /* State feedback only */
   --color-danger: #dc2626;
   --color-warning: #b45309;
 
-  /*
-   * next/font hashes the real family name, so we consume the CSS variables it
-   * generates (set on <html> in app/layout.tsx) rather than naming the fonts
-   * directly. The fallbacks matter — they are what renders if a font fails.
-   */
-  --font-display: var(--font-display-loaded), 'Oswald', Impact, sans-serif;
+  --shadow-sm: 0 1px 2px rgba(4, 36, 26, 0.05);
+  --shadow-md: 0 4px 12px rgba(4, 36, 26, 0.07), 0 1px 3px rgba(4, 36, 26, 0.04);
+  --shadow-lg: 0 12px 32px rgba(4, 36, 26, 0.09), 0 4px 8px rgba(4, 36, 26, 0.04);
+
+  --font-display: var(--font-display-loaded), 'Georgia', 'Times New Roman', serif;
   --font-sans: var(--font-sans-loaded), ui-sans-serif, system-ui, -apple-system, 'Segoe UI',
     sans-serif;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    translate: 0 1rem;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    scale: 0.97;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    translate: 0 -0.5rem;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@keyframes float {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -12px; }
+}
+
+@keyframes float-reverse {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 12px; }
+}
+
+@keyframes shimmer {
+  from { translate: -100% 0; }
+  to { translate: 200% 0; }
+}
+
+@keyframes underline-reveal {
+  from { scale: 0 1; }
+  to { scale: 1 1; }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes rotate-slow {
+  from { rotate: 0deg; }
+  to { rotate: 360deg; }
+}
+
+@keyframes liquid-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
-    /* Sticky header clearance for in-page anchor links. */
     scroll-padding-top: 6rem;
   }
 
@@ -87,62 +127,46 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  h1,
-  h2,
-  h3,
-  h4 {
+  h1, h2, h3, h4 {
     font-family: var(--font-display);
     font-weight: 400;
-    letter-spacing: 0.01em;
-    line-height: 1.05;
+    letter-spacing: -0.01em;
+    line-height: 1.15;
     text-wrap: balance;
   }
 
-  /* Visible focus for keyboard users — never remove without a replacement. */
   :focus-visible {
-    outline: 3px solid var(--color-sparkle-400);
+    outline: 2px solid var(--color-green-500);
     outline-offset: 2px;
     border-radius: 2px;
   }
 
   ::selection {
-    background: var(--color-sparkle-300);
+    background: var(--color-green-200);
     color: var(--color-ink);
   }
 }
 
 @layer components {
-  /* Type scale — desktop sizes, stepping down on mobile per the plan. */
-  .h1 {
-    font-size: clamp(2rem, 6vw, 4rem);
-  }
-  .h2 {
-    font-size: clamp(1.5rem, 4vw, 2.5rem);
-  }
-  .h3 {
-    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
-  }
+  .h1 { font-size: clamp(2rem, 6vw, 3.75rem); }
+  .h2 { font-size: clamp(1.5rem, 4vw, 2.5rem); }
+  .h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
 
   .lede {
     font-size: clamp(1.05rem, 1.6vw, 1.25rem);
     line-height: 1.6;
   }
 
-  /* Page gutter, used by every section wrapper. */
   .container-page {
     width: 100%;
     max-width: 76rem;
     margin-inline: auto;
     padding-inline: 1.25rem;
   }
-
   @media (min-width: 768px) {
-    .container-page {
-      padding-inline: 2rem;
-    }
+    .container-page { padding-inline: 2rem; }
   }
 
-  /* Small gold overhead label used above headlines. */
   .eyebrow {
     display: inline-flex;
     align-items: center;
@@ -155,10 +179,188 @@
     line-height: 1;
   }
 
-  /* Long-form article typography. */
-  .prose-article > * + * {
-    margin-top: 1.15rem;
+  /* Card — subtle shadow, lift on hover */
+  .card {
+    border-radius: 1rem;
+    border: 1px solid var(--color-line);
+    background: white;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 0.3s ease, translate 0.3s ease;
   }
+  .card:hover,
+  .card:focus-within {
+    box-shadow: var(--shadow-lg);
+    translate: 0 -3px;
+  }
+
+  /* Animation utilities */
+  .animate-fade-up   { animation: fade-up 0.5s ease-out both; }
+  .animate-fade-in   { animation: fade-in 0.4s ease-out both; }
+  .animate-scale-in  { animation: scale-in 0.4s ease-out both; }
+  .animate-slide-down { animation: slide-down 0.25s ease-out both; }
+
+  .stagger-1 { animation-delay: 0.08s; }
+  .stagger-2 { animation-delay: 0.16s; }
+  .stagger-3 { animation-delay: 0.24s; }
+  .stagger-4 { animation-delay: 0.32s; }
+
+  /* Floating decorative elements */
+  .float { animation: float 6s ease-in-out infinite; }
+  .float-reverse { animation: float-reverse 7s ease-in-out infinite; }
+  .float-slow { animation: float 9s ease-in-out infinite; }
+  .pulse-soft { animation: pulse-soft 4s ease-in-out infinite; }
+  .rotate-slow { animation: rotate-slow 20s linear infinite; }
+
+  /* Hero text underline reveal */
+  .text-underline-reveal {
+    position: relative;
+    display: inline;
+  }
+  .text-underline-reveal::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 3px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, var(--color-sparkle-400), var(--color-sparkle-600));
+    transform-origin: left center;
+    scale: 0 1;
+    animation: underline-reveal 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.9s forwards;
+  }
+
+  /* Hero gradient background */
+  .hero-gradient {
+    background:
+      radial-gradient(ellipse 80% 60% at 70% 20%, rgba(0, 181, 120, 0.12) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 50% at 20% 80%, rgba(196, 152, 32, 0.08) 0%, transparent 70%),
+      linear-gradient(160deg, #04241a 0%, #063325 30%, #084b36 70%, #04241a 100%);
+  }
+
+  /* Shimmer effect for primary CTA */
+  .btn-shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-shimmer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    translate: -100% 0;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .btn-shimmer:hover::before {
+    animation: shimmer 0.8s ease-in-out;
+  }
+
+  /* Gradient text */
+  .gradient-text-gold {
+    background: linear-gradient(135deg, var(--color-sparkle-400), var(--color-sparkle-600));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* FAQ smooth accordion */
+  .faq-answer {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.3s ease;
+  }
+  .faq-answer[data-open='true'] {
+    grid-template-rows: 1fr;
+  }
+  .faq-answer > div {
+    overflow: hidden;
+  }
+
+  /* Custom range slider */
+  input[type='range'] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 6px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--color-green-200), var(--color-green-400));
+    outline: none;
+    cursor: pointer;
+  }
+  input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--color-green-700);
+    border: 3px solid white;
+    box-shadow: var(--shadow-md);
+    cursor: pointer;
+    transition: box-shadow 0.2s ease;
+  }
+  input[type='range']::-webkit-slider-thumb:hover {
+    box-shadow: var(--shadow-lg);
+  }
+  input[type='range']::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--color-green-700);
+    border: 3px solid white;
+    box-shadow: var(--shadow-md);
+    cursor: pointer;
+  }
+
+  /* Liquid wave-fill hover for buttons.
+     A large blob with asymmetric border-radius sits below the button and
+     spins continuously. On hover it rises into view. The rotation of the
+     irregular shape creates an organic, wave-like leading edge. */
+  .btn-liquid {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .btn-liquid::after {
+    content: '';
+    position: absolute;
+    left: -25%;
+    width: 150%;
+    height: 200%;
+    z-index: -1;
+    pointer-events: none;
+    border-radius: 40% 45% 42% 38%;
+    bottom: -200%;
+    animation: liquid-spin 4s linear infinite;
+    transition: bottom 0.55s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .btn-liquid:hover::after,
+  .btn-liquid:focus-visible::after {
+    bottom: -45%;
+  }
+
+  .btn-liquid--primary::after   { background: var(--color-sparkle-600); }
+  .btn-liquid--secondary::after { background: var(--color-green-600); }
+  .btn-liquid--ghost::after     { background: currentColor; opacity: 0.12; }
+  .btn-liquid--whatsapp::after  { background: #1eb857; }
+
+  /* Link hover underline */
+  .link-hover {
+    background-image: linear-gradient(var(--color-green-500), var(--color-green-500));
+    background-size: 0% 1.5px;
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    transition: background-size 0.25s ease;
+  }
+  .link-hover:hover {
+    background-size: 100% 1.5px;
+  }
+
+  /* Article prose */
+  .prose-article > * + * { margin-top: 1.15rem; }
   .prose-article h2 {
     font-size: clamp(1.5rem, 3vw, 2rem);
     margin-top: 2.75rem;
@@ -178,23 +380,16 @@
     display: grid;
     gap: 0.6rem;
   }
-  .prose-article ul {
-    list-style: disc;
-  }
-  .prose-article ol {
-    list-style: decimal;
-  }
+  .prose-article ul { list-style: disc; }
+  .prose-article ol { list-style: decimal; }
   .prose-article li {
     padding-left: 0.25rem;
     line-height: 1.7;
   }
 }
 
-/* Respect reduced-motion preferences throughout. */
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
+  html { scroll-behavior: auto; }
   *,
   *::before,
   *::after {

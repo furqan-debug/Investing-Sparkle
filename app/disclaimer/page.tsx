@@ -39,7 +39,7 @@ export default function DisclaimerPage() {
       <p>
         We do not provide stock tips or specific buy and sell recommendations, in any service tier,
         at any price. Where a company is discussed in our material, it is used to illustrate a
-        method of analysis — not as a suggestion to invest in it.
+        method of analysis, not as a suggestion to invest in it.
       </p>
 
       <h2>Market risk</h2>
@@ -50,7 +50,7 @@ export default function DisclaimerPage() {
       </p>
       <p>
         We make no representation, warranty, or guarantee about any level of return. Anyone who
-        offers you one — including anyone claiming to represent us — is not telling you the truth.
+        offers you one (including anyone claiming to represent us) is not telling you the truth.
       </p>
 
       <h2>Accuracy of information</h2>

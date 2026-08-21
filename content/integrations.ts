@@ -50,5 +50,5 @@ export const calendly = {
 export const payments = {
   enabled: process.env.NEXT_PUBLIC_PAYMENTS_ENABLED === 'true',
   /** Shown alongside prices while online checkout is not available. */
-  fallbackNote: 'Booking and payment are handled over WhatsApp — we share details when you message.',
+  fallbackNote: 'Booking and payment are handled over WhatsApp, we share details when you message.',
 };

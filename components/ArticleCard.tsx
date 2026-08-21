@@ -5,7 +5,7 @@ import { formatDate } from '@/lib/format';
 
 export function ArticleCard({ article }: { article: Article }) {
   return (
-    <article className="group relative flex h-full flex-col rounded-2xl border border-line bg-white p-6 transition-colors hover:border-green-300">
+    <article className="card group relative flex h-full flex-col border-l-4 border-l-green-500 p-6">
       <div className="flex items-center gap-3 text-xs">
         <span className="rounded-full bg-green-50 px-2.5 py-1 font-medium text-green-700">
           {article.category}

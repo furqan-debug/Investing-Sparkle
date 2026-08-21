@@ -5,7 +5,7 @@ import { site, refundPolicy, paymentMethods } from '@/content/site';
 export const metadata: Metadata = {
   title: 'Refund policy',
   description:
-    'Refund terms for bootcamps, courses, and each advisory service — stated explicitly, per service.',
+    'Refund terms for bootcamps, courses, and each advisory service, stated explicitly, per service.',
   alternates: { canonical: '/refund' },
 };
 
@@ -14,7 +14,7 @@ export default function RefundPage() {
     <LegalPage title="Refund policy" updated="2026-08-20">
       <p>
         Every service has its own refund terms, set out below. These are the same terms shown on the
-        service pages — if you ever find a discrepancy between this page and another page on this
+        service pages, if you ever find a discrepancy between this page and another page on this
         site, tell us and the more generous term applies.
       </p>
 
@@ -35,7 +35,7 @@ export default function RefundPage() {
       <h2>Launchpad Advisory Call</h2>
       <p>{refundPolicy.launchpad}</p>
       <p>
-        Once the session has taken place, the service has been delivered and no refund applies —
+        Once the session has taken place, the service has been delivered and no refund applies, 
         including if you choose not to act on the plan.
       </p>
 
@@ -51,7 +51,7 @@ export default function RefundPage() {
       <p>
         There is no minimum commitment beyond the first month and no cancellation fee. Cancel by
         messaging us on WhatsApp or emailing{' '}
-        <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a> — no
+        <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>, no
         retention call, no friction.
       </p>
 
@@ -66,7 +66,7 @@ export default function RefundPage() {
       <h2>If we cancel</h2>
       <p>
         If we cancel or reschedule a bootcamp or session for any reason, you receive a full refund
-        or a place in the next cohort — your choice, with no time limit on deciding.
+        or a place in the next cohort, your choice, with no time limit on deciding.
       </p>
 
       <h2>How to request a refund</h2>

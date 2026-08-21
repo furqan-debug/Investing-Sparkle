@@ -7,7 +7,7 @@ import { CompoundingCalculator } from '@/components/tools/CompoundingCalculator'
 import { CTABand } from '@/components/CTABand';
 
 export const metadata: Metadata = {
-  title: 'Compounding Calculator — see what time does to your money',
+  title: 'Compounding Calculator | see what time does to your money',
   description:
     'Work out what a starting amount plus monthly investing becomes over time, and how much of the total is growth rather than your own contributions.',
   alternates: { canonical: '/learn/tools/compounding-calculator' },
@@ -46,7 +46,7 @@ export default function CompoundingPage() {
             <p>
               Try this: set the return rate to 12% and the horizon to 10 years, and note the growth
               figure. Now leave the rate alone and change the horizon to 20 years. The result does
-              not double — it grows by considerably more.
+              not double, it grows by considerably more.
             </p>
             <p>
               Then go back and try the opposite. Keep the horizon at 10 years and raise the return
@@ -56,13 +56,13 @@ export default function CompoundingPage() {
             <p>
               This is the single most useful thing a beginner can internalise, because it reorders
               the priorities. Chasing an extra few percent of return is where most people direct
-              their effort — and where most of them lose money trying. Starting earlier and
+              their effort, and where most of them lose money trying. Starting earlier and
               continuing for longer requires no skill at all.
             </p>
             <h2>What this calculator does not do</h2>
             <p>
               It assumes a constant return, applied evenly. No market behaves that way. Real returns
-              arrive in bursts and drawdowns, and the sequence matters — particularly if you need to
+              arrive in bursts and drawdowns, and the sequence matters, particularly if you need to
               withdraw money during a bad stretch.
             </p>
             <p>
@@ -72,7 +72,7 @@ export default function CompoundingPage() {
             </p>
             <p>
               And the return rate is your assumption, not our forecast. We do not publish expected
-              returns, because nobody can know them — and anyone who tells you otherwise is selling
+              returns, because nobody can know them, and anyone who tells you otherwise is selling
               something.
             </p>
           </div>

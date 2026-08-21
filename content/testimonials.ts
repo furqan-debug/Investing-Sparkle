@@ -65,25 +65,25 @@ export const allTestimonials: Testimonial[] = [...learningTestimonials, ...clien
  * something a stranger can actually evaluate.
  */
 export const testimonialRequests = {
-  bootcamp: `Hi [NAME] — hope the last couple of weeks have gone well.
+  bootcamp: `Hi [NAME], hope the last couple of weeks have gone well.
 
-We're putting real student feedback on our website and we'd like to include yours, if you're happy for us to.
+We're putting real student feedback on our website and we'd like to include yours, if you"re happy for us to.
 
-Three quick questions — a sentence each is plenty:
+Three quick questions, a sentence each is plenty:
 
 1. What were you stuck on before the bootcamp?
 2. What can you do now that you couldn't do then?
 3. Would you tell someone in your position to do it? Why or why not?
 
 Two things to be clear about:
-- We'd publish your first name and something like "Software engineer, Karachi". A photo helps but is entirely optional.
-- We won't rewrite what you say to sound better. If you have criticism, we'd genuinely rather publish that than nothing.
+- We"d publish your first name and something like "Software engineer, Karachi". A photo helps but is entirely optional.
+- We won"t rewrite what you say to sound better. If you have criticism, we'd genuinely rather publish that than nothing.
 
-No obligation at all — say no and it changes nothing.`,
+No obligation at all, say no and it changes nothing.`,
 
-  advisory: `Hi [NAME] — it's been a few weeks since your session, so you've had time to actually run the plan.
+  advisory: `Hi [NAME], it"s been a few weeks since your session, so you"ve had time to actually run the plan.
 
-We'd like to put real client feedback on our website, and we'd value yours.
+We'd like to put real client feedback on our website, and we"d value yours.
 
 Three questions, a sentence each:
 
@@ -91,9 +91,9 @@ Three questions, a sentence each:
 2. What are you doing differently now?
 3. Was it worth what you paid? Honestly.
 
-We'd publish your first name and a short credential, with your permission. We won't edit your words to be more flattering, and if your answer to question three is "not really", we'd still like to hear it — that tells us what to fix.`,
+We'd publish your first name and a short credential, with your permission. We won't edit your words to be more flattering, and if your answer to question three is "not really", we'd still like to hear it, that tells us what to fix.`,
 
-  followUp: `Hi [NAME] — just following up on this once, and then I'll leave it.
+  followUp: `Hi [NAME], just following up on this once, and then I'll leave it.
 
 Completely fine if you'd rather not. Thanks either way.`,
 };

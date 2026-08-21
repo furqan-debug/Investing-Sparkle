@@ -39,8 +39,8 @@ export default function NotFound() {
             If you got here from a link on this site,{' '}
             <Link href="/contact" className="underline underline-offset-2">
               tell us
-            </Link>{' '}
-            — broken links are our fault, not yours.
+            </Link>
+            . Broken links are our fault, not yours.
           </p>
         </div>
       </div>

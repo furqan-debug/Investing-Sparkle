@@ -5,7 +5,7 @@ import { site, paymentMethods } from '@/content/site';
 export const metadata: Metadata = {
   title: 'Terms of service',
   description:
-    'The terms governing our courses, bootcamps, and advisory services — what we provide, what we do not, and how disputes are handled.',
+    'The terms governing our courses, bootcamps, and advisory services: what we provide, what we do not, and how disputes are handled.',
   alternates: { canonical: '/terms' },
 };
 
@@ -19,7 +19,7 @@ export default function TermsPage() {
 
       <h2>1. What we provide</h2>
       <p>
-        We provide financial education — courses, live bootcamps, written material, and free tools —
+        We provide financial education (courses, live bootcamps, written material, and free tools)
         and advisory services consisting of coaching, risk profiling, written investment plans, and
         portfolio review.
       </p>
@@ -71,7 +71,7 @@ export default function TermsPage() {
       <h2>7. Conduct</h2>
       <p>
         Cohort WhatsApp groups and live sessions are for learning. We may remove anyone who
-        solicits, promotes stock tips, shares others’ information, or harasses other participants —
+        solicits, promotes stock tips, shares others’ information, or harasses other participants,
         without refund where the behaviour is deliberate.
       </p>
 

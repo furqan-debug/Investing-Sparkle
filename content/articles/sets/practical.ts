@@ -12,9 +12,9 @@ import type { Article } from '../types';
 export const practicalArticles: Article[] = [
   {
     slug: 'shariah-compliant-investing-psx-guide',
-    title: 'Shariah-compliant investing on PSX: a complete beginner’s guide',
+    title: "Shariah-compliant investing on PSX: a complete beginner's guide",
     description:
-      'What the screening actually tests, why compliant companies drop off the list, how purification works, and what it means for your portfolio’s shape.',
+      "What the screening actually tests, why compliant companies drop off the list, how purification works, and what it means for your portfolio's shape.",
     category: 'Beginner',
     publishedAt: '2026-08-23',
     readingMinutes: 10,
@@ -42,7 +42,7 @@ export const practicalArticles: Article[] = [
       { type: 'h3', text: 'The financial screen' },
       {
         type: 'p',
-        text: 'This asks how the company is financed and where its income comes from, and it is the screen that surprises people. A company can do something entirely permissible — make cement, sell food, provide telecoms — and still fail, because of its balance sheet.',
+        text: 'This asks how the company is financed and where its income comes from, and it is the screen that surprises people. A company can do something entirely permissible (make cement, sell food, provide telecoms) and still fail, because of its balance sheet.',
       },
       {
         type: 'p',
@@ -50,12 +50,12 @@ export const practicalArticles: Article[] = [
       },
       {
         type: 'callout',
-        text: 'The exact thresholds vary between screening authorities and are reviewed periodically. Check the current criteria with your screening source rather than relying on a number quoted in an article — including this one.',
+        text: 'The exact thresholds vary between screening authorities and are reviewed periodically. Check the current criteria with your screening source rather than relying on a number quoted in an article, including this one.',
       },
       { type: 'h2', text: 'Why a company can drop off the list' },
       {
         type: 'p',
-        text: 'This is the practical consequence people are least prepared for. A company that was compliant last quarter can fail the next screening because it took on debt, or because its market capitalisation fell — which changes the ratio without the company doing anything at all.',
+        text: 'This is the practical consequence people are least prepared for. A company that was compliant last quarter can fail the next screening because it took on debt, or because its market capitalisation fell, which changes the ratio without the company doing anything at all.',
       },
       {
         type: 'p',
@@ -64,7 +64,7 @@ export const practicalArticles: Article[] = [
       { type: 'h2', text: 'Purification' },
       {
         type: 'p',
-        text: 'Companies that pass the screens may still earn a small proportion of income from non-compliant sources — typically interest on bank deposits. The convention is that the investor purifies this by calculating their share of that income and donating it, without taking it as a benefit.',
+        text: 'Companies that pass the screens may still earn a small proportion of income from non-compliant sources, typically interest on bank deposits. The convention is that the investor purifies this by calculating their share of that income and donating it, without taking it as a benefit.',
       },
       {
         type: 'p',
@@ -78,7 +78,7 @@ export const practicalArticles: Article[] = [
       {
         type: 'ul',
         items: [
-          'No conventional banks. This removes a large, liquid, dividend-paying part of the market — and the sector that typically benefits most when interest rates rise.',
+          'No conventional banks. This removes a large, liquid, dividend-paying part of the market, and the sector that typically benefits most when interest rates rise.',
           'A tilt away from heavily leveraged companies, since the debt ratio screen excludes them. This is arguably a quality filter as much as a religious one.',
           'A smaller investable universe, which makes diversification take more deliberate effort.',
           'Different behaviour across the interest-rate cycle, which is why the KMI-30 and the KSE-100 diverge.',
@@ -92,7 +92,7 @@ export const practicalArticles: Article[] = [
       { type: 'h2', text: 'Where to get rulings' },
       {
         type: 'p',
-        text: 'We teach the mechanics of screening — the ratios, the process, the practical review habit. We are not a religious authority, and questions of interpretation belong with a qualified scholar. Where a matter is contested between scholars, we say so rather than picking a side for you.',
+        text: 'We teach the mechanics of screening, the ratios, the process, the practical review habit. We are not a religious authority, and questions of interpretation belong with a qualified scholar. Where a matter is contested between scholars, we say so rather than picking a side for you.',
       },
     ],
   },
@@ -101,7 +101,7 @@ export const practicalArticles: Article[] = [
     slug: 'how-to-build-your-first-psx-portfolio',
     title: 'How to build your first PSX portfolio',
     description:
-      'How many holdings, how to size them, what to buy first, and the order to do it in — with worked rupee examples.',
+      'How many holdings, how to size them, what to buy first, and the order to do it in, with worked rupee examples.',
     category: 'Beginner',
     publishedAt: '2026-08-24',
     readingMinutes: 9,
@@ -110,7 +110,7 @@ export const practicalArticles: Article[] = [
     body: [
       {
         type: 'p',
-        text: 'Most first portfolios are not built. They accumulate — a stock someone mentioned, another from an article, a third because it fell and looked cheap. Six months later there is a collection of positions with no relationship to each other and no stated purpose.',
+        text: 'Most first portfolios are not built. They accumulate, a stock someone mentioned, another from an article, a third because it fell and looked cheap. Six months later there is a collection of positions with no relationship to each other and no stated purpose.',
       },
       {
         type: 'p',
@@ -131,7 +131,7 @@ export const practicalArticles: Article[] = [
       },
       {
         type: 'p',
-        text: 'If any of these is not true, the honest answer is that you are not ready yet — and starting anyway is how people end up selling at the worst possible moment.',
+        text: 'If any of these is not true, the honest answer is that you are not ready yet, and starting anyway is how people end up selling at the worst possible moment.',
       },
       { type: 'h2', text: 'How many holdings' },
       {
@@ -140,7 +140,7 @@ export const practicalArticles: Article[] = [
       },
       {
         type: 'p',
-        text: 'Fewer than about eight and a single company-specific event — a governance failure, a regulatory change, a bad quarter — can do damage that takes years to recover. More than about fifteen and you cannot realistically follow them all, which means you own things you no longer understand.',
+        text: 'Fewer than about eight and a single company-specific event (a governance failure, a regulatory change, a bad quarter) can do damage that takes years to recover. More than about fifteen and you cannot realistically follow them all, which means you own things you no longer understand.',
       },
       {
         type: 'p',
@@ -149,7 +149,7 @@ export const practicalArticles: Article[] = [
       { type: 'h2', text: 'Sizing positions' },
       {
         type: 'p',
-        text: 'The simplest approach, and a perfectly good one to begin with, is roughly equal weighting. Ten holdings, about 10% each. It requires no forecasting skill and it prevents the most common beginner error — one enormous position that determines your entire outcome.',
+        text: 'The simplest approach, and a perfectly good one to begin with, is roughly equal weighting. Ten holdings, about 10% each. It requires no forecasting skill and it prevents the most common beginner error, one enormous position that determines your entire outcome.',
       },
       {
         type: 'p',
@@ -159,7 +159,7 @@ export const practicalArticles: Article[] = [
         type: 'ul',
         items: [
           'Ten holdings at roughly PKR 50,000 each.',
-          'No single position above PKR 75,000, even after it rises — trim back when it drifts well past its target weight.',
+          'No single position above PKR 75,000, even after it rises, trim back when it drifts well past its target weight.',
           'No sector above about 30% of the total, which for most people means no more than three holdings from any one sector.',
         ],
       },
@@ -183,7 +183,7 @@ export const practicalArticles: Article[] = [
       { type: 'h2', text: 'Spread the entry over time' },
       {
         type: 'p',
-        text: 'Do not deploy the whole amount on one day. Not because timing the market is impossible — though it is — but because entering gradually limits the damage of starting at an unlucky moment, and it gives you time to notice how you actually feel when a position falls.',
+        text: 'Do not deploy the whole amount on one day. Not because timing the market is impossible (though it is) but because entering gradually limits the damage of starting at an unlucky moment, and it gives you time to notice how you actually feel when a position falls.',
       },
       {
         type: 'p',
@@ -196,7 +196,7 @@ export const practicalArticles: Article[] = [
       },
       {
         type: 'p',
-        text: 'This document is the portfolio. The shares are just its current expression. When a position falls 20%, the note is what lets you distinguish "the market is being irrational" from "I was wrong" — a distinction that is almost impossible to make honestly in the moment without it.',
+        text: 'This document is the portfolio. The shares are just its current expression. When a position falls 20%, the note is what lets you distinguish "the market is being irrational" from "I was wrong", a distinction that is almost impossible to make honestly in the moment without it.',
       },
       { type: 'h2', text: 'Reviewing' },
       {
@@ -214,7 +214,7 @@ export const practicalArticles: Article[] = [
     slug: 'dividends-in-pakistan-explained',
     title: 'Dividends in Pakistan: how they work and when you actually get paid',
     description:
-      'Declaration, book closure, ex-dividend, and payment — plus bonus shares, what the payout ratio tells you, and why a high yield can be a warning.',
+      'Declaration, book closure, ex-dividend, and payment, plus bonus shares, what the payout ratio tells you, and why a high yield can be a warning.',
     category: 'Beginner',
     publishedAt: '2026-08-24',
     readingMinutes: 7,
@@ -223,7 +223,7 @@ export const practicalArticles: Article[] = [
     body: [
       {
         type: 'p',
-        text: 'Dividends are a large part of the return for many PSX investors, and the mechanics confuse almost everyone at first — particularly the dates, which determine whether you actually receive a payment you were expecting.',
+        text: 'Dividends are a large part of the return for many PSX investors, and the mechanics confuse almost everyone at first, particularly the dates, which determine whether you actually receive a payment you were expecting.',
       },
       { type: 'h2', text: 'What a dividend is' },
       {
@@ -238,10 +238,10 @@ export const practicalArticles: Article[] = [
       {
         type: 'ol',
         items: [
-          'Declaration date — the board announces the dividend, its size, and the dates below.',
-          'Book closure — the period during which the company fixes the register of who owns its shares. You must be a recorded holder before this to qualify.',
-          'Ex-dividend date — from this date, buying the share no longer entitles you to the upcoming dividend. Buy on or after it and the payment goes to the seller.',
-          'Payment date — when the money actually reaches you.',
+          'Declaration date, the board announces the dividend, its size, and the dates below.',
+          'Book closure, the period during which the company fixes the register of who owns its shares. You must be a recorded holder before this to qualify.',
+          'Ex-dividend date, from this date, buying the share no longer entitles you to the upcoming dividend. Buy on or after it and the payment goes to the seller.',
+          'Payment date, when the money actually reaches you.',
         ],
       },
       {
@@ -255,7 +255,7 @@ export const practicalArticles: Article[] = [
       },
       {
         type: 'p',
-        text: 'Which is why buying purely to capture a dividend gains you nothing by itself. You receive the dividend and hold a share worth correspondingly less — and you may have created a tax event in the process.',
+        text: 'Which is why buying purely to capture a dividend gains you nothing by itself. You receive the dividend and hold a share worth correspondingly less, and you may have created a tax event in the process.',
       },
       { type: 'h2', text: 'Bonus shares are not a dividend' },
       {
@@ -264,7 +264,7 @@ export const practicalArticles: Article[] = [
       },
       {
         type: 'p',
-        text: 'Your proportional ownership of the company is unchanged — every shareholder received the same proportional increase, and the share price adjusts down accordingly. You own more pieces of the same pie. No cash has been distributed, and the company has parted with nothing.',
+        text: 'Your proportional ownership of the company is unchanged, every shareholder received the same proportional increase, and the share price adjusts down accordingly. You own more pieces of the same pie. No cash has been distributed, and the company has parted with nothing.',
       },
       {
         type: 'p',
@@ -277,7 +277,7 @@ export const practicalArticles: Article[] = [
       },
       {
         type: 'p',
-        text: 'The dividend yield is the annual dividend divided by the share price — what you are paid for owning the share at today’s price. The payout ratio is the dividend divided by earnings — how much of what the company earned is being handed out.',
+        text: "The dividend yield is the annual dividend divided by the share price, what you are paid for owning the share at today's price. The payout ratio is the dividend divided by earnings, how much of what the company earned is being handed out.",
       },
       {
         type: 'p',
@@ -290,16 +290,16 @@ export const practicalArticles: Article[] = [
       },
       {
         type: 'p',
-        text: 'Before being attracted by a high yield, check why the price fell. If the answer is that earnings are deteriorating, the yield you are looking at is historical, and the forward yield may be far lower — or zero.',
+        text: 'Before being attracted by a high yield, check why the price fell. If the answer is that earnings are deteriorating, the yield you are looking at is historical, and the forward yield may be far lower, or zero.',
       },
       { type: 'h2', text: 'Tax and receipt' },
       {
         type: 'p',
-        text: 'Tax is deducted from dividends at source in Pakistan, at a rate that has historically differed depending on whether you are on the Active Taxpayers List. Rates and rules change between budgets — confirm the current treatment with your broker or a tax professional rather than assuming last year’s number still applies.',
+        text: "Tax is deducted from dividends at source in Pakistan, at a rate that has historically differed depending on whether you are on the Active Taxpayers List. Rates and rules change between budgets, confirm the current treatment with your broker or a tax professional rather than assuming last year's number still applies.",
       },
       {
         type: 'p',
-        text: 'Payment reaches the bank account registered with your broker. If dividends are not arriving, the cause is almost always outdated bank details on your account — check there first.',
+        text: 'Payment reaches the bank account registered with your broker. If dividends are not arriving, the cause is almost always outdated bank details on your account, check there first.',
       },
     ],
   },
@@ -321,7 +321,7 @@ export const practicalArticles: Article[] = [
       },
       {
         type: 'p',
-        text: 'This article explains the mechanics and the reasoning. It is not a religious ruling — for that, speak to a qualified scholar, particularly where your situation is unusual.',
+        text: 'This article explains the mechanics and the reasoning. It is not a religious ruling, for that, speak to a qualified scholar, particularly where your situation is unusual.',
       },
       { type: 'h2', text: 'Intent changes the calculation' },
       {
@@ -340,7 +340,7 @@ export const practicalArticles: Article[] = [
       { type: 'h3', text: 'Shares held as long-term investment' },
       {
         type: 'p',
-        text: 'If you bought to hold for the dividend income and long-term ownership of the business, a common view is that zakat is due on your proportional share of the company’s zakatable assets — broadly its cash, receivables, and inventory — rather than on the full market value, because fixed assets like plant and machinery are not themselves zakatable.',
+        text: "If you bought to hold for the dividend income and long-term ownership of the business, a common view is that zakat is due on your proportional share of the company's zakatable assets (broadly its cash, receivables, and inventory) rather than on the full market value, because fixed assets like plant and machinery are not themselves zakatable.",
       },
       {
         type: 'p',
@@ -348,12 +348,12 @@ export const practicalArticles: Article[] = [
       },
       {
         type: 'callout',
-        text: 'Where a company publishes a zakat-per-share figure, multiply it by your shareholding. It is calculated from the company’s own accounts and is far more accurate than anything you can estimate from outside.',
+        text: "Where a company publishes a zakat-per-share figure, multiply it by your shareholding. It is calculated from the company's own accounts and is far more accurate than anything you can estimate from outside.",
       },
       { type: 'h2', text: 'The practical middle path' },
       {
         type: 'p',
-        text: 'Many investors, faced with a mixed portfolio and incomplete disclosure, calculate on full market value for everything. It is simpler, and it errs on the side of paying more rather than less — which most people are comfortable with.',
+        text: 'Many investors, faced with a mixed portfolio and incomplete disclosure, calculate on full market value for everything. It is simpler, and it errs on the side of paying more rather than less, which most people are comfortable with.',
       },
       {
         type: 'p',
@@ -391,12 +391,12 @@ export const practicalArticles: Article[] = [
       },
       {
         type: 'p',
-        text: 'Keep the working. Next year it takes a fraction of the time, and having last year’s method written down removes the annual re-litigation of decisions you already made.',
+        text: "Keep the working. Next year it takes a fraction of the time, and having last year's method written down removes the annual re-litigation of decisions you already made.",
       },
       { type: 'h2', text: 'A note on our role' },
       {
         type: 'p',
-        text: 'We teach the calculation, not the ruling. Where scholars differ — and on some of these points they do — we will tell you that they differ rather than presenting one position as settled.',
+        text: 'We teach the calculation, not the ruling. Where scholars differ (and on some of these points they do) we will tell you that they differ rather than presenting one position as settled.',
       },
     ],
   },
@@ -414,7 +414,7 @@ export const practicalArticles: Article[] = [
     body: [
       {
         type: 'p',
-        text: 'Tax on investment income in Pakistan changes with each Finance Act, sometimes substantially. So this article explains which taxes exist and how they work, and deliberately does not quote rates — a wrong number on a finance site is worse than no number.',
+        text: 'Tax on investment income in Pakistan changes with each Finance Act, sometimes substantially. So this article explains which taxes exist and how they work, and deliberately does not quote rates, a wrong number on a finance site is worse than no number.',
       },
       {
         type: 'p',
@@ -438,7 +438,7 @@ export const practicalArticles: Article[] = [
       { type: 'h3', text: 'Withholding on transactions' },
       {
         type: 'p',
-        text: 'Certain transaction-level withholdings may apply. Your broker’s contract notes show these, which is one reason to read them rather than filing them unopened.',
+        text: "Certain transaction-level withholdings may apply. Your broker's contract notes show these, which is one reason to read them rather than filing them unopened.",
       },
       { type: 'h2', text: 'Filer status is the biggest single factor' },
       {
@@ -447,7 +447,7 @@ export const practicalArticles: Article[] = [
       },
       {
         type: 'p',
-        text: 'For most investors, getting onto the ATL is the highest-return administrative action available — the difference compounds across every dividend and every sale, year after year. It requires an NTN and filing a return.',
+        text: 'For most investors, getting onto the ATL is the highest-return administrative action available, the difference compounds across every dividend and every sale, year after year. It requires an NTN and filing a return.',
       },
       {
         type: 'callout',
@@ -464,7 +464,7 @@ export const practicalArticles: Article[] = [
           'Contract notes for every buy and sell.',
           'Annual account statements from your broker.',
           'Dividend advices, showing gross amount and tax deducted.',
-          'The annual tax certificate your broker issues — this is the document that makes filing straightforward.',
+          'The annual tax certificate your broker issues, this is the document that makes filing straightforward.',
           'A simple spreadsheet of purchases: date, company, quantity, price, and total cost including charges.',
         ],
       },
@@ -493,7 +493,7 @@ export const practicalArticles: Article[] = [
     body: [
       {
         type: 'p',
-        text: 'Investing a fixed amount at regular intervals — often called a systematic investment plan, or simply rupee-cost averaging — is the approach that suits most salaried people. It is also frequently oversold, so it is worth being precise about what it does.',
+        text: 'Investing a fixed amount at regular intervals (often called a systematic investment plan, or simply rupee-cost averaging) is the approach that suits most salaried people. It is also frequently oversold, so it is worth being precise about what it does.',
       },
       { type: 'h2', text: 'What it actually does' },
       {
@@ -511,7 +511,7 @@ export const practicalArticles: Article[] = [
       },
       {
         type: 'p',
-        text: 'The largest destroyer of retail returns is not poor stock selection. It is behaviour — buying after a long rise because it feels safe, and refusing to buy after a fall because it feels dangerous. Both instincts are backwards, and both are extremely strong.',
+        text: 'The largest destroyer of retail returns is not poor stock selection. It is behaviour, buying after a long rise because it feels safe, and refusing to buy after a fall because it feels dangerous. Both instincts are backwards, and both are extremely strong.',
       },
       {
         type: 'p',
@@ -532,7 +532,7 @@ export const practicalArticles: Article[] = [
       },
       {
         type: 'p',
-        text: 'The second point deserves emphasis, because it is often glossed over. Regular investing is optimal for someone earning a salary and investing as the money arrives — which is most people. It is not automatically optimal for someone sitting on cash.',
+        text: 'The second point deserves emphasis, because it is often glossed over. Regular investing is optimal for someone earning a salary and investing as the money arrives, which is most people. It is not automatically optimal for someone sitting on cash.',
       },
       { type: 'h2', text: 'Setting it up on PSX' },
       {
@@ -545,7 +545,7 @@ export const practicalArticles: Article[] = [
           'Pick a fixed amount you can sustain in a bad month, not a good one. Consistency matters more than size.',
           'Pick a fixed date, tied to when your salary arrives.',
           'Set a recurring reminder. This is the entire enforcement mechanism, so do not skip it.',
-          'Decide in advance what you are buying — either topping up existing holdings toward their target weights, or a set rotation.',
+          'Decide in advance what you are buying, either topping up existing holdings toward their target weights, or a set rotation.',
           'Check the cost per trade against your monthly amount. If fixed charges are eating a meaningful share, invest quarterly in larger amounts instead.',
         ],
       },

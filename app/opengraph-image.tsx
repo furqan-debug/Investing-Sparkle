@@ -12,7 +12,7 @@ import { site } from '@/content/site';
  * in their route folder.
  */
 
-export const alt = `${site.name} — Learn to invest in Pakistan`;
+export const alt = `${site.name} | Learn to invest in Pakistan`;
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
@@ -78,7 +78,7 @@ export default async function OpengraphImage() {
               letterSpacing: -1,
             }}
           >
-            Learn to invest in Pakistan —
+            Learn to invest in Pakistan
           </div>
           <div
             style={{

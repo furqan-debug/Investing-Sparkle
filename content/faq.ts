@@ -19,7 +19,7 @@ export const faqGroups: FaqGroup[] = [
       },
       {
         q: 'Are sessions in Urdu or English?',
-        a: 'Urdu, with English used for financial terminology — so the vocabulary transfers directly to annual reports, filings, and market news.',
+        a: 'Urdu, with English used for financial terminology, so the vocabulary transfers directly to annual reports, filings, and market news.',
       },
       {
         q: 'Do I get recordings?',
@@ -36,7 +36,7 @@ export const faqGroups: FaqGroup[] = [
     items: [
       {
         q: 'Will you tell me which stocks to buy?',
-        a: 'No — not in any tier, at any price. We teach frameworks so you can evaluate companies yourself. A recommendation you cannot assess is worth nothing the second time you need one.',
+        a: 'No, not in any tier, at any price. We teach frameworks so you can evaluate companies yourself. A recommendation you cannot assess is worth nothing the second time you need one.',
       },
       {
         q: 'Do you manage my money?',
@@ -48,7 +48,7 @@ export const faqGroups: FaqGroup[] = [
       },
       {
         q: 'How do I know which service fits me?',
-        a: 'Launchpad if you want a plan to execute yourself. Guided Start if you want help through account opening and your first trades. Membership if you want ongoing accountability. If you are unsure, message us on WhatsApp and we will tell you honestly — including if the answer is none of them yet.',
+        a: 'Launchpad if you want a plan to execute yourself. Guided Start if you want help through account opening and your first trades. Membership if you want ongoing accountability. If you are unsure, message us on WhatsApp and we will tell you honestly, including if the answer is none of them yet.',
       },
       {
         q: 'Can I upgrade from one tier to another?',
@@ -82,7 +82,7 @@ export const faqGroups: FaqGroup[] = [
     items: [
       {
         q: 'Who is behind Investing Sparkle?',
-        a: 'Two Pakistani founders who started the company in May 2025 after watching too many friends lose money on tips they could not evaluate. What matters more than who we are is what we will and will not do — that is set out in full on the About page.',
+        a: 'Two Pakistani founders who started the company in May 2025 after watching too many friends lose money on tips they could not evaluate. What matters more than who we are is what we will and will not do, that is set out in full on the About page.',
       },
       {
         q: 'How do you make money?',

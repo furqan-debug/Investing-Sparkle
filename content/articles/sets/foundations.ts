@@ -28,11 +28,11 @@ export const foundationArticles: Article[] = [
       { type: 'h2', text: 'First, what a CDC account actually is' },
       {
         type: 'p',
-        text: 'When you buy shares in Pakistan, you do not receive a paper certificate. Your ownership is recorded electronically by the Central Depository Company — the CDC. Think of the CDC as the registry that holds the record of who owns what, and your broker as the party that places trades on your instruction.',
+        text: 'When you buy shares in Pakistan, you do not receive a paper certificate. Your ownership is recorded electronically by the Central Depository Company, the CDC. Think of the CDC as the registry that holds the record of who owns what, and your broker as the party that places trades on your instruction.',
       },
       {
         type: 'p',
-        text: 'That separation matters more than it first appears. Your shares are recorded in your name in the depository system. Your broker executes orders; they are not where your ownership lives. Understanding this distinction is the first step toward understanding why you should never hand account credentials to anyone — including us.',
+        text: 'That separation matters more than it first appears. Your shares are recorded in your name in the depository system. Your broker executes orders; they are not where your ownership lives. Understanding this distinction is the first step toward understanding why you should never hand account credentials to anyone, including us.',
       },
       { type: 'h2', text: 'The two things you are actually opening' },
       {
@@ -42,8 +42,8 @@ export const foundationArticles: Article[] = [
       {
         type: 'ul',
         items: [
-          'A brokerage account — with a TREC-holder brokerage firm, which is what lets you place buy and sell orders.',
-          'A depository account — where your shareholding is recorded. For most retail investors this is a sub-account opened through your broker, rather than a direct CDC investor account.',
+          'A brokerage account, with a TREC-holder brokerage firm, which is what lets you place buy and sell orders.',
+          'A depository account, where your shareholding is recorded. For most retail investors this is a sub-account opened through your broker, rather than a direct CDC investor account.',
         ],
       },
       {
@@ -58,17 +58,17 @@ export const foundationArticles: Article[] = [
       {
         type: 'ul',
         items: [
-          'Your CNIC — valid, not expired. An expired CNIC is the single most common reason applications stall.',
-          'Proof of your bank account — a cheque copy, bank statement, or account maintenance certificate in your own name.',
+          'Your CNIC, valid, not expired. An expired CNIC is the single most common reason applications stall.',
+          'Proof of your bank account, a cheque copy, bank statement, or account maintenance certificate in your own name.',
           'Proof of address, if your CNIC address is not current.',
           'A recent photograph, and in many cases a specimen signature.',
-          'Source-of-income declaration — salary slip, tax return, or business documentation.',
+          'Source-of-income declaration, salary slip, tax return, or business documentation.',
           'Your NTN, if you have one. Your tax filing status affects the rate at which tax is deducted on your investment income.',
         ],
       },
       {
         type: 'callout',
-        text: 'Tax rules and withholding rates change between budgets. Confirm the current treatment with your broker or a tax professional rather than relying on any article — including this one.',
+        text: 'Tax rules and withholding rates change between budgets. Confirm the current treatment with your broker or a tax professional rather than relying on any article, including this one.',
       },
       { type: 'h2', text: 'Choosing the broker before you fill anything in' },
       {
@@ -77,7 +77,7 @@ export const foundationArticles: Article[] = [
       },
       {
         type: 'p',
-        text: 'What to compare: commission structure and any minimum per-trade charge, custody or maintenance fees, the quality of the trading platform you will actually use every week, research access, how quickly funds settle in and out, and — underrated — whether their support answers the phone.',
+        text: 'What to compare: commission structure and any minimum per-trade charge, custody or maintenance fees, the quality of the trading platform you will actually use every week, research access, how quickly funds settle in and out, and (underrated) whether their support answers the phone.',
       },
       {
         type: 'p',
@@ -88,13 +88,13 @@ export const foundationArticles: Article[] = [
         type: 'ol',
         items: [
           'Shortlist two or three brokers and compare them on the points above.',
-          'Request the account opening form — most brokers now offer a fully online process.',
+          'Request the account opening form, most brokers now offer a fully online process.',
           'Complete the KYC form and the account opening documentation.',
           'Submit your documents and complete identity verification.',
           'Wait for approval. This is typically a few working days, though it varies.',
           'Receive your account credentials and your depository sub-account details.',
           'Transfer funds into your trading account from your own bank account.',
-          'Place your first order — small, deliberate, and for a company you can explain to someone else.',
+          'Place your first order, small, deliberate, and for a company you can explain to someone else.',
         ],
       },
       { type: 'h2', text: 'What trips people up' },
@@ -102,8 +102,8 @@ export const foundationArticles: Article[] = [
         type: 'ul',
         items: [
           'An expired CNIC. Check the date before you begin.',
-          'A bank account in someone else’s name. It must be yours; third-party funding gets rejected.',
-          'Mismatched details — a name spelled differently on the CNIC and the bank record will hold up verification.',
+          "A bank account in someone else's name. It must be yours; third-party funding gets rejected.",
+          'Mismatched details, a name spelled differently on the CNIC and the bank record will hold up verification.',
           'Not asking about the fee schedule in writing. Ask for it before you sign, not after your first statement.',
         ],
       },
@@ -136,12 +136,12 @@ export const foundationArticles: Article[] = [
       { type: 'h2', text: 'What an index is doing' },
       {
         type: 'p',
-        text: 'An index is a measuring instrument. It takes a defined set of companies, weights them by a stated rule, and reports the combined value as a single number. The number itself is meaningless in isolation — what matters is the direction and the rate of change, and what set of companies is being measured.',
+        text: 'An index is a measuring instrument. It takes a defined set of companies, weights them by a stated rule, and reports the combined value as a single number. The number itself is meaningless in isolation, what matters is the direction and the rate of change, and what set of companies is being measured.',
       },
       { type: 'h2', text: 'The KSE-100' },
       {
         type: 'p',
-        text: 'The KSE-100 is the Pakistan Stock Exchange’s benchmark index. It tracks 100 companies selected to represent the market broadly, including the largest company by market capitalisation from each sector, with the remainder selected on market capitalisation.',
+        text: "The KSE-100 is the Pakistan Stock Exchange's benchmark index. It tracks 100 companies selected to represent the market broadly, including the largest company by market capitalisation from each sector, with the remainder selected on market capitalisation.",
       },
       {
         type: 'p',
@@ -150,7 +150,7 @@ export const foundationArticles: Article[] = [
       { type: 'h2', text: 'The KMI-30' },
       {
         type: 'p',
-        text: 'The KMI-30 — the KSE Meezan Index — tracks 30 companies that pass Shariah screening. That screening covers both the nature of the business and its financial ratios: what the company does, how much interest-bearing debt it carries, how much of its income is non-compliant, and related tests.',
+        text: 'The KMI-30 (the KSE Meezan Index) tracks 30 companies that pass Shariah screening. That screening covers both the nature of the business and its financial ratios: what the company does, how much interest-bearing debt it carries, how much of its income is non-compliant, and related tests.',
       },
       {
         type: 'p',
@@ -174,7 +174,7 @@ export const foundationArticles: Article[] = [
         type: 'ul',
         items: [
           'If you invest across the whole market, the KSE-100 is your reference point.',
-          'If you invest only in Shariah-compliant companies, benchmarking against the KSE-100 will mislead you — you are measuring yourself against companies you would never buy. The KMI-30 is the honest comparison.',
+          'If you invest only in Shariah-compliant companies, benchmarking against the KSE-100 will mislead you, you are measuring yourself against companies you would never buy. The KMI-30 is the honest comparison.',
         ],
       },
       {
@@ -209,12 +209,12 @@ export const foundationArticles: Article[] = [
       },
       {
         type: 'p',
-        text: 'Here is the comparison worth doing first — it takes an afternoon.',
+        text: 'Here is the comparison worth doing first, it takes an afternoon.',
       },
       { type: 'h2', text: '1. Regulatory standing' },
       {
         type: 'p',
-        text: 'The broker must be a TREC holder registered with the SECP and licensed to deal in securities. Verify this at source — on the PSX and SECP listings — rather than taking the firm’s word for it. This is a five-minute check that eliminates an entire category of risk.',
+        text: "The broker must be a TREC holder registered with the SECP and licensed to deal in securities. Verify this at source (on the PSX and SECP listings) rather than taking the firm's word for it. This is a five-minute check that eliminates an entire category of risk.",
       },
       { type: 'h2', text: '2. The full fee schedule, in writing' },
       {
@@ -223,17 +223,17 @@ export const foundationArticles: Article[] = [
       },
       {
         type: 'p',
-        text: 'The minimum per-trade charge matters enormously if you invest modest amounts regularly. A flat minimum can quietly consume several percent of a small order — which is a large headwind to overcome before you have earned anything.',
+        text: 'The minimum per-trade charge matters enormously if you invest modest amounts regularly. A flat minimum can quietly consume several percent of a small order, which is a large headwind to overcome before you have earned anything.',
       },
       { type: 'h2', text: '3. The platform you will actually use' },
       {
         type: 'p',
-        text: 'Ask for a demo. You will be in this interface every week for years. Check whether it works properly on your phone, since that is where most Pakistani investors actually trade, and ask what happens on high-volume days — platform outages during volatility are not rare, and they occur precisely when you need access.',
+        text: 'Ask for a demo. You will be in this interface every week for years. Check whether it works properly on your phone, since that is where most Pakistani investors actually trade, and ask what happens on high-volume days, platform outages during volatility are not rare, and they occur precisely when you need access.',
       },
       { type: 'h2', text: '4. Settlement and withdrawal speed' },
       {
         type: 'p',
-        text: 'How quickly can you get money in, and — more importantly — out? Ask specifically how long a withdrawal takes to reach your bank account. A firm that is slow or vague on withdrawals is telling you something.',
+        text: 'How quickly can you get money in, and (more importantly) out? Ask specifically how long a withdrawal takes to reach your bank account. A firm that is slow or vague on withdrawals is telling you something.',
       },
       { type: 'h2', text: '5. Research, and who it serves' },
       {
@@ -260,7 +260,7 @@ export const foundationArticles: Article[] = [
         items: [
           'A relationship manager who promises returns. Nobody can promise returns, and the promise itself is disqualifying.',
           'The lowest commission alone, if the platform is unreliable.',
-          'A friend’s recommendation, unless your friend invests the way you intend to.',
+          "A friend's recommendation, unless your friend invests the way you intend to.",
           'Marketing that emphasises how much you could make rather than how the service works.',
         ],
       },
@@ -284,7 +284,7 @@ export const foundationArticles: Article[] = [
       { type: 'h2', text: 'The two questions' },
       {
         type: 'p',
-        text: 'Fundamental analysis asks: what is this business worth, and is the current price reasonable relative to that? It works from the company outward — revenue, margins, debt, competitive position, the quality of management, and what the sector is likely to do.',
+        text: 'Fundamental analysis asks: what is this business worth, and is the current price reasonable relative to that? It works from the company outward, revenue, margins, debt, competitive position, the quality of management, and what the sector is likely to do.',
       },
       {
         type: 'p',
@@ -301,12 +301,12 @@ export const foundationArticles: Article[] = [
       },
       {
         type: 'p',
-        text: 'The strength of this approach is that it gives you a reason to own something that you can state out loud. The weakness is that it tells you nothing about timing — a company can be genuinely undervalued and stay that way for years.',
+        text: 'The strength of this approach is that it gives you a reason to own something that you can state out loud. The weakness is that it tells you nothing about timing, a company can be genuinely undervalued and stay that way for years.',
       },
       { type: 'h2', text: 'What technical analysis involves' },
       {
         type: 'p',
-        text: 'Reading price charts, identifying trend and range, and using a small number of indicators — moving averages, RSI, and volume are enough to start — to describe what buyers and sellers are currently doing.',
+        text: 'Reading price charts, identifying trend and range, and using a small number of indicators (moving averages, RSI, and volume are enough to start) to describe what buyers and sellers are currently doing.',
       },
       {
         type: 'p',
@@ -327,12 +327,12 @@ export const foundationArticles: Article[] = [
       },
       {
         type: 'p',
-        text: 'Then layer basic technicals on top — not to trade, but to avoid buying into a vertical move and to have a pre-decided level where you admit you were wrong.',
+        text: 'Then layer basic technicals on top, not to trade, but to avoid buying into a vertical move and to have a pre-decided level where you admit you were wrong.',
       },
       { type: 'h2', text: 'The failure mode to avoid' },
       {
         type: 'p',
-        text: 'The common beginner path is to skip fundamentals entirely, learn a few indicators, and start trading short-term — because the charts look actionable and the feedback is immediate. It usually ends the same way: a series of small losses and commission costs, and no framework left behind to build on.',
+        text: 'The common beginner path is to skip fundamentals entirely, learn a few indicators, and start trading short-term, because the charts look actionable and the feedback is immediate. It usually ends the same way: a series of small losses and commission costs, and no framework left behind to build on.',
       },
       {
         type: 'p',
@@ -358,7 +358,7 @@ export const foundationArticles: Article[] = [
       { type: 'h2', text: '1. Acting on a tip you cannot evaluate' },
       {
         type: 'p',
-        text: 'Someone in a WhatsApp group says a stock is about to move. Sometimes they are right, which is the problem — the occasional win teaches you to keep listening.',
+        text: 'Someone in a WhatsApp group says a stock is about to move. Sometimes they are right, which is the problem, the occasional win teaches you to keep listening.',
       },
       {
         type: 'p',
@@ -371,7 +371,7 @@ export const foundationArticles: Article[] = [
       { type: 'h2', text: '2. Putting money in that you will need soon' },
       {
         type: 'p',
-        text: 'Equity investing needs time to work, and it needs you to be able to sit through drawdowns without selling. Money earmarked for a wedding, a tuition payment, or a medical fund cannot do that — because the market does not consult your calendar.',
+        text: 'Equity investing needs time to work, and it needs you to be able to sit through drawdowns without selling. Money earmarked for a wedding, a tuition payment, or a medical fund cannot do that, because the market does not consult your calendar.',
       },
       {
         type: 'p',
@@ -380,7 +380,7 @@ export const foundationArticles: Article[] = [
       { type: 'h2', text: '3. Concentrating everything in one or two names' },
       {
         type: 'p',
-        text: 'New investors often hold two or three stocks, usually in the same sector, usually because those were the names they had heard of. The upside feels good. The downside is that a single company-specific event — a regulatory change, a bad quarter, a governance failure — can take a large share of your savings with it.',
+        text: 'New investors often hold two or three stocks, usually in the same sector, usually because those were the names they had heard of. The upside feels good. The downside is that a single company-specific event (a regulatory change, a bad quarter, a governance failure) can take a large share of your savings with it.',
       },
       {
         type: 'p',
@@ -406,12 +406,12 @@ export const foundationArticles: Article[] = [
       },
       {
         type: 'p',
-        text: 'If your thesis is measured in years, review on a schedule — quarterly, when results are published, or when something specific changes about the business. Not continuously.',
+        text: 'If your thesis is measured in years, review on a schedule, quarterly, when results are published, or when something specific changes about the business. Not continuously.',
       },
       { type: 'h2', text: 'What connects all five' },
       {
         type: 'p',
-        text: 'Every one of these is a decision made without a framework. The tip, the timeline mismatch, the concentration, the asymmetric selling, the constant checking — each is what happens when there is no pre-existing rule, so the decision gets made by whatever you happen to be feeling.',
+        text: 'Every one of these is a decision made without a framework. The tip, the timeline mismatch, the concentration, the asymmetric selling, the constant checking, each is what happens when there is no pre-existing rule, so the decision gets made by whatever you happen to be feeling.',
       },
       {
         type: 'p',

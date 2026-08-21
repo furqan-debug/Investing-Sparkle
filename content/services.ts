@@ -64,7 +64,7 @@ export const services: Service[] = [
       'We do not pick stocks for you',
       'We do not open or operate your brokerage account',
       'We do not execute trades or hold your funds',
-      'Ongoing follow-up is not included — that is the Membership',
+      'Ongoing follow-up is not included. That is the Membership',
     ],
     endState:
       'You leave with a plan and the reasoning behind it. Most people need nothing further from us.',
@@ -73,7 +73,7 @@ export const services: Service[] = [
     whatsappMessage: whatsappMessages.launchpad,
 
     detail: [
-      'The Launchpad call exists for a specific situation: you have money to invest, you are reasonably intelligent about most things, and you have no idea where to start with PSX — and every source of guidance available to you has an interest in what you decide.',
+      'The Launchpad call exists for a specific situation: you have money to invest, you are reasonably intelligent about most things, and you have no idea where to start with PSX, and every source of guidance available to you has an interest in what you decide.',
       'It is one session, one written plan, and no ongoing relationship unless you want one. We deliberately designed it that way. A service you have to keep buying is a service with an incentive to leave you dependent, and that incentive shapes advice whether anyone intends it to or not.',
       'What makes it worth the fee is not the recommendations. It is that you leave able to make the next fifty decisions without us.',
     ],
@@ -84,9 +84,9 @@ export const services: Service[] = [
       'You are comfortable executing trades yourself once you know what you are doing',
     ],
     notForYou: [
-      'You want stock picks — we will not give them, in the call or in the plan',
+      'You want stock picks. We will not give them, in the call or in the plan',
       'You want someone to manage the portfolio for you',
-      'You have no emergency fund yet — we will only tell you to build one first',
+      'You have no emergency fund yet. We will only tell you to build one first',
       'You are looking for a short-term trading system',
     ],
     steps: [
@@ -148,7 +148,7 @@ export const services: Service[] = [
       },
       {
         q: 'What if I want ongoing help afterwards?',
-        a: 'Membership exists for that, and we will mention it only if it genuinely fits. If you can run the plan alone — which most people can — we would rather you did.',
+        a: 'Membership exists for that, and we will mention it only if it genuinely fits. If you can run the plan alone (which most people can), we would rather you did.',
       },
     ],
   },
@@ -167,11 +167,11 @@ export const services: Service[] = [
       'Everything in the Launchpad Advisory Call',
       'Help choosing a brokerage that fits how you actually invest',
       'Walked through account opening and CDC setup, step by step',
-      'Guided through your first trades — you place them, we explain each one',
+      'Guided through your first trades. You place them, we explain each one',
       'A follow-up review once your first positions are in place',
     ],
     excludes: [
-      'We never place a trade on your behalf — you execute, we explain',
+      'We never place a trade on your behalf. You execute, we explain',
       'We do not take custody of your funds at any point',
       'No specific stock tips; you apply the framework with our coaching',
       'Brokerage and transaction fees are not included',
@@ -184,7 +184,7 @@ export const services: Service[] = [
 
     detail: [
       'A large number of people never actually start investing. Not because they decided against it, but because the account-opening process defeated them, or because they got as far as a live account and then could not bring themselves to place the first order.',
-      'Guided Start is for exactly that gap. It is the Launchpad plan, plus someone alongside you through brokerage selection, account opening, funding, and your first trades — which you place, while we explain what each one does and why.',
+      'Guided Start is for exactly that gap. It is the Launchpad plan, plus someone alongside you through brokerage selection, account opening, funding, and your first trades, which you place, while we explain what each one does and why.',
       'The distinction matters and we hold it absolutely: we never touch your account. You will not give us credentials, and we would refuse them if offered. Every order is entered by you.',
     ],
     rightForYou: [
@@ -194,7 +194,7 @@ export const services: Service[] = [
       'You would rather ask a question mid-process than research it alone',
     ],
     notForYou: [
-      'You are comfortable with the mechanics and only need the plan — Launchpad is cheaper and sufficient',
+      'You are comfortable with the mechanics and only need the plan. Launchpad is cheaper and sufficient',
       'You want someone to place trades for you. We do not, at any price',
       'You want ongoing management after the first positions are in',
     ],
@@ -209,7 +209,7 @@ export const services: Service[] = [
         step: '02',
         title: 'Choosing a broker',
         detail:
-          'We compare options against how you actually intend to invest — cost structure, platform reliability, withdrawal speed, and support that answers.',
+          'We compare options against how you actually intend to invest: cost structure, platform reliability, withdrawal speed, and support that answers.',
       },
       {
         step: '03',
@@ -241,7 +241,7 @@ export const services: Service[] = [
     faq: [
       {
         q: 'Will you place trades for me?',
-        a: 'No. You place every trade. We explain what you are doing while you do it. This is not a technicality — it is the difference between learning to invest and outsourcing it.',
+        a: 'No. You place every trade. We explain what you are doing while you do it. This is not a technicality. It is the difference between learning to invest and outsourcing it.',
       },
       {
         q: 'Do you need access to my account?',
@@ -266,11 +266,11 @@ export const services: Service[] = [
     name: 'Sparkle Membership',
     shortName: 'Membership',
     price: 'PKR 7,500/month',
-    priceNote: 'or PKR 20,000/quarter — save 11%',
+    priceNote: 'or PKR 20,000/quarter (save 11%)',
     summary: 'Ongoing accountability: scheduled calls, portfolio review, and questions answered.',
     whatItIs: 'Ongoing monthly guidance',
     bestFor: 'Investors who want periodic accountability',
-    duration: 'Monthly recurring — pause or cancel any time after month one',
+    duration: 'Monthly recurring. Pause or cancel any time after month one',
     includes: [
       '2–3 private calls each month',
       'Periodic review of your portfolio against your own plan',
@@ -278,7 +278,7 @@ export const services: Service[] = [
       'Guidance when markets move and you need a second opinion on your reasoning',
     ],
     excludes: [
-      'This is not money management — we never touch your account',
+      'This is not money management. We never touch your account',
       'We do not execute trades or hold funds',
       'No guaranteed returns, and no performance claims',
       'Not a stock-tip service',
@@ -302,7 +302,7 @@ export const services: Service[] = [
     ],
     notForYou: [
       'You want us to manage the money. We never will',
-      'You want frequent trade ideas — this is review and coaching, not a signal service',
+      'You want frequent trade ideas. This is review and coaching, not a signal service',
       'You have not yet built a portfolio. Start with Launchpad or Guided Start',
       'You would find a monthly fee a strain. Cancel-friendly does not make it free',
     ],
@@ -317,7 +317,7 @@ export const services: Service[] = [
         step: '02',
         title: 'Scheduled calls',
         detail:
-          'Two to three private calls each month, at times fixed in advance. The fixed date is much of the value — it is the one you cannot postpone indefinitely.',
+          'Two to three private calls each month, at times fixed in advance. The fixed date is much of the value, it is the one you cannot postpone indefinitely.',
       },
       {
         step: '03',
@@ -329,7 +329,7 @@ export const services: Service[] = [
         step: '04',
         title: 'Questions between calls',
         detail:
-          'WhatsApp support for the moments that do not wait for the next scheduled session — particularly when markets are moving and the urge to act is strongest.',
+          'WhatsApp support for the moments that do not wait for the next scheduled session, particularly when markets are moving and the urge to act is strongest.',
       },
     ],
     deliverables: [
@@ -370,7 +370,7 @@ export const upgradeNote =
 export const advisoryPhilosophy = [
   'We built these services around one principle: your money belongs in your account, under your control. Every decision to buy, sell, or hold is yours to make. Every trade executes through your brokerage, not ours.',
   'What we do is help you make better decisions. Assess your risk profile. Build an investment plan with you. Coach you through the fundamentals. Review your portfolio periodically. But we never touch your money, never execute for you, and never take custody.',
-  'That means every service below is designed with a beginning and — ideally — an end. Success looks like you graduating from us, running your own portfolio confidently.',
+  'That means every service below is designed with a beginning and (ideally) an end. Success looks like you graduating from us, running your own portfolio confidently.',
 ];
 
 export const advisoryProcess = [
@@ -399,11 +399,11 @@ export const advisoryProcess = [
 export const advisoryFaq = [
   {
     q: 'Do you recommend specific stocks?',
-    a: 'No. We coach you to pick your own using a framework you can reapply without us. A tip you can’t evaluate is worth nothing the second time.',
+    a: "No. We coach you to pick your own using a framework you can reapply without us. A tip you can't evaluate is worth nothing the second time.",
   },
   {
     q: 'What happens after the call?',
-    a: 'You receive a written plan within a week. You execute it in your own brokerage account. Follow-up is optional — that’s what the Membership is for.',
+    a: "You receive a written plan within a week. You execute it in your own brokerage account. Follow-up is optional, that's what the Membership is for.",
   },
   {
     q: 'Can I upgrade between tiers?',
@@ -419,7 +419,7 @@ export const advisoryFaq = [
   },
   {
     q: 'Are you SECP-licensed investment advisors?',
-    a: 'No. We provide financial education and general guidance. We do not manage investments, execute trades, or hold client funds — which is exactly why we can be straight with you about what we are.',
+    a: 'No. We provide financial education and general guidance. We do not manage investments, execute trades, or hold client funds, which is exactly why we can be straight with you about what we are.',
   },
 ];
 

@@ -28,7 +28,7 @@ const assetFields: Field[] = [
   {
     id: 'shares',
     label: 'Market value of shares held for trading',
-    hint: 'Bought with the intention of selling for gain — zakatable on full market value.',
+    hint: 'Bought with the intention of selling for gain, zakatable on full market value.',
   },
   {
     id: 'longTerm',
@@ -123,7 +123,7 @@ export function ZakatCalculator() {
             />
             <p className="mt-1.5 text-xs leading-relaxed text-muted">
               Nisab is based on prevailing gold or silver prices, so it changes constantly. We do not
-              hardcode it — look up the current figure from a source you trust and enter it here.
+              hardcode it. Look up the current figure from a source you trust and enter it here.
             </p>
           </div>
         </div>
@@ -132,7 +132,7 @@ export function ZakatCalculator() {
       <div className="flex flex-col gap-5">
         <ResultPanel
           eyebrow="Zakat due"
-          headline={result.meetsNisab ? `PKR ${formatPKR(result.zakat)}` : '—'}
+          headline={result.meetsNisab ? `PKR ${formatPKR(result.zakat)}` : '-'}
           sub={
             result.meetsNisab
               ? `2.5% of PKR ${formatPKR(result.net)} net zakatable wealth.`
@@ -151,14 +151,14 @@ export function ZakatCalculator() {
           <p className="text-sm leading-relaxed text-ink">
             This calculates at 2.5%, the widely applied rate for a lunar year. It is a calculation
             aid, not a religious ruling. Treatment of long-term holdings and deductible liabilities
-            varies between scholars — where your situation is unusual or the amount is large, ask a
+            varies between scholars. Where your situation is unusual or the amount is large, ask a
             qualified scholar rather than relying on a calculator.
           </p>
         </div>
 
         <ToolFooter
           calculatorName="Zakat Calculator"
-          disclaimer="We teach the calculation, not the ruling. Nothing here is a fatwa, and we do not take a position where scholars differ. Keep your working — next year takes a fraction of the time when last year's method is written down."
+          disclaimer="We teach the calculation, not the ruling. Nothing here is a fatwa, and we do not take a position where scholars differ. Keep your working. Next year takes a fraction of the time when last year's method is written down."
         />
       </div>
     </div>

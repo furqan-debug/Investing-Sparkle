@@ -25,7 +25,7 @@ export const behaviourArticles: Article[] = [
       { type: 'h2', text: 'What actually goes wrong' },
       {
         type: 'p',
-        text: 'Consider two investors who buy identical portfolios on the same day. Eighteen months later the market is down 20% — a routine occurrence, not a crisis.',
+        text: 'Consider two investors who buy identical portfolios on the same day. Eighteen months later the market is down 20%, a routine occurrence, not a crisis.',
       },
       {
         type: 'p',
@@ -33,7 +33,7 @@ export const behaviourArticles: Article[] = [
       },
       {
         type: 'p',
-        text: 'The second has no emergency fund. The same bill arrives. Their only source of money is the portfolio, so they sell — at a 20% loss, at the worst possible moment, permanently converting a paper decline into a realised one. Two years later the market has recovered and they are not there for it.',
+        text: 'The second has no emergency fund. The same bill arrives. Their only source of money is the portfolio, so they sell, at a 20% loss, at the worst possible moment, permanently converting a paper decline into a realised one. Two years later the market has recovered and they are not there for it.',
       },
       {
         type: 'p',
@@ -42,7 +42,7 @@ export const behaviourArticles: Article[] = [
       { type: 'h2', text: 'How much' },
       {
         type: 'p',
-        text: 'Three to six months of essential expenses is the usual guidance. Essential means rent, utilities, food, transport, school fees, medical, and loan payments — not your total spending.',
+        text: 'Three to six months of essential expenses is the usual guidance. Essential means rent, utilities, food, transport, school fees, medical, and loan payments, not your total spending.',
       },
       {
         type: 'p',
@@ -50,7 +50,7 @@ export const behaviourArticles: Article[] = [
       },
       {
         type: 'callout',
-        text: 'Calculate it from your actual expenses, not an estimate. Most people are surprised by the real number — which is itself a useful thing to discover.',
+        text: 'Calculate it from your actual expenses, not an estimate. Most people are surprised by the real number, which is itself a useful thing to discover.',
       },
       { type: 'h2', text: 'Where it should sit' },
       {
@@ -59,7 +59,7 @@ export const behaviourArticles: Article[] = [
       },
       {
         type: 'p',
-        text: 'Not in shares. The whole point is that it is available at full value on a day of your choosing, and shares offer no such guarantee — least of all during the kind of broad economic stress that also causes job losses.',
+        text: 'Not in shares. The whole point is that it is available at full value on a day of your choosing, and shares offer no such guarantee, least of all during the kind of broad economic stress that also causes job losses.',
       },
       { type: 'h2', text: 'The objection, and the answer' },
       {
@@ -68,7 +68,7 @@ export const behaviourArticles: Article[] = [
       },
       {
         type: 'p',
-        text: 'The emergency fund is not an investment. It is what allows the investments to be left alone. Its return is measured in forced sales that did not happen — and that return is far larger than the yield differential, because a forced sale during a decline can cost years of progress.',
+        text: 'The emergency fund is not an investment. It is what allows the investments to be left alone. Its return is measured in forced sales that did not happen, and that return is far larger than the yield differential, because a forced sale during a decline can cost years of progress.',
       },
       { type: 'h2', text: 'Building one' },
       {
@@ -84,14 +84,14 @@ export const behaviourArticles: Article[] = [
         type: 'ol',
         items: [
           'One month of expenses in cash.',
-          'Clear high-interest short-term debt — a guaranteed return no market can promise.',
+          'Clear high-interest short-term debt, a guaranteed return no market can promise.',
           'Build to three to six months of expenses.',
           'Then, and only then, start investing.',
         ],
       },
       {
         type: 'p',
-        text: 'If you are at step one, our honest advice is to learn now and invest later. The learning costs nothing and compounds. Investing before the foundation is set is how people conclude the market does not work for ordinary people — when what actually failed was the sequence.',
+        text: 'If you are at step one, our honest advice is to learn now and invest later. The learning costs nothing and compounds. Investing before the foundation is set is how people conclude the market does not work for ordinary people, when what actually failed was the sequence.',
       },
     ],
   },
@@ -118,7 +118,7 @@ export const behaviourArticles: Article[] = [
       { type: 'h2', text: 'Start from what you do not know' },
       {
         type: 'p',
-        text: 'The right size for a position is a function of your uncertainty, not your enthusiasm. In practice the two feel identical — conviction is usually strongest where knowledge is shallowest, because complications you have not yet discovered cannot temper it.',
+        text: 'The right size for a position is a function of your uncertainty, not your enthusiasm. In practice the two feel identical: conviction is usually strongest where knowledge is shallowest, because complications you have not yet discovered cannot temper it.',
       },
       {
         type: 'p',
@@ -140,7 +140,7 @@ export const behaviourArticles: Article[] = [
       },
       {
         type: 'p',
-        text: 'These are not laws. They are defaults that prevent the specific failure that ruins beginners — one enormous position that determines the entire outcome.',
+        text: 'These are not laws. They are defaults that prevent the specific failure that ruins beginners: one enormous position that determines the entire outcome.',
       },
       { type: 'h2', text: 'The arithmetic of losses' },
       {
@@ -152,7 +152,7 @@ export const behaviourArticles: Article[] = [
         items: [
           'Lose 10%, and you need about 11% to get back to even.',
           'Lose 25%, and you need about 33%.',
-          'Lose 50%, and you need 100% — you must double your money simply to return to where you started.',
+          'Lose 50%, and you need 100%. You must double your money simply to return to where you started.',
           'Lose 75%, and you need 300%.',
         ],
       },
@@ -171,12 +171,12 @@ export const behaviourArticles: Article[] = [
       },
       {
         type: 'p',
-        text: 'If the answer is more than a few days, the position is too large — regardless of how attractive the company is. A holding you cannot exit is not really a position; it is a commitment.',
+        text: 'If the answer is more than a few days, the position is too large, regardless of how attractive the company is. A holding you cannot exit is not really a position; it is a commitment.',
       },
       { type: 'h2', text: 'Letting winners grow, within limits' },
       {
         type: 'p',
-        text: 'If a holding does well, it becomes a larger share of the portfolio by simple arithmetic. Up to a point that is fine — it is what you wanted to happen.',
+        text: 'If a holding does well, it becomes a larger share of the portfolio by simple arithmetic. Up to a point that is fine, and it is what you wanted to happen.',
       },
       {
         type: 'p',
@@ -194,7 +194,7 @@ export const behaviourArticles: Article[] = [
       },
       {
         type: 'p',
-        text: 'Four lines, written before you have any money at stake — which is the only time you can think about the position clearly.',
+        text: 'Four lines, written before you have any money at stake, which is the only time you can think about the position clearly.',
       },
     ],
   },
@@ -221,13 +221,13 @@ export const behaviourArticles: Article[] = [
       },
       {
         type: 'p',
-        text: 'The only question that matters is: knowing what I know today, at today’s price, would I buy this? If the answer is no, the reason you own it is not investment. It is reluctance to acknowledge a decision.',
+        text: "The only question that matters is: knowing what I know today, at today's price, would I buy this? If the answer is no, the reason you own it is not investment. It is reluctance to acknowledge a decision.",
       },
       { type: 'h2', text: 'Three good reasons to sell' },
       { type: 'h3', text: '1. The thesis broke' },
       {
         type: 'p',
-        text: 'You bought for specific reasons. One of them has stopped being true — the competitive advantage eroded, the debt became unmanageable, management changed and the new team is doing something different, the regulatory environment shifted.',
+        text: 'You bought for specific reasons. One of them has stopped being true. The competitive advantage eroded, the debt became unmanageable, management changed and the new team is doing something different, the regulatory environment shifted.',
       },
       {
         type: 'p',
@@ -251,7 +251,7 @@ export const behaviourArticles: Article[] = [
       { type: 'h3', text: '1. It went up' },
       {
         type: 'p',
-        text: 'Selling purely because a holding has risen means systematically disposing of the things that are working. Long-term returns in most portfolios come from a small number of holdings that did very well over a long period — and every one of them looked like it had "run too far" at some point.',
+        text: 'Selling purely because a holding has risen means systematically disposing of the things that are working. Long-term returns in most portfolios come from a small number of holdings that did very well over a long period, and every one of them looked like it had "run too far" at some point.',
       },
       { type: 'h3', text: '2. It went down' },
       {
@@ -288,14 +288,14 @@ export const behaviourArticles: Article[] = [
       { type: 'h2', text: 'On taxes and costs' },
       {
         type: 'p',
-        text: 'Selling has costs — commission, and potentially capital gains tax. Factor them in, but do not let them hold you in a broken position. Paying tax on a gain is a better outcome than watching the gain disappear to avoid it.',
+        text: 'Selling has costs: commission, and potentially capital gains tax. Factor them in, but do not let them hold you in a broken position. Paying tax on a gain is a better outcome than watching the gain disappear to avoid it.',
       },
     ],
   },
 
   {
     slug: 'long-term-vs-day-trading-pakistan',
-    title: 'Long-term investing vs day trading in Pakistan’s context',
+    title: "Long-term investing vs day trading in Pakistan's context",
     description:
       'Why the two are different activities with different skill requirements, and an honest account of what short-term trading costs before it earns anything.',
     category: 'Beginner',
@@ -315,7 +315,7 @@ export const behaviourArticles: Article[] = [
       },
       {
         type: 'p',
-        text: 'Short-term trading means buying and selling to profit from price movement over days or weeks. Your return comes from other participants — someone sells you something that then rises, or buys something from you that then falls. It is closer to a competitive game than to ownership.',
+        text: 'Short-term trading means buying and selling to profit from price movement over days or weeks. Your return comes from other participants: someone sells you something that then rises, or buys something from you that then falls. It is closer to a competitive game than to ownership.',
       },
       { type: 'h2', text: 'The costs you pay before you earn anything' },
       {
@@ -334,7 +334,7 @@ export const behaviourArticles: Article[] = [
       },
       {
         type: 'p',
-        text: 'A trader must overcome all of that before earning a single rupee. A long-term holder pays the commission twice — once on entry, once on exit, potentially years apart.',
+        text: 'A trader must overcome all of that before earning a single rupee. A long-term holder pays the commission twice: once on entry, once on exit, potentially years apart.',
       },
       { type: 'h2', text: 'The Pakistani specifics' },
       {
@@ -345,7 +345,7 @@ export const behaviourArticles: Article[] = [
         type: 'ul',
         items: [
           'Liquidity is concentrated. Many listed companies trade thinly, so entering and exiting quickly is costly and sometimes not possible at the price you see.',
-          'The market can be news-driven in ways that are difficult to anticipate — policy announcements, currency moves, and external developments can reprice the market between sessions.',
+          'The market can be news-driven in ways that are difficult to anticipate: policy announcements, currency moves, and external developments can reprice the market between sessions.',
           'Information does not reach everyone simultaneously, which disadvantages whoever is furthest from the source. If you are reading about it, you are not first.',
         ],
       },
@@ -365,7 +365,7 @@ export const behaviourArticles: Article[] = [
       { type: 'h2', text: 'Where we stand' },
       {
         type: 'p',
-        text: 'We teach investing. Not because trading is illegitimate — it is a real discipline that some people do well — but because for the overwhelming majority of the people who come to us, it is the wrong activity for their circumstances, their available time, and their capital.',
+        text: 'We teach investing. Not because trading is illegitimate (it is a real discipline that some people do well) but because for the overwhelming majority of the people who come to us, it is the wrong activity for their circumstances, their available time, and their capital.',
       },
       {
         type: 'p',
@@ -378,7 +378,7 @@ export const behaviourArticles: Article[] = [
     slug: 'how-to-survive-a-market-crash',
     title: 'How to survive a market crash: a framework decided in advance',
     description:
-      'What to do when everything falls at once — written for you to read now, calmly, so that the decisions already exist when you need them.',
+      'What to do when everything falls at once, written for you to read now, calmly, so that the decisions already exist when you need them.',
     category: 'Intermediate',
     publishedAt: '2026-08-28',
     readingMinutes: 8,
@@ -387,7 +387,7 @@ export const behaviourArticles: Article[] = [
     body: [
       {
         type: 'p',
-        text: 'Read this now, while nothing is falling. That is the entire point of it — a crash is precisely when you are least capable of thinking clearly, so the thinking has to be done beforehand.',
+        text: 'Read this now, while nothing is falling. That is the entire point of it: a crash is precisely when you are least capable of thinking clearly, so the thinking has to be done beforehand.',
       },
       { type: 'h2', text: 'What normal looks like' },
       {
@@ -396,7 +396,7 @@ export const behaviourArticles: Article[] = [
       },
       {
         type: 'p',
-        text: 'This matters because the first one always feels like a special case — like this time something is structurally different. Sometimes something is. The response is still the same.',
+        text: 'This matters because the first one always feels like a special case, like this time something is structurally different. Sometimes something is. The response is still the same.',
       },
       { type: 'h2', text: 'What actually determines your outcome' },
       {
@@ -405,7 +405,7 @@ export const behaviourArticles: Article[] = [
       },
       {
         type: 'p',
-        text: 'An investor who can leave their portfolio alone experiences a decline as a temporary paper loss. An investor who needs the money — because there is no emergency fund, or because they borrowed to invest — converts that paper loss into a permanent one at the worst available price.',
+        text: 'An investor who can leave their portfolio alone experiences a decline as a temporary paper loss. An investor who needs the money (because there is no emergency fund, or because they borrowed to invest) converts that paper loss into a permanent one at the worst available price.',
       },
       {
         type: 'p',
@@ -418,13 +418,13 @@ export const behaviourArticles: Article[] = [
           'Do nothing for a week. No selling, no buying, no changes. The urge to act is at its strongest and your judgement at its weakest in the first days.',
           'Check your actual situation. Is your emergency fund intact? Is your income secure? Do you need any of this money in the next three years? This is a factual review, not an emotional one.',
           'Read your written thesis for each holding. Has anything changed about the businesses, or only about their prices? These are different questions and the distinction is everything.',
-          'Sell only where the thesis is genuinely broken. Not because a price fell — because a fact you relied on stopped being true.',
-          'If you have cash and your emergency fund is intact, consider buying — gradually, into your existing plan, not in a single decisive move.',
+          'Sell only where the thesis is genuinely broken. Not because a price fell, but because a fact you relied on stopped being true.',
+          'If you have cash and your emergency fund is intact, consider buying, gradually, into your existing plan, not in a single decisive move.',
         ],
       },
       {
         type: 'callout',
-        text: 'Write down, today, what you will do if your portfolio falls 30%. A decision made now, in calm conditions, is worth far more than one made in the moment — and it is the only way to find out whether your allocation is one you can actually live with.',
+        text: 'Write down, today, what you will do if your portfolio falls 30%. A decision made now, in calm conditions, is worth far more than one made in the moment, and it is the only way to find out whether your allocation is one you can actually live with.',
       },
       { type: 'h2', text: 'What to avoid' },
       {
@@ -449,7 +449,7 @@ export const behaviourArticles: Article[] = [
       { type: 'h2', text: 'Afterwards' },
       {
         type: 'p',
-        text: 'When it is over, write down what you actually did and how you actually felt. That record is the most accurate risk-tolerance assessment you will ever have — far better than any quiz, including ours.',
+        text: 'When it is over, write down what you actually did and how you actually felt. That record is the most accurate risk-tolerance assessment you will ever have, far better than any quiz, including ours.',
       },
       {
         type: 'p',
@@ -462,7 +462,7 @@ export const behaviourArticles: Article[] = [
     slug: 'what-happens-in-an-advisory-call',
     title: 'What actually happens in a one-on-one advisory call',
     description:
-      'A step-by-step account of the Launchpad session — what we ask, what you receive, and what we will refuse to do.',
+      'A step-by-step account of the Launchpad session: what we ask, what you receive, and what we will refuse to do.',
     category: 'Advisory',
     publishedAt: '2026-08-29',
     readingMinutes: 6,
@@ -480,7 +480,7 @@ export const behaviourArticles: Article[] = [
       },
       {
         type: 'p',
-        text: 'The purpose is to avoid spending the first half of a paid session on background questions. Fill it in honestly — a plan built on a flattering version of your finances is worth nothing.',
+        text: 'The purpose is to avoid spending the first half of a paid session on background questions. Fill it in honestly: a plan built on a flattering version of your finances is worth nothing.',
       },
       { type: 'h2', text: 'The first part: your situation, not the market' },
       {
@@ -494,7 +494,7 @@ export const behaviourArticles: Article[] = [
       { type: 'h2', text: 'The second part: risk, in both senses' },
       {
         type: 'p',
-        text: 'We separate your capacity for risk — your horizon, income stability, and how much of your total savings is involved — from your tolerance for it, which is behavioural and much harder to assess honestly.',
+        text: 'We separate your capacity for risk (your horizon, income stability, and how much of your total savings is involved) from your tolerance for it, which is behavioural and much harder to assess honestly.',
       },
       {
         type: 'p',
@@ -507,7 +507,7 @@ export const behaviourArticles: Article[] = [
       },
       {
         type: 'p',
-        text: 'We work through how to evaluate a company — what to read in the annual report, which ratios matter and what each one can hide, how to think about sector exposure, and how to size a position relative to what you do not know. We use real examples so it is concrete.',
+        text: 'We work through how to evaluate a company: what to read in the annual report, which ratios matter and what each one can hide, how to think about sector exposure, and how to size a position relative to what you do not know. We use real examples so it is concrete.',
       },
       {
         type: 'p',
@@ -546,7 +546,7 @@ export const behaviourArticles: Article[] = [
       { type: 'h2', text: 'Who should not book one' },
       {
         type: 'p',
-        text: 'If you want stock picks, this will disappoint you and you should not pay for it. If you have no emergency fund, start with our free material — we will only tell you the same thing, and charge you for it.',
+        text: 'If you want stock picks, this will disappoint you and you should not pay for it. If you have no emergency fund, start with our free material. We will only tell you the same thing, and charge you for it.',
       },
       {
         type: 'p',
