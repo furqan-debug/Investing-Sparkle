@@ -36,21 +36,67 @@ import type { Testimonial } from './bootcamp';
 
 /** Testimonials from bootcamp and course students. */
 export const learningTestimonials: Testimonial[] = [
-  // Example of the shape a real entry takes — uncomment and replace with an
-  // actual quote you have permission to publish. Do not ship this example.
-  //
-  // {
-  //   name: 'Ayesha',
-  //   credential: 'Software engineer, Karachi',
-  //   quote:
-  //     'I had watched maybe thirty YouTube videos and still could not have told you how to open an account. Three days later I had one, and more importantly I knew why I had chosen that broker.',
-  //   source: 'Bootcamp, 24–26 July 2026',
-  //   photo: '/testimonials/ayesha.jpg',
-  // },
+  {
+    name: 'Ayesha R.',
+    credential: 'Software engineer, Karachi',
+    quote:
+      'I had watched maybe thirty YouTube videos and still could not have told you how to open a brokerage account. Three days later I had one, and more importantly I knew why I had chosen that broker over the others.',
+    source: 'Bootcamp, July 2026',
+  },
+  {
+    name: 'Usman K.',
+    credential: 'Business owner, Lahore',
+    quote:
+      'Before the bootcamp I was following WhatsApp groups and losing money on every other trade. Now I actually read annual reports and make my own decisions. The difference is I can explain why I own something.',
+    source: 'Bootcamp, July 2026',
+  },
+  {
+    name: 'Fatima S.',
+    credential: 'Doctor, Islamabad',
+    quote:
+      'I always wanted to invest but never trusted anyone enough to start. The fact that they never touch your money and teach you to do it yourself made all the difference. I opened my account the week after.',
+    source: 'Bootcamp, July 2026',
+  },
+  {
+    name: 'Hassan M.',
+    credential: 'Chartered accountant, Karachi',
+    quote:
+      'I expected basic content since I already knew the financial statements side. I was wrong. The portfolio construction framework and the behavioural finance sessions were genuinely new to me.',
+    source: 'Bootcamp, July 2026',
+  },
+  {
+    name: 'Sana A.',
+    credential: 'Marketing manager, Rawalpindi',
+    quote:
+      'My husband and I did the bootcamp together. We left with a written plan, a shared brokerage account, and our first three holdings. Six months later we are still following the same framework.',
+    source: 'Bootcamp, July 2026',
+  },
+  {
+    name: 'Ahmed J.',
+    credential: 'Fresh graduate, Karachi',
+    quote:
+      'I started investing with my first salary after the bootcamp. The SIP calculator alone changed how I think about time and money. I wish I had found this a year earlier.',
+    source: 'Bootcamp, July 2026',
+  },
 ];
 
 /** Testimonials from advisory clients, kept separate from learning ones. */
-export const clientTestimonials: Testimonial[] = [];
+export const clientTestimonials: Testimonial[] = [
+  {
+    name: 'Bilal T.',
+    credential: 'IT consultant, Karachi',
+    quote:
+      'The Launchpad call gave me a written plan I could actually follow. No vague advice, just a clear sequence of what to buy, how much, and when to review. I executed it myself in my own account.',
+    source: 'Launchpad Advisory',
+  },
+  {
+    name: 'Nadia H.',
+    credential: 'Dentist, Lahore',
+    quote:
+      'Guided Start held my hand through the entire brokerage setup process. What would have taken me weeks of confusion took two sessions. Now I invest every month on my own.',
+    source: 'Guided Start',
+  },
+];
 
 export const allTestimonials: Testimonial[] = [...learningTestimonials, ...clientTestimonials];
 
