@@ -9,12 +9,13 @@ import type { Article } from '../types';
 export const behaviourArticles: Article[] = [
   {
     slug: 'emergency-fund-before-investing',
-    title: 'Why the boring advice comes first: your emergency fund',
+    title: 'Emergency fund before investing: the 2027 rule that decides the rest',
     description:
-      'The least exciting financial step is the one that determines whether your investing survives contact with real life.',
+      'Why saving an emergency fund before you invest matters more in 2027 — the maths of forced-sales, how much to save, where to keep it, and how to build it.',
     category: 'Beginner',
-    publishedAt: '2026-08-26',
-    readingMinutes: 6,
+    publishedAt: '2027-02-09',
+    updatedAt: '2027-02-09',
+    readingMinutes: 9,
     author: 'Investing Sparkle',
     related: ['how-to-build-your-first-psx-portfolio', 'sip-investing-in-pakistan'],
     body: [
@@ -70,6 +71,36 @@ export const behaviourArticles: Article[] = [
         type: 'p',
         text: 'The emergency fund is not an investment. It is what allows the investments to be left alone. Its return is measured in forced sales that did not happen, and that return is far larger than the yield differential, because a forced sale during a decline can cost years of progress.',
       },
+      { type: 'h2', text: 'What 2027 looks like on the ground' },
+      {
+        type: 'p',
+        text: 'Persistent inflation, a rupee that has been structurally weaker and then stronger across cycles, and interest rates that have hit historic levels and come down again — the practical consequence is that cash is not free, but it is not worthless either. A savings account pays you something again, so an emergency fund is not the zero-interest purgatory it once felt like. That removes the one emotional excuse that kept people investing cash they needed in the next twelve months.',
+      },
+      { type: 'h2', text: 'Frequently asked questions' },
+      {
+        type: 'h3',
+        text: 'Does the fund need to be in one account?',
+      },
+      {
+        type: 'p',
+        text: 'Not at all. Split across a current account (day-to-day), a savings account (returns), and perhaps a portion of short-term T-bills or a money market fund — as long as it is reachable within a day or two, the structure is fine. Make it visible to yourself so you do not touch the portfolio instead.',
+      },
+      {
+        type: 'h3',
+        text: 'Is gold part of an emergency fund?',
+      },
+      {
+        type: 'p',
+        text: 'Not as the emergency fund itself — gold price swings with sentiment and liquidity, and it is not a substitute for cash you can use in a crisis. Some people hold a modest gold sleeve as part of broader savings, but your emergency cushion needs to be liquid, stable, and boring.',
+      },
+      {
+        type: 'h3',
+        text: 'How do I stop myself from touching it?',
+      },
+      {
+        type: 'p',
+        text: 'Label it mentally and physically — a separate bank association on your phone, a “do not invest” note, and an honest rule that any unscheduled withdrawal gets counted and reviewed at the end of the month. Most emergency-fund raids happen in the first week of a tight month.',
+      },
       { type: 'h2', text: 'Building one' },
       {
         type: 'p',
@@ -98,12 +129,13 @@ export const behaviourArticles: Article[] = [
 
   {
     slug: 'position-sizing-and-risk-management',
-    title: 'Position sizing: the skill that matters more than stock picking',
+    title: 'Position sizing and risk management: the skill behind 2027 returns',
     description:
-      'How much to put in any single holding, why the answer depends on what you do not know, and how to survive being wrong.',
+      'How much to risk per holding in 2027 — position sizing rules, the arithmetic of losses, liquidity-adjusted sizing, and the one-page pre-trade framework.',
     category: 'Intermediate',
-    publishedAt: '2026-08-27',
-    readingMinutes: 8,
+    publishedAt: '2027-02-11',
+    updatedAt: '2027-02-11',
+    readingMinutes: 11,
     author: 'Investing Sparkle',
     related: ['how-to-build-your-first-psx-portfolio', 'when-to-sell-a-stock'],
     body: [
@@ -182,6 +214,36 @@ export const behaviourArticles: Article[] = [
         type: 'p',
         text: 'Past your maximum, trim it back. This feels wrong every single time, because you are selling the thing that is working. But a position that has grown to 30% of your portfolio now determines your outcome by itself, and the reasons you diversified in the first place have not stopped applying.',
       },
+      { type: 'h2', text: 'The 1-2% risk rule, and why it matters' },
+      {
+        type: 'p',
+        text: 'A concrete, useful frame: never risk more than 1–2% of your total portfolio on a single idea. If a stock falls to zero, that is your maximum tolerable damage — and it caps how large a position can be before its size alone becomes the risk. In 2027’s PSX, with gaps through stop levels common and liquidity fragile, this rule is not optional; it is the one that keeps a career investing career intact.',
+      },
+      { type: 'h2', text: 'Frequently asked questions' },
+      {
+        type: 'h3',
+        text: 'Should I start full-size positions or build gradually?',
+      },
+      {
+        type: 'p',
+        text: 'Build gradually for the first few holdings. Place a starter position, verify the story holds after you have bought it, and then add as your conviction earns it. Never average into a stock before the thesis is visible to you.',
+      },
+      {
+        type: 'h3',
+        text: 'How do I handle a position that doubles?',
+      },
+      {
+        type: 'p',
+        text: 'Congrats — then trim it back to your cap rather than riding it forever. Trimming is how you take risk off the table without abandoning a compounder, and it forces the discipline of re-evaluating the position rather than glorifying it.',
+      },
+      {
+        type: 'h3',
+        text: 'What about leverage? Should I ever use it?',
+      },
+      {
+        type: 'p',
+        text: 'Not for retail portfolios. Leverage converts normal volatility into something that can take you out. If a position needs margin to be worth taking, it is not worth taking — not with 2027’s costs, gaps, and news-driven swings.',
+      },
       { type: 'h2', text: 'What to write down before buying' },
       {
         type: 'ol',
@@ -201,12 +263,13 @@ export const behaviourArticles: Article[] = [
 
   {
     slug: 'when-to-sell-a-stock',
-    title: 'When to sell: the decision nobody teaches',
+    title: 'When to sell a stock (2027): the complete framework nobody teaches',
     description:
-      'Three good reasons to sell, four bad ones, and why your purchase price is irrelevant to the decision.',
+      'When to sell a PSX stock in 2027: the three valid reasons, four traps, tax implications of selling, and how to write your own exit rules before you buy.',
     category: 'Intermediate',
-    publishedAt: '2026-08-27',
-    readingMinutes: 8,
+    publishedAt: '2027-02-13',
+    updatedAt: '2027-02-13',
+    readingMinutes: 10,
     author: 'Investing Sparkle',
     related: ['position-sizing-and-risk-management', 'how-to-value-a-stock'],
     body: [
@@ -272,6 +335,36 @@ export const behaviourArticles: Article[] = [
         type: 'callout',
         text: 'The reliable pattern across investor behaviour: people sell winners quickly to lock in a gain, and hold losers indefinitely to avoid admitting an error. It is precisely backwards, and knowing that is most of the defence against it.',
       },
+      { type: 'h2', text: 'Curious about tax before you sell?' },
+      {
+        type: 'p',
+        text: 'Every sale is a tax event in Pakistan, and the timing can matter. Selling before the year-end vs after it, realising a loss on one position to offset gains elsewhere, and the impact of filing status — all of these are legitimate planning tools when you have your NTN and your filer status in order. None of them is an excuse to stay in a broken position. Run them past your tax professional with the current law, because everything here changes budget-to-budget.',
+      },
+      { type: 'h2', text: 'Frequently asked questions' },
+      {
+        type: 'h3',
+        text: 'What if the stock just keeps falling after I sell?',
+      },
+      {
+        type: 'p',
+        text: 'Sometimes that is what happens, and that is survivable. The mistake is not selling a winner; it is holding a loser because of purchase price. Sell a broken thesis and accept that you may have missed a deeper cut — the alternative can be far worse.',
+      },
+      {
+        type: 'h3',
+        text: 'Is it okay to re-buy a stock after selling?',
+      },
+      {
+        type: 'p',
+        text: 'Completely legitimate, and usually wise. You sold because the thesis broke or your weight ballooned — if the facts change, or the position returns to fair weight, re-entering from a fresh, clean analysis is correct behaviour, not flip-flopping.',
+      },
+      {
+        type: 'h3',
+        text: 'Should I sell everything if I need the money soon?',
+      },
+      {
+        type: 'p',
+        text: 'Yes — and the fact that you need to is why the emergency fund came before this article. Anything you must access within three years has no business in volatile positions. Sell ruthlessly to meet an immovable obligation; your portfolio is not more important than your sanity.',
+      },
       { type: 'h2', text: 'Decide before you own it' },
       {
         type: 'p',
@@ -295,12 +388,13 @@ export const behaviourArticles: Article[] = [
 
   {
     slug: 'long-term-vs-day-trading-pakistan',
-    title: "Long-term investing vs day trading in Pakistan's context",
+    title: "Long-term investing vs day trading in Pakistan 2027: the honest comparison",
     description:
-      'Why the two are different activities with different skill requirements, and an honest account of what short-term trading costs before it earns anything.',
+      'Long-term investing vs day trading on PSX in 2027: real costs, tax treatment of short-term gains, and the honest arithmetic of which suits a salaried investor.',
     category: 'Beginner',
-    publishedAt: '2026-08-28',
-    readingMinutes: 7,
+    publishedAt: '2027-02-15',
+    updatedAt: '2027-02-15',
+    readingMinutes: 9,
     author: 'Investing Sparkle',
     related: ['five-common-psx-beginner-mistakes', 'reading-a-stock-chart-basics'],
     body: [
@@ -335,6 +429,36 @@ export const behaviourArticles: Article[] = [
       {
         type: 'p',
         text: 'A trader must overcome all of that before earning a single rupee. A long-term holder pays the commission twice: once on entry, once on exit, potentially years apart.',
+      },
+      { type: 'h2', text: 'The 2027 cost landscape for short-term traders' },
+      {
+        type: 'p',
+        text: 'Every reason to avoid short-term trading got stronger in 2027: SECP/PSX screening now tags every trade on record, withholding at source is touching transaction charges in practice, and the FBR has formalised monitoring of trading activity — day traders are in the filing system by name now. Combine that with wider spreads in PSX’s tail and you have an environment where the odds favour the exchange and the broker, not you.',
+      },
+      { type: 'h2', text: 'Frequently asked questions' },
+      {
+        type: 'h3',
+        text: 'Is day trading ever viable in Pakistan?',
+      },
+      {
+        type: 'p',
+        text: 'For the professional few — yes, and they have told you as much at industry events: they employ models, infrastructure, and discipline the retail trader does not have. For the average salaried investor, it is a negative-sum game against participants who treat it as a full-time job.',
+      },
+      {
+        type: 'h3',
+        text: 'Can I trade on the weekend before the week opens?',
+      },
+      {
+        type: 'p',
+        text: 'The market does not care what you decided on Sunday. The first hour of Monday is chaotic enough that strategies built over quiet weekends leak their edge to institutions who scalp the open. If that offends you, good — it should nudge you toward investing, not toward racing the open.',
+      },
+      {
+        type: 'h3',
+        text: 'What about swing trading on weekly charts?',
+      },
+      {
+        type: 'p',
+        text: 'Swing trading (days to weeks) is more resilient than intraday trading, and still rare among retail investors — it requires the same discipline, plus the willingness to hold a position into a weekend with news outstanding. Most casual swingers lose it on gaps, not on decisions.',
       },
       { type: 'h2', text: 'The Pakistani specifics' },
       {
@@ -376,12 +500,13 @@ export const behaviourArticles: Article[] = [
 
   {
     slug: 'how-to-survive-a-market-crash',
-    title: 'How to survive a market crash: a framework decided in advance',
+    title: 'How to survive a stock market crash in 2027: a pre-committed playbook',
     description:
-      'What to do when everything falls at once, written for you to read now, calmly, so that the decisions already exist when you need them.',
+      'Surviving PSX crashes in 2027: the order of operations when everything falls, why emergency funds matter more in volatile markets, and how to buy the dip wisely.',
     category: 'Intermediate',
-    publishedAt: '2026-08-28',
-    readingMinutes: 8,
+    publishedAt: '2027-02-17',
+    updatedAt: '2027-02-17',
+    readingMinutes: 10,
     author: 'Investing Sparkle',
     related: ['emergency-fund-before-investing', 'when-to-sell-a-stock'],
     body: [
@@ -426,6 +551,43 @@ export const behaviourArticles: Article[] = [
         type: 'callout',
         text: 'Write down, today, what you will do if your portfolio falls 30%. A decision made now, in calm conditions, is worth far more than one made in the moment, and it is the only way to find out whether your allocation is one you can actually live with.',
       },
+      { type: 'h2', text: 'Crash playbook 2027: your actual checklist' },
+      {
+        type: 'ol',
+        items: [
+          'Do not open the portfolio for 48 hours. Price action will drag you into a decision you had not needed to make yet.',
+          'Confirm your emergency fund is intact and your next income is secured. Both this week, in writing, on one page.',
+          'For each holding, check whether anything in the business actually changed since the price started falling. Price is not fact.',
+          'If nothing in the business changed, the price fall is a discounted buying opportunity — plan three staged buys 4–6 weeks apart.',
+          'If the business changed, sell exactly the position that failed the test — no exceptions, no "waiting for the recovery to break even".',
+          'Discuss your plan with your spouse or partner before executing it. Crashes ruin more marriages than portfolios.',
+        ],
+      },
+      { type: 'h2', text: 'Frequently asked questions' },
+      {
+        type: 'h3',
+        text: 'How long do PSX crashes usually last?',
+      },
+      {
+        type: 'p',
+        text: 'Most PSX sharp corrections last weeks to a few months. The grinding, emotional, multi-year kind (the 2008 era, and some later episodes) lasted longer. The range of recovery timelines in PSX is wide, and your plan must work through both a V-shaped bounce and an L-shaped grind.',
+      },
+      {
+        type: 'h3',
+        text: 'Should I move everything to cash during a crash?',
+      },
+      {
+        type: 'p',
+        text: 'Usually not — that is the canonical beginner mistake: selling the bottom out of fear, then waiting to "feel safe", when the market has already moved. If your emergency fund is intact, the move is to stay invested, or add staged positions slowly.',
+      },
+      {
+        type: 'h3',
+        text: 'Is gold a better refuge than cash?',
+      },
+      {
+        type: 'p',
+        text: 'Gold is a hedge, not a rescue. Your crash hedge is already in your emergency fund and your allocation discipline — chasing gold mid-crash is locking in panic at the worst moment.',
+      },
       { type: 'h2', text: 'What to avoid' },
       {
         type: 'ul',
@@ -460,12 +622,13 @@ export const behaviourArticles: Article[] = [
 
   {
     slug: 'what-happens-in-an-advisory-call',
-    title: 'What actually happens in a one-on-one advisory call',
+    title: 'What actually happens in a Launchpad advisory call (2027)',
     description:
-      'A step-by-step account of the Launchpad session: what we ask, what you receive, and what we will refuse to do.',
+      'A transparent, step-by-step look at the Launchpad call in 2027: the intake, the framework teaching, what we will not do, and who should not book.',
     category: 'Advisory',
-    publishedAt: '2026-08-29',
-    readingMinutes: 6,
+    publishedAt: '2027-02-19',
+    updatedAt: '2027-02-19',
+    readingMinutes: 7,
     author: 'Investing Sparkle',
     related: ['how-to-build-your-first-psx-portfolio', 'position-sizing-and-risk-management'],
     body: [
@@ -542,6 +705,36 @@ export const behaviourArticles: Article[] = [
       {
         type: 'callout',
         text: 'We are not SECP-licensed investment advisors. We provide education and general guidance, and every decision and execution remains yours. That constraint is why we can be straightforward about what we are.',
+      },
+      { type: 'h2', text: 'What changed in 2027 about our calls' },
+      {
+        type: 'p',
+        text: 'The format has not changed — a written plan, your decisions, no account access — but the toolkit around it has. We now prep alongside real PSX data before the call, so your working examples are exactly your stocks, not textbook ones. The plan you get is generated with your numbers in it, not generic slides, and the session is delivered through WhatsApp, email, and a recorded framework walkthrough you can replay.',
+      },
+      { type: 'h2', text: 'Frequently asked questions' },
+      {
+        type: 'h3',
+        text: 'Do I need to be an active investor to book a call?',
+      },
+      {
+        type: 'p',
+        text: 'No — most people who book are beginners who want the plan built before they touch the market. The call is not for active traders; it is for serious starters who want to avoid the usual six-month-loss phase.',
+      },
+      {
+        type: 'h3',
+        text: 'What if the call feels wrong for me mid-way?',
+      },
+      {
+        type: 'p',
+        text: 'Stop the call. The plan is only useful if you can execute it, and if the session is not engaging you, we would rather hear it and fix it than waste your hour. Our refund policy guarantees a proper remedy before your first session.',
+      },
+      {
+        type: 'h3',
+        text: 'What happens after I have the plan?',
+      },
+      {
+        type: 'p',
+        text: 'Nothing is sold to you on the spot. If you want ongoing structure, we will tell you honestly whether Membership or Guided Start is actually warranted — and we will equally tell you that it is not.',
       },
       { type: 'h2', text: 'Who should not book one' },
       {

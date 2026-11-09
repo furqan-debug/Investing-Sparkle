@@ -12,12 +12,13 @@ import type { Article } from '../types';
 export const practicalArticles: Article[] = [
   {
     slug: 'shariah-compliant-investing-psx-guide',
-    title: "Shariah-compliant investing on PSX: a complete beginner's guide",
+    title: "Shariah-compliant investing on PSX in 2027: the complete beginner's guide",
     description:
-      "What the screening actually tests, why compliant companies drop off the list, how purification works, and what it means for your portfolio's shape.",
+      'What Shariah screening tests in 2027, why compliant stocks drop off the list, purification, the investable universe today, and how to structure a portfolio.',
     category: 'Beginner',
-    publishedAt: '2026-08-23',
-    readingMinutes: 10,
+    publishedAt: '2027-01-27',
+    updatedAt: '2027-01-27',
+    readingMinutes: 12,
     author: 'Investing Sparkle',
     related: ['kse-100-vs-kmi-30-explained', 'zakat-on-shares-in-pakistan'],
     body: [
@@ -84,6 +85,36 @@ export const practicalArticles: Article[] = [
           'Different behaviour across the interest-rate cycle, which is why the KMI-30 and the KSE-100 diverge.',
         ],
       },
+      { type: 'h2', text: 'The investable universe in 2027' },
+      {
+        type: 'p',
+        text: 'PSX lists several hundred actively traded companies, and at any given time a minority of them pass both screens. The usable list is, therefore, small enough that each name deserves real research before you buy — and it has grown meaningfully in recent years as non-bank financials and technology services have listed more consistently compliant companies. The list is not static; screening reviews happen periodically and constituents change without warning.',
+      },
+      { type: 'h2', text: 'Frequently asked questions' },
+      {
+        type: 'h3',
+        text: 'Can I invest in PSX mutual funds that are Shariah-compliant instead?',
+      },
+      {
+        type: 'p',
+        text: 'Yes, and for many investors that is the right answer. SECP-regulated Shariah mutual funds exist, they are screened, they carry the same purity rules, and they handle the monitoring burden for you in exchange for a management fee. If you do not want to track screening yourself, a compliant fund is an entirely legitimate starting point.',
+      },
+      {
+        type: 'h3',
+        text: 'What happens to my shares if a company fails screening mid-year?',
+      },
+      {
+        type: 'p',
+        text: 'You are not forced to sell. The screening constraint applies to new purchases. But once a stock fails, holding it with continued non-compliant income is no longer compliant investing — most scholars say purify the non-compliant portion and sell when reasonably possible. Decide your rule before it happens, not while it is happening.',
+      },
+      {
+        type: 'h3',
+        text: 'Does Shariah compliance mean the stock will go up?',
+      },
+      {
+        type: 'p',
+        text: 'No. Compliance is a filter about what you own, not a guarantee about returns. Compliant companies can and do fall in value. The discipline of compliance does not replace the need for research, patience, and the risk controls in any portfolio.',
+      },
       { type: 'h2', text: 'Benchmark against the right thing' },
       {
         type: 'p',
@@ -99,12 +130,13 @@ export const practicalArticles: Article[] = [
 
   {
     slug: 'how-to-build-your-first-psx-portfolio',
-    title: 'How to build your first PSX portfolio',
+    title: 'How to build your first PSX portfolio in 2027: a step-by-step playbook',
     description:
-      'How many holdings, how to size them, what to buy first, and the order to do it in, with worked rupee examples.',
+      'Build your first PSX portfolio in 2027: how many holdings, equal-weight vs conviction sizing, worked rupee examples, sector caps, and the review habit.',
     category: 'Beginner',
-    publishedAt: '2026-08-24',
-    readingMinutes: 9,
+    publishedAt: '2027-01-29',
+    updatedAt: '2027-01-29',
+    readingMinutes: 12,
     author: 'Investing Sparkle',
     related: ['position-sizing-and-risk-management', 'sector-analysis-pakistan'],
     body: [
@@ -180,6 +212,61 @@ export const practicalArticles: Article[] = [
         type: 'p',
         text: 'Those criteria will exclude most of what gets talked about in WhatsApp groups. That is a feature.',
       },
+      { type: 'h2', text: 'The 2027 playbook' },
+      {
+        type: 'p',
+        text: 'Here is the concrete sequence we walk students through, in order. Skip nothing.',
+      },
+      {
+        type: 'ol',
+        items: [
+          'Open and fund your account, and confirm your broker’s settlement cycle in writing before the first trade.',
+          'Build your watchlist of 15–25 liquid PSX names you understand.',
+          'Pick your starting core: 6–8 of them, one or two sectors, within your risk profile and Shariah status if applicable.',
+          'Invest a fixed amount every month for 6–12 months, equal-weighted at first, no lump sums.',
+          'Once you have been through two earnings seasons with your holdings, graduate to conviction weighting — biggest position no more than roughly double the smallest.',
+          'Set your quarterly review date now, and your stop-reading-the-news date for the days in between.',
+        ],
+      },
+      { type: 'h2', text: 'Sample allocation for a PKR 1,000,000 first portfolio' },
+      {
+        type: 'p',
+        text: 'A typical construction — not advice, and you should calibrate to your own risk profile — looks like this:',
+      },
+      {
+        type: 'ul',
+        items: [
+          '40% — 4 to 5 core, quality, cash-generative names you plan to hold for years.',
+          '30% — 3 to 4 cyclicals or recovery names with clearer catalysts, sized smaller.',
+          '20% — one or two special situations or a Shariah-compliant core if that is your constraint, capped and deliberate.',
+          '10% — cash to keep yourself solvent and patient through drawdowns.',
+        ],
+      },
+      { type: 'h2', text: 'Frequently asked questions' },
+      {
+        type: 'h3',
+        text: 'Do I need to do this myself, or is a mutual fund enough?',
+      },
+      {
+        type: 'p',
+        text: 'A good mutual fund is honestly sufficient for most investors — it buys you diversification, professional monitoring, and discipline for a fee. The point of this article is for those who want to own and understand their own holdings, or add a direct-equity sleeve alongside a fund. Many investors do both.',
+      },
+      {
+        type: 'h3',
+        text: 'How do I know when to add vs rotate a holding?',
+      },
+      {
+        type: 'p',
+        text: 'Add to a holding when the price falls and the thesis holds. Rotate when the thesis breaks — not when the price is down. If you cannot tell the difference, you did not have a thesis in the first place, which is what reviews are for.',
+      },
+      {
+        type: 'h3',
+        text: 'What is a realistic first-year expectation?',
+      },
+      {
+        type: 'p',
+        text: 'The honest range is wide: you could be up substantially, or down, or flat — all in a single year. A disciplined start is not about your first-year return; it is about whether you are doing this after a bad quarter without panic-selling. Most people are not, which is what separates a starter portfolio from a real one.',
+      },
       { type: 'h2', text: 'Spread the entry over time' },
       {
         type: 'p',
@@ -212,12 +299,13 @@ export const practicalArticles: Article[] = [
 
   {
     slug: 'dividends-in-pakistan-explained',
-    title: 'Dividends in Pakistan: how they work and when you actually get paid',
+    title: 'Dividends in Pakistan in 2027: ex-dates, payout ratios and yields',
     description:
-      'Declaration, book closure, ex-dividend, and payment, plus bonus shares, what the payout ratio tells you, and why a high yield can be a warning.',
+      'How dividends work on PSX in 2027: declaration vs ex-date vs book closure, bonus shares, payout ratios, why high yields can warn you, and the tax angle.',
     category: 'Beginner',
-    publishedAt: '2026-08-24',
-    readingMinutes: 7,
+    publishedAt: '2027-02-01',
+    updatedAt: '2027-02-01',
+    readingMinutes: 10,
     author: 'Investing Sparkle',
     related: ['understanding-pe-roe-and-other-ratios', 'tax-on-stock-investing-pakistan'],
     body: [
@@ -292,6 +380,41 @@ export const practicalArticles: Article[] = [
         type: 'p',
         text: 'Before being attracted by a high yield, check why the price fell. If the answer is that earnings are deteriorating, the yield you are looking at is historical, and the forward yield may be far lower, or zero.',
       },
+      { type: 'h2', text: 'How to spot a good dividend payer' },
+      {
+        type: 'ol',
+        items: [
+          'Payout ratio consistently under 60–70%, so the dividend is covered by earnings and not by debt or reserves.',
+          'A track record of raising the dividend, not just paying it — companies that raise it tell you they expect earnings to keep growing.',
+          'Strong, predictable free cash flow, since dividends are ultimately paid in cash, not in accounting profits.',
+          'A reasonable history of no dramatic cuts — check five years of dividend history, not just this year.',
+        ],
+      },
+      { type: 'h2', text: 'Frequently asked questions' },
+      {
+        type: 'h3',
+        text: 'Are PSX dividends guaranteed?',
+      },
+      {
+        type: 'p',
+        text: 'No. Dividends are discretionary — the board recommends them and shareholders approve them, and none of that creates a right. Treat any marketing that implies a guaranteed dividend as a red flag about whoever is marketing.',
+      },
+      {
+        type: 'h3',
+        text: 'Do I pay tax on dividends in Pakistan?',
+      },
+      {
+        type: 'p',
+        text: 'Tax is deducted at source at the rate applicable to your filer status on the day the money is paid. Non-filers face substantially higher rates. Where the law has changed at recent budgets, verify the current rate directly with FBR — do not rely on any article.',
+      },
+      {
+        type: 'h3',
+        text: 'Do I receive bonus shares instead of dividends?',
+      },
+      {
+        type: 'p',
+        text: 'Sometimes. A bonus issue increases share count proportionally at no cost, no cash changes hands, and no ownership portion increases — it is not a payout in any meaningful sense. Do not count a bonus as income when evaluating a stock.',
+      },
       { type: 'h2', text: 'Tax and receipt' },
       {
         type: 'p',
@@ -306,12 +429,13 @@ export const practicalArticles: Article[] = [
 
   {
     slug: 'zakat-on-shares-in-pakistan',
-    title: 'Zakat on shares: how to calculate it on an investment portfolio',
+    title: 'Zakat on shares in Pakistan in 2027: the complete calculation',
     description:
-      'The two common approaches to calculating zakat on listed equities, how holding intent changes the answer, and what to do about dividends and cash.',
+      'How to calculate zakat on your PSX portfolio in 2027: trading vs long-term intent, zakat-per-share disclosure, what else counts as zakatable cash, Nisab.',
     category: 'Beginner',
-    publishedAt: '2026-08-25',
-    readingMinutes: 7,
+    publishedAt: '2027-02-03',
+    updatedAt: '2027-02-03',
+    readingMinutes: 10,
     author: 'Investing Sparkle',
     related: ['shariah-compliant-investing-psx-guide', 'dividends-in-pakistan-explained'],
     body: [
@@ -393,6 +517,36 @@ export const practicalArticles: Article[] = [
         type: 'p',
         text: "Keep the working. Next year it takes a fraction of the time, and having last year's method written down removes the annual re-litigation of decisions you already made.",
       },
+      { type: 'h2', text: 'Nisab in 2027' },
+      {
+        type: 'p',
+        text: 'The nisab threshold is pegged to gold or silver prices, and gold has been the benchmark most Pakistani scholars point to in recent years because it is more stable in purchasing power. It is recalculated by monitoring the market rate on your zakat date. Use a reliable gold spot price on the day, fix the amount, and apply it consistently — do not chase a different number each month.',
+      },
+      { type: 'h2', text: 'Frequently asked questions' },
+      {
+        type: 'h3',
+        text: 'Is my entire portfolio zakatable even if it fell in value?',
+      },
+      {
+        type: 'p',
+        text: 'For shares held for trading, yes — zakat is on current market value, so a fall means less zakat, full stop. For long-term holdings under the “per-share zakatable assets” approach, the answer depends on the company’s accounts, not on the stock’s market price.',
+      },
+      {
+        type: 'h3',
+        text: 'Do I pay zakat on business stock at cost or at market?',
+      },
+      {
+        type: 'p',
+        text: 'Scholars commonly hold stock-in-trade zakatable at its resale value on the zakat date, which is why the good companies publish per-share figures to make this mechanical for you. For retail stock traders, the working market value calculation is the accepted middle path.',
+      },
+      {
+        type: 'h3',
+        text: 'Does my broker deduct zakat for me?',
+      },
+      {
+        type: 'p',
+        text: 'No. Brokers do not calculate or collect zakat on your portfolio. The 2.5% deduction at source applies only to certain bank deposits and specific securities on specific dates — not to your shareholdings. You must compute and give it yourself.',
+      },
       { type: 'h2', text: 'A note on our role' },
       {
         type: 'p',
@@ -403,12 +557,13 @@ export const practicalArticles: Article[] = [
 
   {
     slug: 'tax-on-stock-investing-pakistan',
-    title: 'Tax on stock investing in Pakistan: what applies and where to check',
+    title: 'Tax on stock investing in Pakistan (Finance Act 2026-27): the full guide',
     description:
-      'The taxes that touch a share portfolio, why filer status matters so much, and how to keep records that make filing straightforward.',
+      'Tax in Pakistan for share investors after the Finance Act 2026-27: capital gains, dividends, filer vs non-filer rates, ATL status, and how to keep records.',
     category: 'Beginner',
-    publishedAt: '2026-08-25',
-    readingMinutes: 7,
+    publishedAt: '2027-02-05',
+    updatedAt: '2027-02-05',
+    readingMinutes: 10,
     author: 'Investing Sparkle',
     related: ['dividends-in-pakistan-explained', 'how-to-open-a-cdc-account-in-pakistan'],
     body: [
@@ -453,6 +608,36 @@ export const practicalArticles: Article[] = [
         type: 'callout',
         text: 'If you are investing meaningful amounts as a non-filer, the tax differential is likely costing you more than any realistic improvement in stock selection would gain you. Fix that first.',
       },
+      { type: 'h2', text: 'Finance Act 2026-27: where things now stand' },
+      {
+        type: 'p',
+        text: 'Every recent Finance Act has tightened the screws on share-market taxation: more documentation, wider withholding at source, sharper penalties for non-compliance, and clearer rules for how holding periods interact with capital gains. The direction of travel is obvious. If you trade casually without keeping your filer status current, you are in the FBR’s open file, and they are not ignoring it.',
+      },
+      { type: 'h2', text: 'Frequently asked questions' },
+      {
+        type: 'h3',
+        text: 'How do I become a filer?',
+      },
+      {
+        type: 'p',
+        text: 'Obtain an NTN (the FBR online portal does this in minutes), file your annual income tax return, and your name appears on the Active Taxpayers List within days to weeks. That single act usually pays for itself in one quarter of a dividend cycle.',
+      },
+      {
+        type: 'h3',
+        text: 'Does capital gains tax apply if I hold for more than one year?',
+      },
+      {
+        type: 'p',
+        text: 'The structure has historically treated long-term capital gains more generously, but the specific rates and holding-period rules have swung around with nearly every budget. File your records and check the current position at the FBR — never assume last year’s rates still hold.',
+      },
+      {
+        type: 'h3',
+        text: 'How will the FBR track my trades?',
+      },
+      {
+        type: 'p',
+        text: 'Directly. Your broker files contract notes with the exchanges and the FBR; dividends are reported at source; and your annual tax certificate already lists everything you earned, gross and net. There is no reasonable scenario in which “I didn’t realise that counted” is accepted.',
+      },
       { type: 'h2', text: 'Records to keep' },
       {
         type: 'p',
@@ -482,12 +667,13 @@ export const practicalArticles: Article[] = [
 
   {
     slug: 'sip-investing-in-pakistan',
-    title: 'Investing a fixed amount every month: does it actually work?',
+    title: 'SIP investing in Pakistan (2027): can monthly investing beat timing the market?',
     description:
-      'What regular investing does and does not achieve, why it suits most salaried investors, and how to set it up on PSX without an automatic mechanism.',
+      'Why monthly investing beats market timing for salaried Pakistani investors in 2027 — rupee-cost averaging, the SIP vs lump sum maths, and how to set it up.',
     category: 'Beginner',
-    publishedAt: '2026-08-26',
-    readingMinutes: 7,
+    publishedAt: '2027-02-07',
+    updatedAt: '2027-02-07',
+    readingMinutes: 9,
     author: 'Investing Sparkle',
     related: ['how-to-build-your-first-psx-portfolio', 'emergency-fund-before-investing'],
     body: [
@@ -533,6 +719,36 @@ export const practicalArticles: Article[] = [
       {
         type: 'p',
         text: 'The second point deserves emphasis, because it is often glossed over. Regular investing is optimal for someone earning a salary and investing as the money arrives, which is most people. It is not automatically optimal for someone sitting on cash.',
+      },
+      { type: 'h2', text: 'The 2027 maths of SIP vs lump sum' },
+      {
+        type: 'p',
+        text: 'Here is the honest version of the debate. Your lump sum, invested on day one, beats monthly investing on average — because markets rise more often than they fall, and time is the strongest driver of compound returns. The catch: nobody has a lump sum. Most people have a salary. For a salaried investor, the choice is not “lump sum or SIP” — it is “invest every month as income arrives, or float in the brokerage account and buy at emotion-driven prices”. For that investor, SIP wins, and the backtest never beats the discipline.',
+      },
+      { type: 'h2', text: 'Frequently asked questions' },
+      {
+        type: 'h3',
+        text: 'How much should I invest monthly?',
+      },
+      {
+        type: 'p',
+        text: 'Start with what stings little: enough that you notice but not so much you sweat it during a bad month. PKR 5,000–20,000 for most salaried investors is a workable range. The exact rupee figure matters less than the consistency of it.',
+      },
+      {
+        type: 'h3',
+        text: 'Should I invest in mutual funds or direct shares for an SIP?',
+      },
+      {
+        type: 'p',
+        text: 'Both work. A mutual fund SIP is set-and-forget and must buy diversification. A direct-share SIP requires you to decide the holdings and makes you do the research, which is genuinely valuable experience. Many investors run both — a fund SIP for automation, direct shares for learning.',
+      },
+      {
+        type: 'h3',
+        text: 'What happens during a market crash?',
+      },
+      {
+        type: 'p',
+        text: 'The same thing that happens every crash: people stop their SIPs out of fear, then buy again after the recovery out of greed. That cycle is where most money is lost. A pre-committed, fixed-date SIP is the concrete behavioural fix.',
       },
       { type: 'h2', text: 'Setting it up on PSX' },
       {

@@ -9,12 +9,13 @@ import type { Article } from '../types';
 export const foundationArticles: Article[] = [
   {
     slug: 'how-to-open-a-cdc-account-in-pakistan',
-    title: 'How to open a CDC account in Pakistan (step by step)',
+    title: 'How to open a CDC account in Pakistan (step by step, 2027)',
     description:
-      'A plain walkthrough of what a CDC account is, what documents you need, and the order the steps actually happen in.',
+      'A complete, up-to-date walkthrough of opening a CDC account in Pakistan: what a CDC sub-account is, what you need, and the mistakes to avoid in 2027.',
     category: 'Beginner',
-    publishedAt: '2026-08-20',
-    readingMinutes: 8,
+    publishedAt: '2027-01-15',
+    updatedAt: '2027-01-15',
+    readingMinutes: 11,
     author: 'Investing Sparkle',
     body: [
       {
@@ -107,6 +108,53 @@ export const foundationArticles: Article[] = [
           'Not asking about the fee schedule in writing. Ask for it before you sign, not after your first statement.',
         ],
       },
+      { type: 'h2', text: 'What 2027 looks different' },
+      {
+        type: 'p',
+        text: 'Account opening is now almost entirely online at the larger TREC-holder brokers, identity verification happens through NADRA’s digital checks, and the CDC’s investor-awareness drive has made the account opening window faster than it was two or three years ago. The fundamentals have not changed, the documents still matter, and the CNIC is still the thing that stops most applications.',
+      },
+      {
+        type: 'ul',
+        items: [
+          'Fully online onboarding is now the norm at most banks-turned-brokers and independent TREC holders — no branch visits for most of the process.',
+          'Biometric verification through the NADRA CNIC connection is mandatory for account opening.',
+          'The minimum age for a trading account is 18, and minors can hold a guardian-linked CDC account.',
+        ],
+      },
+      { type: 'h2', text: 'Caution: the charges nobody tells you about' },
+      {
+        type: 'p',
+        text: 'Your brokerage statement will show a stack of small charges: PSX fees, SECP charges, CDC fees, exchange regulatory fees, GST on services, and your broker’s own commission. None of these is hidden exactly, but almost nobody reads them out loud before you sign. Ask for the complete charge sheet and an example of a net settlement on an actual buy order, in writing, so you understand what a trade really costs you.',
+      },
+      {
+        type: 'p',
+        text: 'In 2027 the tax side of trading is moving in exactly the direction it has been moving for years: more documentation, more traceability, more attention from the FBR. Your NTN and your filing status are not decorative — they change what you keep from every rupee of profit and every rupee of dividend.',
+      },
+      { type: 'h2', text: 'Frequently asked questions' },
+      {
+        type: 'h3',
+        text: 'How much money do I need to open a CDC account?',
+      },
+      {
+        type: 'p',
+        text: 'There is no legal minimum in most cases, and your broker’s account opening charges are what they are. The real answer is about the minimum order size: PSX lot sizes and broker minimums mean a very small deposit can still work — but factor in round-trip costs, you should only deposit an amount you are content to leave in shares for a while.',
+      },
+      {
+        type: 'h3',
+        text: 'Can I open more than one CDC account?',
+      },
+      {
+        type: 'p',
+        text: 'A person can hold a depository account with multiple brokers, and many experienced investors do exactly that. What you cannot do is hold the same shares in two accounts under two names at once without records. Keep a clean main account for your core holdings and a smaller one if you want to ring-fence something specific.',
+      },
+      {
+        type: 'h3',
+        text: 'How long does CDC account opening take in 2027?',
+      },
+      {
+        type: 'p',
+        text: 'Typically a few working days for a complete application, sometimes sooner for digitally verified submissions and longer when documents are missing or inconsistent. The variable is never the paperwork — it is always whether the documents match each other.',
+      },
       { type: 'h2', text: 'After the account is open' },
       {
         type: 'p',
@@ -121,12 +169,13 @@ export const foundationArticles: Article[] = [
 
   {
     slug: 'kse-100-vs-kmi-30-explained',
-    title: 'KSE-100 vs KMI-30: what the difference actually means for you',
+    title: 'KSE-100 vs KMI-30: which index should you actually follow in 2027?',
     description:
-      'Two headline indices, two different things being measured. What each one tracks, and which one is the right benchmark for your portfolio.',
+      'KSE-100 vs KMI-30 explained for Pakistani investors in 2027: what each index tracks, how returns differ, and which benchmark suits your portfolio.',
     category: 'Beginner',
-    publishedAt: '2026-08-20',
-    readingMinutes: 7,
+    publishedAt: '2027-01-18',
+    updatedAt: '2027-01-18',
+    readingMinutes: 9,
     author: 'Investing Sparkle',
     body: [
       {
@@ -181,6 +230,41 @@ export const foundationArticles: Article[] = [
         type: 'callout',
         text: 'A benchmark is not a target. It tells you whether your decisions added anything relative to simply owning the market you chose to operate in. That is a useful question to ask yourself once a year.',
       },
+      { type: 'h2', text: 'PSX all-shares and free-float indices' },
+      {
+        type: 'p',
+        text: 'The KSE-100 and KMI-30 are the most quoted, but they are not the only yardsticks. PSX publishes a broader market index and sub-indices, and the free-float versions adjust for shares actually available in the market rather than shares issued. For 2027, the all-shares universe tells you whether the market’s advance is broad-based or carried by a handful of index heavyweights — always check the breadth before assuming everything is rallying.',
+      },
+      { type: 'h2', text: 'The thing index marketing never tells you' },
+      {
+        type: 'p',
+        text: 'Indices can be weighted by market capitalisation, free float, or sector caps, and different methodologies produce different answers. A KSE-100 point change and a KMI-30 point change are not a race; a point in each means different things because the baskets differ. Never compare your portfolio return against a price index when you should be using a total-return (dividend-adjusting) index.',
+      },
+      { type: 'h2', text: 'Frequently asked questions' },
+      {
+        type: 'h3',
+        text: 'Which index do mutual funds use as a benchmark?',
+      },
+      {
+        type: 'p',
+        text: 'Equity funds registered with the SECP benchmark themselves against indices they declare in their offering documents, very commonly the KSE-100 for conventional funds and the KMI-30 or all-share Shariah indices for Shariah funds. Check the latest fund factsheet — the benchmark is printed there, and it is the honest question to ask the distributor.',
+      },
+      {
+        type: 'h3',
+        text: 'Can the KMI-30 underperform the KSE-100 for years?',
+      },
+      {
+        type: 'p',
+        text: 'Yes, and it can also outperform for years. If banks and the conventional sectors lead the market, the KMI-30 lags. If PSX’s compliant leaders lead the market, the KMI-30 outpaces. The Shariah universe is smaller, more concentrated, and its returns will differ from the broad market by definition. Compare like with like.',
+      },
+      {
+        type: 'h3',
+        text: 'I invest only Shariah-compliant — do I still watch the KSE-100?',
+      },
+      {
+        type: 'p',
+        text: 'Yes, but as market context, not as your scoreboard. When an analyst says "the market is up 1.2%", they mean the KSE-100 — you still want to know whether the whole market moved, whether it was a banks-driven move, and what the Shariah names did. Do not use the KSE-100 as your benchmark.',
+      },
       { type: 'h2', text: 'A note on sector indices' },
       {
         type: 'p',
@@ -195,12 +279,13 @@ export const foundationArticles: Article[] = [
 
   {
     slug: 'how-to-pick-a-psx-broker',
-    title: 'How to pick a PSX broker: seven things to check',
+    title: 'How to pick a PSX broker in 2027: a checklist that actually decides',
     description:
-      'The comparison most beginners skip, and the questions worth asking in writing before you open an account.',
+      'How to pick the right PSX broker in 2027: SECP/PSX verification, the complete fee schedule in writing, platform quality, custody rules and red flags.',
     category: 'Beginner',
-    publishedAt: '2026-08-20',
-    readingMinutes: 7,
+    publishedAt: '2027-01-20',
+    updatedAt: '2027-01-20',
+    readingMinutes: 9,
     author: 'Investing Sparkle',
     body: [
       {
@@ -254,6 +339,41 @@ export const foundationArticles: Article[] = [
         type: 'p',
         text: 'Fully online opening, clear document requirements, and a stated turnaround time are all signs of an operation that has its processes in order. It is a weak signal on its own but a useful tiebreaker.',
       },
+      { type: 'h2', text: '9. Custody and transfer out of the broker' },
+      {
+        type: 'p',
+        text: 'Ask, in writing, how to move your shares to another broker or to a CDC investor account. The answer should be spelled out: the form, the fee, the timeline. A broker that makes it hard to leave your assets is telling you the business is built on friction — and it never improves after you are inside.',
+      },
+      { type: 'h2', text: '10. The deposit requirements of the 2027 account opening round' },
+      {
+        type: 'p',
+        text: 'Regulatory requirements change. In 2027 the NADRA and SECP/PSX digital verification stack is stronger than it has ever been, mandatory TSS (transaction screening) is live at most large TREC holders, and brokers periodically tighten or loosen onboarding criteria mid-cycle. The one rule that does not change: if the fee schedule, the minimum age, or the verification requirement is not on paper from the firm — do not rely on anyone’s verbal claim, including ours. Ask for the sheet.',
+      },
+      { type: 'h2', text: 'Frequently asked questions' },
+      {
+        type: 'h3',
+        text: 'Is my broker required to be a TREC holder?',
+      },
+      {
+        type: 'p',
+        text: 'Yes. PSX trading access is held by TREC holders, and the broker must be registered with the SECP and any required exchanges. Check the SECP and PSX member listings for yourself before you fill anything in.',
+      },
+      {
+        type: 'h3',
+        text: 'What if a broker’s app crashes during market open?',
+      },
+      {
+        type: 'p',
+        text: 'It happens — PSX’s infamous high-volume days are a feature of a technology-hungry market. Ask the support line what alternatives exist, whether phone orders work, and whether the firm has an outage post-mortem habit. A broker that tells you "our servers handle it" without evidence is not being honest.',
+      },
+      {
+        type: 'h3',
+        text: 'Should a beginner trade through a bank-backed broker?',
+      },
+      {
+        type: 'p',
+        text: 'Bank-backed brokers have the custody advantage and often easier onboarding, but their platforms skew corporate. Independent TREC holders tend to be more nimble for retail. There is no universally right answer — pick on platform quality, fees, and how responsive support is when you test it, not on the brand on the door.',
+      },
       { type: 'h2', text: 'What should not decide it' },
       {
         type: 'ul',
@@ -269,12 +389,13 @@ export const foundationArticles: Article[] = [
 
   {
     slug: 'fundamental-vs-technical-analysis-for-beginners',
-    title: 'Fundamental vs technical analysis: which one should a beginner learn first?',
+    title: 'Fundamental vs technical analysis: the honest guide for 2027',
     description:
-      'Two different questions, often presented as rival camps. What each actually answers, and the order to learn them in.',
+      'Fundamental vs technical analysis explained clearly for Pakistani beginners: what each tells you, which to learn first, and how to use both in 2027.',
     category: 'Beginner',
-    publishedAt: '2026-08-20',
-    readingMinutes: 8,
+    publishedAt: '2027-01-22',
+    updatedAt: '2027-01-22',
+    readingMinutes: 10,
     author: 'Investing Sparkle',
     body: [
       {
@@ -329,6 +450,41 @@ export const foundationArticles: Article[] = [
         type: 'p',
         text: 'Then layer basic technicals on top, not to trade, but to avoid buying into a vertical move and to have a pre-decided level where you admit you were wrong.',
       },
+      { type: 'h2', text: 'Where hybrid investors go wrong' },
+      {
+        type: 'p',
+        text: 'The hybrid failure mode is reading every indicator you can find, then buying because three of them "agreed". Agreement between three indicators built from the same price series is not confluence — it is the same data dressed up three ways. Confluence means the funda contradicts the chart, or that the chart is noisy while the funda screams quality, and deciding which side to weight. Have one framework you trust, not eight you check.',
+      },
+      { type: 'h2', text: 'How this plays out in 2027 in PSX specifically' },
+      {
+        type: 'p',
+        text: 'The KSE-100 has been through a decade of gap-ups and consolidations, and the market remains more narrative-driven than most developed markets — large moves still start from a sector narrative. In 2027, with filings, disclosures, and sector analysis all searchable, the edge sits further upstream: reading the report before the crowd does. Technical levels matter more in the moments of capitulation and euphoria; fundamentals matter more between the two. The frameworks do not compete; they own different minutes of the tape.',
+      },
+      { type: 'h2', text: 'Frequently asked questions' },
+      {
+        type: 'h3',
+        text: 'Can I be a successful investor without technical analysis at all?',
+      },
+      {
+        type: 'p',
+        text: 'Yes. Buy-and-hold investors who never look at a chart are a fully legitimate operator type. You will miss obvious entry discipline, but you cannot lever yourself into reading the tape daily, and you will not be tempted to exit on an inflection that has not happened yet.',
+      },
+      {
+        type: 'h3',
+        text: 'How much do I need to know before my first trade?',
+      },
+      {
+        type: 'p',
+        text: 'You need to be able to (1) explain why you own the business, (2) state the roughly correct number of shares to take, and (3) articulate what would make you sell. If you cannot answer all three, the analysis is incomplete — whether or not it uses charts.',
+      },
+      {
+        type: 'h3',
+        text: 'Is technical analysis reliable in thinly traded PSX names?',
+      },
+      {
+        type: 'p',
+        text: 'Be sceptical. Indicators assume continuous, deep liquidity, and PSX has stocks where one large shareholder or a single mutual fund block can gap the price through your levels without a single trade cooking a pattern. Stick with large-cap names if you lean on charts — that liquidity constraint is a foundational piece of why your list matters.',
+      },
       { type: 'h2', text: 'The failure mode to avoid' },
       {
         type: 'p',
@@ -343,12 +499,13 @@ export const foundationArticles: Article[] = [
 
   {
     slug: 'five-common-psx-beginner-mistakes',
-    title: 'The five mistakes that cost new PSX investors the most',
+    title: 'The five costliest mistakes new PSX investors make in 2027',
     description:
-      'Not the obvious ones. These are the errors that look reasonable at the time and are only visible in hindsight.',
+      'The five mistakes that actually cost new Pakistani investors money in 2027 — tips you cannot verify, wrong timelines, and concentration — and how to avoid them.',
     category: 'Beginner',
-    publishedAt: '2026-08-20',
-    readingMinutes: 7,
+    publishedAt: '2027-01-25',
+    updatedAt: '2027-01-25',
+    readingMinutes: 10,
     author: 'Investing Sparkle',
     body: [
       {
@@ -407,6 +564,45 @@ export const foundationArticles: Article[] = [
       {
         type: 'p',
         text: 'If your thesis is measured in years, review on a schedule, quarterly, when results are published, or when something specific changes about the business. Not continuously.',
+      },
+      { type: 'h2', text: 'What changed in 2027 (and what did not)' },
+      {
+        type: 'p',
+        text: 'The traps are the same ones they have always been, but the environment makes them cheaper to fall into and slower to climb out of. Two things are different in 2027: brokers now impose transaction screening by SECP/PSX rules on every trade, and the FBR treats trading income with increasing seriousness. The trades you used to make casually are now traceable, taxed, and monitored — the cost of a bad habit is no longer just the price you pay for it.',
+      },
+      { type: 'h2', text: 'The three poor habits that sneak in alongside the five' },
+      {
+        type: 'ol',
+        items: [
+          'Believing a free tip because it arrived in a familiar format. The design of WhatsApp messages is engineered to make the claim feel vetted. It is not vetted.',
+          'Buying a stock because the chart looks cheap. A low price is not a low valuation — a stock can be trading at a third of its high and still be expensive.',
+          'Treating your brokerage app like a bank balance. The cash is not a savings account — it is idle cash with an opportunity cost, and it belongs either in your portfolio or in a real deposit, not sat in the trading wallet for months.',
+        ],
+      },
+      { type: 'h2', text: 'Frequently asked questions' },
+      {
+        type: 'h3',
+        text: 'How much of my savings should be in the stock market?',
+      },
+      {
+        type: 'p',
+        text: 'There is no one right answer, and any article that gives you one is selling you something. Use this rough frame: money you need in less than three years does not belong in equities; money you can leave alone for five or more years may reasonably start with a portion of it invested; if you would lose sleep every month, it is too much.',
+      },
+      {
+        type: 'h3',
+        text: 'Are WhatsApp and Telegram investing groups all scams?',
+      },
+      {
+        type: 'p',
+        text: 'Most are not scams in the sense of theft; they are worse, they are bad habits with occasional wins. The person running the room seldom shows their whole record, they do not carry the loss when they are wrong, and you never built a framework. Either learn the framework or leave the group.',
+      },
+      {
+        type: 'h3',
+        text: 'What is the single best fix for all five mistakes?',
+      },
+      {
+        type: 'p',
+        text: 'Write down, before you buy, why you are buying, how much, what you will check and when, and what would make you sell. A quarter-page written plan, kept next to the terminal, is the one decision that makes these five mistakes almost impossible to repeat.',
       },
       { type: 'h2', text: 'What connects all five' },
       {

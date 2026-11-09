@@ -10,12 +10,13 @@ import type { Article } from '../types';
 export const analysisArticles: Article[] = [
   {
     slug: 'reading-a-pakistani-annual-report',
-    title: "How to read a Pakistani company's annual report",
+    title: "How to read a Pakistani annual report in 2027: a forensic guide",
     description:
-      'Where to look first in a 200-page document, what the three statements actually tell you, and the sections most people skip that matter most.',
+      'Read a PSX company annual report in 2027 like an analyst — financial statements, related-party deals, audit opinions, cash flow, and the traps every year.',
     category: 'Intermediate',
-    publishedAt: '2026-08-21',
-    readingMinutes: 9,
+    publishedAt: '2027-02-21',
+    updatedAt: '2027-02-21',
+    readingMinutes: 11,
     author: 'Investing Sparkle',
     related: ['understanding-pe-roe-and-other-ratios', 'how-to-value-a-stock'],
     body: [
@@ -92,6 +93,51 @@ export const analysisArticles: Article[] = [
         type: 'p',
         text: 'Listed Pakistani companies disclose their shareholding pattern. It tells you who controls the company, how much of it the sponsors hold, and how much genuinely floats. A very small free float means the price can move sharply on modest volume, worth knowing before you take a position you may want to exit.',
       },
+      { type: 'h2', text: 'The 30-minute speed read' },
+      {
+        type: 'p',
+        text: 'You do not have to read a 200-page annual report line by line. Here is the disciplined 30-minute route every busy investor should use for a first pass:',
+      },
+      {
+        type: 'ol',
+        items: [
+          'Auditor’s opinion and key audit matters — 5 minutes.',
+          'Profit and loss: revenue trend, gross margin, finance cost as % of operating profit — 5 minutes.',
+          'Balance sheet: debt vs equity, receivable and inventory build-up — 5 minutes.',
+          'Cash flow: compare operating cash to net profit over three years — 5 minutes.',
+          'Notes: related-party deals, contingencies, segment contributions — 10 minutes.',
+        ],
+      },
+      { type: 'h2', text: 'The 2027 twists you will actually hit' },
+      {
+        type: 'p',
+        text: 'Recent Pakistani audits have highlighted judgement calls on impairment testing (or “ECL” disclosures at banks), inflation-adjustments, and forward-looking estimates. When the auditors spend an entire key audit matter on one estimate, that is where the management team might be quarterbacking. Read that matter first every single time.',
+      },
+      { type: 'h2', text: 'Frequently asked questions' },
+      {
+        type: 'h3',
+        text: 'What if the auditor’s report is not embedded in the PDF?',
+      },
+      {
+        type: 'p',
+        text: 'Never accept a missing or altered auditor’s opinion. Some sketchier issuers strip it from extracts. If the PDF you downloaded shows no signed audit opinion on the first pages, download it from the PSX and SECP filings system directly.',
+      },
+      {
+        type: 'h3',
+        text: 'How do I check if related-party pricing is fair?',
+      },
+      {
+        type: 'p',
+        text: 'Compare the rates: the margin on goods bought from related parties vs third parties, and the volume of related-party transactions vs total revenue. A pattern of creeping related-party generosity is a governance red flag worth avoiding outright.',
+      },
+      {
+        type: 'h3',
+        text: 'What does a qualified opinion mean in practice?',
+      },
+      {
+        type: 'p',
+        text: 'It means the auditors could not sign off cleanly on the whole picture, with something specific disputed — a number, a classification, or a disclosure. It is not always a catastrophe, but it should stop you buying before you understand exactly what was disputed.',
+      },
       { type: 'h2', text: 'What you are actually looking for' },
       {
         type: 'p',
@@ -106,12 +152,13 @@ export const analysisArticles: Article[] = [
 
   {
     slug: 'understanding-pe-roe-and-other-ratios',
-    title: 'P/E, ROE, and the handful of ratios that actually matter',
+    title: 'P/E, ROE and the ratios that actually matter in 2027',
     description:
-      'Four ratios will carry a beginner most of the way. What each one measures, how to read it in a Pakistani context, and how each can mislead you.',
+      'The five ratios that matter for PSX investors in 2027 — P/E, ROE, D/E, dividend yield and payout ratio — how to read them and where they lie to you.',
     category: 'Intermediate',
-    publishedAt: '2026-08-21',
-    readingMinutes: 8,
+    publishedAt: '2027-02-23',
+    updatedAt: '2027-02-23',
+    readingMinutes: 10,
     author: 'Investing Sparkle',
     related: ['reading-a-pakistani-annual-report', 'how-to-value-a-stock'],
     body: [
@@ -179,6 +226,41 @@ export const analysisArticles: Article[] = [
         type: 'p',
         text: 'The trap is the yield that rises because the price fell. A yield that suddenly looks generous often means the market expects the dividend to be cut. Check the payout ratio (the share of earnings being paid out) and ask whether it is sustainable.',
       },
+      { type: 'h2', text: 'The payout ratio: the dividend watchdog' },
+      {
+        type: 'p',
+        text: 'Dividends per share divided by earnings per share. Under 60% means the dividend is generous but the company is still keeping enough back to fund the business. Above 90% means the dividend is running on fumes — the business has no margin for error and nearly everything earned is going straight out to shareholders. Most sustainable PSX dividend payers sit consistently at 40–65%; if a name suddenly exceeds that, investigate whether it has anything left to grow with.',
+      },
+      { type: 'h2', text: 'How ratios shift in 2027' },
+      {
+        type: 'p',
+        text: 'Pakistan’s inflation print and the SBP’s policy rate trajectory have been violent enough that any ratio quoted must be anchored to the year. A P/E of 6x in a year of cyclical peak earnings looks like a value trap; the same 6x trough earnings can be absurdly attractive. ROE in a high-rate environment can flatter low-quality banks and hide debt-lapsing industrials. Always locate the ratio in its cycle context before you draw a conclusion.',
+      },
+      { type: 'h2', text: 'Frequently asked questions' },
+      {
+        type: 'h3',
+        text: 'Is P/E the best single valuation tool?',
+      },
+      {
+        type: 'p',
+        text: 'The most convenient, not the most complete. Use it against the company’s own history and direct peers — never in isolation. A cheap stock is genuinely cheap only if earnings quality is high enough to back the price.',
+      },
+      {
+        type: 'h3',
+        text: 'Is a high ROE always attractive?',
+      },
+      {
+        type: 'p',
+        text: 'No. Leverage boosts ROE by shrinking equity relative to profit. A bank earning 22% on equity on 90% equity financed with debt feels different from an industrial earning 22% on virtually no debt. Always pair ROE with leverage before judging quality.',
+      },
+      {
+        type: 'h3',
+        text: 'What about PEG ratios?',
+      },
+      {
+        type: 'p',
+        text: 'Useful in theory — P/E divided by expected earnings growth — but extremely sensitive to growth estimates, which nobody knows for certain in Pakistan. Treat any precise PEG as a conversation starter, not a verdict.',
+      },
       { type: 'h2', text: 'Reading them together' },
       {
         type: 'p',
@@ -207,12 +289,13 @@ export const analysisArticles: Article[] = [
 
   {
     slug: 'how-to-value-a-stock',
-    title: 'How to work out what a stock is actually worth',
+    title: 'How to value a stock in 2027: earnings power, DCF-lite and relative valuation',
     description:
-      'Valuation is not a formula that produces a price. It is a way of making your assumptions explicit enough to argue with.',
+      'Valuing PSX stocks in 2027 — earnings power valuation, DCF-lite for Pakistani interest rates, relative multiples, and why margin of safety is non-optional.',
     category: 'Intermediate',
-    publishedAt: '2026-08-22',
-    readingMinutes: 9,
+    publishedAt: '2027-02-25',
+    updatedAt: '2027-02-25',
+    readingMinutes: 11,
     author: 'Investing Sparkle',
     related: ['understanding-pe-roe-and-other-ratios', 'when-to-sell-a-stock'],
     body: [
@@ -272,6 +355,41 @@ export const analysisArticles: Article[] = [
         type: 'p',
         text: 'This suits cyclical businesses, which are common on PSX: cement, steel, autos, fertiliser. Valuing a cyclical on peak earnings is one of the most reliable ways to lose money, because the multiple and the earnings collapse together.',
       },
+      { type: 'h2', text: 'DCF-lite for Pakistani interest rates' },
+      {
+        type: 'p',
+        text: 'You do not need a 40-tab spreadsheet to value a stock, but you do need a discount rate that respects reality. Pakistan’s risk-free rate has touched double digits at points in the last few years, so equity risk premium demands a meaningful buffer. In 2027, a sensible hurdle looks like: risk-free + 7–10% equity premium + a company-specific risk add-on for illiquid, thinly traded names. Anything you model below that, you are claiming a guaranteed rate below a T-bill — trust me, the real market will not thank you for it.',
+      },
+      { type: 'h2', text: 'Relative valuation with the correct peer set' },
+      {
+        type: 'p',
+        text: 'PSX has genuine sector peers in cement, fertiliser, banks, and textiles. Compare on forward metrics (P/E or EV/EBITDA on next-year estimates) to avoid the peak-earnings trap. If the stock looks expensive against its peers, the market might be paying for a moat you are not seeing — or it might just be wrong. Your job is to find out which before you buy.',
+      },
+      { type: 'h2', text: 'Frequently asked questions' },
+      {
+        type: 'h3',
+        text: 'Will my valuation ever be right?',
+      },
+      {
+        type: 'p',
+        text: 'Rarely exactly — and that is not the point. The purpose of a valuation is to discipline your thinking, not to replace it. A range of fair value with a wide margin of safety beats a single precise answer built on guesswork.',
+      },
+      {
+        type: 'h3',
+        text: 'How do I handle companies making losses?',
+      },
+      {
+        type: 'p',
+        text: 'Use asset-backed methods — price-to-book for PSX banks and insurance firms, or replacement cost for industrial plants. When the P&L is negative, your question shifts to: is this business worth more alive than liquidated?',
+      },
+      {
+        type: 'h3',
+        text: 'Does the required return change with the SBP policy rate?',
+      },
+      {
+        type: 'p',
+        text: 'Yes — when the risk-free rate moves, your hurdle moves with it. A stock you could buy at 16x in a 10% risk-free world is a different deal at an 18% risk-free world, and your valuation must be recomputed, not recycled.',
+      },
       { type: 'h2', text: 'Where beginners go wrong' },
       {
         type: 'ol',
@@ -296,12 +414,13 @@ export const analysisArticles: Article[] = [
 
   {
     slug: 'reading-a-stock-chart-basics',
-    title: 'Reading a stock chart without fooling yourself',
+    title: 'Reading PSX charts in 2027: trend, volume, moving averages and RSI',
     description:
-      'Trend, volume, moving averages, and RSI, the small set of chart tools worth learning, and the large set of ways charts mislead.',
+      'A clear 2027 guide to reading PSX stock charts — trendlines, volume confirmation, 50/200-day averages, RSI done right, and where PSX charts mislead.',
     category: 'Beginner',
-    publishedAt: '2026-08-22',
-    readingMinutes: 7,
+    publishedAt: '2027-02-27',
+    updatedAt: '2027-02-27',
+    readingMinutes: 9,
     author: 'Investing Sparkle',
     related: ['fundamental-vs-technical-analysis-for-beginners', 'when-to-sell-a-stock'],
     body: [
@@ -357,6 +476,36 @@ export const analysisArticles: Article[] = [
         type: 'p',
         text: 'The useful reading is narrower than the conventional one: RSI tells you a move has been fast, not that it is about to reverse. Strongly trending stocks stay above 70 for weeks, and traders who sell every reading of 70 spend a lot of time watching things go up without them.',
       },
+      { type: 'h2', text: 'The PSX charting specifics you need in 2027' },
+      {
+        type: 'p',
+        text: 'Most PSX retail traders fire off 1-minute charts during the open and learn nothing. The honest approach: daily candles for everything except intraday stalls, a minimum 50% of your attention on higher timeframes, and candlestick patterns only in liquid names (cement, banking, energy names with real overnight volume). Marginal PSX names 10% charts — treat them with suspicion.',
+      },
+      { type: 'h2', text: 'Frequently asked questions' },
+      {
+        type: 'h3',
+        text: 'Is technical analysis enough to make money on PSX?',
+      },
+      {
+        type: 'p',
+        text: 'In the very short run on actively traded names — maybe. Over any horizon beyond a week, fundamentals dominate. Charts help you spot behaviour at points of capitulation and euphoria, but a company with broken economics and a pretty chart is still a broken company.',
+      },
+      {
+        type: 'h3',
+        text: 'What are the most reliable PSX chart signals?',
+      },
+      {
+        type: 'p',
+        text: 'Honest answer: trend alignment (higher highs and higher lows over 3–6 months) with volume increasing on up moves — that is the cleanest signal you can take. Most other patterns are too noisy to bet on in isolation.',
+      },
+      {
+        type: 'h3',
+        text: 'Should I use 1-hour or daily charts?',
+      },
+      {
+        type: 'p',
+        text: 'Daily for position decisions, 1-hour to fine-tune entry and exit on an established daily trend. Most retail losses come from trading the noise on minute charts against every moving average available.',
+      },
       { type: 'h2', text: 'What charts genuinely help with' },
       {
         type: 'ul',
@@ -381,12 +530,13 @@ export const analysisArticles: Article[] = [
 
   {
     slug: 'sector-analysis-pakistan',
-    title: 'Sector analysis: why the same news moves two stocks differently',
+    title: 'Sector analysis on PSX in 2027: what moves cement, banks, autos and fertiliser',
     description:
-      'Pakistani listed companies cluster into a handful of sectors driven by very different forces. Knowing which force drives yours changes what you watch.',
+      'PSX sector analysis 2027 — how to read cement, banking, auto, fertiliser and textile cycles, why sector exposure matters, and how to compare peers correctly.',
     category: 'Intermediate',
-    publishedAt: '2026-08-23',
-    readingMinutes: 8,
+    publishedAt: '2027-03-01',
+    updatedAt: '2027-03-01',
+    readingMinutes: 11,
     author: 'Investing Sparkle',
     related: ['kse-100-vs-kmi-30-explained', 'how-to-build-your-first-psx-portfolio'],
     body: [
@@ -435,6 +585,42 @@ export const analysisArticles: Article[] = [
       {
         type: 'p',
         text: 'Energy-intensive manufacturing (cement, steel, chemicals) sees margins compress unless it can pass costs on. Whether it can is a question about pricing power and competitive structure, which is exactly the sort of question the annual report and the segment note help you answer.',
+      },
+      { type: 'h2', text: 'The five sector drivers that actually matter in 2027' },
+      {
+        type: 'ol',
+        items: [
+          'Interest-rate sensitivity — banks love high rates, leveraged industries get crushed by them; rate decisions ripple instantly across the market.',
+          'Exchange-rate exposure — rupee stability drives import-heavy sectors (autos, energy, consumer); exporters (textiles, IT services) benefit dramatically from a weaker rupee.',
+          'Commodity cycles — cement, steel, and fertiliser march to global pricing, not domestic hope; watch the LME and commodity indices before the PSX moves.',
+          'Regulatory and fiscal change — SECP circular changes, duty adjustments, and SBP lending caps can reprice half a sector in a single week.',
+          'Input cost inflation — energy, freight and imported machinery costs can shift margins before any company delivers its numbers.',
+        ],
+      },
+      { type: 'h2', text: 'Frequently asked questions' },
+      {
+        type: 'h3',
+        text: 'How do I assess a sector before buying a stock in it?',
+      },
+      {
+        type: 'p',
+        text: 'Three checks: (1) where the sector is in its cycle — peak, expansion, trough, or recovery; (2) whether the company’s narrative is different from the sector’s; (3) whether the balance sheet can survive a bad quarter if the cycle turns against you.',
+      },
+      {
+        type: 'h3',
+        text: 'Is textile still a valid sector to consider in 2027?',
+      },
+      {
+        type: 'p',
+        text: 'Textiles have been the heart of Pakistan’s export story forever, and they remain high-beta. The difference between a great textile investment and a terrible one is timing and balance-sheet strength — the margin buffers are razor-thin and the FX swings are brutal.',
+      },
+      {
+        type: 'h3',
+        text: 'Which sector leads PSX during rate cuts?',
+      },
+      {
+        type: 'p',
+        text: 'Historically, rate cuts spark a rotation toward rate-sensitive beneficiaries: auto assemblers, high-multiple growth names, and some consumer staples — not banks. The sequencing is subtle and the market prices it in advance; you are always late to the headline.',
       },
       { type: 'h2', text: 'The cyclicals problem' },
       {
