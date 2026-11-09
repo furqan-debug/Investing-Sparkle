@@ -97,14 +97,14 @@ export function RoiCalculator() {
   const positive = result.netProfit >= 0;
 
   return (
-    <div className="grid gap-6 lg:grid-cols-2">
-      <div className="rounded-3xl border border-line bg-white p-7 md:p-8">
-        <h2 className="font-sans text-lg font-semibold text-ink">The position</h2>
+    <div className="grid gap-4 lg:grid-cols-2">
+      <div className="rounded-2xl border border-line bg-white p-5 md:p-6">
+        <h2 className="font-sans text-base font-semibold text-ink">The position</h2>
         <p className="mt-1.5 text-sm text-muted">
           Works for a closed position, or use today’s price to check one you still hold.
         </p>
 
-        <div className="mt-7 space-y-5">
+        <div className="mt-6 space-y-4">
           {fields.map((f) => (
             <div key={f.id}>
               <label htmlFor={f.id} className="text-sm font-medium text-ink">
@@ -129,7 +129,7 @@ export function RoiCalculator() {
         </div>
       </div>
 
-      <div className="flex flex-col gap-5">
+      <div className="flex flex-col gap-4">
         <ResultPanel
           eyebrow="Total return"
           headline={`${positive ? '+' : ''}${result.totalReturn.toFixed(1)}%`}

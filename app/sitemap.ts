@@ -5,13 +5,11 @@ import { courses } from '@/content/courses';
 import { tools } from '@/content/tools';
 import { services } from '@/content/services';
 import { caseStudies } from '@/content/case-studies';
-import { pastCohorts } from '@/content/bootcamp';
 
 /**
  * XML sitemap, generated from the content files — so a new article, course,
  * tool, or case study appears the moment it is added, with no separate step to
- * forget. Tools that are not live and pages that hide themselves when empty
- * (the cohort archive) are excluded.
+ * forget. Tools that are not live are excluded.
  */
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = site.url;
@@ -22,7 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages: MetadataRoute.Sitemap = ([
     { url: `${base}/`, priority: 1, changeFrequency: 'weekly' },
     { url: `${base}/learn`, priority: 0.9, changeFrequency: 'weekly' },
-    { url: `${base}/learn/bootcamp`, priority: 0.9, changeFrequency: 'weekly' },
+    { url: `${base}/live`, priority: 0.9, changeFrequency: 'weekly' },
     { url: `${base}/services`, priority: 0.9, changeFrequency: 'monthly' },
     { url: `${base}/learn/courses`, priority: 0.8, changeFrequency: 'monthly' },
     { url: `${base}/learn/tools`, priority: 0.8, changeFrequency: 'monthly' },
@@ -77,18 +75,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   // Only listed once a cohort has actually finished — the page 404s until then.
-  const archivePages: MetadataRoute.Sitemap =
-    pastCohorts.length > 0
-      ? [
-          {
-            url: `${base}/learn/bootcamp/archive`,
-            lastModified: now,
-            changeFrequency: 'monthly',
-            priority: 0.5,
-          },
-        ]
-      : [];
-
   return [
     ...staticPages,
     ...articlePages,
@@ -96,6 +82,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...toolPages,
     ...servicePages,
     ...caseStudyPages,
-    ...archivePages,
   ];
 }

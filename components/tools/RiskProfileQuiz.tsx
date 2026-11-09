@@ -128,7 +128,7 @@ function profileFor(score: number): Profile {
         'Spend the waiting time learning. It costs nothing and it is the part that compounds.',
         'Be especially wary of anyone promising quick returns while you are in this position.',
       ],
-      nextStep: 'Start with our free material and the bootcamp. Advisory can wait.',
+      nextStep: 'Start with our free material and the free live session. Advisory can wait.',
     };
   }
 
@@ -143,7 +143,7 @@ function profileFor(score: number): Profile {
         'Decide in advance what would make you sell, and write it down before you buy.',
         'Avoid leverage and short-term trading entirely at this stage.',
       ],
-      nextStep: 'The bootcamp is the right fit. A Launchpad call helps if you want a plan built with you.',
+      nextStep: 'Our free live session is the right start. A Launchpad call helps if you want a plan built with you.',
     };
   }
 
@@ -158,7 +158,7 @@ function profileFor(score: number): Profile {
         'Keep a written thesis for every holding, so you can tell a broken thesis from a falling price.',
         'Rebalance on a rule, not on a feeling.',
       ],
-      nextStep: 'The bootcamp will sharpen your analysis. Membership suits you if you want accountability.',
+      nextStep: 'Our courses will sharpen your analysis. Membership suits you if you want accountability.',
     };
   }
 
@@ -194,7 +194,7 @@ export function RiskProfileQuiz() {
     const profile = profileFor(score);
 
     return (
-      <div className="rounded-3xl border border-line bg-white p-7 md:p-10">
+      <div className="rounded-2xl border border-line bg-white p-5 md:p-7">
         <p className="eyebrow text-green-600">Your result</p>
         <h2 className="h2 mt-3">{profile.name}</h2>
 
@@ -236,10 +236,10 @@ export function RiskProfileQuiz() {
             <MessageCircle className="h-4 w-4" aria-hidden /> Discuss my result on WhatsApp
           </a>
           <a
-            href="/learn/bootcamp"
+            href="/live"
             className="inline-flex items-center justify-center gap-2 rounded-full bg-green-800 px-6 py-3 text-sm font-semibold text-white hover:bg-green-700"
           >
-            See the bootcamp <ArrowRight className="h-4 w-4" aria-hidden />
+            Join the free live session <ArrowRight className="h-4 w-4" aria-hidden />
           </a>
           <button
             onClick={reset}
@@ -259,9 +259,9 @@ export function RiskProfileQuiz() {
   }
 
   return (
-    <div className="rounded-3xl border border-line bg-white p-7 md:p-10">
+    <div className="rounded-2xl border border-line bg-white p-5 md:p-7">
       {/* Progress */}
-      <div className="mb-8">
+      <div className="mb-6">
         <div className="flex items-center justify-between text-sm">
           <span className="font-semibold text-ink">
             {answeredCount} of {questions.length} answered
@@ -276,7 +276,7 @@ export function RiskProfileQuiz() {
         </div>
       </div>
 
-      <ol className="space-y-9">
+      <ol className="space-y-7">
         {questions.map((q, qi) => (
           <li key={q.id}>
             <fieldset>
@@ -318,7 +318,7 @@ export function RiskProfileQuiz() {
       <button
         onClick={() => setSubmitted(true)}
         disabled={!complete}
-        className="mt-9 w-full rounded-full bg-sparkle-400 px-7 py-3.5 font-semibold text-green-950 transition-colors hover:bg-sparkle-500 disabled:cursor-not-allowed disabled:opacity-50"
+        className="mt-8 w-full rounded-full bg-sparkle-400 px-6 py-3 font-semibold text-green-950 transition-colors hover:bg-sparkle-500 disabled:cursor-not-allowed disabled:opacity-50"
       >
         {complete ? 'See my risk profile' : `Answer all ${questions.length} questions to continue`}
       </button>

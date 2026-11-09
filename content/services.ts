@@ -1,6 +1,6 @@
 import { refundPolicy } from './site';
 import { whatsappMessages } from './whatsapp';
-import type { Testimonial } from './bootcamp';
+import type { Testimonial } from './testimonials';
 import { clientTestimonials } from './testimonials';
 
 /**

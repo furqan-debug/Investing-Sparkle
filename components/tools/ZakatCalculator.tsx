@@ -60,14 +60,14 @@ export function ZakatCalculator() {
     'mt-1.5 w-full rounded-xl border border-line bg-white px-4 py-2.5 text-sm outline-none transition-colors focus:border-green-600';
 
   return (
-    <div className="grid gap-6 lg:grid-cols-2">
-      <div className="rounded-3xl border border-line bg-white p-7 md:p-8">
-        <h2 className="font-sans text-lg font-semibold text-ink">Your zakatable wealth</h2>
+    <div className="grid gap-4 lg:grid-cols-2">
+      <div className="rounded-2xl border border-line bg-white p-5 md:p-6">
+        <h2 className="font-sans text-base font-semibold text-ink">Your zakatable wealth</h2>
         <p className="mt-1.5 text-sm text-muted">
           Enter values as at your zakat date. Leave anything that does not apply blank.
         </p>
 
-        <div className="mt-7 space-y-5">
+        <div className="mt-6 space-y-4">
           {assetFields.map((f) => (
             <div key={f.id}>
               <label htmlFor={f.id} className="text-sm font-medium text-ink">

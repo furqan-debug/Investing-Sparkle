@@ -15,7 +15,7 @@ import { Check } from 'lucide-react';
 
 const interests = [
   'Course',
-  'Bootcamp',
+  'Live session',
   'Advisory',
   'Partnership',
   'Media',

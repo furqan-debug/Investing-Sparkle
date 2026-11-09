@@ -1,5 +1,6 @@
 import { Quote } from 'lucide-react';
-import type { Testimonial } from '@/content/bootcamp';
+import type { Testimonial } from '@/content/testimonials';
+import { Portrait } from './Portrait';
 
 export function Testimonials({
   items,
@@ -30,12 +31,7 @@ export function Testimonials({
               // eslint-disable-next-line @next/next/no-img-element
               <img src={t.photo} alt="" className="h-10 w-10 rounded-full object-cover" />
             ) : (
-              <span
-                className="grid h-10 w-10 place-items-center rounded-full bg-green-50 font-display text-lg text-green-800"
-                aria-hidden
-              >
-                {t.name.charAt(0)}
-              </span>
+              <Portrait name={t.name} className="h-10 w-10" />
             )}
             <span className="text-sm">
               <span className="block font-semibold text-ink">{t.name}</span>

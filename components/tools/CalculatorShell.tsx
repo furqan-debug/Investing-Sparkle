@@ -24,17 +24,20 @@ export type SliderSpec = {
 
 export function SliderPanel({ title, sliders }: { title: string; sliders: SliderSpec[] }) {
   return (
-    <div className="rounded-3xl border border-line bg-white p-7 md:p-8">
-      <h2 className="font-sans text-lg font-semibold text-ink">{title}</h2>
+    <div className="rounded-2xl border border-line bg-white p-5 md:p-6">
+      <h2 className="font-sans text-base font-semibold text-ink">{title}</h2>
 
-      <div className="mt-7 space-y-7">
+      <div className="mt-6 space-y-6">
         {sliders.map((s) => (
           <div key={s.id}>
             <div className="flex items-baseline justify-between gap-3">
               <label htmlFor={s.id} className="text-sm font-medium text-ink">
                 {s.label}
               </label>
-              <output htmlFor={s.id} className="font-display text-xl text-green-800">
+              <output
+                htmlFor={s.id}
+                className="min-w-0 break-words text-right font-display text-lg leading-tight text-green-800"
+              >
                 {s.format(s.value)}
               </output>
             </div>
@@ -75,20 +78,20 @@ export function ResultPanel({
   children?: React.ReactNode;
 }) {
   return (
-    <div className="rounded-3xl bg-green-900 p-7 text-white md:p-8">
+    <div className="rounded-2xl bg-green-900 p-5 text-white md:p-6">
       <p className="eyebrow text-sparkle-400">{eyebrow}</p>
-      <p className="mt-3 font-display text-4xl leading-none text-sparkle-400 md:text-5xl">
+      <p className="mt-2.5 break-words font-display text-3xl leading-[1.05] text-sparkle-400 md:text-4xl">
         {headline}
       </p>
       {sub && <p className="mt-2 text-sm text-green-200">{sub}</p>}
 
       {rows && rows.length > 0 && (
-        <dl className="mt-7 grid gap-4 border-t border-white/15 pt-6 sm:grid-cols-2">
+        <dl className="mt-5 grid gap-4 border-t border-white/15 pt-5 sm:grid-cols-2">
           {rows.map((row) => (
-            <div key={row.label}>
+            <div key={row.label} className="min-w-0">
               <dt className="text-xs uppercase tracking-wider text-green-200">{row.label}</dt>
               <dd
-                className={`mt-1 font-display text-2xl ${
+                className={`mt-1 break-words font-display text-xl ${
                   row.accent ? 'text-sparkle-400' : 'text-white'
                 }`}
               >
@@ -114,7 +117,7 @@ export function ToolFooter({
 }) {
   return (
     <>
-      <div className="rounded-2xl border border-line bg-white p-6">
+      <div className="rounded-2xl border border-line bg-white p-5">
         <Newsletter compact />
       </div>
 
@@ -122,7 +125,7 @@ export function ToolFooter({
         href={whatsappLink(whatsappMessages.calculatorResult(calculatorName))}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-6 py-3.5 font-semibold text-green-950 hover:bg-[#1eb857]"
+        className="inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-5 py-3 text-sm font-semibold text-green-950 hover:bg-[#1eb857]"
       >
         <MessageCircle className="h-4 w-4" aria-hidden /> Talk through these numbers
       </a>

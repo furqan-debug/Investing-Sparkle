@@ -5,7 +5,7 @@ import { site, refundPolicy, paymentMethods } from '@/content/site';
 export const metadata: Metadata = {
   title: 'Refund policy',
   description:
-    'Refund terms for bootcamps, courses, and each advisory service, stated explicitly, per service.',
+    'Refund terms for courses, free live sessions, and each advisory service, stated explicitly, per service.',
   alternates: { canonical: '/refund' },
 };
 
@@ -18,11 +18,11 @@ export default function RefundPage() {
         site, tell us and the more generous term applies.
       </p>
 
-      <h2>Bootcamps</h2>
-      <p>{refundPolicy.bootcamp}</p>
+      <h2>Free live sessions</h2>
+      <p>{refundPolicy.liveSession}</p>
       <p>
-        If you cannot attend but do not want a refund, your seat is transferable to someone else at
-        no charge. Tell us the replacement attendee’s name before the bootcamp starts.
+        If a session is cancelled or rescheduled, we will announce the new date on the same page and
+        send a reminder to anyone who asked for one. There is no payment to refund.
       </p>
 
       <h2>Courses</h2>
@@ -65,8 +65,8 @@ export default function RefundPage() {
 
       <h2>If we cancel</h2>
       <p>
-        If we cancel or reschedule a bootcamp or session for any reason, you receive a full refund
-        or a place in the next cohort, your choice, with no time limit on deciding.
+        If we cancel or reschedule a paid course or advisory session for any reason, you receive a
+        full refund or a place in the next session, your choice, with no time limit on deciding.
       </p>
 
       <h2>How to request a refund</h2>

@@ -24,7 +24,7 @@ export function Section({
   tight?: boolean;
 }) {
   return (
-    <section id={id} className={cn(tones[tone], tight ? 'py-12' : 'py-16 md:py-24', className)}>
+    <section id={id} className={cn(tones[tone], tight ? 'py-7 md:py-10' : 'py-11 md:py-16', className)}>
       <div className="container-page">{children}</div>
     </section>
   );
@@ -44,15 +44,15 @@ export function SectionHeading({
   invert?: boolean;
 }) {
   return (
-    <div className={cn('max-w-3xl', align === 'center' && 'mx-auto text-center')}>
+    <div className={cn('max-w-2xl', align === 'center' && 'mx-auto text-center')}>
       {eyebrow && (
-        <p className={cn('eyebrow mb-3', invert ? 'text-sparkle-400' : 'text-green-600')}>
+        <p className={cn('eyebrow mb-2.5', invert ? 'text-sparkle-400' : 'text-green-600')}>
           {eyebrow}
         </p>
       )}
       <h2 className="h2">{title}</h2>
       {lede && (
-        <p className={cn('lede mt-4', invert ? 'text-green-100' : 'text-muted')}>{lede}</p>
+        <p className={cn('lede mt-3', invert ? 'text-green-100' : 'text-muted')}>{lede}</p>
       )}
     </div>
   );

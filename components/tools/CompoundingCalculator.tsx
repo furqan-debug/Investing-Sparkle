@@ -91,19 +91,19 @@ export function CompoundingCalculator() {
   ];
 
   return (
-    <div className="grid gap-6 lg:grid-cols-[1fr_1fr]">
+    <div className="grid gap-4 lg:grid-cols-[1fr_1fr]">
       {/* Inputs */}
-      <div className="rounded-3xl border border-line bg-white p-7 md:p-8">
-        <h2 className="font-sans text-lg font-semibold text-ink">Your numbers</h2>
+      <div className="rounded-2xl border border-line bg-white p-5 md:p-6">
+        <h2 className="font-sans text-base font-semibold text-ink">Your numbers</h2>
 
-        <div className="mt-7 space-y-7">
+        <div className="mt-6 space-y-6">
           {inputs.map((input) => (
             <div key={input.id}>
               <div className="flex items-baseline justify-between gap-3">
                 <label htmlFor={input.id} className="text-sm font-medium text-ink">
                   {input.label}
                 </label>
-                <output className="font-display text-xl text-green-800">
+                <output className="min-w-0 break-words text-right font-display text-lg leading-tight text-green-800">
                   {input.format(input.value)}
                 </output>
               </div>
@@ -127,15 +127,15 @@ export function CompoundingCalculator() {
       </div>
 
       {/* Result */}
-      <div className="flex flex-col gap-5">
-        <div className="rounded-3xl bg-green-900 p-7 text-white md:p-8">
+      <div className="flex flex-col gap-4">
+        <div className="rounded-2xl bg-green-900 p-5 text-white md:p-6">
           <p className="eyebrow text-sparkle-400">After {years} years</p>
-          <p className="mt-3 font-display text-4xl leading-none text-sparkle-400 md:text-5xl">
+          <p className="mt-2.5 break-words font-display text-3xl leading-[1.05] text-sparkle-400 md:text-4xl">
             PKR {formatPKR(result.future)}
           </p>
 
           {/* The split is the point of the tool. */}
-          <div className="mt-7">
+          <div className="mt-5">
             <div
               className="flex h-3 overflow-hidden rounded-full bg-white/15"
               role="img"
@@ -154,20 +154,20 @@ export function CompoundingCalculator() {
                   <span className="h-2.5 w-2.5 rounded-full bg-green-300" aria-hidden />
                   You put in
                 </dt>
-                <dd className="mt-1 font-display text-2xl">PKR {formatPKR(result.invested)}</dd>
+                <dd className="mt-1 break-words font-display text-lg">PKR {formatPKR(result.invested)}</dd>
               </div>
               <div>
                 <dt className="flex items-center gap-2 text-xs uppercase tracking-wider text-green-200">
                   <span className="h-2.5 w-2.5 rounded-full bg-sparkle-400" aria-hidden />
                   Growth added
                 </dt>
-                <dd className="mt-1 font-display text-2xl text-sparkle-400">
+                <dd className="mt-1 break-words font-display text-lg text-sparkle-400">
                   PKR {formatPKR(result.growth)}
                 </dd>
               </div>
             </dl>
 
-            <p className="mt-5 text-sm leading-relaxed text-green-100">
+            <p className="mt-4 text-sm leading-relaxed text-green-100">
               {Math.round(result.growthShare)}% of that final figure is growth rather than money you
               contributed. Lengthen the time horizon and watch that share move, it moves far more
               than the return rate does.
@@ -175,7 +175,7 @@ export function CompoundingCalculator() {
           </div>
         </div>
 
-        <div className="rounded-2xl border border-line bg-white p-6">
+        <div className="rounded-2xl border border-line bg-white p-5">
           <Newsletter compact />
         </div>
 
@@ -183,7 +183,7 @@ export function CompoundingCalculator() {
           href={whatsappLink(whatsappMessages.calculatorResult('Compounding Calculator'))}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-6 py-3.5 font-semibold text-green-950 hover:bg-[#1eb857]"
+          className="inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-5 py-3 text-sm font-semibold text-green-950 hover:bg-[#1eb857]"
         >
           <MessageCircle className="h-4 w-4" aria-hidden /> Talk through these numbers
         </a>

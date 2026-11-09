@@ -3,6 +3,7 @@ import { MessageCircle, Mail, MapPin, Clock } from 'lucide-react';
 
 import { Section, SectionHeading } from '@/components/ui/Section';
 import { ScrollReveal } from '@/components/ScrollReveal';
+import { PageHero } from '@/components/PageHero';
 import { ContactForm } from '@/components/ContactForm';
 import { Faq } from '@/components/Faq';
 import { site } from '@/content/site';
@@ -24,43 +25,38 @@ export default function ContactPage() {
 
   return (
     <>
-      <section className="bg-green-950 text-white">
-        <div className="container-page py-16 md:py-24">
-          <p className="eyebrow animate-fade-in text-sparkle-400">Contact</p>
-          <h1 className="h1 mt-4 animate-fade-up">Get in touch.</h1>
-          <p className="lede mt-5 max-w-2xl animate-fade-up stagger-1 text-green-100">
-            WhatsApp is the fastest way to reach us, and it is where bookings happen. Email works
-            too if you would rather write it out.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Contact"
+        title="Get in touch."
+        lede="WhatsApp is the fastest way to reach us, and it is where bookings happen. Email works too if you would rather write it out."
+      />
 
       <Section tone="paper">
-        <div className="grid gap-6 lg:grid-cols-[1fr_1.2fr]">
-          <div className="flex flex-col gap-5">
+        <div className="grid gap-5 lg:grid-cols-[1fr_1.2fr]">
+          <div className="flex flex-col gap-4">
             <ScrollReveal>
-              <div className="rounded-3xl bg-green-900 p-8 text-white">
-                <MessageCircle className="h-9 w-9 text-sparkle-400" aria-hidden />
-                <h2 className="h3 mt-4">Fastest way to reach us</h2>
-                <p className="mt-3 text-green-100">
+              <div className="rounded-2xl bg-green-900 p-6 text-white md:p-8">
+                <MessageCircle className="h-8 w-8 text-sparkle-400" aria-hidden />
+                <h2 className="h3 mt-3">Fastest way to reach us</h2>
+                <p className="mt-2 text-sm text-green-100 md:text-base">
                   Message us on WhatsApp and you will usually hear back the same day.
                 </p>
                 <a
                   href={whatsappLink(whatsappMessages.contact)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#25D366] px-6 py-3.5 font-semibold text-green-950 transition-colors hover:bg-[#1eb857]"
+                  className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#25D366] px-6 py-3 text-sm font-semibold text-green-950 transition-colors hover:bg-[#1eb857]"
                 >
                   <MessageCircle className="h-4 w-4" aria-hidden /> {site.contact.whatsapp}
                 </a>
-                <p className="mt-4 text-sm text-green-200">
+                <p className="mt-3 text-xs text-green-200">
                   Response time: {site.contact.responseTime.toLowerCase()}.
                 </p>
               </div>
             </ScrollReveal>
 
             <ScrollReveal delay={0.1}>
-              <dl className="card space-y-4 p-7">
+              <dl className="card space-y-4 p-6">
                 <div className="flex gap-3">
                   <div className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-green-50">
                     <Mail className="h-4 w-4 text-green-700" aria-hidden />
@@ -104,13 +100,13 @@ export default function ContactPage() {
           </div>
 
           <ScrollReveal delay={0.15}>
-            <div className="card p-7 md:p-9">
+            <div className="card p-6 md:p-8">
               <h2 className="h3">Prefer to write?</h2>
               <p className="mt-2 text-sm text-muted">
                 Fill this in and we will reply by email. Everything marked with an asterisk is
                 required.
               </p>
-              <div className="mt-7">
+              <div className="mt-6">
                 <ContactForm />
               </div>
             </div>
@@ -123,11 +119,11 @@ export default function ContactPage() {
           <SectionHeading eyebrow="Before you write" title="These come up a lot." />
         </ScrollReveal>
         <ScrollReveal delay={0.1}>
-          <div className="mt-8 max-w-3xl">
+          <div className="mt-6 max-w-2xl">
             <Faq items={miniFaq} />
           </div>
         </ScrollReveal>
-        <p className="mt-6 text-sm text-muted">
+        <p className="mt-5 text-sm text-muted">
           More on the{' '}
           <a href="/faq" className="link-hover font-semibold text-green-700">
             full FAQ page

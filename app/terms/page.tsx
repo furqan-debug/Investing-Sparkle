@@ -5,7 +5,7 @@ import { site, paymentMethods } from '@/content/site';
 export const metadata: Metadata = {
   title: 'Terms of service',
   description:
-    'The terms governing our courses, bootcamps, and advisory services: what we provide, what we do not, and how disputes are handled.',
+    'The terms governing our courses, live sessions, and advisory services: what we provide, what we do not, and how disputes are handled.',
   alternates: { canonical: '/terms' },
 };
 
@@ -13,13 +13,13 @@ export default function TermsPage() {
   return (
     <LegalPage title="Terms of service" updated="2026-08-20">
       <p>
-        These terms govern your use of this website and any course, bootcamp, or advisory service
+        These terms govern your use of this website and any course, live session, or advisory service
         you purchase from {site.name}. By using the site or booking a service, you agree to them.
       </p>
 
       <h2>1. What we provide</h2>
       <p>
-        We provide financial education (courses, live bootcamps, written material, and free tools)
+        We provide financial education (courses, live sessions, written material, and free tools)
         and advisory services consisting of coaching, risk profiling, written investment plans, and
         portfolio review.
       </p>

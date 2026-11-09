@@ -18,14 +18,19 @@ export function CTABand({
         <div className="rotate-slow absolute right-[20%] bottom-[10%] h-32 w-32 rounded-full border border-white/[0.03]" />
       </div>
 
-      <div className="container-page relative py-16 text-center md:py-24">
+      <div className="container-page relative py-10 text-center md:py-14">
         <ScrollReveal>
           <h2 className="h2">{title}</h2>
-          <p className="lede mx-auto mt-4 max-w-2xl text-green-200">{lede}</p>
+          <p className="lede mx-auto mt-3 max-w-2xl text-green-200">{lede}</p>
         </ScrollReveal>
         <ScrollReveal delay={0.15}>
-          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <Button href="/learn" size="lg">
+          <div className="mt-6 flex flex-col items-center justify-center gap-2.5 sm:flex-row">
+            <Button
+              href="/learn"
+              size="lg"
+              goo="var(--color-sparkle-700)"
+              gooScale
+            >
               Start Learning <ArrowRight className="h-4 w-4" aria-hidden />
             </Button>
             <Button
@@ -33,6 +38,9 @@ export function CTABand({
               variant="ghost"
               size="lg"
               className="text-white"
+              goo="var(--color-green-950)"
+              gooTextHover="var(--color-sparkle-400)"
+              gooScale
             >
               <MessageCircle className="h-4 w-4" aria-hidden /> Book Advisory Call
             </Button>

@@ -4,6 +4,7 @@ import { ArrowRight, Info } from 'lucide-react';
 
 import { Section, SectionHeading } from '@/components/ui/Section';
 import { ScrollReveal } from '@/components/ScrollReveal';
+import { PageHero } from '@/components/PageHero';
 import { CTABand } from '@/components/CTABand';
 import { caseStudies, caseStudyDisclaimer } from '@/content/case-studies';
 
@@ -17,22 +18,15 @@ export const metadata: Metadata = {
 export default function CaseStudiesPage() {
   return (
     <>
-      <section className="bg-green-950 text-white">
-        <div className="container-page py-16 md:py-24">
-          <p className="eyebrow animate-fade-in text-sparkle-400">Worked examples</p>
-          <h1 className="h1 mt-4 max-w-3xl animate-fade-up">
-            What the reasoning actually looks like.
-          </h1>
-          <p className="lede mt-5 max-w-2xl animate-fade-up stagger-1 text-green-100">
-            Three common situations, worked through the way we would work through them in a
-            session, so you can judge the method before you pay for it.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Worked examples"
+        title="What the reasoning actually looks like."
+        lede="Three common situations, worked through the way we would work through them in a session, so you can judge the method before you pay for it."
+      />
 
       <Section tone="paper" tight>
         <ScrollReveal>
-          <div className="flex gap-3 rounded-2xl border-l-4 border-sparkle-400 bg-sparkle-50 p-5 md:p-6">
+          <div className="flex gap-3 rounded-2xl border-l-4 border-sparkle-400 bg-sparkle-50 p-4 md:p-5">
             <Info className="mt-0.5 h-5 w-5 shrink-0 text-green-800" aria-hidden />
             <p className="text-sm leading-relaxed text-ink">
               <strong>These are not real clients.</strong> {caseStudyDisclaimer} We do not publish
@@ -47,19 +41,19 @@ export default function CaseStudiesPage() {
         <ScrollReveal>
           <SectionHeading eyebrow="The examples" title="Pick the one closest to you." />
         </ScrollReveal>
-        <ul className="mt-10 grid gap-5 md:grid-cols-3">
+        <ul className="mt-8 grid gap-4 md:grid-cols-3">
           {caseStudies.map((study, i) => (
             <li key={study.slug}>
-              <ScrollReveal delay={0.1 * i}>
+              <ScrollReveal delay={0.06 * i}>
                 <Link
                   href={`/case-studies/${study.slug}`}
-                  className="card group flex h-full flex-col p-6"
+                  className="card group flex h-full flex-col p-5"
                 >
-                  <h2 className="font-sans text-lg font-semibold leading-snug text-ink">
+                  <h2 className="font-sans text-base font-semibold leading-snug text-ink">
                     {study.title}
                   </h2>
-                  <p className="mt-2.5 flex-1 text-sm leading-relaxed text-muted">{study.summary}</p>
-                  <p className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-green-700">
+                  <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">{study.summary}</p>
+                  <p className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-green-700">
                     Read the reasoning
                     <ArrowRight
                       className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5"
@@ -75,9 +69,9 @@ export default function CaseStudiesPage() {
 
       <Section tone="paper">
         <ScrollReveal animation="scale-in">
-          <div className="card mx-auto max-w-3xl border-l-4 border-l-green-800 p-8 md:p-10">
+          <div className="card mx-auto max-w-3xl border-l-4 border-l-green-800 p-6 md:p-8">
             <h2 className="h3">Why we publish examples rather than client stories</h2>
-            <div className="mt-5 space-y-4 leading-relaxed text-muted">
+            <div className="mt-4 space-y-3.5 text-sm leading-relaxed text-muted md:text-base">
               <p>
                 Most firms in this space publish case studies about named clients with impressive
                 returns. We do not, for two reasons.

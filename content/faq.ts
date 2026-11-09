@@ -14,8 +14,8 @@ export const faqGroups: FaqGroup[] = [
         a: 'No. Everything we teach starts from what a share is. If you can read a bank statement, you can follow our beginner material.',
       },
       {
-        q: 'What is the difference between the bootcamp and a course?',
-        a: 'The bootcamp is three live days covering foundations, fundamental analysis, and portfolio construction, with a cohort and a take-home plan. Courses are narrower and self-paced.',
+        q: 'What is the difference between a live session and a course?',
+        a: 'Live sessions are free, scheduled broadcasts on Facebook Live. Each one takes a single topic end to end and leaves room for questions. Courses are self-paced and go deeper into one subject.',
       },
       {
         q: 'Are sessions in Urdu or English?',
@@ -23,7 +23,7 @@ export const faqGroups: FaqGroup[] = [
       },
       {
         q: 'Do I get recordings?',
-        a: 'Yes. Bootcamp recordings are available for 30 days. Course material is available for as long as the course runs.',
+        a: 'Course material is available for as long as the course runs. Facebook Live replays stay on our Facebook page for as long as the platform keeps them available.',
       },
       {
         q: 'Are the free tools really free?',
@@ -68,8 +68,12 @@ export const faqGroups: FaqGroup[] = [
         a: 'Because it is how people in Pakistan actually prefer to transact, and it lets us answer questions before you commit. Online checkout is planned, but we would rather ship something that works than something that looks modern.',
       },
       {
-        q: 'What is the refund policy for the bootcamp?',
-        a: refundPolicy.bootcamp,
+        q: 'What is the refund policy for courses?',
+        a: 'Self-paced courses are refundable in full within 7 days of purchase, provided you have not completed more than the first module. After that point the material has been delivered and no refund is available.',
+      },
+      {
+        q: 'Do the live sessions cost anything?',
+        a: 'No. Our Facebook Live sessions are free. You may be asked for an email address if you want a reminder, and you can unsubscribe at any time.',
       },
       {
         q: 'What is the refund policy for advisory services?',
@@ -86,7 +90,7 @@ export const faqGroups: FaqGroup[] = [
       },
       {
         q: 'How do you make money?',
-        a: 'From course and bootcamp fees, and from advisory fees. We do not earn commission on your trades, we take no payment from brokers, and we have no financial interest in what you buy. That is deliberate.',
+        a: 'From course fees and advisory fees. Our live sessions are free. We do not earn commission on your trades, we take no payment from brokers, and we have no financial interest in what you buy. That is deliberate.',
       },
       {
         q: 'Where are you based?',
@@ -102,8 +106,8 @@ export const faqGroups: FaqGroup[] = [
         a: 'No. There is nothing to sign up for. Bookings happen over WhatsApp and material is delivered directly.',
       },
       {
-        q: 'How do I access recordings?',
-        a: 'We share access links with your cohort directly after each session.',
+        q: 'How do I access course material?',
+        a: 'We share access links directly after enrolment. Live session replays remain on our Facebook page for as long as the platform keeps them available.',
       },
       {
         q: 'How do I unsubscribe from the newsletter?',

@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { ArrowLeft, MessageCircle, Info } from 'lucide-react';
+import { MessageCircle, Info } from 'lucide-react';
 
 import { Section, SectionHeading } from '@/components/ui/Section';
+import { PageHero } from '@/components/PageHero';
 import { LogoMark } from '@/components/Logo';
 import { ArticleCard } from '@/components/ArticleCard';
 import { Newsletter } from '@/components/Newsletter';
@@ -99,44 +100,32 @@ export default async function ArticlePage({ params }: Params) {
     <>
       <article>
         {/* Header */}
-        <header className="bg-green-950 text-white">
-          <div className="container-page py-14 md:py-20">
-            <Link
-              href="/learn/insights"
-              className="inline-flex items-center gap-1.5 text-sm text-green-200 hover:text-sparkle-400"
-            >
-              <ArrowLeft className="h-4 w-4" aria-hidden /> All insights
-            </Link>
-
-            <div className="mt-6 flex flex-wrap items-center gap-3 text-sm">
-              <span className="rounded-full bg-sparkle-400 px-3 py-1 text-xs font-semibold text-green-950">
-                {article.category}
-              </span>
-              <time dateTime={article.publishedAt} className="text-green-200">
-                {formatDate(article.publishedAt)}
-              </time>
-              <span className="text-green-300">·</span>
-              <span className="text-green-200">{article.readingMinutes} min read</span>
-            </div>
-
-            <h1 className="h1 mt-5 max-w-4xl">{article.title}</h1>
-            <p className="lede mt-5 max-w-2xl text-green-100">{article.description}</p>
+        <PageHero
+          back={{ href: '/learn/insights', label: 'All insights' }}
+          eyebrow={article.category}
+          title={article.title}
+          lede={article.description}
+        >
+          <div className="flex flex-wrap items-center gap-3 text-sm text-green-200">
+            <time dateTime={article.publishedAt}>{formatDate(article.publishedAt)}</time>
+            <span aria-hidden>·</span>
+            <span>{article.readingMinutes} min read</span>
           </div>
-        </header>
+        </PageHero>
 
         {/* Body */}
         <Section tone="paper">
-          <div className="prose-article mx-auto max-w-3xl">
+          <div className="prose-article mx-auto max-w-2xl">
             {article.body.map((block, i) => renderBlock(block, i))}
           </div>
 
           {/* Author box */}
-          <div className="mx-auto mt-12 flex max-w-3xl gap-5 rounded-2xl border border-line bg-white p-6">
+          <div className="mx-auto mt-10 flex max-w-2xl gap-4 rounded-2xl border border-line bg-white p-5">
             <span
-              className="grid h-14 w-14 shrink-0 place-items-center rounded-full bg-green-50"
+              className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-green-50"
               aria-hidden
             >
-              <LogoMark className="h-8 w-auto" />
+              <LogoMark className="h-7 w-auto" />
             </span>
             <div>
               <p className="font-sans font-semibold text-ink">{article.author}</p>
@@ -154,17 +143,17 @@ export default async function ArticlePage({ params }: Params) {
           </div>
 
           {/* Newsletter */}
-          <div className="mx-auto mt-6 max-w-3xl rounded-2xl bg-green-900 p-7 text-white">
+          <div className="mx-auto mt-5 max-w-2xl rounded-2xl bg-green-900 p-6 text-white">
             <Newsletter variant="dark" />
           </div>
 
           {/* WhatsApp */}
-          <div className="mx-auto mt-6 max-w-3xl">
+          <div className="mx-auto mt-5 max-w-2xl">
             <a
               href={whatsappLink(whatsappMessages.articleQuestion(article.title))}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 rounded-2xl border-2 border-line bg-white px-6 py-4 font-semibold text-ink transition-colors hover:border-green-300"
+              className="flex items-center justify-center gap-2 rounded-2xl border-2 border-line bg-white px-6 py-3.5 text-sm font-semibold text-ink transition-colors hover:border-green-300"
             >
               <MessageCircle className="h-5 w-5 text-[#25D366]" aria-hidden />
               Have a question about this article?
@@ -176,7 +165,7 @@ export default async function ArticlePage({ params }: Params) {
       {related.length > 0 && (
         <Section tone="white">
           <SectionHeading eyebrow="Keep reading" title="Related articles." />
-          <ul className="mt-10 grid gap-5 md:grid-cols-3">
+          <ul className="mt-8 grid gap-4 md:grid-cols-3">
             {related.map((a) => (
               <li key={a.slug}>
                 <ArticleCard article={a} />

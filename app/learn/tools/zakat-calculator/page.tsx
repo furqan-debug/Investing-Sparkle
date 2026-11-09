@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowLeft } from 'lucide-react';
 
 import { Section, SectionHeading } from '@/components/ui/Section';
+import { PageHero } from '@/components/PageHero';
 import { ZakatCalculator } from '@/components/tools/ZakatCalculator';
 import { CTABand } from '@/components/CTABand';
 
@@ -16,28 +16,19 @@ export const metadata: Metadata = {
 export default function ZakatPage() {
   return (
     <>
-      <section className="bg-green-950 text-white">
-        <div className="container-page py-14 md:py-20">
-          <Link
-            href="/learn/tools"
-            className="inline-flex items-center gap-1.5 text-sm text-green-200 hover:text-sparkle-400"
-          >
-            <ArrowLeft className="h-4 w-4" aria-hidden /> All free tools
-          </Link>
-          <h1 className="h1 mt-5 max-w-3xl">Zakat Calculator</h1>
-          <p className="lede mt-4 max-w-2xl text-green-100">
-            For shares, dividends, and the cash people forget, the balance sitting idle in a
-            trading account.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        back={{ href: '/learn/tools', label: 'All free tools' }}
+        eyebrow="Free tool"
+        title="Zakat Calculator"
+        lede="For shares, dividends, and the cash people forget: the balance sitting idle in a trading account."
+      />
 
       <Section tone="paper">
         <ZakatCalculator />
       </Section>
 
       <Section tone="white">
-        <div className="mx-auto max-w-3xl">
+        <div className="mx-auto max-w-2xl">
           <SectionHeading eyebrow="How this works" title="Why we ask you for the nisab." />
           <div className="prose-article mt-6">
             <p>

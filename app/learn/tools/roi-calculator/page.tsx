@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowLeft } from 'lucide-react';
 
 import { Section, SectionHeading } from '@/components/ui/Section';
+import { PageHero } from '@/components/PageHero';
 import { RoiCalculator } from '@/components/tools/RoiCalculator';
 import { CTABand } from '@/components/CTABand';
 
@@ -16,28 +16,19 @@ export const metadata: Metadata = {
 export default function RoiPage() {
   return (
     <>
-      <section className="bg-green-950 text-white">
-        <div className="container-page py-14 md:py-20">
-          <Link
-            href="/learn/tools"
-            className="inline-flex items-center gap-1.5 text-sm text-green-200 hover:text-sparkle-400"
-          >
-            <ArrowLeft className="h-4 w-4" aria-hidden /> All free tools
-          </Link>
-          <h1 className="h1 mt-5 max-w-3xl">ROI Calculator</h1>
-          <p className="lede mt-4 max-w-2xl text-green-100">
-            Most people measure a position by comparing the buy price to the sell price. That is not
-            the return, it leaves out the dividends you received and the costs you paid.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        back={{ href: '/learn/tools', label: 'All free tools' }}
+        eyebrow="Free tool"
+        title="ROI Calculator"
+        lede="Most people measure a position by comparing the buy price to the sell price. That is not the return, it leaves out the dividends you received and the costs you paid."
+      />
 
       <Section tone="paper">
         <RoiCalculator />
       </Section>
 
       <Section tone="white">
-        <div className="mx-auto max-w-3xl">
+        <div className="mx-auto max-w-2xl">
           <SectionHeading
             eyebrow="Reading the result"
             title="Two numbers matter more than the headline."

@@ -1,4 +1,5 @@
 import { site } from './site';
+import { liveSession } from './live-session';
 
 /**
  * WhatsApp deep links.
@@ -27,14 +28,9 @@ export const whatsappMessages = {
   exploreAdvisory:
     "Hi Investing Sparkle! I'd like to know more about your advisory services. Please share details.",
 
-  // Bootcamp — the cohort name is injected so the message stays accurate as
-  // cohorts roll over. See content/bootcamp.ts.
-  bootcampReserve: (cohort: string) =>
-    `Hi Investing Sparkle! I want to register for the Stock Market Investor Boot Camp (${cohort}). Please share payment details and confirm my seat.`,
-  bootcampQuestion: (cohort: string) =>
-    `Hi Investing Sparkle! I have a question about the Stock Market Investor Boot Camp (${cohort}).`,
-  bootcampWaitlist:
-    'Hi Investing Sparkle! Please add me to the waitlist for the next Stock Market Investor Boot Camp.',
+  // Upcoming free live session.
+  liveSessionReminder: `Hi Investing Sparkle! Please remind me about the free Facebook Live session "${liveSession.title}" on ${liveSession.date}.`,
+  liveSessionQuestion: `Hi Investing Sparkle! I have a question about the free Facebook Live session "${liveSession.title}" on ${liveSession.date}.`,
 
   // Services
   launchpad:

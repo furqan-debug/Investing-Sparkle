@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 
 import { Section, SectionHeading } from '@/components/ui/Section';
 import { ScrollReveal } from '@/components/ScrollReveal';
+import { PageHero } from '@/components/PageHero';
 import { Faq } from '@/components/Faq';
 import { CTABand } from '@/components/CTABand';
 import { faqGroups, allFaqItems } from '@/content/faq';
@@ -9,7 +10,7 @@ import { faqGroups, allFaqItems } from '@/content/faq';
 export const metadata: Metadata = {
   title: "FAQ | courses, advisory, payments, and what we don't do",
   description:
-    'Answers about our courses and bootcamps, advisory services, pricing, refunds, and our licensing status.',
+    'Answers about our courses, free live sessions, advisory services, pricing, refunds, and our licensing status.',
   alternates: { canonical: '/faq' },
 };
 
@@ -26,19 +27,15 @@ const faqSchema = {
 export default function FaqPage() {
   return (
     <>
-      <section className="bg-green-950 text-white">
-        <div className="container-page py-16 md:py-24">
-          <p className="eyebrow animate-fade-in text-sparkle-400">FAQ</p>
-          <h1 className="h1 mt-4 animate-fade-up">Questions, answered straight.</h1>
-          <p className="lede mt-5 max-w-2xl animate-fade-up stagger-1 text-green-100">
-            Including the ones most companies in this space would rather not answer in public.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="FAQ"
+        title="Questions, answered straight."
+        lede="Including the ones most companies in this space would rather not answer in public."
+      />
 
       {faqGroups.map((group, i) => (
         <Section key={group.heading} tone={i % 2 === 0 ? 'paper' : 'white'}>
-          <div className="grid gap-10 lg:grid-cols-[1fr_2fr]">
+          <div className="grid gap-6 lg:grid-cols-[1fr_2fr] lg:gap-10">
             <ScrollReveal>
               <SectionHeading title={group.heading} />
             </ScrollReveal>
