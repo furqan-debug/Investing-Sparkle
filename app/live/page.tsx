@@ -91,7 +91,7 @@ export default function LiveSessionPage() {
         title={
           <>
             {liveSession.title}{' '}
-            <span className="text-sparkle-400">— a blueprint for your money.</span>
+            <span className="text-sparkle-400">: a blueprint for your money.</span>
           </>
         }
         lede={liveSession.subtitle}
