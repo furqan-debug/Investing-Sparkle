@@ -1,8 +1,7 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
-import { ArrowLeft } from 'lucide-react';
 
 import { Section, SectionHeading } from '@/components/ui/Section';
+import { PageHero } from '@/components/PageHero';
 import { CompoundingCalculator } from '@/components/tools/CompoundingCalculator';
 import { CTABand } from '@/components/CTABand';
 
@@ -16,28 +15,19 @@ export const metadata: Metadata = {
 export default function CompoundingPage() {
   return (
     <>
-      <section className="bg-green-950 text-white">
-        <div className="container-page py-14 md:py-20">
-          <Link
-            href="/learn/tools"
-            className="inline-flex items-center gap-1.5 text-sm text-green-200 hover:text-sparkle-400"
-          >
-            <ArrowLeft className="h-4 w-4" aria-hidden /> All free tools
-          </Link>
-          <h1 className="h1 mt-5 max-w-3xl">Compounding Calculator</h1>
-          <p className="lede mt-4 max-w-2xl text-green-100">
-            Move the sliders and watch which input actually changes the outcome. It is almost never
-            the one people expect.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        back={{ href: '/learn/tools', label: 'All free tools' }}
+        eyebrow="Free tool"
+        title="Compounding Calculator"
+        lede="Move the sliders and watch which input actually changes the outcome. It is almost never the one people expect."
+      />
 
       <Section tone="paper">
         <CompoundingCalculator />
       </Section>
 
       <Section tone="white">
-        <div className="mx-auto max-w-3xl">
+        <div className="mx-auto max-w-2xl">
           <SectionHeading
             eyebrow="What the numbers mean"
             title="Time does more work than returns."

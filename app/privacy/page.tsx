@@ -52,7 +52,7 @@ export default function PrivacyPage() {
       <h2>Why we use it</h2>
       <ul>
         <li>To reply to your enquiry.</li>
-        <li>To deliver the course, bootcamp, or advisory service you booked.</li>
+        <li>To deliver the course, live session, newsletter, or advisory service you requested.</li>
         <li>To send the newsletter, if you asked for it.</li>
         <li>To understand which pages are useful, so we can improve them.</li>
       </ul>

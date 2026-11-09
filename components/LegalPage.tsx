@@ -23,20 +23,23 @@ export function LegalPage({
 }) {
   return (
     <>
-      <section className="bg-green-950 text-white">
-        <div className="container-page py-14 md:py-20">
+      <section className="hero-gradient relative overflow-hidden text-white">
+        <div className="pointer-events-none absolute inset-0" aria-hidden>
+          <div className="absolute -right-24 -top-24 h-64 w-64 rounded-full bg-sparkle-400/[0.06]" />
+        </div>
+        <div className="container-page relative py-10 md:py-14">
           <p className="eyebrow text-sparkle-400">Legal</p>
-          <h1 className="h1 mt-4">{title}</h1>
-          <p className="mt-4 text-sm text-green-200">
+          <h1 className="h1 mt-3">{title}</h1>
+          <p className="mt-3 text-sm text-green-200">
             Last updated <time dateTime={updated}>{formatDate(updated)}</time>
           </p>
         </div>
       </section>
 
       <Section tone="paper">
-        <div className="mx-auto max-w-3xl">
+        <div className="mx-auto max-w-2xl">
           {!reviewed && (
-            <div className="mb-10 flex gap-3 rounded-2xl border-l-4 border-warning bg-sparkle-100 p-5">
+            <div className="mb-8 flex gap-3 rounded-2xl border-l-4 border-warning bg-sparkle-100 p-4">
               <AlertTriangle className="mt-0.5 h-5 w-5 shrink-0 text-warning" aria-hidden />
               <p className="text-sm leading-relaxed text-ink">
                 <strong>Internal note, remove before launch.</strong> This is a working draft

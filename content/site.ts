@@ -87,12 +87,12 @@ export const footerDisclaimer =
   'Investing Sparkle provides financial education and general guidance. We are not licensed investment advisors under the SECP. We do not manage client investments, execute trades, or hold client funds. All investment decisions and executions are made by clients through their own brokerage accounts. Investing in the stock market carries risk, including loss of principal. Past performance does not guarantee future results.';
 
 /**
- * Refund policy, stated once and reused on /refund, service pages, and the
- * bootcamp page — the checklist requires these three to stay consistent.
+ * Refund policy, stated once and reused on /refund and the service pages —
+ * the checklist requires these to stay consistent.
  */
 export const refundPolicy = {
-  bootcamp:
-    'Full refund up to 3 days before the start date. 50% refund up to the day of. No refund once the bootcamp begins, but your seat is transferable.',
+  liveSession:
+    'Our Facebook Live sessions are free, so no payment is taken and no refund applies. If a paid workshop is announced, its price and refund terms will be shown before booking.',
   launchpad: 'Full refund any time before your first session.',
   guidedStart: 'Full refund before your first session. Prorated refund after onboarding begins.',
   membership:

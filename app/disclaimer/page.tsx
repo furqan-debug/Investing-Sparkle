@@ -16,7 +16,7 @@ export default function DisclaimerPage() {
       <p>
         {site.name} provides financial education and general guidance. We are not licensed
         investment advisors under the Securities and Exchange Commission of Pakistan (SECP), and
-        nothing on this website, in our courses, in our bootcamps, or in our advisory sessions
+        nothing on this website, in our courses, in our live sessions, or in our advisory sessions
         constitutes a personal recommendation to buy, sell, or hold any security.
       </p>
       <p>

@@ -11,14 +11,14 @@ export function PhilosophyStrip() {
         <div className="rotate-slow absolute left-[50%] top-[50%] h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/[0.03]" />
       </div>
 
-      <div className="container-page relative py-14 md:py-20">
+      <div className="container-page relative py-10 md:py-14">
         <ScrollReveal>
-          <div className="mx-auto max-w-4xl text-center">
-            <ShieldCheck className="mx-auto h-9 w-9 text-sparkle-400 drop-shadow-[0_0_12px_rgba(196,152,32,0.3)]" aria-hidden />
-            <p className="mt-5 font-display text-3xl leading-tight tracking-wide md:text-5xl">
+          <div className="mx-auto max-w-3xl text-center">
+            <ShieldCheck className="mx-auto h-8 w-8 text-sparkle-400 drop-shadow-[0_0_12px_rgba(196,152,32,0.3)]" aria-hidden />
+            <p className="mt-4 font-display text-2xl leading-tight tracking-wide md:text-4xl">
               {philosophy.headline}
             </p>
-            <p className="mx-auto mt-5 max-w-2xl text-green-100">{philosophy.subline}</p>
+            <p className="mx-auto mt-4 max-w-2xl text-sm text-green-100 md:text-base">{philosophy.subline}</p>
           </div>
         </ScrollReveal>
       </div>

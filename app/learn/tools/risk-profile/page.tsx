@@ -1,8 +1,7 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
-import { ArrowLeft } from 'lucide-react';
 
 import { Section, SectionHeading } from '@/components/ui/Section';
+import { PageHero } from '@/components/PageHero';
 import { RiskProfileQuiz } from '@/components/tools/RiskProfileQuiz';
 import { PhilosophyStrip } from '@/components/PhilosophyStrip';
 
@@ -16,30 +15,21 @@ export const metadata: Metadata = {
 export default function RiskProfilePage() {
   return (
     <>
-      <section className="bg-green-950 text-white">
-        <div className="container-page py-14 md:py-20">
-          <Link
-            href="/learn/tools"
-            className="inline-flex items-center gap-1.5 text-sm text-green-200 hover:text-sparkle-400"
-          >
-            <ArrowLeft className="h-4 w-4" aria-hidden /> All free tools
-          </Link>
-          <h1 className="h1 mt-5 max-w-3xl">Risk Profile Quiz</h1>
-          <p className="lede mt-4 max-w-2xl text-green-100">
-            Eight questions about your timeline, your temperament, and your finances. It takes about
-            two minutes, and it will tell you honestly if the answer is “not yet”.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        back={{ href: '/learn/tools', label: 'All free tools' }}
+        eyebrow="Free tool"
+        title="Risk Profile Quiz"
+        lede="Eight questions about your timeline, your temperament, and your finances. It takes about two minutes, and it will tell you honestly if the answer is “not yet”."
+      />
 
       <Section tone="paper">
-        <div className="mx-auto max-w-3xl">
+        <div className="mx-auto max-w-2xl">
           <RiskProfileQuiz />
         </div>
       </Section>
 
       <Section tone="white">
-        <div className="mx-auto max-w-3xl">
+        <div className="mx-auto max-w-2xl">
           <SectionHeading
             eyebrow="What this measures"
             title="Risk tolerance is two different things."

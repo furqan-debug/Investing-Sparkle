@@ -1,4 +1,4 @@
-import type { Testimonial } from './bootcamp';
+import type { Testimonial } from './testimonials';
 
 /**
  * Courses.
@@ -98,8 +98,8 @@ export const courses: Course[] = [
         a: 'None. The course starts from what a share is and assumes nothing beyond that.',
       },
       {
-        q: 'Is this the same as the bootcamp?',
-        a: 'No. The bootcamp is three live days covering foundations, fundamental analysis, and portfolio construction. This course covers foundations only, at your own pace.',
+        q: 'Is this the same as your live sessions?',
+        a: 'No. Our Facebook Live sessions are free and cover one topic at a time. This course is paid, self-paced, and goes deeper into PSX foundations with exercises and templates.',
       },
       {
         q: 'Will you tell me which stocks to buy?',

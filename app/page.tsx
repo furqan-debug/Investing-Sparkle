@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { ArrowRight, GraduationCap, Compass, Calculator, TrendingUp } from 'lucide-react';
+import { ArrowRight, GraduationCap, Compass, Calculator, TrendingUp, Radio } from 'lucide-react';
 
 import { Section, SectionHeading } from '@/components/ui/Section';
 import { Button } from '@/components/ui/Button';
@@ -8,13 +8,13 @@ import { ScrollReveal } from '@/components/ScrollReveal';
 import { HeroHeadline } from '@/components/HeroHeadline';
 import { TrustBar } from '@/components/TrustBar';
 import { PhilosophyStrip } from '@/components/PhilosophyStrip';
-import { BootcampCard } from '@/components/BootcampCard';
+import { LiveSessionCard } from '@/components/LiveSessionCard';
 import { Testimonials } from '@/components/Testimonials';
 import { ArticleCard } from '@/components/ArticleCard';
 import { CTABand } from '@/components/CTABand';
 
 import { site } from '@/content/site';
-import { bootcamp } from '@/content/bootcamp';
+import { liveSession } from '@/content/live-session';
 import { problems, journey, journeyNote } from '@/content/about';
 import { publishedArticles } from '@/content/insights';
 import { tools } from '@/content/tools';
@@ -47,50 +47,51 @@ export default function HomePage() {
           <div className="rotate-slow absolute left-[5%] top-[15%] h-40 w-40 rounded-full border border-sparkle-400/[0.04]" style={{ animationDirection: 'reverse' }} />
         </div>
 
-        <div className="container-page relative py-20 md:py-28">
-          <div className="grid items-center gap-12 lg:grid-cols-[1.15fr_1fr]">
+        <div className="container-page relative py-12 md:py-16 lg:py-20">
+          <div className="grid items-center gap-10 lg:grid-cols-[1.15fr_1fr]">
             <div>
-              {bootcamp.status === 'enrolling' && (
-                <Link
-                  href="/learn/bootcamp"
-                  className="animate-fade-in eyebrow rounded-full bg-sparkle-400 px-3.5 py-1.5 text-green-950 transition-all duration-200 hover:-translate-y-0.5 hover:bg-sparkle-300 hover:shadow-lg hover:shadow-sparkle-400/20"
-                >
-                  New bootcamp · {bootcamp.cohort}
-                </Link>
-              )}
+              <Link
+                href="/live"
+                className="animate-fade-in eyebrow rounded-full bg-sparkle-400 px-3 py-1.5 text-[11px] text-green-950 transition-all duration-200 hover:-translate-y-0.5 hover:bg-sparkle-300 hover:shadow-lg hover:shadow-sparkle-400/20"
+              >
+                <Radio className="h-3.5 w-3.5" aria-hidden />
+                Free Facebook Live · {liveSession.date}
+              </Link>
 
               <HeroHeadline />
 
-              <p className="lede mt-5 max-w-xl animate-fade-up stagger-1 text-green-100">
+              <p className="lede mt-4 max-w-xl animate-fade-up stagger-1 text-green-100">
                 Structured education and personal guidance for PSX investors. You keep control of
                 your money. Always.
               </p>
 
-              <div className="mt-8 flex flex-col gap-3 animate-fade-up stagger-2 sm:flex-row sm:items-center">
-                <Button href="/learn" size="lg">
+              <div className="mt-7 flex flex-col gap-3 animate-fade-up stagger-2 sm:flex-row sm:items-center">
+                <Button href="/learn" size="lg" goo="var(--color-sparkle-700)" gooScale>
                   Start Learning <ArrowRight className="h-4 w-4" aria-hidden />
                 </Button>
                 <Link
-                  href="/services"
-                  className="link-hover inline-flex items-center gap-1.5 px-2 py-2 font-semibold text-sparkle-400 transition-colors hover:text-sparkle-300"
+                  href="/live"
+                  className="link-hover inline-flex items-center gap-1.5 px-2 py-2 text-sm font-semibold text-sparkle-400 transition-colors hover:text-sparkle-300"
                 >
-                  Explore Advisory <ArrowRight className="h-4 w-4" aria-hidden />
+                  Join the free live session <ArrowRight className="h-4 w-4" aria-hidden />
                 </Link>
               </div>
             </div>
 
             <div className="animate-scale-in stagger-3">
-              <div className="group rounded-3xl border border-white/10 bg-white/5 p-7 backdrop-blur-xl transition-all duration-500 hover:border-sparkle-400/20 hover:bg-white/[0.07] hover:shadow-xl hover:shadow-sparkle-400/5">
+              <div className="group rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl transition-all duration-500 hover:border-sparkle-400/20 hover:bg-white/[0.07] hover:shadow-xl hover:shadow-sparkle-400/5">
                 <p className="eyebrow text-sparkle-400">The path</p>
-                <ul className="mt-5 space-y-4">
+                <ul className="mt-4 space-y-3.5">
                   {journey.map((s) => (
-                    <li key={s.step} className="flex gap-4">
-                      <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-green-700 font-display text-base text-white transition-colors duration-300 group-hover:bg-green-600">
+                    <li key={s.step} className="flex gap-3.5">
+                      <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-green-700 font-display text-sm text-white transition-colors duration-300 group-hover:bg-green-600">
                         {s.step}
                       </span>
                       <span>
-                        <span className="block font-semibold leading-tight">{s.title}</span>
-                        <span className="mt-0.5 block text-sm text-green-100">{s.detail}</span>
+                        <span className="block text-sm font-semibold leading-tight">{s.title}</span>
+                        <span className="mt-0.5 block text-[13px] leading-relaxed text-green-100">
+                          {s.detail}
+                        </span>
                       </span>
                     </li>
                   ))}
@@ -104,6 +105,13 @@ export default function HomePage() {
       {/* Trust bar */}
       <TrustBar />
 
+      {/* Free live session */}
+      <Section tone="white" tight>
+        <ScrollReveal>
+          <LiveSessionCard />
+        </ScrollReveal>
+      </Section>
+
       {/* Why we exist */}
       <Section tone="paper">
         <ScrollReveal>
@@ -113,13 +121,13 @@ export default function HomePage() {
             lede="It is hard because almost nobody is teaching it properly. These are the four problems we built the company around."
           />
         </ScrollReveal>
-        <ul className="mt-10 grid gap-5 sm:grid-cols-2">
+        <ul className="mt-8 grid gap-4 sm:grid-cols-2">
           {problems.map((p, i) => (
             <li key={p.title}>
-              <ScrollReveal delay={0.08 * i}>
-                <div className="card p-6">
-                  <h3 className="font-sans text-lg font-semibold text-ink">{p.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted">{p.detail}</p>
+              <ScrollReveal delay={0.06 * i}>
+                <div className="card h-full p-5">
+                  <h3 className="font-sans text-base font-semibold text-ink">{p.title}</h3>
+                  <p className="mt-1.5 text-sm leading-relaxed text-muted">{p.detail}</p>
                 </div>
               </ScrollReveal>
             </li>
@@ -135,32 +143,32 @@ export default function HomePage() {
             title="Two pillars, and one of them does most of the work."
           />
         </ScrollReveal>
-        <div className="mt-10 grid gap-6 lg:grid-cols-[1.4fr_1fr]">
-          <ScrollReveal delay={0.1}>
-            <div className="rounded-3xl bg-green-900 p-8 text-white md:p-10">
-              <GraduationCap className="h-9 w-9 text-sparkle-400" aria-hidden />
-              <h3 className="h3 mt-5">Learn</h3>
-              <p className="mt-3 max-w-lg text-green-100">
-                Structured courses, live bootcamps, and free tools. Understand PSX from first
+        <div className="mt-8 grid gap-4 lg:grid-cols-[1.4fr_1fr]">
+          <ScrollReveal delay={0.08}>
+            <div className="h-full rounded-2xl bg-green-900 p-6 text-white md:p-8">
+              <GraduationCap className="h-8 w-8 text-sparkle-400" aria-hidden />
+              <h3 className="h3 mt-4">Learn</h3>
+              <p className="mt-2.5 max-w-lg text-sm leading-relaxed text-green-100 md:text-base">
+                Structured courses, free live sessions, and free tools. Understand PSX from first
                 principles, in the right order, without needing anyone to tell you what to buy.
               </p>
-              <Button href="/learn" size="lg" className="mt-7">
+              <Button href="/learn" size="lg" className="mt-6">
                 Explore Learning <ArrowRight className="h-4 w-4" aria-hidden />
               </Button>
             </div>
           </ScrollReveal>
 
-          <ScrollReveal delay={0.2}>
-            <div className="card p-8 md:p-10">
-              <Compass className="h-9 w-9 text-green-700" aria-hidden />
-              <h3 className="h3 mt-5">Guide</h3>
-              <p className="mt-3 text-muted">
+          <ScrollReveal delay={0.16}>
+            <div className="card h-full p-6 md:p-8">
+              <Compass className="h-8 w-8 text-green-700" aria-hidden />
+              <h3 className="h3 mt-4">Guide</h3>
+              <p className="mt-2.5 text-sm leading-relaxed text-muted md:text-base">
                 One-on-one advisory when you want a plan built <em>with</em> you. Not for you, and
                 never instead of you.
               </p>
               <Link
                 href="/services"
-                className="link-hover mt-7 inline-flex items-center gap-1.5 font-semibold text-green-700"
+                className="link-hover mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-green-700"
               >
                 See advisory services <ArrowRight className="h-4 w-4" aria-hidden />
               </Link>
@@ -181,19 +189,19 @@ export default function HomePage() {
           </div>
         </ScrollReveal>
 
-        <ul className="mt-10 grid gap-5 md:grid-cols-3">
+        <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {featuredTools.map((tool, i) => {
             const Icon = toolIcons[i % toolIcons.length];
             const isLive = tool.status === 'live';
 
             const inner = (
               <>
-                <div className="grid h-12 w-12 place-items-center rounded-2xl bg-green-50">
-                  <Icon className="h-6 w-6 text-green-700" aria-hidden />
+                <div className="grid h-10 w-10 place-items-center rounded-xl bg-green-50">
+                  <Icon className="h-5 w-5 text-green-700" aria-hidden />
                 </div>
-                <h3 className="mt-4 font-sans text-lg font-semibold text-ink">{tool.name}</h3>
-                <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">{tool.blurb}</p>
-                <p className="mt-4 text-sm font-semibold text-green-700">
+                <h3 className="mt-3.5 font-sans text-base font-semibold text-ink">{tool.name}</h3>
+                <p className="mt-1.5 flex-1 text-sm leading-relaxed text-muted">{tool.blurb}</p>
+                <p className="mt-3.5 text-sm font-semibold text-green-700">
                   {isLive ? 'Open tool →' : 'Coming soon'}
                 </p>
               </>
@@ -201,16 +209,16 @@ export default function HomePage() {
 
             return (
               <li key={tool.slug}>
-                <ScrollReveal delay={0.08 * i}>
+                <ScrollReveal delay={0.06 * i}>
                   {isLive ? (
                     <Link
                       href={`/learn/tools/${tool.slug}`}
-                      className="card flex h-full flex-col p-6"
+                      className="card flex h-full flex-col p-5"
                     >
                       {inner}
                     </Link>
                   ) : (
-                    <div className="card flex h-full flex-col p-6 opacity-70">{inner}</div>
+                    <div className="card flex h-full flex-col p-5 opacity-70">{inner}</div>
                   )}
                 </ScrollReveal>
               </li>
@@ -218,46 +226,34 @@ export default function HomePage() {
           })}
         </ul>
 
-        <div className="mt-8">
+        <div className="mt-6">
           <Button href="/learn/tools" variant="secondary">
             View all free tools <ArrowRight className="h-4 w-4" aria-hidden />
           </Button>
         </div>
       </Section>
 
-      {/* Currently enrolling */}
-      <Section tone="white">
-        <ScrollReveal>
-          <SectionHeading eyebrow="Currently enrolling" title="The next cohort." />
-        </ScrollReveal>
-        <ScrollReveal animation="scale-in" delay={0.15}>
-          <div className="mt-10">
-            <BootcampCard />
-          </div>
-        </ScrollReveal>
-      </Section>
-
       {/* The path */}
-      <Section tone="paper">
+      <Section tone="white">
         <ScrollReveal>
           <SectionHeading
             eyebrow="How this works"
             title="Four steps. Most people should stop after two."
           />
         </ScrollReveal>
-        <ol className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+        <ol className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {journey.map((step, i) => (
             <li key={step.step}>
-              <ScrollReveal delay={0.1 * i}>
-                <div className="card flex h-full flex-col p-6">
-                  <span className="grid h-10 w-10 place-items-center rounded-full bg-green-700 font-display text-lg text-white">
+              <ScrollReveal delay={0.08 * i}>
+                <div className="card flex h-full flex-col p-5">
+                  <span className="grid h-9 w-9 place-items-center rounded-full bg-green-700 font-display text-base text-white">
                     {step.step}
                   </span>
-                  <h3 className="mt-4 font-sans text-lg font-semibold text-ink">{step.title}</h3>
-                  <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">{step.detail}</p>
+                  <h3 className="mt-3.5 font-sans text-base font-semibold text-ink">{step.title}</h3>
+                  <p className="mt-1.5 flex-1 text-sm leading-relaxed text-muted">{step.detail}</p>
                   <Link
                     href={step.href}
-                    className="link-hover mt-4 inline-flex items-center gap-1 text-sm font-semibold text-green-700"
+                    className="link-hover mt-3.5 inline-flex items-center gap-1 text-sm font-semibold text-green-700"
                   >
                     Learn more <ArrowRight className="h-3.5 w-3.5" aria-hidden />
                   </Link>
@@ -267,8 +263,8 @@ export default function HomePage() {
           ))}
         </ol>
 
-        <ScrollReveal delay={0.4}>
-          <p className="mx-auto mt-9 max-w-2xl rounded-2xl border border-sparkle-300 bg-sparkle-50 px-6 py-5 text-center font-medium text-ink">
+        <ScrollReveal delay={0.3}>
+          <p className="mx-auto mt-7 max-w-2xl rounded-2xl border border-sparkle-300 bg-sparkle-50 px-5 py-4 text-center text-sm font-medium text-ink md:text-base">
             {journeyNote}
           </p>
         </ScrollReveal>
@@ -282,8 +278,8 @@ export default function HomePage() {
         <ScrollReveal>
           <SectionHeading eyebrow="In their words" title="What students say." />
         </ScrollReveal>
-        <ScrollReveal delay={0.15}>
-          <div className="mt-10">
+        <ScrollReveal delay={0.1}>
+          <div className="mt-8">
             <Testimonials
               items={learningTestimonials.slice(0, 3)}
               emptyMessage="Our first cohorts have just finished. We would rather show you nothing here than write testimonials ourselves. Real ones are coming."
@@ -295,20 +291,20 @@ export default function HomePage() {
       {/* Insights */}
       <Section tone="white">
         <ScrollReveal>
-          <div className="flex flex-wrap items-end justify-between gap-6">
+          <div className="flex flex-wrap items-end justify-between gap-4">
             <SectionHeading eyebrow="Insights" title="Recent writing." />
             <Link
               href="/learn/insights"
-              className="link-hover inline-flex items-center gap-1.5 font-semibold text-green-700"
+              className="link-hover inline-flex items-center gap-1.5 text-sm font-semibold text-green-700"
             >
               Read all articles <ArrowRight className="h-4 w-4" aria-hidden />
             </Link>
           </div>
         </ScrollReveal>
-        <ul className="mt-10 grid gap-5 md:grid-cols-3">
+        <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {latestArticles.map((article, i) => (
             <li key={article.slug}>
-              <ScrollReveal delay={0.08 * i}>
+              <ScrollReveal delay={0.06 * i}>
                 <ArticleCard article={article} />
               </ScrollReveal>
             </li>
@@ -319,24 +315,24 @@ export default function HomePage() {
       {/* About preview */}
       <Section tone="paper">
         <ScrollReveal animation="scale-in">
-          <div className="card grid gap-8 overflow-hidden p-8 md:grid-cols-[1fr_1.2fr] md:p-10">
+          <div className="card grid gap-6 overflow-hidden p-6 md:grid-cols-[1fr_1.2fr] md:p-8">
             <div>
               <p className="eyebrow text-green-600">Who we are</p>
-              <p className="mt-3 text-lg leading-relaxed text-ink">
+              <p className="mt-2.5 text-base leading-relaxed text-ink md:text-lg">
                 Built by two Pakistani builders who watched too many friends lose money on WhatsApp
                 tips.
               </p>
               <Link
                 href="/about"
-                className="link-hover mt-4 inline-flex items-center gap-1.5 font-semibold text-green-700"
+                className="link-hover mt-3.5 inline-flex items-center gap-1.5 text-sm font-semibold text-green-700"
               >
                 Read our story <ArrowRight className="h-4 w-4" aria-hidden />
               </Link>
             </div>
 
-            <div className="border-t border-line pt-6 md:border-l md:border-t-0 md:pl-8 md:pt-0">
+            <div className="border-t border-line pt-5 md:border-l md:border-t-0 md:pl-6 md:pt-0">
               <p className="text-sm font-semibold text-ink">Where we stand, plainly</p>
-              <p className="mt-2 text-sm leading-relaxed text-muted">
+              <p className="mt-1.5 text-sm leading-relaxed text-muted">
                 We are not SECP-licensed investment advisors. We earn from course and advisory fees
                 only: no commission on your trades, no payment from brokers, no referral fees.
                 Nothing we teach is influenced by what we would earn if you acted on it.

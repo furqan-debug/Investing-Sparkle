@@ -9,7 +9,6 @@ export const mainNav: NavItem[] = [
     href: '/learn',
     children: [
       { label: 'Courses', href: '/learn/courses' },
-      { label: 'Current Bootcamp', href: '/learn/bootcamp' },
       { label: 'Free Tools', href: '/learn/tools' },
       { label: 'Insights', href: '/learn/insights' },
     ],
@@ -25,7 +24,7 @@ export const mainNav: NavItem[] = [
       { label: 'Worked Examples', href: '/case-studies' },
     ],
   },
-  { label: 'Insights', href: '/learn/insights' },
+  { label: 'Live Session', href: '/live' },
   { label: 'About', href: '/about' },
   { label: 'Contact', href: '/contact' },
 ];
@@ -35,9 +34,9 @@ export const footerNav = [
     heading: 'Learn',
     links: [
       { label: 'Courses', href: '/learn/courses' },
-      { label: 'Current Bootcamp', href: '/learn/bootcamp' },
       { label: 'Free Tools', href: '/learn/tools' },
       { label: 'Insights', href: '/learn/insights' },
+      { label: 'Live Session', href: '/live' },
     ],
   },
   {

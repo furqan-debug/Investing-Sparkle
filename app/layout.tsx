@@ -2,7 +2,9 @@ import type { Metadata, Viewport } from 'next';
 import { DM_Serif_Display, Inter } from 'next/font/google';
 import './globals.css';
 
+import { LiveSessionBanner } from '@/components/LiveSessionBanner';
 import { Header } from '@/components/Header';
+import { GooFilter } from '@/components/GooFilter';
 import { Footer } from '@/components/Footer';
 import { WhatsAppFloat } from '@/components/WhatsAppFloat';
 import { CookieBanner } from '@/components/CookieBanner';
@@ -103,6 +105,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           Skip to content
         </a>
 
+        <GooFilter />
+        <LiveSessionBanner />
         <Header />
         <main id="main">{children}</main>
         <Footer />

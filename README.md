@@ -72,7 +72,7 @@ there. Change a phone number once, it changes everywhere.
 | File | Controls |
 | --- | --- |
 | `content/site.ts` | Contact details, trust stats, refund policy, disclaimer |
-| `content/bootcamp.ts` | Current cohort, and the past-cohort archive |
+| `content/live-session.ts` | The current free live session (e.g. the Financial Revolution) |
 | `content/services.ts` | The three advisory tiers, including detail pages |
 | `content/courses.ts` | Courses |
 | `content/insights.ts` | Article registry (articles live in `content/articles/sets/`) |
@@ -87,11 +87,10 @@ there. Change a phone number once, it changes everywhere.
 
 ### Common edits
 
-**Rolling over a bootcamp cohort.** Edit `content/bootcamp.ts`. Set
-`status: 'closed'` between cohorts and every bootcamp card switches to a
-waitlist state on its own. When a cohort finishes, add it to `pastCohorts` — the
-archive page appears automatically (it 404s while the list is empty) and the
-"cohorts run" count is derived from that list, so it cannot drift.
+**Repeating the free live session.** Edit `content/live-session.ts`. The date,
+subtitle, agenda, and "how to join" steps all live there, and the banner, the
+dedicated `/live` page, and the homepage all read from it, so a date change is a
+one-file edit. The event schema on the live page is generated from the same file.
 
 **Adding an article.** Drop it into the appropriate file in
 `content/articles/sets/`. The listing, category filters, related-article logic,
@@ -113,7 +112,7 @@ careless edit later:
 - **The scarcity bar** only appears when `seatsRemaining` or
   `registrationCloses` holds a real value, so a permanent "only 2 seats left!"
   cannot ship by accident.
-- **The cohort archive** 404s until a cohort has actually finished.
+- **Live sessions** are free and public by design — no seat counts, ever.
 - **No founder profiles anywhere** — no bios, headshots, team sections, or named
   instructor blocks, by decision. The trust argument rests on what the company
   will and will not do, not on personal profiles. Do not reintroduce them.
@@ -128,7 +127,7 @@ careless edit later:
 
 ## What's built
 
-**Phase 1** — home, learn hub, bootcamp, courses, services, about, contact, FAQ,
+**Phase 1** — home, learn hub, live session, courses, services, about, contact, FAQ,
 four legal pages, 404, sitemap, robots, cookie consent, WhatsApp CTAs
 throughout.
 
@@ -143,8 +142,6 @@ throughout.
   process, deliverables, and a per-service FAQ.
 - **Worked examples** at `/case-studies` — three illustrative scenarios showing
   the reasoning, clearly not presented as real clients.
-- **Past-cohort archive** at `/learn/bootcamp/archive`, self-hiding until
-  populated.
 - **Generated og-image and favicon** — `app/opengraph-image.tsx` and
   `app/icon.tsx`, so there is no asset to design or keep in sync.
 - **Calendly and payment scaffolding** in `content/integrations.ts`, both off

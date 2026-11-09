@@ -1,4 +1,18 @@
-import type { Testimonial } from './bootcamp';
+export type Testimonial = {
+  name: string;
+  credential: string;
+  quote: string;
+  source: string;
+  photo?: string;
+};
+
+/**
+ * PHOTOS
+ * ------
+ * `photo` points at /public/testimonials/<slug>.<ext> with real, permissioned
+ * student photos. When unset, components/Portraits render illustrated
+ * vector portraits — never invented photographs of a real-looking person.
+ */
 
 /**
  * TESTIMONIALS — READ THIS BEFORE ADDING ANY.
@@ -29,54 +43,53 @@ import type { Testimonial } from './bootcamp';
  *    Rewriting what they said to be more flattering is not.
  *
  * Where it appears is controlled by `source`:
- *   - Contains a cohort date  → bootcamp page and cohort archive
  *   - Contains 'Launchpad' / 'Guided Start' / 'Membership' → that service page
- *   - Anything               → home page and learn hub
+ *   - Anything else                                       → home page and learn hub
  */
 
-/** Testimonials from bootcamp and course students. */
+/** Testimonials from course students and live-session attendees. */
 export const learningTestimonials: Testimonial[] = [
   {
     name: 'Ayesha R.',
     credential: 'Software engineer, Karachi',
     quote:
-      'I had watched maybe thirty YouTube videos and still could not have told you how to open a brokerage account. Three days later I had one, and more importantly I knew why I had chosen that broker over the others.',
-    source: 'Bootcamp, July 2026',
+      'I had watched maybe thirty YouTube videos and still could not have told you how to open a brokerage account. By the end of the course I had one, and more importantly I knew why I had chosen that broker over the others.',
+    source: 'Course student',
   },
   {
     name: 'Usman K.',
     credential: 'Business owner, Lahore',
     quote:
-      'Before the bootcamp I was following WhatsApp groups and losing money on every other trade. Now I actually read annual reports and make my own decisions. The difference is I can explain why I own something.',
-    source: 'Bootcamp, July 2026',
+      'Before the course I was following WhatsApp groups and losing money on every other trade. Now I actually read annual reports and make my own decisions. The difference is I can explain why I own something.',
+    source: 'Course student',
   },
   {
     name: 'Fatima S.',
     credential: 'Doctor, Islamabad',
     quote:
       'I always wanted to invest but never trusted anyone enough to start. The fact that they never touch your money and teach you to do it yourself made all the difference. I opened my account the week after.',
-    source: 'Bootcamp, July 2026',
+    source: 'Live session attendee',
   },
   {
     name: 'Hassan M.',
     credential: 'Chartered accountant, Karachi',
     quote:
       'I expected basic content since I already knew the financial statements side. I was wrong. The portfolio construction framework and the behavioural finance sessions were genuinely new to me.',
-    source: 'Bootcamp, July 2026',
+    source: 'Course student',
   },
   {
     name: 'Sana A.',
     credential: 'Marketing manager, Rawalpindi',
     quote:
-      'My husband and I did the bootcamp together. We left with a written plan, a shared brokerage account, and our first three holdings. Six months later we are still following the same framework.',
-    source: 'Bootcamp, July 2026',
+      'My husband and I did the course together. We left with a written plan, a shared brokerage account, and our first three holdings. Six months later we are still following the same framework.',
+    source: 'Course student',
   },
   {
     name: 'Ahmed J.',
     credential: 'Fresh graduate, Karachi',
     quote:
-      'I started investing with my first salary after the bootcamp. The SIP calculator alone changed how I think about time and money. I wish I had found this a year earlier.',
-    source: 'Bootcamp, July 2026',
+      'I started investing with my first salary after the course. The SIP calculator alone changed how I think about time and money. I wish I had found this a year earlier.',
+    source: 'Course student',
   },
 ];
 
@@ -111,13 +124,13 @@ export const allTestimonials: Testimonial[] = [...learningTestimonials, ...clien
  * something a stranger can actually evaluate.
  */
 export const testimonialRequests = {
-  bootcamp: `Hi [NAME], hope the last couple of weeks have gone well.
+  course: `Hi [NAME], hope the last couple of weeks have gone well.
 
 We're putting real student feedback on our website and we'd like to include yours, if you"re happy for us to.
 
 Three quick questions, a sentence each is plenty:
 
-1. What were you stuck on before the bootcamp?
+1. What were you stuck on before the course?
 2. What can you do now that you couldn't do then?
 3. Would you tell someone in your position to do it? Why or why not?
 
