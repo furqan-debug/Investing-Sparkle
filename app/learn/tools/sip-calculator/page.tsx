@@ -4,12 +4,13 @@ import Link from 'next/link';
 import { Section, SectionHeading } from '@/components/ui/Section';
 import { PageHero } from '@/components/PageHero';
 import { SipCalculator } from '@/components/tools/SipCalculator';
+import { ToolGate } from '@/components/auth/ToolGate';
 import { CTABand } from '@/components/CTABand';
 
 export const metadata: Metadata = {
   title: 'SIP Calculator | what monthly investing builds up to',
   description:
-    'Work out what a fixed monthly investment becomes over time, and exactly what starting a few years late costs you. Free, no signup.',
+    'Work out what a fixed monthly investment becomes over time, and exactly what starting a few years late costs you. Free with a Google account.',
   alternates: { canonical: '/learn/tools/sip-calculator' },
 };
 
@@ -20,11 +21,13 @@ export default function SipPage() {
         back={{ href: '/learn/tools', label: 'All free tools' }}
         eyebrow="Free tool"
         title="SIP Calculator"
-        lede="The approach that suits most salaried people: a fixed amount, every month, regardless of what the market is doing. Move the delay slider to see the real cost of waiting."
+        lede="Free with a Google account. The approach that suits most salaried people: a fixed amount, every month, regardless of what the market is doing. Move the delay slider to see the real cost of waiting."
       />
 
       <Section tone="paper">
-        <SipCalculator />
+        <ToolGate>
+          <SipCalculator />
+        </ToolGate>
       </Section>
 
       <Section tone="white">

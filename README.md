@@ -170,6 +170,23 @@ add live figures anywhere you can commit to keeping them current.
 
 Copy `.env.example` to `.env.local` and fill in what you use.
 
+- **Free tools sign-in** — every calculator and the risk profile quiz requires a
+  Google account. It will not work until this is set up:
+  1. In Google Cloud Console, create or choose a project and configure the OAuth
+     consent screen (External). Add your app name and support email, and the
+     `openid`, `email`, and `profile` scopes. Add test users while it is in
+     testing mode.
+  2. Create credentials → OAuth client ID → **Web application**. Authorised
+     JavaScript origins: `http://localhost:3000` and
+     `https://investingsparkle.com`. No redirect URI is needed: the site uses
+     Google Identity Services, not a redirect flow.
+  3. Put the client ID in `.env.local` as `GOOGLE_CLIENT_ID`, then generate a
+     session secret with
+     `node -e "console.log(require('crypto').randomBytes(32).toString('base64'))"`
+     and set `AUTH_SECRET`. `NEXT_PUBLIC_GOOGLE_CLIENT_ID` is optional; the
+     session route passes the ID to the page either way.
+  4. Restart the dev server. Sessions last 30 days, are signed server-side, and
+     are cleared by the Sign out link on any tool page.
 - **Newsletter** — wire `app/api/subscribe/route.ts` to ConvertKit, Mailchimp,
   or Buttondown. Turn on double opt-in.
 - **Contact form** — wire `app/api/contact/route.ts` to Resend, Postmark, or
@@ -203,6 +220,7 @@ Console.
 
 ## Not built
 
-Deferred by the plan: user accounts, a member dashboard, an integrated payment
-gateway, an in-house LMS, and the Urdu language toggle. Bookings and payment run
-through WhatsApp.
+Deferred by the plan: a member dashboard, an integrated payment gateway, an
+in-house LMS, and the Urdu language toggle. Bookings and payment run through
+WhatsApp. Google sign-in exists only to unlock the free tools; there is no
+account area or stored profile beyond the signed session cookie.

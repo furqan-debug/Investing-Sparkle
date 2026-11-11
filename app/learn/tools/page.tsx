@@ -11,7 +11,7 @@ import { tools } from '@/content/tools';
 export const metadata: Metadata = {
   title: 'Free tools | Calculators and a risk profile quiz',
   description:
-    'Free calculators and a risk profile quiz for Pakistani investors. No cost and no account. The personalised risk profile and zakat sheet open in WhatsApp, ready to send.',
+    'Free calculators and a risk profile quiz for Pakistani investors. Sign in with Google once, at no cost, and every tool opens.',
   alternates: { canonical: '/learn/tools' },
 };
 
@@ -21,7 +21,7 @@ export default function ToolsPage() {
       <PageHero
         eyebrow="Free tools"
         title="Work out the numbers before anyone sells you anything."
-        lede="Free to use, no account needed. The risk profile and zakat sheet ask for your name, WhatsApp number, and email before the full result, because the full result opens in WhatsApp, ready to send. Every other tool is open immediately."
+        lede="Free with a Google account. Sign in once and all five tools open, including the risk profile quiz and the zakat sheet. No card, no charge, and the detailed results are handed to WhatsApp so you keep a copy."
       />
 
       <Section tone="paper">
@@ -72,8 +72,9 @@ export default function ToolsPage() {
         </ul>
 
         <p className="mt-7 max-w-2xl text-sm leading-relaxed text-muted">
-          More tools are on the way. If there is a calculation you keep doing by hand, tell us on
-          WhatsApp. The ones people actually ask for get built first.
+          All five tools need a free Google account. One sign-in covers every tool for 30 days, and
+          you can sign out from any tool page. More tools are on the way. If there is a calculation
+          you keep doing by hand, tell us on WhatsApp.
         </p>
       </Section>
 

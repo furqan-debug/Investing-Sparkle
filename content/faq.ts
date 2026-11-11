@@ -27,7 +27,7 @@ export const faqGroups: FaqGroup[] = [
       },
       {
         q: 'Are the free tools really free?',
-        a: 'Yes. The calculators and quiz are free to use, and the inputs are always open. The risk profile and zakat sheet are the only gated parts: we ask for your name, WhatsApp number, and email so we can unlock the detailed result and open WhatsApp with it ready to send. There is no charge at any point.',
+        a: 'Yes. All five tools are free with a Google account, and there is no card and no charge at any point. Signing in with Google is how we keep them free without ads or a paywall. The risk profile and zakat sheet are also handed to WhatsApp, ready to send, so you keep a copy.',
       },
     ],
   },
@@ -103,7 +103,7 @@ export const faqGroups: FaqGroup[] = [
     items: [
       {
         q: 'Do I need an account on this website?',
-        a: 'No. There is nothing to sign up for. Bookings happen over WhatsApp and material is delivered directly.',
+        a: 'Only for the free tools, which use Google sign-in so they stay free without ads. There is no separate password to create and no member dashboard. Bookings happen over WhatsApp and material is delivered directly.',
       },
       {
         q: 'How do I access course material?',

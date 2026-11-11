@@ -24,9 +24,11 @@ export default function PrivacyPage() {
           Your email address, if you subscribe to the newsletter.
         </li>
         <li>
-          Your name, email address, and WhatsApp number, if you request a detailed tool result (the
-          risk profile or zakat sheet). The result itself is sent through WhatsApp, so the message
-          you send us contains the figures you entered.
+          Your name, email address, and Google profile photo, when you sign in with Google to use
+          the free tools. Google confirms your identity and shares that basic profile; we never see
+          your Google password and we do not access your Gmail, Drive, contacts, or any other Google
+          data. The tool result itself is sent through WhatsApp, so the message you send us contains
+          the figures you entered.
         </li>
         <li>
           Your name, email, optional WhatsApp number, and message, if you use the contact form.
@@ -59,6 +61,7 @@ export default function PrivacyPage() {
       <h2>Why we use it</h2>
       <ul>
         <li>To reply to your enquiry.</li>
+        <li>To verify who is using the free tools, so they stay free without ads.</li>
         <li>To deliver the detailed tool result you requested.</li>
         <li>To deliver the course, live session, newsletter, or advisory service you requested.</li>
         <li>To send the newsletter, if you asked for it.</li>
@@ -71,6 +74,12 @@ export default function PrivacyPage() {
 
       <h2>Cookies</h2>
       <p>
+        Signing in to the free tools sets one essential cookie that keeps you signed in for 30 days.
+        It holds a signed copy of your name and email, cannot be read by scripts on the page, and is
+        removed when you sign out. It is required for the tools to work, so it is not covered by the
+        analytics choice.
+      </p>
+      <p>
         Analytics cookies load only after you accept them in the banner. Choosing “Reject” means no
         analytics or advertising scripts run at all, it is a real rejection, not a dismissal. You
         can change your mind by clearing this site’s data in your browser.
@@ -80,6 +89,7 @@ export default function PrivacyPage() {
       <p>We use a small number of third-party services to operate:</p>
       <ul>
         <li>Our website host, which processes requests and keeps server logs.</li>
+        <li>Google, which handles the sign-in that unlocks the free tools, under Google’s own privacy terms.</li>
         <li>Our email newsletter provider, which stores subscriber addresses.</li>
         <li>Our email delivery provider, which forwards enquiries and tool results to our inbox.</li>
         <li>Our analytics provider, if you accepted cookies.</li>
@@ -93,6 +103,7 @@ export default function PrivacyPage() {
       <h2>How long we keep it</h2>
       <ul>
         <li>Newsletter subscribers: until you unsubscribe.</li>
+        <li>Free tool sign-ins: the session cookie lasts 30 days, or until you sign out.</li>
         <li>Contact enquiries and tool result requests: up to two years, then deleted.</li>
         <li>Client records: as long as needed for the engagement and any legal record-keeping.</li>
       </ul>

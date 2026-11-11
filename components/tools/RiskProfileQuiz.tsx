@@ -5,8 +5,7 @@ import { RotateCcw, MessageCircle, ArrowRight, Send } from 'lucide-react';
 
 import { whatsappLink } from '@/content/whatsapp';
 import { riskBlueprintMessage, type AllocationSlice } from '@/lib/tool-result';
-import type { Lead } from '@/lib/lead';
-import { LeadCapture } from './LeadCapture';
+import { useAuth } from '@/components/auth/AuthProvider';
 import { cn } from '@/lib/cn';
 
 /**
@@ -16,10 +15,9 @@ import { cn } from '@/lib/cn';
  * the total is shown with the result, and the bands are stated. A quiz that
  * hides its logic is a personality test, not a risk assessment.
  *
- * The last screen asks for a name, WhatsApp number, and email before the
- * personalised profile and allocation blueprint appear. The questions and the
- * scoring stay open to everyone; only the detailed result is gated, and it is
- * handed straight to WhatsApp so the visitor keeps a copy.
+ * The whole quiz sits behind the Google sign-in gate, so the result already has
+ * a name and email attached. Revealing the result also hands it to WhatsApp in
+ * the same click, which is the only moment a new tab is allowed to open.
  *
  * This is educational, not a regulated suitability assessment — the result copy
  * says so plainly.
@@ -227,12 +225,12 @@ const sliceColors = [
   'bg-white/25',
 ];
 
-type Stage = 'quiz' | 'lead' | 'result';
+type Stage = 'quiz' | 'result';
 
 export function RiskProfileQuiz() {
+  const { user } = useAuth();
   const [answers, setAnswers] = useState<Record<string, number>>({});
   const [stage, setStage] = useState<Stage>('quiz');
-  const [lead, setLead] = useState<Lead | null>(null);
   const [handoff, setHandoff] = useState<{ link: string; autoOpened: boolean } | null>(null);
 
   const answeredCount = Object.keys(answers).length;
@@ -240,9 +238,9 @@ export function RiskProfileQuiz() {
   const score = Object.values(answers).reduce((a, b) => a + b, 0);
   const profile = profileFor(score);
 
-  function buildMessage(person: Lead) {
+  function buildMessage() {
     return riskBlueprintMessage({
-      lead: person,
+      user,
       profile: profile.name,
       score,
       maxScore: MAX,
@@ -250,34 +248,47 @@ export function RiskProfileQuiz() {
     });
   }
 
+  /**
+   * Reveals the result and hands it to WhatsApp in the same click. Browsers
+   * only allow a new tab during a user gesture, and this click is the one
+   * moment the result is both final and tied to a real interaction.
+   */
+  function reveal() {
+    const message = buildMessage();
+    const link = whatsappLink(message);
+
+    let autoOpened = false;
+    try {
+      const win = window.open(link, '_blank');
+      if (win) {
+        win.opener = null;
+        autoOpened = true;
+      }
+    } catch {
+      autoOpened = false;
+    }
+
+    // Fire and forget: the result must never wait on our inbox.
+    void fetch('/api/tool-result', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ tool: 'risk-profile', result: message }),
+      keepalive: true,
+    }).catch(() => undefined);
+
+    setHandoff({ link, autoOpened });
+    setStage('result');
+  }
+
   function reset() {
     setAnswers({});
     setStage('quiz');
-    setLead(null);
     setHandoff(null);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  if (stage === 'lead' && complete) {
-    return (
-      <LeadCapture
-        tool="risk-profile"
-        title="Unlock your profile and allocation blueprint"
-        description="Enter your details to see your personalised risk profile and the asset allocation that matches it. We will open WhatsApp with the full result ready to send to our team, so you keep a copy."
-        submitLabel="Show my blueprint"
-        buildMessage={buildMessage}
-        onBack={() => setStage('quiz')}
-        onSubmit={(person, meta) => {
-          setLead(person);
-          setHandoff(meta);
-          setStage('result');
-        }}
-      />
-    );
-  }
-
-  if (stage === 'result' && complete && lead) {
-    const link = handoff?.link ?? whatsappLink(buildMessage(lead));
+  if (stage === 'result' && complete && handoff) {
+    const link = handoff.link;
 
     return (
       <div
@@ -295,7 +306,7 @@ export function RiskProfileQuiz() {
         <p className="mt-3 flex items-start gap-2 rounded-xl border border-green-500/25 bg-green-500/[0.06] p-3.5 text-xs leading-relaxed text-muted">
           <Send className="mt-0.5 h-3.5 w-3.5 shrink-0 text-green-400" aria-hidden />
           <span>
-            {handoff?.autoOpened
+            {handoff.autoOpened
               ? 'WhatsApp opened with your blueprint ready to send. Press send there to keep a copy and get our reply.'
               : 'WhatsApp did not open automatically. Use the button below to send your blueprint.'}
           </span>
@@ -445,7 +456,7 @@ export function RiskProfileQuiz() {
       </ol>
 
       <button
-        onClick={() => setStage('lead')}
+        onClick={reveal}
         disabled={!complete}
         className="btn btn--primary btn--lg mt-8 w-full disabled:cursor-not-allowed"
       >
@@ -454,7 +465,7 @@ export function RiskProfileQuiz() {
 
       {complete && (
         <p className="mt-3 text-center text-xs text-muted">
-          Next, your name and WhatsApp number so we can send the full blueprint.
+          Your blueprint opens in WhatsApp at the same time, ready to send to our team.
         </p>
       )}
     </div>

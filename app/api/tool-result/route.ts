@@ -1,36 +1,42 @@
 import { NextResponse } from 'next/server';
+import { cookies } from 'next/headers';
 
 import { site } from '@/content/site';
-import { formatPhone, normalizePhone } from '@/lib/lead';
+import { SESSION_COOKIE, readSession } from '@/lib/auth';
 
 /**
- * Lead capture endpoint for the gated tool results.
+ * Result hand-off for the signed-in tools.
  *
- * The result itself is computed in the browser, so this route never gates the
- * visitor's answer. It records the lead and, when RESEND_API_KEY is set,
- * forwards the whole result to the support inbox so a reply can pick up where
- * the tool left off.
+ * The visitor is already authenticated by the time this is called, so the
+ * identity comes from the signed session cookie rather than the request body.
+ * Nothing a caller sends can change who the lead is recorded as.
  *
- * The WhatsApp hand-off happens in the browser as a click-to-chat link. That is
- * deliberate: WhatsApp does not allow a website to send a message to someone
- * who has not messaged the business first, and a template would need approval
- * before it could carry a personalised result.
+ * Delivery through Resend is best-effort. The visitor's result must never be
+ * blocked because our inbox is unavailable, so a failed send still returns ok.
+ *
+ * The WhatsApp hand-off happens in the browser as a click-to-chat link. WhatsApp
+ * does not allow a website to send a message to someone who has not messaged
+ * the business first, and a template would need approval before it could carry
+ * a personalised result.
  */
 
 const TOOLS = new Set(['risk-profile', 'zakat']);
-const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
 type Payload = {
   tool?: unknown;
-  name?: unknown;
-  whatsapp?: unknown;
-  email?: unknown;
   result?: unknown;
   /** Honeypot. Real people never see this field. */
   company?: unknown;
 };
 
 export async function POST(request: Request) {
+  const jar = await cookies();
+  const user = readSession(jar.get(SESSION_COOKIE)?.value);
+
+  if (!user) {
+    return NextResponse.json({ error: 'Sign in to send a result.' }, { status: 401 });
+  }
+
   let body: Payload;
 
   try {
@@ -45,29 +51,16 @@ export async function POST(request: Request) {
   }
 
   const tool = typeof body.tool === 'string' ? body.tool : '';
-  const name = typeof body.name === 'string' ? body.name.trim() : '';
-  const email = typeof body.email === 'string' ? body.email.trim() : '';
   const result = typeof body.result === 'string' ? body.result.trim() : '';
-  const digits = typeof body.whatsapp === 'string' ? normalizePhone(body.whatsapp) : null;
 
-  if (
-    !TOOLS.has(tool) ||
-    name.length < 2 ||
-    name.length > 120 ||
-    !digits ||
-    !EMAIL_RE.test(email) ||
-    email.length > 200 ||
-    result.length < 10 ||
-    result.length > 4000
-  ) {
-    return NextResponse.json({ error: 'Check the details and try again.' }, { status: 400 });
+  if (!TOOLS.has(tool) || result.length < 10 || result.length > 4000) {
+    return NextResponse.json({ error: 'Check the result and try again.' }, { status: 400 });
   }
 
-  const whatsapp = formatPhone(digits);
   const subject =
     tool === 'risk-profile'
-      ? `[Risk profile] ${name} unlocked their blueprint`
-      : `[Zakat] ${name} unlocked their liability sheet`;
+      ? `[Risk profile] ${user.name} opened their blueprint`
+      : `[Zakat] ${user.name} opened their liability sheet`;
 
   const key = process.env.RESEND_API_KEY;
   let delivered = false;
@@ -83,16 +76,11 @@ export async function POST(request: Request) {
         body: JSON.stringify({
           from: `Investing Sparkle <website@investingsparkle.com>`,
           to: site.contact.email,
-          reply_to: email,
+          reply_to: user.email,
           subject,
-          text: [
-            `Tool: ${tool}`,
-            `Name: ${name}`,
-            `WhatsApp: ${whatsapp}`,
-            `Email: ${email}`,
-            '',
-            result,
-          ].join('\n'),
+          text: [`Tool: ${tool}`, `Name: ${user.name}`, `Email: ${user.email}`, '', result].join(
+            '\n'
+          ),
         }),
       });
 
@@ -104,7 +92,7 @@ export async function POST(request: Request) {
       console.error('[tool-result] Could not reach Resend', error);
     }
   } else if (process.env.NODE_ENV !== 'production') {
-    console.info('[tool-result] (dev) lead received', { tool, name, whatsapp, email });
+    console.info('[tool-result] (dev) result received', { tool, user });
   } else {
     console.error(
       '[tool-result] No delivery provider configured. Set RESEND_API_KEY or wire this route to your CRM.'

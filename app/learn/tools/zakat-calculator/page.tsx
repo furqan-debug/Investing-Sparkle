@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Section, SectionHeading } from '@/components/ui/Section';
 import { PageHero } from '@/components/PageHero';
 import { ZakatCalculator } from '@/components/tools/ZakatCalculator';
+import { ToolGate } from '@/components/auth/ToolGate';
 import { CTABand } from '@/components/CTABand';
 
 export const metadata: Metadata = {
@@ -20,11 +21,13 @@ export default function ZakatPage() {
         back={{ href: '/learn/tools', label: 'All free tools' }}
         eyebrow="Free tool"
         title="Zakat Calculator"
-        lede="For shares, dividends, and the cash people forget: the balance sitting idle in a trading account. Enter your details at the end to unlock the full liability sheet and send it in WhatsApp."
+        lede="Free with a Google account. For shares, dividends, and the cash people forget: the balance sitting idle in a trading account. The full liability sheet updates as you type and sends to WhatsApp in one tap."
       />
 
       <Section tone="paper">
-        <ZakatCalculator />
+        <ToolGate>
+          <ZakatCalculator />
+        </ToolGate>
       </Section>
 
       <Section tone="white">

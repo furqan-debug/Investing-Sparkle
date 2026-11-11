@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Section, SectionHeading } from '@/components/ui/Section';
 import { PageHero } from '@/components/PageHero';
 import { RoiCalculator } from '@/components/tools/RoiCalculator';
+import { ToolGate } from '@/components/auth/ToolGate';
 import { CTABand } from '@/components/CTABand';
 
 export const metadata: Metadata = {
@@ -20,11 +21,13 @@ export default function RoiPage() {
         back={{ href: '/learn/tools', label: 'All free tools' }}
         eyebrow="Free tool"
         title="ROI Calculator"
-        lede="Most people measure a position by comparing the buy price to the sell price. That is not the return, it leaves out the dividends you received and the costs you paid."
+        lede="Free with a Google account. Most people measure a position by comparing the buy price to the sell price. That is not the return, it leaves out the dividends you received and the costs you paid."
       />
 
       <Section tone="paper">
-        <RoiCalculator />
+        <ToolGate>
+          <RoiCalculator />
+        </ToolGate>
       </Section>
 
       <Section tone="white">

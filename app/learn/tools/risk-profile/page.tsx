@@ -3,12 +3,13 @@ import type { Metadata } from 'next';
 import { Section, SectionHeading } from '@/components/ui/Section';
 import { PageHero } from '@/components/PageHero';
 import { RiskProfileQuiz } from '@/components/tools/RiskProfileQuiz';
+import { ToolGate } from '@/components/auth/ToolGate';
 import { PhilosophyStrip } from '@/components/PhilosophyStrip';
 
 export const metadata: Metadata = {
   title: 'Risk Profile Quiz | what kind of investor are you?',
   description:
-    'Eight questions that tell you what kind of investor you actually are, plus an asset allocation blueprint to match. Free to use, with the full blueprint ready to send in WhatsApp.',
+    'Eight questions that tell you what kind of investor you actually are, plus an asset allocation blueprint to match. Free with a Google account, and the blueprint is handed to WhatsApp.',
   alternates: { canonical: '/learn/tools/risk-profile' },
 };
 
@@ -19,12 +20,14 @@ export default function RiskProfilePage() {
         back={{ href: '/learn/tools', label: 'All free tools' }}
         eyebrow="Free tool"
         title="Risk Profile Quiz"
-        lede="Eight questions about your timeline, your temperament, and your finances. It takes about two minutes, and it will tell you honestly if the answer is “not yet”. You get a risk profile and an asset allocation blueprint, with the full result ready to send in WhatsApp."
+        lede="Free with a Google account. Eight questions about your timeline, your temperament, and your finances. It takes about two minutes, and it will tell you honestly if the answer is “not yet”. You get a risk profile and an asset allocation blueprint, with the full result ready to send in WhatsApp."
       />
 
       <Section tone="paper">
         <div className="mx-auto max-w-2xl">
-          <RiskProfileQuiz />
+          <ToolGate>
+            <RiskProfileQuiz />
+          </ToolGate>
         </div>
       </Section>
 

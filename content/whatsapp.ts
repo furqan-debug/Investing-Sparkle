@@ -49,6 +49,8 @@ export const whatsappMessages = {
   // Free tools
   calculatorResult: (calculatorName: string) =>
     `Hi Investing Sparkle! I just used your ${calculatorName}. I'd like guidance on how to actually start investing with these numbers.`,
+  toolHelp:
+    'Hi Investing Sparkle! I would like to use the free tools. Can you help me with the numbers while Google sign-in is being switched on?',
 
   // Contact
   contact: "Hi Investing Sparkle! I'd like to get in touch.",

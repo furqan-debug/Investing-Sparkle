@@ -231,7 +231,7 @@ export default function HomePage() {
             <SectionHeading
               eyebrow="Free tools"
               title="Start with the tools."
-              lede="Nothing to pay and no account. Use them freely, and see whether the way we explain things works for you."
+              lede="Nothing to pay and no card. Sign in with Google once and every calculator and the risk profile quiz open."
             />
           </div>
         </ScrollReveal>

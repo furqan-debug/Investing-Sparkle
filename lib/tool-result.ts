@@ -1,31 +1,36 @@
 import { formatPKR } from './format';
-import type { Lead } from './lead';
+import type { SessionUser } from './auth';
 
 /**
- * The message that leaves the site when a gated tool result is unlocked.
+ * The message that leaves the site when a tool result is handed to WhatsApp.
  *
- * It carries the full result, the visitor's details, and enough context that
- * the WhatsApp reply can pick up without asking the same questions again.
- * Written as plain text on purpose: WhatsApp strips most formatting.
+ * It carries the full result, the signed-in visitor's name and email, and
+ * enough context that the WhatsApp reply can pick up without asking the same
+ * questions again. Written as plain text on purpose: WhatsApp strips most
+ * formatting.
+ *
+ * There is no phone number in the body: the message is sent from the visitor's
+ * own WhatsApp, so their number arrives with it.
  */
 
 export type AllocationSlice = { label: string; percent: number };
 
+type Identity = Pick<SessionUser, 'name' | 'email'>;
+
 export function riskBlueprintMessage(input: {
-  lead: Lead;
+  user: Identity;
   profile: string;
   score: number;
   maxScore: number;
   allocation: AllocationSlice[];
 }): string {
-  const { lead, profile, score, maxScore, allocation } = input;
+  const { user, profile, score, maxScore, allocation } = input;
 
   return [
     'Hi Investing Sparkle! Here is my risk profile result.',
     '',
-    `Name: ${lead.name}`,
-    `WhatsApp: ${lead.whatsapp}`,
-    `Email: ${lead.email}`,
+    `Name: ${user.name}`,
+    `Email: ${user.email}`,
     '',
     `Risk profile: ${profile}`,
     `Score: ${score} of ${maxScore}`,
@@ -38,7 +43,7 @@ export function riskBlueprintMessage(input: {
 }
 
 export function zakatSheetMessage(input: {
-  lead: Lead;
+  user: Identity;
   assets: { label: string; value: number }[];
   liabilities: number;
   net: number;
@@ -46,7 +51,7 @@ export function zakatSheetMessage(input: {
   zakat: number;
   meetsNisab: boolean;
 }): string {
-  const { lead, assets, liabilities, net, nisab, zakat, meetsNisab } = input;
+  const { user, assets, liabilities, net, nisab, zakat, meetsNisab } = input;
 
   const status = !nisab
     ? 'Nisab threshold not entered'
@@ -57,9 +62,8 @@ export function zakatSheetMessage(input: {
   return [
     'Hi Investing Sparkle! Here is my zakat calculation.',
     '',
-    `Name: ${lead.name}`,
-    `WhatsApp: ${lead.whatsapp}`,
-    `Email: ${lead.email}`,
+    `Name: ${user.name}`,
+    `Email: ${user.email}`,
     '',
     assets.length > 0 ? 'Assets:' : 'Assets: none entered',
     ...assets.map((asset) => `- ${asset.label}: PKR ${formatPKR(asset.value)}`),

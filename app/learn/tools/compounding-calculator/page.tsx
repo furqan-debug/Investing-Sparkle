@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { Section, SectionHeading } from '@/components/ui/Section';
 import { PageHero } from '@/components/PageHero';
 import { CompoundingCalculator } from '@/components/tools/CompoundingCalculator';
+import { ToolGate } from '@/components/auth/ToolGate';
 import { CTABand } from '@/components/CTABand';
 
 export const metadata: Metadata = {
@@ -19,11 +20,13 @@ export default function CompoundingPage() {
         back={{ href: '/learn/tools', label: 'All free tools' }}
         eyebrow="Free tool"
         title="Compounding Calculator"
-        lede="Move the sliders and watch which input actually changes the outcome. It is almost never the one people expect."
+        lede="Free with a Google account. Move the sliders and watch which input actually changes the outcome. It is almost never the one people expect."
       />
 
       <Section tone="paper">
-        <CompoundingCalculator />
+        <ToolGate>
+          <CompoundingCalculator />
+        </ToolGate>
       </Section>
 
       <Section tone="white">
