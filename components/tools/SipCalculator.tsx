@@ -119,9 +119,9 @@ export function SipCalculator() {
         </ResultPanel>
 
         {delay > 0 && (
-          <div className="rounded-2xl border-2 border-sparkle-400 bg-sparkle-100 p-5">
-            <p className="eyebrow text-green-800">The cost of waiting</p>
-            <p className="mt-2.5 break-words font-display text-2xl leading-tight text-green-800 md:text-3xl">
+          <div className="rounded-2xl border border-sparkle-400/25 bg-sparkle-400/[0.05] p-5">
+            <p className="mono-label text-sparkle-300">The cost of waiting</p>
+            <p className="num mt-3 break-words text-[1.6rem] leading-tight text-sparkle-300 md:text-[2rem]">
               PKR {formatPKR(result.cost)}
             </p>
             <p className="mt-2 text-sm leading-relaxed text-ink">

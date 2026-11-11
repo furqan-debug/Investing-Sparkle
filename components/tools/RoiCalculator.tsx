@@ -56,7 +56,7 @@ export function RoiCalculator() {
   }, [buyPrice, sellPrice, shares, dividends, costs, months]);
 
   const inputClass =
-    'mt-1.5 w-full rounded-xl border border-line bg-white px-4 py-2.5 text-sm outline-none transition-colors focus:border-green-600';
+    'mt-1.5 w-full rounded-xl border border-line bg-[#030604] px-4 py-2.5 text-sm text-ink outline-none transition-colors placeholder:text-low focus:border-sparkle-400 focus:ring-2 focus:ring-sparkle-400/15';
 
   const fields = [
     { id: 'buy', label: 'Buy price per share (PKR)', value: buyPrice, set: setBuyPrice, step: 0.5 },
@@ -175,7 +175,7 @@ export function RoiCalculator() {
           </dl>
 
           {result.dividendIncome > 0 && (
-            <p className="mt-4 rounded-xl bg-green-50 p-3.5 text-xs leading-relaxed text-green-800">
+            <p className="mt-4 rounded-xl bg-green-50 p-3.5 text-xs leading-relaxed text-green-300">
               Dividends contributed{' '}
               {Math.round((result.dividendIncome / Math.abs(result.netProfit || 1)) * 100)}% of your
               net profit here. This is why comparing only entry and exit prices understates what a

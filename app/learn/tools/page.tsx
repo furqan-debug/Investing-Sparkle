@@ -33,19 +33,19 @@ export default function ToolsPage() {
                 <div className="flex items-start justify-between gap-3">
                   <h2 className="font-sans text-base font-semibold text-ink">{tool.name}</h2>
                   {!isLive && (
-                    <span className="shrink-0 rounded-full bg-sparkle-100 px-2.5 py-1 text-xs font-medium text-ink">
+                    <span className="mono-label shrink-0 rounded-full border border-sparkle-400/25 bg-sparkle-400/[0.06] px-2.5 py-1 text-[10px] text-sparkle-300">
                       Coming soon
                     </span>
                   )}
                 </div>
                 <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">{tool.blurb}</p>
                 <p className="mt-3.5 border-t border-line pt-3.5 text-xs text-muted">
-                  <span className="font-semibold uppercase tracking-wider">Gives you</span>
+                  <span className="mono-label text-[10px]">Gives you</span>
                   <br />
                   {tool.outcome}
                 </p>
                 {isLive && (
-                  <span className="mt-3.5 inline-flex items-center gap-1.5 text-sm font-semibold text-green-700">
+                  <span className="mt-3.5 inline-flex items-center gap-1.5 text-sm font-semibold text-sparkle-300">
                     Open tool <ArrowRight className="h-3.5 w-3.5" aria-hidden />
                   </span>
                 )}

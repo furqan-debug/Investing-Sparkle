@@ -45,8 +45,8 @@ export function ContactForm() {
 
   if (state === 'done') {
     return (
-      <div className="flex items-start gap-3 rounded-2xl bg-green-50 p-6 animate-scale-in">
-        <Check className="mt-0.5 h-5 w-5 shrink-0 text-green-600" aria-hidden />
+      <div className="flex animate-scale-in items-start gap-3 rounded-2xl border border-green-500/25 bg-green-500/[0.06] p-6">
+        <Check className="mt-0.5 h-5 w-5 shrink-0 text-green-400" aria-hidden />
         <div>
           <p className="font-semibold text-ink">Message received.</p>
           <p className="mt-1 text-sm text-muted">
@@ -58,10 +58,10 @@ export function ContactForm() {
   }
 
   const fieldClass =
-    'mt-1.5 w-full rounded-xl border border-line bg-white px-4 py-3 text-sm outline-none transition-all duration-200 focus:border-green-600 focus:ring-2 focus:ring-green-500/20';
+    'mt-1.5 w-full min-w-0 rounded-xl border border-line bg-[#030604] px-4 py-3 text-sm text-ink outline-none transition-all duration-200 placeholder:text-low focus:border-sparkle-400 focus:ring-2 focus:ring-sparkle-400/15';
 
   return (
-    <form onSubmit={onSubmit} className="grid gap-5">
+    <form onSubmit={onSubmit} className="grid min-w-0 gap-5">
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
           <label htmlFor="name" className="text-sm font-medium text-ink">
@@ -130,7 +130,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={state === 'loading'}
-        className="btn-liquid btn-liquid--primary justify-self-start rounded-full bg-sparkle-400 px-7 py-3 font-semibold text-green-950 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md active:translate-y-0 disabled:opacity-60"
+        className="btn btn--primary btn--lg justify-self-start disabled:opacity-60"
       >
         {state === 'loading' ? 'Sending…' : 'Send message'}
       </button>

@@ -57,7 +57,7 @@ export function ZakatCalculator() {
   }, [values, liabilities, nisab]);
 
   const inputClass =
-    'mt-1.5 w-full rounded-xl border border-line bg-white px-4 py-2.5 text-sm outline-none transition-colors focus:border-green-600';
+    'mt-1.5 w-full rounded-xl border border-line bg-[#030604] px-4 py-2.5 text-sm text-ink outline-none transition-colors placeholder:text-low focus:border-sparkle-400 focus:ring-2 focus:ring-sparkle-400/15';
 
   return (
     <div className="grid gap-4 lg:grid-cols-2">
@@ -146,9 +146,9 @@ export function ZakatCalculator() {
           ]}
         />
 
-        <div className="flex gap-3 rounded-2xl border-l-4 border-sparkle-400 bg-sparkle-100 p-5">
-          <Info className="mt-0.5 h-5 w-5 shrink-0 text-green-800" aria-hidden />
-          <p className="text-sm leading-relaxed text-ink">
+        <div className="flex gap-3 rounded-2xl border border-sparkle-400/25 bg-sparkle-400/[0.05] p-5">
+          <Info className="mt-0.5 h-5 w-5 shrink-0 text-sparkle-300" aria-hidden />
+          <p className="text-sm leading-relaxed text-muted">
             This calculates at 2.5%, the widely applied rate for a lunar year. It is a calculation
             aid, not a religious ruling. Treatment of long-term holdings and deductible liabilities
             varies between scholars. Where your situation is unusual or the amount is large, ask a

@@ -66,9 +66,9 @@ function renderBlock(block: Block, i: number) {
       return (
         <aside
           key={i}
-          className="flex gap-3 rounded-2xl border-l-4 border-sparkle-400 bg-sparkle-100 px-5 py-4"
+          className="flex gap-3 rounded-2xl border-l-2 border-sparkle-400/60 bg-sparkle-400/[0.05] px-5 py-4"
         >
-          <Info className="mt-0.5 h-5 w-5 shrink-0 text-green-800" aria-hidden />
+          <Info className="mt-0.5 h-5 w-5 shrink-0 text-green-300" aria-hidden />
           <p className="text-sm leading-relaxed text-ink">{block.text}</p>
         </aside>
       );
@@ -153,9 +153,9 @@ export default async function ArticlePage({ params }: Params) {
               href={whatsappLink(whatsappMessages.articleQuestion(article.title))}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 rounded-2xl border-2 border-line bg-white px-6 py-3.5 text-sm font-semibold text-ink transition-colors hover:border-green-300"
+              className="btn btn--secondary btn--lg w-full"
             >
-              <MessageCircle className="h-5 w-5 text-[#25D366]" aria-hidden />
+              <MessageCircle className="h-4 w-4 text-green-400" aria-hidden />
               Have a question about this article?
             </a>
           </div>

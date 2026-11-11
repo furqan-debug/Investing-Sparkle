@@ -12,7 +12,7 @@ export function Testimonials({
   if (items.length === 0) {
     if (!emptyMessage) return null;
     return (
-      <p className="rounded-2xl border border-dashed border-line bg-white px-6 py-8 text-center text-muted">
+      <p className="rounded-2xl border border-dashed border-line bg-white/[0.02] px-6 py-10 text-center text-sm leading-relaxed text-muted">
         {emptyMessage}
       </p>
     );
@@ -23,10 +23,10 @@ export function Testimonials({
       {items.map((t) => (
         <li key={t.name} className="card flex flex-col p-6">
           <Quote className="h-5 w-5 text-sparkle-400/60" aria-hidden />
-          <blockquote className="mt-4 flex-1 text-sm leading-relaxed text-ink">
+          <blockquote className="mt-4 flex-1 text-[15px] leading-relaxed text-ink">
             &ldquo;{t.quote}&rdquo;
           </blockquote>
-          <figcaption className="mt-5 flex items-center gap-3 border-t border-line pt-4">
+          <figcaption className="mt-6 flex items-center gap-3 border-t border-line pt-4">
             {t.photo ? (
               // eslint-disable-next-line @next/next/no-img-element
               <img src={t.photo} alt="" className="h-10 w-10 rounded-full object-cover" />
@@ -35,10 +35,10 @@ export function Testimonials({
             )}
             <span className="text-sm">
               <span className="block font-semibold text-ink">{t.name}</span>
-              <span className="block text-xs text-muted">{t.credential}</span>
+              <span className="mt-0.5 block text-xs text-muted">{t.credential}</span>
             </span>
           </figcaption>
-          <p className="mt-3 text-xs uppercase tracking-wider text-muted">{t.source}</p>
+          <p className="mono-label mt-4 text-[10px]">{t.source}</p>
         </li>
       ))}
     </ul>

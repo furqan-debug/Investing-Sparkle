@@ -45,8 +45,8 @@ export default async function CaseStudyPage({ params }: Params) {
       />
 
       <Section tone="paper" tight>
-        <div className="mx-auto flex max-w-3xl gap-3 rounded-2xl border-l-4 border-sparkle-400 bg-sparkle-100 p-4 md:p-5">
-          <Info className="mt-0.5 h-5 w-5 shrink-0 text-green-800" aria-hidden />
+        <div className="mx-auto flex max-w-3xl gap-3 rounded-2xl border-l-2 border-sparkle-400/60 bg-sparkle-400/[0.05] p-4 md:p-5">
+          <Info className="mt-0.5 h-5 w-5 shrink-0 text-green-300" aria-hidden />
           <p className="text-sm leading-relaxed text-ink">
             <strong>Not a real client.</strong> {caseStudyDisclaimer}
           </p>
@@ -66,7 +66,7 @@ export default async function CaseStudyPage({ params }: Params) {
             ))}
           </dl>
 
-          <blockquote className="mt-6 border-l-4 border-green-800 pl-5">
+          <blockquote className="mt-6 border-l-2 border-green-400/40 pl-5">
             <p className="text-lg leading-relaxed text-ink">{study.question}</p>
           </blockquote>
         </div>
@@ -112,7 +112,7 @@ export default async function CaseStudyPage({ params }: Params) {
             ))}
           </div>
 
-          <p className="mt-6 rounded-2xl bg-green-50 p-5 text-sm leading-relaxed text-green-800 md:text-base">
+          <p className="mt-6 rounded-2xl bg-green-50 p-5 text-sm leading-relaxed text-green-300 md:text-base">
             <span className="font-semibold">What this example shows: </span>
             {study.lesson}
           </p>
@@ -131,7 +131,7 @@ export default async function CaseStudyPage({ params }: Params) {
                 <li key={other.slug}>
                   <Link
                     href={`/case-studies/${other.slug}`}
-                    className="group flex flex-col rounded-xl border border-line bg-white p-5 transition-colors hover:border-green-300"
+                    className="group flex flex-col rounded-xl border border-line bg-white p-5 transition-colors hover:border-white/20"
                   >
                     <h3 className="font-sans text-base font-semibold text-ink">{other.title}</h3>
                     <p className="mt-1.5 text-sm leading-relaxed text-muted">{other.summary}</p>
@@ -156,9 +156,10 @@ export default async function CaseStudyPage({ params }: Params) {
             </p>
             <Button
               href={whatsappLink(whatsappMessages.launchpad)}
-              variant="whatsapp"
               size="lg"
               className="mt-5 w-full"
+              goo="var(--color-sparkle-300)"
+              gooScale
             >
               <MessageCircle className="h-4 w-4" aria-hidden /> Book a call
             </Button>

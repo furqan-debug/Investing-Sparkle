@@ -21,16 +21,16 @@ export function CalendlyEmbed({ label = 'Or pick a slot yourself' }: { label?: s
   if (!calendly.enabled || !mounted) return null;
 
   return (
-    <div className="rounded-2xl border border-line bg-white p-6">
+    <div className="rounded-2xl border border-line bg-white/[0.02] p-6">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div className="flex items-center gap-2.5">
-          <Calendar className="h-5 w-5 text-green-700" aria-hidden />
+          <Calendar className="h-5 w-5 text-sparkle-400" aria-hidden />
           <p className="font-semibold text-ink">{label}</p>
         </div>
         <button
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
-          className="rounded-full border-2 border-green-800 px-5 py-2 text-sm font-semibold text-green-800 transition-colors hover:bg-green-800 hover:text-white"
+          className="btn btn--secondary btn--sm"
         >
           {open ? 'Hide calendar' : 'Show calendar'}
         </button>

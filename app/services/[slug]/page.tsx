@@ -70,9 +70,10 @@ export default async function ServiceDetailPage({ params }: Params) {
         title={service.name}
         lede={service.summary}
         aside={
-          <div className="rounded-2xl border border-white/15 bg-white/5 p-6 backdrop-blur">
-            <p className="font-display text-3xl text-sparkle-400">{service.price}</p>
-            {service.priceNote && <p className="mt-1 text-sm text-green-200">{service.priceNote}</p>}
+          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur">
+            <p className="mono-label text-sparkle-300">Fee</p>
+            <p className="num mt-3 text-[1.65rem] leading-none text-sparkle-300">{service.price}</p>
+            {service.priceNote && <p className="mt-2 text-sm text-muted">{service.priceNote}</p>}
 
             <dl className="mt-5 space-y-2.5 border-t border-white/15 pt-4 text-sm">
               <div>
@@ -116,8 +117,8 @@ export default async function ServiceDetailPage({ params }: Params) {
           lede="We would rather lose the sale than take money from someone this was never going to help."
         />
         <div className="mt-8 grid gap-4 md:grid-cols-2">
-          <div className="rounded-2xl border border-green-200 bg-green-50 p-6">
-            <h3 className="font-sans text-base font-semibold text-green-800">Right for you if</h3>
+          <div className="rounded-2xl border border-green-400/20 bg-green-500/[0.05] p-6">
+            <h3 className="font-sans text-base font-semibold text-green-300">Right for you if</h3>
             <ul className="mt-4 space-y-2.5">
               {service.rightForYou.map((item) => (
                 <li key={item} className="flex gap-2.5 text-sm leading-relaxed text-ink">
@@ -151,7 +152,7 @@ export default async function ServiceDetailPage({ params }: Params) {
               key={step.step}
               className="flex gap-4 rounded-2xl border border-line bg-white p-5 md:p-6"
             >
-              <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-green-800 font-display text-base text-sparkle-400">
+              <span className="num grid h-10 w-10 shrink-0 place-items-center rounded-full border border-sparkle-400/25 bg-sparkle-400/[0.06] text-[12px] text-sparkle-300">
                 {step.step}
               </span>
               <div>
@@ -202,9 +203,9 @@ export default async function ServiceDetailPage({ params }: Params) {
 
       {/* Pricing */}
       <Section tone="paper">
-        <div className="mx-auto max-w-2xl rounded-2xl border-2 border-green-800 bg-white p-6 text-center md:p-8">
-          <p className="eyebrow text-green-600">Pricing</p>
-          <p className="mt-3 font-display text-4xl text-green-800 md:text-5xl">{service.price}</p>
+        <div className="mx-auto max-w-2xl rounded-2xl border border-sparkle-400/25 bg-white/[0.02] p-6 text-center md:p-8">
+          <p className="mono-label text-sparkle-300">Pricing</p>
+          <p className="num mt-4 text-[2rem] leading-none text-sparkle-300 md:text-[2.5rem]">{service.price}</p>
           {service.priceNote && <p className="mt-1.5 text-sm text-muted">{service.priceNote}</p>}
 
           <div className="mt-5 border-t border-line pt-4 text-left">
@@ -217,10 +218,10 @@ export default async function ServiceDetailPage({ params }: Params) {
 
           <Button
             href={cta}
-            variant="whatsapp"
             size="lg"
             className="mt-6 w-full"
-            goo="#1eb857"
+            goo="var(--color-sparkle-300)"
+            gooScale
           >
             <MessageCircle className="h-4 w-4" aria-hidden /> {service.ctaLabel}
           </Button>
@@ -274,11 +275,11 @@ export default async function ServiceDetailPage({ params }: Params) {
             <li key={s.slug}>
               <Link
                 href={`/services/${s.slug}`}
-                className="flex h-full flex-col rounded-2xl border border-line bg-white p-5 transition-colors hover:border-green-300"
+                className="flex h-full flex-col rounded-2xl border border-line bg-white p-5 transition-colors hover:border-white/20"
               >
                 <h3 className="font-sans text-base font-semibold text-ink">{s.name}</h3>
                 <p className="mt-1.5 flex-1 text-sm leading-relaxed text-muted">{s.summary}</p>
-                <p className="mt-3 font-display text-xl text-green-800">{s.price}</p>
+                <p className="num mt-3 text-[15px] text-green-300">{s.price}</p>
                 <span className="mt-2 inline-flex items-center gap-1.5 text-sm font-semibold text-green-700">
                   See details <ArrowRight className="h-3.5 w-3.5" aria-hidden />
                 </span>

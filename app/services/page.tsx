@@ -60,7 +60,7 @@ export default function ServicesPage() {
         }
         lede="Three services, each designed to make you more independent, not more dependent."
       >
-        <Button href={whatsappLink(whatsappMessages.exploreAdvisory)} size="lg" variant="whatsapp">
+        <Button href={whatsappLink(whatsappMessages.exploreAdvisory)} size="lg" goo="var(--color-sparkle-300)" gooScale>
           <MessageCircle className="h-4 w-4" aria-hidden /> Book advisory call via WhatsApp
         </Button>
       </PageHero>
@@ -101,7 +101,7 @@ export default function ServicesPage() {
                   <th scope="col" className="w-40 p-3" />
                   {services.map((s) => (
                     <th key={s.slug} scope="col" className="p-3 align-bottom">
-                      <span className="block font-display text-xl text-green-800">
+                      <span className="num block text-[15px] text-green-300">
                         {s.shortName}
                       </span>
                     </th>
@@ -128,7 +128,7 @@ export default function ServicesPage() {
                   </th>
                   {services.map((s) => (
                     <td key={s.slug} className="p-3">
-                      <span className="block font-display text-xl text-green-800">{s.price}</span>
+                      <span className="num block text-[15px] text-green-300">{s.price}</span>
                       {s.priceNote && (
                         <span className="mt-0.5 block text-xs text-muted">{s.priceNote}</span>
                       )}
@@ -157,9 +157,9 @@ export default function ServicesPage() {
             <ScrollReveal key={s.slug} delay={0.06 * i}>
               <article className="card flex h-full flex-col p-5">
                 <div className="flex items-start justify-between gap-3">
-                  <h3 className="font-display text-xl text-green-800">{s.shortName}</h3>
+                  <h3 className="text-[15px] font-semibold text-green-300">{s.shortName}</h3>
                   <div className="text-right">
-                    <span className="block font-display text-lg leading-tight text-green-800">
+                    <span className="num block text-[13.5px] leading-tight text-green-300">
                       {s.price}
                     </span>
                     {s.priceNote && (
@@ -238,7 +238,7 @@ export default function ServicesPage() {
                       {s.summary}
                     </p>
 
-                    <p className="mt-5 font-display text-3xl text-green-800">{s.price}</p>
+                    <p className="num mt-5 text-[1.65rem] leading-none text-sparkle-300">{s.price}</p>
                     {s.priceNote && <p className="mt-0.5 text-sm text-muted">{s.priceNote}</p>}
 
                     <dl className="mt-5 space-y-2.5 border-t border-line pt-4 text-sm">
@@ -298,7 +298,7 @@ export default function ServicesPage() {
                       </ul>
                     </div>
 
-                    <p className="rounded-xl bg-green-50 p-3.5 text-sm leading-relaxed text-green-800 sm:col-span-2">
+                    <p className="rounded-xl bg-green-50 p-3.5 text-sm leading-relaxed text-green-300 sm:col-span-2">
                       <span className="font-semibold">Where this ends: </span>
                       {s.endState}
                     </p>
@@ -319,7 +319,7 @@ export default function ServicesPage() {
             <li key={step.step}>
               <ScrollReveal delay={0.06 * i}>
                 <div className="card h-full p-5">
-                  <span className="grid h-9 w-9 place-items-center rounded-full bg-green-700 font-display text-base text-white">
+                  <span className="grid h-9 w-9 place-items-center rounded-full border border-sparkle-400/25 bg-sparkle-400/[0.06] font-mono text-[11px] text-sparkle-300">
                     {step.step}
                   </span>
                   <h3 className="mt-3.5 font-sans text-base font-semibold text-ink">{step.title}</h3>

@@ -75,12 +75,12 @@ export default function LearnPage() {
             <li key={href}>
               <ScrollReveal delay={0.06 * i}>
                 <Link href={href} className="card group flex h-full flex-col p-5">
-                  <div className="grid h-10 w-10 place-items-center rounded-xl bg-green-50">
-                    <Icon className="h-5 w-5 text-green-700" aria-hidden />
+                  <div className="grid h-10 w-10 place-items-center rounded-xl border border-green-500/20 bg-green-500/[0.07]">
+                    <Icon className="h-5 w-5 text-green-400" aria-hidden />
                   </div>
                   <h2 className="mt-3.5 font-sans text-base font-semibold text-ink">{title}</h2>
                   <p className="mt-1.5 flex-1 text-sm leading-relaxed text-muted">{detail}</p>
-                  <span className="mt-3.5 inline-flex items-center gap-1.5 text-sm font-semibold text-green-700">
+                  <span className="mt-3.5 inline-flex items-center gap-1.5 text-sm font-semibold text-sparkle-300">
                     Explore
                     <ArrowRight
                       className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5"
@@ -121,17 +121,17 @@ export default function LearnPage() {
                 <div className="flex items-start justify-between gap-3">
                   <h3 className="font-sans text-base font-semibold text-ink">{tool.name}</h3>
                   {!isLive && (
-                    <span className="shrink-0 rounded-full bg-sparkle-100 px-2.5 py-1 text-xs font-medium text-ink">
+                    <span className="mono-label shrink-0 rounded-full border border-sparkle-400/25 bg-sparkle-400/[0.06] px-2.5 py-1 text-[10px] text-sparkle-300">
                       Soon
                     </span>
                   )}
                 </div>
                 <p className="mt-1.5 flex-1 text-sm leading-relaxed text-muted">{tool.blurb}</p>
-                <p className="mt-3.5 text-xs uppercase tracking-wider text-muted">
+                <p className="mono-label mt-3.5 text-[10px]">
                   Gives you: {tool.outcome}
                 </p>
                 {isLive && (
-                  <span className="mt-2.5 inline-flex items-center gap-1.5 text-sm font-semibold text-green-700">
+                  <span className="mt-2.5 inline-flex items-center gap-1.5 text-sm font-semibold text-sparkle-300">
                     Open tool <ArrowRight className="h-3.5 w-3.5" aria-hidden />
                   </span>
                 )}
@@ -182,7 +182,7 @@ export default function LearnPage() {
                       {course.level}
                     </span>
                     {course.status === 'waitlist' && (
-                      <span className="rounded-full bg-sparkle-100 px-2.5 py-1 font-medium text-ink">
+                      <span className="mono-label rounded-full border border-sparkle-400/25 bg-sparkle-400/[0.06] px-2.5 py-1 text-[10px] text-sparkle-300">
                         Waitlist
                       </span>
                     )}

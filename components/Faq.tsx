@@ -32,9 +32,11 @@ export function Faq({ items, invert }: { items: QA[]; invert?: boolean }) {
                 </span>
                 <span
                   className={cn(
-                    'mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full transition-transform duration-200',
+                    'mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full border transition-transform duration-200',
                     isOpen && 'rotate-90',
-                    invert ? 'bg-white/10 text-sparkle-400' : 'bg-green-50 text-green-700'
+                    invert
+                      ? 'border-sparkle-400/30 bg-sparkle-400/[0.08] text-sparkle-300'
+                      : 'border-sparkle-400/25 bg-sparkle-400/[0.06] text-sparkle-300'
                   )}
                   aria-hidden
                 >

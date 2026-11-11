@@ -31,33 +31,36 @@ export function LiveSessionBanner() {
   if (state !== 'show') return null;
 
   return (
-    <div className="bg-sparkle-400 text-green-950">
-      <div className="container-page relative flex flex-wrap items-center justify-center gap-x-2 gap-y-0.5 py-1.5 pr-9 text-center text-[11px] leading-snug sm:gap-x-2.5 sm:py-2 sm:text-sm">
-        <span className="hidden shrink-0 items-center gap-1.5 rounded-full bg-green-950 px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.12em] text-sparkle-300 sm:inline-flex">
-          <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-sparkle-300" aria-hidden />
-          Free
+    <div className="border-b border-line bg-[#070c09]">
+      <div className="container-page relative flex flex-wrap items-center justify-center gap-x-3 gap-y-1 py-2.5 pr-9 text-center">
+        <span className="mono-label hidden items-center gap-2 rounded-full border border-sparkle-400/30 bg-sparkle-400/[0.06] px-2.5 py-1 text-sparkle-300 sm:inline-flex">
+          <span className="signal-dot" aria-hidden />
+          Free live
         </span>
-        <p className="font-medium">
-          <span className="font-bold">{liveSession.title}</span>
-          <span className="mx-1 opacity-50" aria-hidden>
-            ·
+
+        <p className="text-[12px] leading-snug text-muted sm:text-[13px]">
+          <span className="font-medium text-ink">{liveSession.title}</span>
+          <span className="mx-2 text-white/20" aria-hidden>
+            /
           </span>
-          {liveSession.date}
-          <span className="hidden sm:inline"> · {liveSession.platform}</span>
+          <span className="num text-sparkle-300">{liveSession.date}</span>
+          <span className="hidden sm:inline"> / {liveSession.platform}</span>
         </p>
+
         <Link
           href="/live"
-          className="shrink-0 font-bold underline underline-offset-2 hover:opacity-75"
+          className="shrink-0 text-[12px] font-medium text-sparkle-300 underline decoration-sparkle-400/40 underline-offset-4 transition-colors hover:text-sparkle-200 sm:text-[13px]"
         >
           Details
         </Link>
+
         <button
           type="button"
           onClick={dismiss}
           aria-label="Dismiss announcement"
-          className="absolute right-1.5 top-1/2 grid h-7 w-7 -translate-y-1/2 place-items-center rounded-full transition-colors hover:bg-green-950/10"
+          className="absolute right-1 top-1/2 grid h-7 w-7 -translate-y-1/2 place-items-center rounded-full text-muted transition-colors hover:bg-white/[0.06] hover:text-ink"
         >
-          <X className="h-4 w-4" aria-hidden />
+          <X className="h-3.5 w-3.5" aria-hidden />
         </button>
       </div>
     </div>

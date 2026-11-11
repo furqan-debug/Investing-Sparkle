@@ -40,27 +40,24 @@ export function CookieBanner() {
     <div
       role="dialog"
       aria-label="Cookie consent"
-      className="fixed inset-x-0 bottom-0 z-50 border-t border-white/10 bg-green-950 text-white"
+      className="fixed inset-x-0 bottom-0 z-50 border-t border-line bg-[#070c09]/95 text-ink backdrop-blur-xl"
     >
       <div className="container-page flex flex-col gap-3 py-4 sm:flex-row sm:items-center sm:justify-between">
-        <p className="text-sm text-green-100">
+        <p className="max-w-2xl text-[13px] leading-relaxed text-muted">
           This site uses cookies for analytics and to improve your experience. See our{' '}
-          <Link href="/privacy" className="underline underline-offset-2 hover:text-sparkle-400">
+          <Link
+            href="/privacy"
+            className="text-sparkle-300 underline decoration-sparkle-400/40 underline-offset-2 hover:text-sparkle-200"
+          >
             Privacy Policy
           </Link>
           .
         </p>
         <div className="flex shrink-0 gap-2">
-          <button
-            onClick={() => decide('accepted')}
-            className="rounded-full bg-sparkle-400 px-5 py-2 text-sm font-semibold text-green-950 hover:bg-sparkle-500"
-          >
+          <button onClick={() => decide('accepted')} className="btn btn--primary btn--sm">
             Accept
           </button>
-          <button
-            onClick={() => decide('rejected')}
-            className="rounded-full border border-white/25 px-5 py-2 text-sm font-semibold hover:bg-white/10"
-          >
+          <button onClick={() => decide('rejected')} className="btn btn--secondary btn--sm">
             Reject
           </button>
         </div>

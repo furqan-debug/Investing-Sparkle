@@ -93,8 +93,8 @@ export function CompoundingCalculator() {
   return (
     <div className="grid gap-4 lg:grid-cols-[1fr_1fr]">
       {/* Inputs */}
-      <div className="rounded-2xl border border-line bg-white p-5 md:p-6">
-        <h2 className="font-sans text-base font-semibold text-ink">Your numbers</h2>
+      <div className="rounded-2xl border border-line bg-white/[0.025] p-5 md:p-6">
+        <h2 className="mono-label text-ink">Your numbers</h2>
 
         <div className="mt-6 space-y-6">
           {inputs.map((input) => (
@@ -103,7 +103,7 @@ export function CompoundingCalculator() {
                 <label htmlFor={input.id} className="text-sm font-medium text-ink">
                   {input.label}
                 </label>
-                <output className="min-w-0 break-words text-right font-display text-lg leading-tight text-green-800">
+                <output className="num min-w-0 break-words text-right text-[15px] leading-tight text-green-300">
                   {input.format(input.value)}
                 </output>
               </div>
@@ -115,7 +115,7 @@ export function CompoundingCalculator() {
                 step={input.step}
                 value={input.value}
                 onChange={(e) => input.set(Number(e.target.value))}
-                className="mt-2.5 w-full accent-green-700"
+                className="mt-2.5 w-full accent-sparkle-400"
               />
               <div className="mt-1 flex justify-between text-xs text-muted">
                 <span>{input.format(input.min)}</span>
@@ -128,54 +128,54 @@ export function CompoundingCalculator() {
 
       {/* Result */}
       <div className="flex flex-col gap-4">
-        <div className="rounded-2xl bg-green-900 p-5 text-white md:p-6">
-          <p className="eyebrow text-sparkle-400">After {years} years</p>
-          <p className="mt-2.5 break-words font-display text-3xl leading-[1.05] text-sparkle-400 md:text-4xl">
+        <div className="rounded-2xl border border-sparkle-400/20 bg-green-900 p-5 md:p-6">
+          <p className="mono-label text-sparkle-300">After {years} years</p>
+          <p className="num mt-3 break-words text-[1.75rem] leading-[1.05] text-sparkle-300 md:text-[2.1rem]">
             PKR {formatPKR(result.future)}
           </p>
 
           {/* The split is the point of the tool. */}
-          <div className="mt-5">
+          <div className="mt-6">
             <div
-              className="flex h-3 overflow-hidden rounded-full bg-white/15"
+              className="flex h-2.5 overflow-hidden rounded-full bg-white/10"
               role="img"
               aria-label={`${Math.round(100 - result.growthShare)}% of the total is money you put in; ${Math.round(result.growthShare)}% is growth`}
             >
               <div
-                className="bg-green-300"
+                className="bg-green-400"
                 style={{ width: `${100 - result.growthShare}%` }}
               />
               <div className="bg-sparkle-400" style={{ width: `${result.growthShare}%` }} />
             </div>
 
-            <dl className="mt-5 grid grid-cols-2 gap-4">
+            <dl className="mt-6 grid grid-cols-2 gap-4">
               <div>
-                <dt className="flex items-center gap-2 text-xs uppercase tracking-wider text-green-200">
-                  <span className="h-2.5 w-2.5 rounded-full bg-green-300" aria-hidden />
+                <dt className="mono-label flex items-center gap-2 text-[10px] text-muted">
+                  <span className="h-2 w-2 rounded-full bg-green-400" aria-hidden />
                   You put in
                 </dt>
-                <dd className="mt-1 break-words font-display text-lg">PKR {formatPKR(result.invested)}</dd>
+                <dd className="num mt-2 break-words text-[15px]">PKR {formatPKR(result.invested)}</dd>
               </div>
               <div>
-                <dt className="flex items-center gap-2 text-xs uppercase tracking-wider text-green-200">
-                  <span className="h-2.5 w-2.5 rounded-full bg-sparkle-400" aria-hidden />
+                <dt className="mono-label flex items-center gap-2 text-[10px] text-muted">
+                  <span className="h-2 w-2 rounded-full bg-sparkle-400" aria-hidden />
                   Growth added
                 </dt>
-                <dd className="mt-1 break-words font-display text-lg text-sparkle-400">
+                <dd className="num mt-2 break-words text-[15px] text-sparkle-300">
                   PKR {formatPKR(result.growth)}
                 </dd>
               </div>
             </dl>
 
-            <p className="mt-4 text-sm leading-relaxed text-green-100">
-              {Math.round(result.growthShare)}% of that final figure is growth rather than money you
-              contributed. Lengthen the time horizon and watch that share move, it moves far more
-              than the return rate does.
+            <p className="mt-5 border-t border-white/10 pt-4 text-sm leading-relaxed text-muted">
+              <span className="num text-sparkle-300">{Math.round(result.growthShare)}%</span> of that
+              final figure is growth rather than money you contributed. Lengthen the time horizon and
+              watch that share move, it moves far more than the return rate does.
             </p>
           </div>
         </div>
 
-        <div className="rounded-2xl border border-line bg-white p-5">
+        <div className="rounded-2xl border border-line bg-white/[0.02] p-5">
           <Newsletter compact />
         </div>
 
@@ -183,7 +183,7 @@ export function CompoundingCalculator() {
           href={whatsappLink(whatsappMessages.calculatorResult('Compounding Calculator'))}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-5 py-3 text-sm font-semibold text-green-950 hover:bg-[#1eb857]"
+          className="btn btn--secondary btn--md self-start"
         >
           <MessageCircle className="h-4 w-4" aria-hidden /> Talk through these numbers
         </a>

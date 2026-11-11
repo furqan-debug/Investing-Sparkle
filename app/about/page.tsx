@@ -53,15 +53,15 @@ export default function AboutPage() {
       <Section tone="white">
         <div className="grid gap-4 md:grid-cols-2">
           <ScrollReveal>
-            <div className="h-full rounded-2xl bg-green-900 p-6 text-white md:p-8">
-              <p className="eyebrow text-sparkle-400">Mission</p>
-              <p className="mt-3 text-lg leading-relaxed md:text-xl">{mission}</p>
+            <div className="h-full rounded-2xl border border-sparkle-400/20 bg-green-900 p-6 md:p-8">
+              <p className="mono-label text-sparkle-300">Mission</p>
+              <p className="mt-4 text-lg leading-relaxed text-ink md:text-xl">{mission}</p>
             </div>
           </ScrollReveal>
           <ScrollReveal delay={0.1}>
             <div className="card h-full p-6 md:p-8">
-              <p className="eyebrow text-green-600">Vision</p>
-              <p className="mt-3 text-lg leading-relaxed text-ink md:text-xl">{vision}</p>
+              <p className="mono-label text-sparkle-300">Vision</p>
+              <p className="mt-4 text-lg leading-relaxed text-ink md:text-xl">{vision}</p>
             </div>
           </ScrollReveal>
         </div>
@@ -80,7 +80,7 @@ export default function AboutPage() {
             <li key={v.title}>
               <ScrollReveal delay={0.06 * i}>
                 <div className="card h-full p-5">
-                  <span className="font-display text-2xl text-sparkle-500">0{i + 1}</span>
+                  <span className="mono-label text-sparkle-400">{String(i + 1).padStart(2, '0')}</span>
                   <h3 className="mt-2 font-sans text-base font-semibold text-ink">{v.title}</h3>
                   <p className="mt-1.5 text-sm leading-relaxed text-muted">{v.detail}</p>
                 </div>
@@ -92,7 +92,7 @@ export default function AboutPage() {
 
       <Section tone="paper">
         <ScrollReveal animation="scale-in">
-          <div className="card mx-auto max-w-3xl border-l-4 border-l-green-800 p-6 md:p-8">
+          <div className="card mx-auto max-w-3xl border-l-2 border-l-sparkle-400/40 p-6 md:p-8">
             <h2 className="h3">Where we stand, plainly</h2>
             <div className="mt-4 space-y-3.5 text-sm leading-relaxed text-muted md:text-base">
               <p>

@@ -70,15 +70,15 @@ export function InsightsBrowser({
                 aria-selected={active}
                 onClick={() => choose(tab)}
                 className={cn(
-                  'rounded-full border-2 px-4 py-2 text-sm font-medium transition-colors',
+                  'rounded-full border px-4 py-2 text-sm font-medium transition-colors',
                   active
-                    ? 'border-green-800 bg-green-800 text-white'
-                    : 'border-line bg-white text-ink hover:border-green-300'
+                    ? 'border-sparkle-400/50 bg-sparkle-400/[0.08] text-sparkle-200'
+                    : 'border-line bg-white/[0.02] text-muted hover:border-white/20 hover:text-ink'
                 )}
               >
                 {tab}
                 {tab !== 'All' && (
-                  <span className={cn('ml-1.5 text-xs', active ? 'text-green-200' : 'text-muted')}>
+                  <span className={cn('num ml-1.5 text-xs', active ? 'text-sparkle-300/70' : 'text-low')}>
                     {articles.filter((a) => a.category === tab).length}
                   </span>
                 )}
@@ -105,7 +105,7 @@ export function InsightsBrowser({
               setVisible(PAGE_SIZE);
             }}
             placeholder="Search articles"
-            className="w-full rounded-full border border-line bg-white py-2.5 pl-10 pr-9 text-sm outline-none transition-colors focus:border-green-600"
+            className="w-full rounded-full border border-line bg-[#030604] py-2.5 pl-10 pr-9 text-sm text-ink outline-none transition-colors placeholder:text-low focus:border-sparkle-400 focus:ring-2 focus:ring-sparkle-400/15"
           />
           {query && (
             <button
@@ -135,7 +135,7 @@ export function InsightsBrowser({
           ))}
         </ul>
       ) : (
-        <div className="mt-6 rounded-2xl border border-dashed border-line bg-white px-6 py-12 text-center">
+        <div className="mt-6 rounded-2xl border border-dashed border-line bg-white/[0.02] px-6 py-12 text-center">
           <p className="font-semibold text-ink">Nothing matches that.</p>
           <p className="mt-1.5 text-sm text-muted">
             Try a different term, or{' '}
@@ -144,7 +144,7 @@ export function InsightsBrowser({
                 setQuery('');
                 choose('All');
               }}
-              className="font-semibold text-green-700 underline underline-offset-2"
+              className="font-semibold text-sparkle-300 underline underline-offset-2"
             >
               clear the filters
             </button>
@@ -157,7 +157,7 @@ export function InsightsBrowser({
         <div className="mt-9 text-center">
           <button
             onClick={() => setVisible((v) => v + PAGE_SIZE)}
-            className="rounded-full border-2 border-green-800 px-7 py-3 font-semibold text-green-800 transition-colors hover:bg-green-800 hover:text-white"
+            className="btn btn--secondary btn--md"
           >
             Show more ({filtered.length - visible} remaining)
           </button>

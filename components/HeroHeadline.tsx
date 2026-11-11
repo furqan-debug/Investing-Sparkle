@@ -10,19 +10,18 @@ export function HeroHeadline() {
       setRevealed(true);
       return;
     }
-    const t = setTimeout(() => setRevealed(true), 600);
+    const t = setTimeout(() => setRevealed(true), 550);
     return () => clearTimeout(t);
   }, []);
 
   return (
-    <h1 className="h1 mt-5 animate-fade-up">
+    <h1 className="hero-title mt-6">
       Learn to invest in Pakistan with confidence,{' '}
       <span
-        className="text-underline-reveal inline-block text-sparkle-400 transition-all duration-700"
+        className="accent-serif inline-block transition-all duration-700 ease-out"
         style={{
           opacity: revealed ? 1 : 0,
-          translate: revealed ? 'none' : '0 0.3em',
-          filter: revealed ? 'none' : 'blur(4px)',
+          translate: revealed ? 'none' : '0 0.25em',
         }}
       >
         not guesswork.

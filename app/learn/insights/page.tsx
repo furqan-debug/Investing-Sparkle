@@ -35,7 +35,7 @@ export default function InsightsPage() {
           <ScrollReveal animation="scale-in" delay={0.15}>
             <div className="card mt-8 grid gap-6 p-6 md:p-8 lg:grid-cols-[1.3fr_1fr] lg:items-center">
               <div>
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-green-500/10 px-2.5 py-1 text-xs font-medium text-green-700">
+                <span className="mono-label inline-flex items-center gap-1.5 rounded-full border border-green-500/25 bg-green-500/[0.07] px-2.5 py-1 text-[10px] text-green-300">
                   <span className="h-1.5 w-1.5 rounded-full bg-current" aria-hidden />
                   {lead.category}
                 </span>

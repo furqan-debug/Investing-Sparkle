@@ -194,8 +194,8 @@ export function RiskProfileQuiz() {
     const profile = profileFor(score);
 
     return (
-      <div className="rounded-2xl border border-line bg-white p-5 md:p-7">
-        <p className="eyebrow text-green-600">Your result</p>
+      <div className="rounded-2xl border border-sparkle-400/20 bg-white/[0.025] p-5 md:p-7">
+        <p className="mono-label text-sparkle-300">Your result</p>
         <h2 className="h2 mt-3">{profile.name}</h2>
 
         <p className="mt-2 text-sm text-muted">
@@ -214,8 +214,8 @@ export function RiskProfileQuiz() {
           ))}
         </ul>
 
-        <p className="mt-7 rounded-2xl bg-green-50 p-5 text-sm leading-relaxed text-green-800">
-          <span className="font-semibold">Suggested next step: </span>
+        <p className="mt-7 rounded-2xl border border-sparkle-400/25 bg-sparkle-400/[0.05] p-5 text-sm leading-relaxed text-muted">
+          <span className="font-semibold text-sparkle-300">Suggested next step: </span>
           {profile.nextStep}
         </p>
 
@@ -231,19 +231,19 @@ export function RiskProfileQuiz() {
             href={whatsappLink(whatsappMessages.riskProfileResult)}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-6 py-3 text-sm font-semibold text-green-950 hover:bg-[#1eb857]"
+            className="btn btn--secondary btn--md"
           >
             <MessageCircle className="h-4 w-4" aria-hidden /> Discuss my result on WhatsApp
           </a>
           <a
             href="/live"
-            className="inline-flex items-center justify-center gap-2 rounded-full bg-green-800 px-6 py-3 text-sm font-semibold text-white hover:bg-green-700"
+            className="btn btn--primary btn--md"
           >
             Join the free live session <ArrowRight className="h-4 w-4" aria-hidden />
           </a>
           <button
             onClick={reset}
-            className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-line px-6 py-3 text-sm font-semibold text-ink hover:bg-paper"
+            className="inline-flex items-center justify-center gap-2 rounded-full border border-line px-6 py-3 text-sm font-semibold text-ink transition-colors hover:border-white/20 hover:bg-white/[0.04]"
           >
             <RotateCcw className="h-4 w-4" aria-hidden /> Retake
           </button>
@@ -291,10 +291,10 @@ export function RiskProfileQuiz() {
                     <label
                       key={opt.label}
                       className={cn(
-                        'flex cursor-pointer items-center gap-3 rounded-xl border-2 px-4 py-3 text-sm transition-colors',
+                        'flex cursor-pointer items-center gap-3 rounded-xl border px-4 py-3 text-sm transition-colors',
                         selected
-                          ? 'border-green-600 bg-green-50 text-ink'
-                          : 'border-line hover:border-green-300'
+                          ? 'border-sparkle-400/60 bg-sparkle-400/[0.08] text-ink'
+                          : 'border-line hover:border-white/20 hover:bg-white/[0.03]'
                       )}
                     >
                       <input
@@ -303,7 +303,7 @@ export function RiskProfileQuiz() {
                         value={opt.score}
                         checked={selected}
                         onChange={() => setAnswers((a) => ({ ...a, [q.id]: opt.score }))}
-                        className="h-4 w-4 accent-green-700"
+                        className="h-4 w-4 accent-sparkle-400"
                       />
                       {opt.label}
                     </label>
@@ -318,7 +318,7 @@ export function RiskProfileQuiz() {
       <button
         onClick={() => setSubmitted(true)}
         disabled={!complete}
-        className="mt-8 w-full rounded-full bg-sparkle-400 px-6 py-3 font-semibold text-green-950 transition-colors hover:bg-sparkle-500 disabled:cursor-not-allowed disabled:opacity-50"
+        className="btn btn--primary btn--lg mt-8 w-full disabled:cursor-not-allowed"
       >
         {complete ? 'See my risk profile' : `Answer all ${questions.length} questions to continue`}
       </button>

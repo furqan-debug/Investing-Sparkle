@@ -34,11 +34,11 @@ export default function CoursesPage() {
                 className="card flex h-full flex-col p-5"
               >
                 <div className="flex flex-wrap gap-2 text-xs">
-                  <span className="rounded-full bg-green-50 px-2.5 py-1 font-medium text-green-700">
+                  <span className="mono-label rounded-full border border-green-500/25 bg-green-500/[0.07] px-2.5 py-1 text-[10px] text-green-300">
                     {course.level}
                   </span>
                   {course.status === 'waitlist' && (
-                    <span className="rounded-full bg-sparkle-100 px-2.5 py-1 font-medium text-ink">
+                    <span className="mono-label rounded-full border border-sparkle-400/25 bg-sparkle-400/[0.06] px-2.5 py-1 text-[10px] text-sparkle-300">
                       Waitlist
                     </span>
                   )}
@@ -58,7 +58,7 @@ export default function CoursesPage() {
                   </div>
                 </dl>
 
-                <span className="mt-3.5 inline-flex items-center gap-1.5 text-sm font-semibold text-green-700">
+                <span className="mt-3.5 inline-flex items-center gap-1.5 text-sm font-semibold text-sparkle-300">
                   Course details <ArrowRight className="h-3.5 w-3.5" aria-hidden />
                 </span>
               </Link>

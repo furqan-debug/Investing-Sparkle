@@ -5,34 +5,34 @@ import { formatDate } from '@/lib/format';
 
 export function ArticleCard({ article }: { article: Article }) {
   return (
-    <article className="card group relative flex h-full flex-col border-l-4 border-l-green-500 p-6">
-      <div className="flex items-center gap-3 text-xs">
-        <span className="rounded-full bg-green-50 px-2.5 py-1 font-medium text-green-700">
+    <article className="card group relative flex h-full flex-col p-6">
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <span className="mono-label rounded-full border border-sparkle-400/20 bg-sparkle-400/[0.05] px-2.5 py-1 text-[10px] text-sparkle-300">
           {article.category}
         </span>
-        <time dateTime={article.publishedAt} className="text-muted">
+        <time dateTime={article.publishedAt} className="mono-label text-[10px]">
           {formatDate(article.publishedAt)}
         </time>
       </div>
 
-      <h3 className="mt-4 font-sans text-lg font-semibold leading-snug text-ink">
+      <h3 className="mt-5 font-sans text-lg font-semibold leading-snug text-ink">
         <Link href={`/learn/insights/${article.slug}`} className="after:absolute after:inset-0">
           {article.title}
         </Link>
       </h3>
 
-      <p className="mt-2.5 flex-1 text-sm leading-relaxed text-muted">{article.description}</p>
+      <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">{article.description}</p>
 
-      <p className="mt-5 flex items-center gap-1.5 text-sm font-semibold text-green-700">
-        Read article
-        <ArrowUpRight
-          className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-          aria-hidden
-        />
-        <span className="ml-auto text-xs font-normal text-muted">
-          {article.readingMinutes} min read
+      <div className="mt-6 flex items-center justify-between gap-3 border-t border-line pt-4">
+        <span className="inline-flex items-center gap-1.5 text-sm font-medium text-sparkle-300">
+          Read article
+          <ArrowUpRight
+            className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+            aria-hidden
+          />
         </span>
-      </p>
+        <span className="mono-label text-[10px]">{article.readingMinutes} min</span>
+      </div>
     </article>
   );
 }

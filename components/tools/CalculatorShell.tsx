@@ -36,7 +36,7 @@ export function SliderPanel({ title, sliders }: { title: string; sliders: Slider
               </label>
               <output
                 htmlFor={s.id}
-                className="min-w-0 break-words text-right font-display text-lg leading-tight text-green-800"
+                className="num min-w-0 break-words text-right text-[15px] leading-tight text-green-300"
               >
                 {s.format(s.value)}
               </output>
@@ -49,7 +49,7 @@ export function SliderPanel({ title, sliders }: { title: string; sliders: Slider
               step={s.step}
               value={s.value}
               onChange={(e) => s.set(Number(e.target.value))}
-              className="mt-2.5 w-full accent-green-700"
+              className="mt-2.5 w-full accent-sparkle-400"
             />
             <div className="mt-1 flex justify-between text-xs text-muted">
               <span>{s.format(s.min)}</span>
@@ -79,20 +79,20 @@ export function ResultPanel({
 }) {
   return (
     <div className="rounded-2xl bg-green-900 p-5 text-white md:p-6">
-      <p className="eyebrow text-sparkle-400">{eyebrow}</p>
-      <p className="mt-2.5 break-words font-display text-3xl leading-[1.05] text-sparkle-400 md:text-4xl">
+      <p className="eyebrow text-sparkle-300">{eyebrow}</p>
+      <p className="num mt-3 break-words text-[1.75rem] leading-[1.05] text-sparkle-300 md:text-[2.1rem]">
         {headline}
       </p>
-      {sub && <p className="mt-2 text-sm text-green-200">{sub}</p>}
+      {sub && <p className="mt-2.5 text-sm leading-relaxed text-muted">{sub}</p>}
 
       {rows && rows.length > 0 && (
         <dl className="mt-5 grid gap-4 border-t border-white/15 pt-5 sm:grid-cols-2">
           {rows.map((row) => (
             <div key={row.label} className="min-w-0">
-              <dt className="text-xs uppercase tracking-wider text-green-200">{row.label}</dt>
+              <dt className="mono-label text-[10px] text-muted">{row.label}</dt>
               <dd
-                className={`mt-1 break-words font-display text-xl ${
-                  row.accent ? 'text-sparkle-400' : 'text-white'
+                className={`num mt-1.5 break-words text-[15px] ${
+                  row.accent ? 'text-sparkle-300' : 'text-ink'
                 }`}
               >
                 {row.value}
@@ -125,7 +125,7 @@ export function ToolFooter({
         href={whatsappLink(whatsappMessages.calculatorResult(calculatorName))}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-5 py-3 text-sm font-semibold text-green-950 hover:bg-[#1eb857]"
+        className="btn btn--secondary inline-flex"
       >
         <MessageCircle className="h-4 w-4" aria-hidden /> Talk through these numbers
       </a>

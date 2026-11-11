@@ -46,10 +46,10 @@ export function Logo({
         and tight, "SPARKLE" is lighter and widely letterspaced beneath it.
       */}
       <span className="flex flex-col leading-none">
-        <span className="text-xl font-bold uppercase tracking-wider text-green-500 md:text-2xl">
+        <span className="text-[1.15rem] font-bold uppercase tracking-[0.06em] text-green-300 md:text-[1.35rem]">
           INVESTING
         </span>
-        <span className="mt-0.5 text-[0.7rem] font-semibold uppercase tracking-[0.34em] text-sparkle-400 md:text-xs">
+        <span className="mt-[3px] text-[0.62rem] font-semibold uppercase tracking-[0.36em] text-sparkle-400 md:text-[0.68rem]">
           SPARKLE
         </span>
       </span>

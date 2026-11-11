@@ -112,16 +112,15 @@ export default function LiveSessionPage() {
         </ul>
 
         <div className="mt-6 flex flex-col gap-2.5 sm:flex-row sm:items-center">
-          <Button href={liveSession.platformUrl} size="lg" external goo="var(--color-sparkle-700)" gooScale>
+          <Button href={liveSession.platformUrl} size="lg" external goo="var(--color-sparkle-300)" gooScale>
             <Radio className="h-4 w-4" aria-hidden /> {liveSession.watchLabel}
           </Button>
           <Button
             href={whatsappLink(whatsappMessages.liveSessionReminder)}
             size="lg"
-            variant="ghost"
-            className="text-white"
+            variant="secondary"
           >
-            <MessageCircle className="h-4 w-4" aria-hidden /> {liveSession.reminderLabel}
+            <MessageCircle className="h-4 w-4 text-green-400" aria-hidden /> {liveSession.reminderLabel}
           </Button>
         </div>
       </PageHero>
@@ -160,7 +159,7 @@ export default function LiveSessionPage() {
             <li key={step.title}>
               <ScrollReveal delay={0.06 * i}>
                 <div className="card h-full p-5">
-                  <span className="grid h-9 w-9 place-items-center rounded-full bg-green-700 font-display text-base text-white">
+                  <span className="grid h-9 w-9 place-items-center rounded-full border border-sparkle-400/25 bg-sparkle-400/[0.06] font-mono text-[11px] text-sparkle-300">
                     {i + 1}
                   </span>
                   <h3 className="mt-3.5 font-sans text-base font-semibold text-ink">

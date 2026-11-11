@@ -31,7 +31,7 @@ export default async function OpengraphImage() {
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
-          background: 'linear-gradient(135deg, #04241a 0%, #084b36 100%)',
+          background: 'linear-gradient(150deg, #061a12 0%, #040705 60%, #0a110d 100%)',
           padding: 72,
           fontFamily: 'sans-serif',
         }}
@@ -45,7 +45,7 @@ export default async function OpengraphImage() {
               style={{
                 fontSize: 38,
                 fontWeight: 700,
-                color: '#00B578',
+                color: '#A9EED4',
                 letterSpacing: 1,
                 lineHeight: 1,
               }}
@@ -56,7 +56,7 @@ export default async function OpengraphImage() {
               style={{
                 fontSize: 20,
                 fontWeight: 500,
-                color: '#C49820',
+                color: '#EBCE86',
                 letterSpacing: 11,
                 lineHeight: 1,
                 marginTop: 6,
@@ -73,7 +73,7 @@ export default async function OpengraphImage() {
             style={{
               fontSize: 64,
               fontWeight: 700,
-              color: '#ffffff',
+              color: '#F4F7F4',
               lineHeight: 1.12,
               letterSpacing: -1,
             }}
@@ -84,7 +84,7 @@ export default async function OpengraphImage() {
             style={{
               fontSize: 64,
               fontWeight: 700,
-              color: '#DDAF33',
+              color: '#EBCE86',
               lineHeight: 1.12,
               letterSpacing: -1,
             }}
@@ -100,11 +100,11 @@ export default async function OpengraphImage() {
             alignItems: 'center',
             gap: 16,
             fontSize: 26,
-            color: '#A9EBD2',
+            color: '#B7C2BA',
           }}
         >
           <div
-            style={{ display: 'flex', width: 12, height: 12, borderRadius: 6, background: '#C49820' }}
+            style={{ display: 'flex', width: 12, height: 12, borderRadius: 6, background: '#EBCE86' }}
           />
           We teach. You execute. Your account, your decisions.
         </div>

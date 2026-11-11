@@ -33,7 +33,7 @@ export default function ContactPage() {
 
       <Section tone="paper">
         <div className="grid gap-5 lg:grid-cols-[1fr_1.2fr]">
-          <div className="flex flex-col gap-4">
+          <div className="flex min-w-0 flex-col gap-4">
             <ScrollReveal>
               <div className="rounded-2xl bg-green-900 p-6 text-white md:p-8">
                 <MessageCircle className="h-8 w-8 text-sparkle-400" aria-hidden />
@@ -45,9 +45,9 @@ export default function ContactPage() {
                   href={whatsappLink(whatsappMessages.contact)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#25D366] px-6 py-3 text-sm font-semibold text-green-950 transition-colors hover:bg-[#1eb857]"
+                  className="btn btn--secondary btn--md mt-5 w-full"
                 >
-                  <MessageCircle className="h-4 w-4" aria-hidden /> {site.contact.whatsapp}
+                  <MessageCircle className="h-4 w-4 text-sparkle-400" aria-hidden /> {site.contact.whatsapp}
                 </a>
                 <p className="mt-3 text-xs text-green-200">
                   Response time: {site.contact.responseTime.toLowerCase()}.
@@ -56,17 +56,17 @@ export default function ContactPage() {
             </ScrollReveal>
 
             <ScrollReveal delay={0.1}>
-              <dl className="card space-y-4 p-6">
+              <dl className="card min-w-0 space-y-4 p-6">
                 <div className="flex gap-3">
                   <div className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-green-50">
                     <Mail className="h-4 w-4 text-green-700" aria-hidden />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <dt className="text-sm font-semibold text-ink">Email</dt>
                     <dd className="mt-0.5 text-sm text-muted">
                       <a
                         href={`mailto:${site.contact.email}`}
-                        className="link-hover font-medium text-green-700"
+                        className="link-hover font-medium break-words text-green-700"
                       >
                         {site.contact.email}
                       </a>
@@ -99,8 +99,8 @@ export default function ContactPage() {
             </ScrollReveal>
           </div>
 
-          <ScrollReveal delay={0.15}>
-            <div className="card p-6 md:p-8">
+          <ScrollReveal delay={0.15} className="min-w-0">
+            <div className="card min-w-0 p-6 md:p-8">
               <h2 className="h3">Prefer to write?</h2>
               <p className="mt-2 text-sm text-muted">
                 Fill this in and we will reply by email. Everything marked with an asterisk is

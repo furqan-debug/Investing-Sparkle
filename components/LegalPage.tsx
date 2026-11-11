@@ -39,7 +39,7 @@ export function LegalPage({
       <Section tone="paper">
         <div className="mx-auto max-w-2xl">
           {!reviewed && (
-            <div className="mb-8 flex gap-3 rounded-2xl border-l-4 border-warning bg-sparkle-100 p-4">
+            <div className="mb-8 flex gap-3 rounded-2xl border border-warning/30 bg-warning/[0.06] p-4">
               <AlertTriangle className="mt-0.5 h-5 w-5 shrink-0 text-warning" aria-hidden />
               <p className="text-sm leading-relaxed text-ink">
                 <strong>Internal note, remove before launch.</strong> This is a working draft

@@ -27,17 +27,22 @@ export function PageHero({
   className?: string;
 }) {
   return (
-    <section className={cn('hero-gradient relative overflow-hidden text-white', className)}>
+    <section
+      className={cn(
+        'relative overflow-hidden border-b border-line bg-white/[0.012]',
+        className
+      )}
+    >
       <div className="pointer-events-none absolute inset-0" aria-hidden>
-        <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-sparkle-400/[0.06]" />
-        <div className="absolute -bottom-32 -left-20 h-80 w-80 rounded-full border border-white/[0.04]" />
+        <div className="absolute inset-0 bg-[radial-gradient(60%_90%_at_18%_-20%,rgba(6,113,78,0.24),transparent_70%)]" />
+        <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
       </div>
 
-      <div className="container-page relative py-10 md:py-14">
+      <div className="container-page relative py-14 md:py-20">
         {back && (
           <Link
             href={back.href}
-            className="inline-flex items-center gap-1.5 text-sm text-green-200 transition-colors hover:text-sparkle-400"
+            className="inline-flex items-center gap-1.5 text-sm text-muted transition-colors hover:text-sparkle-300"
           >
             <ArrowLeft className="h-4 w-4" aria-hidden /> {back.label}
           </Link>
@@ -45,15 +50,15 @@ export function PageHero({
 
         <div
           className={cn(
-            back ? 'mt-5' : undefined,
-            aside ? 'grid gap-8 lg:grid-cols-[1.5fr_1fr] lg:items-start' : undefined
+            back ? 'mt-6' : undefined,
+            aside ? 'grid gap-10 lg:grid-cols-[1.5fr_1fr] lg:items-start' : undefined
           )}
         >
           <div className={cn(!aside && 'max-w-3xl')}>
             {eyebrow && <p className="eyebrow text-sparkle-400">{eyebrow}</p>}
-            <h1 className={cn('h1', eyebrow && 'mt-3')}>{title}</h1>
-            {lede && <p className="lede mt-4 max-w-2xl text-green-100">{lede}</p>}
-            {children && <div className="mt-6">{children}</div>}
+            <h1 className={cn('h1', eyebrow && 'mt-4')}>{title}</h1>
+            {lede && <p className="lede mt-5 max-w-2xl">{lede}</p>}
+            {children && <div className="mt-7">{children}</div>}
           </div>
 
           {aside && <div>{aside}</div>}

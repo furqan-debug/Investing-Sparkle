@@ -26,8 +26,8 @@ export default function CaseStudiesPage() {
 
       <Section tone="paper" tight>
         <ScrollReveal>
-          <div className="flex gap-3 rounded-2xl border-l-4 border-sparkle-400 bg-sparkle-50 p-4 md:p-5">
-            <Info className="mt-0.5 h-5 w-5 shrink-0 text-green-800" aria-hidden />
+          <div className="flex gap-3 rounded-2xl border-l-2 border-sparkle-400/60 bg-sparkle-400/[0.04] p-4 md:p-5">
+            <Info className="mt-0.5 h-5 w-5 shrink-0 text-green-300" aria-hidden />
             <p className="text-sm leading-relaxed text-ink">
               <strong>These are not real clients.</strong> {caseStudyDisclaimer} We do not publish
               invented client stories, and we will not present these as anything other than what they
@@ -53,7 +53,7 @@ export default function CaseStudiesPage() {
                     {study.title}
                   </h2>
                   <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">{study.summary}</p>
-                  <p className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-green-700">
+                  <p className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-sparkle-300">
                     Read the reasoning
                     <ArrowRight
                       className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5"
@@ -69,7 +69,7 @@ export default function CaseStudiesPage() {
 
       <Section tone="paper">
         <ScrollReveal animation="scale-in">
-          <div className="card mx-auto max-w-3xl border-l-4 border-l-green-800 p-6 md:p-8">
+          <div className="card mx-auto max-w-3xl border-l-2 border-l-sparkle-400/40 p-6 md:p-8">
             <h2 className="h3">Why we publish examples rather than client stories</h2>
             <div className="mt-4 space-y-3.5 text-sm leading-relaxed text-muted md:text-base">
               <p>

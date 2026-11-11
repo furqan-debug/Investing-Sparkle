@@ -151,11 +151,17 @@ export default async function CoursePage({ params }: Params) {
             </ul>
           </div>
 
-          <div className="rounded-2xl border-2 border-green-800 bg-white p-6 text-center">
-            <p className="eyebrow text-green-600">Price</p>
-            <p className="mt-3 font-display text-3xl text-green-800 md:text-4xl">{course.price}</p>
+          <div className="rounded-2xl border border-sparkle-400/25 bg-white/[0.02] p-6 text-center">
+            <p className="mono-label text-sparkle-300">Price</p>
+            <p className="num mt-4 text-[1.75rem] leading-none text-sparkle-300 md:text-[2.1rem]">{course.price}</p>
             <p className="mt-4 text-sm text-muted">Payment via {paymentMethods.join(' · ')}</p>
-            <Button href={enrollLink} size="lg" variant="whatsapp" className="mt-6 w-full" goo="#1eb857">
+            <Button
+              href={enrollLink}
+              size="lg"
+              className="mt-6 w-full"
+              goo="var(--color-sparkle-300)"
+              gooScale
+            >
               <MessageCircle className="h-4 w-4" aria-hidden />
               {course.status === 'waitlist' ? 'Join the waitlist' : 'Enroll via WhatsApp'}
             </Button>

@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { DM_Serif_Display, Inter } from 'next/font/google';
+import { IBM_Plex_Mono, Instrument_Sans, Instrument_Serif, Inter } from 'next/font/google';
 import './globals.css';
 
 import { LiveSessionBanner } from '@/components/LiveSessionBanner';
@@ -11,9 +11,8 @@ import { CookieBanner } from '@/components/CookieBanner';
 import { Analytics } from '@/components/Analytics';
 import { site } from '@/content/site';
 
-const display = DM_Serif_Display({
+const display = Instrument_Sans({
   subsets: ['latin'],
-  weight: '400',
   variable: '--font-display-loaded',
   display: 'swap',
 });
@@ -21,6 +20,21 @@ const display = DM_Serif_Display({
 const sans = Inter({
   subsets: ['latin'],
   variable: '--font-sans-loaded',
+  display: 'swap',
+});
+
+const mono = IBM_Plex_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500'],
+  variable: '--font-mono-loaded',
+  display: 'swap',
+});
+
+const serif = Instrument_Serif({
+  subsets: ['latin'],
+  weight: '400',
+  style: ['normal', 'italic'],
+  variable: '--font-serif-loaded',
   display: 'swap',
 });
 
@@ -65,7 +79,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: '#04241a',
+  themeColor: '#040705',
   width: 'device-width',
   initialScale: 1,
 };
@@ -95,7 +109,10 @@ const organizationSchema = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en-PK" className={`${display.variable} ${sans.variable}`}>
+    <html
+      lang="en-PK"
+      className={`${display.variable} ${sans.variable} ${mono.variable} ${serif.variable}`}
+    >
       <body>
         {/* Keyboard users land here first — the plan's accessibility baseline. */}
         <a
