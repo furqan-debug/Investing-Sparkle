@@ -217,9 +217,9 @@ export default function HomePage() {
         <ScrollReveal>
           <div className="flex flex-wrap items-end justify-between gap-4">
             <SectionHeading
-              eyebrow="Free, no signup"
+              eyebrow="Free tools"
               title="Start with the tools."
-              lede="Nothing to pay, nothing to join. Use them, and see whether the way we explain things works for you."
+              lede="Nothing to pay and no account. Use them freely, and see whether the way we explain things works for you."
             />
           </div>
         </ScrollReveal>

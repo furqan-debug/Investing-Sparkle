@@ -111,9 +111,12 @@ export function ResultPanel({
 export function ToolFooter({
   calculatorName,
   disclaimer,
+  showWhatsapp = true,
 }: {
   calculatorName: string;
   disclaimer: string;
+  /** Set false when the tool already offers a richer WhatsApp hand-off. */
+  showWhatsapp?: boolean;
 }) {
   return (
     <>
@@ -121,14 +124,16 @@ export function ToolFooter({
         <Newsletter compact />
       </div>
 
-      <a
-        href={whatsappLink(whatsappMessages.calculatorResult(calculatorName))}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="btn btn--secondary inline-flex"
-      >
-        <MessageCircle className="h-4 w-4" aria-hidden /> Talk through these numbers
-      </a>
+      {showWhatsapp && (
+        <a
+          href={whatsappLink(whatsappMessages.calculatorResult(calculatorName))}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn btn--secondary inline-flex"
+        >
+          <MessageCircle className="h-4 w-4" aria-hidden /> Talk through these numbers
+        </a>
+      )}
 
       <p className="text-xs leading-relaxed text-muted">{disclaimer}</p>
     </>

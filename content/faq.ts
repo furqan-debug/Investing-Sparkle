@@ -27,7 +27,7 @@ export const faqGroups: FaqGroup[] = [
       },
       {
         q: 'Are the free tools really free?',
-        a: 'Yes. The calculators and the risk profile quiz are free to use. We ask for your email only if you want the detailed result sent to you.',
+        a: 'Yes. The calculators and quiz are free to use, and the inputs are always open. The risk profile and zakat sheet are the only gated parts: we ask for your name, WhatsApp number, and email so we can unlock the detailed result and open WhatsApp with it ready to send. There is no charge at any point.',
       },
     ],
   },

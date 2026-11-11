@@ -23,7 +23,8 @@ export const tools: Tool[] = [
     name: 'Risk Profile Quiz',
     blurb:
       'Eight questions that tell you what kind of investor you actually are, before you put money at risk.',
-    outcome: 'Your risk profile, and what it means for how you should build a portfolio.',
+    outcome:
+      'Your risk profile, an asset allocation blueprint, and what both mean for your portfolio.',
     status: 'live',
     featured: true,
   },
@@ -50,7 +51,7 @@ export const tools: Tool[] = [
     name: 'Zakat Calculator',
     blurb:
       'Calculate zakat due on shares, dividends, and cash holdings, with the reasoning shown rather than hidden.',
-    outcome: 'Your zakat liability across an investment portfolio.',
+    outcome: 'A detailed zakat liability sheet across your investment portfolio.',
     status: 'live',
   },
   {

@@ -20,7 +20,7 @@ export default function ZakatPage() {
         back={{ href: '/learn/tools', label: 'All free tools' }}
         eyebrow="Free tool"
         title="Zakat Calculator"
-        lede="For shares, dividends, and the cash people forget: the balance sitting idle in a trading account."
+        lede="For shares, dividends, and the cash people forget: the balance sitting idle in a trading account. Enter your details at the end to unlock the full liability sheet and send it in WhatsApp."
       />
 
       <Section tone="paper">

@@ -4,9 +4,9 @@ import { liveSession } from './live-session';
 /**
  * WhatsApp deep links.
  *
- * Every booking CTA on the site routes through here. The pre-filled opening
- * line differs per surface on purpose: when a lead lands in the WhatsApp
- * inbox, the first line tells you which page they came from.
+ * Every WhatsApp hand-off on the site routes through here. The pre-filled
+ * opening line differs per surface on purpose: when a lead lands in the
+ * WhatsApp inbox, the first line tells you which page they came from.
  *
  * Keep these consistent — that attribution is the only lead-source tracking
  * the MVP has, since payment happens off-site.
@@ -47,8 +47,6 @@ export const whatsappMessages = {
     `Hi Investing Sparkle! I want to enroll in ${courseName}. Please share the schedule and payment details.`,
 
   // Free tools
-  riskProfileResult:
-    'Hi Investing Sparkle! I just took the Risk Profile Quiz. Please share what I should do next based on my result.',
   calculatorResult: (calculatorName: string) =>
     `Hi Investing Sparkle! I just used your ${calculatorName}. I'd like guidance on how to actually start investing with these numbers.`,
 

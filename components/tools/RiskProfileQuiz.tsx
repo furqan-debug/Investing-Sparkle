@@ -1,9 +1,12 @@
 'use client';
 
 import { useState } from 'react';
-import { RotateCcw, MessageCircle, ArrowRight } from 'lucide-react';
-import { whatsappLink, whatsappMessages } from '@/content/whatsapp';
-import { Newsletter } from '@/components/Newsletter';
+import { RotateCcw, MessageCircle, ArrowRight, Send } from 'lucide-react';
+
+import { whatsappLink } from '@/content/whatsapp';
+import { riskBlueprintMessage, type AllocationSlice } from '@/lib/tool-result';
+import type { Lead } from '@/lib/lead';
+import { LeadCapture } from './LeadCapture';
 import { cn } from '@/lib/cn';
 
 /**
@@ -12,6 +15,11 @@ import { cn } from '@/lib/cn';
  * Scoring is deliberately transparent: every option carries a visible weight,
  * the total is shown with the result, and the bands are stated. A quiz that
  * hides its logic is a personality test, not a risk assessment.
+ *
+ * The last screen asks for a name, WhatsApp number, and email before the
+ * personalised profile and allocation blueprint appear. The questions and the
+ * scoring stay open to everyone; only the detailed result is gated, and it is
+ * handed straight to WhatsApp so the visitor keeps a copy.
  *
  * This is educational, not a regulated suitability assessment — the result copy
  * says so plainly.
@@ -96,7 +104,7 @@ const questions: Question[] = [
     id: 'reaction',
     question: 'Someone you trust tells you a stock is about to move. What happens next?',
     options: [
-      { label: "I buy it. A good tip is a good tip", score: 1 },
+      { label: 'I buy it. A good tip is a good tip', score: 1 },
       { label: 'I buy a small amount to test it', score: 2 },
       { label: 'I look into the company before deciding', score: 3 },
       { label: 'I ignore it unless it passes my own criteria', score: 4 },
@@ -112,6 +120,8 @@ type Profile = {
   summary: string;
   guidance: string[];
   nextStep: string;
+  allocation: AllocationSlice[];
+  allocationNote: string;
 };
 
 function profileFor(score: number): Profile {
@@ -129,6 +139,14 @@ function profileFor(score: number): Profile {
         'Be especially wary of anyone promising quick returns while you are in this position.',
       ],
       nextStep: 'Start with our free material and the free live session. Advisory can wait.',
+      allocation: [
+        { label: 'PSX equities', percent: 5 },
+        { label: 'Cash and emergency fund', percent: 70 },
+        { label: 'Gold', percent: 15 },
+        { label: 'Other funds and REITs', percent: 10 },
+      ],
+      allocationNote:
+        'With no emergency fund, the cash sleeve is the priority. Treat the equity slice as tuition, not a growth engine, and do not add to it until the foundation is funded.',
     };
   }
 
@@ -143,7 +161,16 @@ function profileFor(score: number): Profile {
         'Decide in advance what would make you sell, and write it down before you buy.',
         'Avoid leverage and short-term trading entirely at this stage.',
       ],
-      nextStep: 'Our free live session is the right start. A Launchpad call helps if you want a plan built with you.',
+      nextStep:
+        'Our free live session is the right start. A Launchpad call helps if you want a plan built with you.',
+      allocation: [
+        { label: 'PSX equities', percent: 30 },
+        { label: 'Cash, T-bills and money market', percent: 45 },
+        { label: 'Gold', percent: 15 },
+        { label: 'Other funds and REITs', percent: 10 },
+      ],
+      allocationNote:
+        'Start at the smaller end of the equity range. Increase it only after you have held through a real drawdown without selling.',
     };
   }
 
@@ -159,6 +186,14 @@ function profileFor(score: number): Profile {
         'Rebalance on a rule, not on a feeling.',
       ],
       nextStep: 'Our courses will sharpen your analysis. Membership suits you if you want accountability.',
+      allocation: [
+        { label: 'PSX equities', percent: 50 },
+        { label: 'Cash, T-bills and money market', percent: 30 },
+        { label: 'Gold', percent: 15 },
+        { label: 'Other funds and REITs', percent: 5 },
+      ],
+      allocationNote:
+        'Spread the equity sleeve across sectors and rebalance back to these weights once a year, not every month.',
     };
   }
 
@@ -172,37 +207,145 @@ function profileFor(score: number): Profile {
       'Guard against confusing a rising market for skill.',
       'Diversification still applies to you, however strong your convictions feel.',
     ],
-    nextStep: 'Focus on the fundamental analysis material. Membership works if you want a second opinion on your reasoning.',
+    nextStep:
+      'Focus on the fundamental analysis material. Membership works if you want a second opinion on your reasoning.',
+    allocation: [
+      { label: 'PSX equities', percent: 70 },
+      { label: 'Cash, T-bills and money market', percent: 15 },
+      { label: 'Gold', percent: 10 },
+      { label: 'Other funds and REITs', percent: 5 },
+    ],
+    allocationNote:
+      'Concentration is the real risk here. Cap any single holding and keep the cash sleeve funded before adding to equities.',
   };
 }
 
+const sliceColors = [
+  'bg-green-500',
+  'bg-green-300/50',
+  'bg-sparkle-400',
+  'bg-white/25',
+];
+
+type Stage = 'quiz' | 'lead' | 'result';
+
 export function RiskProfileQuiz() {
   const [answers, setAnswers] = useState<Record<string, number>>({});
-  const [submitted, setSubmitted] = useState(false);
+  const [stage, setStage] = useState<Stage>('quiz');
+  const [lead, setLead] = useState<Lead | null>(null);
+  const [handoff, setHandoff] = useState<{ link: string; autoOpened: boolean } | null>(null);
 
   const answeredCount = Object.keys(answers).length;
   const complete = answeredCount === questions.length;
   const score = Object.values(answers).reduce((a, b) => a + b, 0);
+  const profile = profileFor(score);
+
+  function buildMessage(person: Lead) {
+    return riskBlueprintMessage({
+      lead: person,
+      profile: profile.name,
+      score,
+      maxScore: MAX,
+      allocation: profile.allocation,
+    });
+  }
 
   function reset() {
     setAnswers({});
-    setSubmitted(false);
+    setStage('quiz');
+    setLead(null);
+    setHandoff(null);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  if (submitted && complete) {
-    const profile = profileFor(score);
+  if (stage === 'lead' && complete) {
+    return (
+      <LeadCapture
+        tool="risk-profile"
+        title="Unlock your profile and allocation blueprint"
+        description="Enter your details to see your personalised risk profile and the asset allocation that matches it. We will open WhatsApp with the full result ready to send to our team, so you keep a copy."
+        submitLabel="Show my blueprint"
+        buildMessage={buildMessage}
+        onBack={() => setStage('quiz')}
+        onSubmit={(person, meta) => {
+          setLead(person);
+          setHandoff(meta);
+          setStage('result');
+        }}
+      />
+    );
+  }
+
+  if (stage === 'result' && complete && lead) {
+    const link = handoff?.link ?? whatsappLink(buildMessage(lead));
 
     return (
-      <div className="rounded-2xl border border-sparkle-400/20 bg-white/[0.025] p-5 md:p-7">
-        <p className="mono-label text-sparkle-300">Your result</p>
+      <div
+        id="risk-profile-result"
+        className="animate-fade-in rounded-2xl border border-sparkle-400/20 bg-white/[0.025] p-5 md:p-7"
+      >
+        <p className="mono-label text-sparkle-300">Your personalised risk profile</p>
         <h2 className="h2 mt-3">{profile.name}</h2>
 
         <p className="mt-2 text-sm text-muted">
-          Score: {score} out of {MAX}
+          Score: <span className="num text-ink">{score}</span> out of{' '}
+          <span className="num text-ink">{MAX}</span>
+        </p>
+
+        <p className="mt-3 flex items-start gap-2 rounded-xl border border-green-500/25 bg-green-500/[0.06] p-3.5 text-xs leading-relaxed text-muted">
+          <Send className="mt-0.5 h-3.5 w-3.5 shrink-0 text-green-400" aria-hidden />
+          <span>
+            {handoff?.autoOpened
+              ? 'WhatsApp opened with your blueprint ready to send. Press send there to keep a copy and get our reply.'
+              : 'WhatsApp did not open automatically. Use the button below to send your blueprint.'}
+          </span>
         </p>
 
         <p className="mt-5 text-lg leading-relaxed text-ink">{profile.summary}</p>
+
+        <div className="mt-8 rounded-2xl border border-line bg-paper p-5 md:p-6">
+          <div className="flex flex-wrap items-baseline justify-between gap-2">
+            <p className="mono-label text-sparkle-300">Asset allocation blueprint</p>
+            <p className="text-xs text-muted">A starting point, not a recommendation</p>
+          </div>
+
+          <div className="mt-5 flex h-2.5 overflow-hidden rounded-full" aria-hidden>
+            {profile.allocation.map((slice, index) => (
+              <span
+                key={slice.label}
+                className={sliceColors[index % sliceColors.length]}
+                style={{ width: `${slice.percent}%` }}
+              />
+            ))}
+          </div>
+
+          <ul className="mt-5 grid gap-2.5 sm:grid-cols-2">
+            {profile.allocation.map((slice, index) => (
+              <li
+                key={slice.label}
+                className="flex items-center justify-between gap-3 rounded-xl border border-line/70 px-3.5 py-2.5"
+              >
+                <span className="flex min-w-0 items-center gap-2 text-sm text-ink">
+                  <span
+                    className={cn(
+                      'h-2 w-2 shrink-0 rounded-full',
+                      sliceColors[index % sliceColors.length]
+                    )}
+                    aria-hidden
+                  />
+                  {slice.label}
+                </span>
+                <span className="num text-sm text-sparkle-300">{slice.percent}%</span>
+              </li>
+            ))}
+          </ul>
+
+          <p className="mt-4 text-xs leading-relaxed text-muted">{profile.allocationNote}</p>
+          <p className="mt-3 text-xs leading-relaxed text-muted">
+            This ignores your existing holdings, tax position, and any Shariah screening you follow.
+            Apply those before acting on it.
+          </p>
+        </div>
 
         <h3 className="mt-8 font-sans text-lg font-semibold text-ink">What this means for you</h3>
         <ul className="mt-4 space-y-3">
@@ -219,26 +362,12 @@ export function RiskProfileQuiz() {
           {profile.nextStep}
         </p>
 
-        <div className="mt-8 rounded-2xl border border-line bg-paper p-6">
-          <Newsletter compact />
-          <p className="mt-3 text-xs text-muted">
-            Get the weekly email: one PSX explainer, one market update. Unsubscribe in one click.
-          </p>
-        </div>
-
-        <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-          <a
-            href={whatsappLink(whatsappMessages.riskProfileResult)}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn--secondary btn--md"
-          >
-            <MessageCircle className="h-4 w-4" aria-hidden /> Discuss my result on WhatsApp
+        <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+          <a href={link} target="_blank" rel="noopener noreferrer" className="btn btn--secondary btn--md">
+            <MessageCircle className="h-4 w-4 text-green-400" aria-hidden /> Send my blueprint on
+            WhatsApp
           </a>
-          <a
-            href="/live"
-            className="btn btn--primary btn--md"
-          >
+          <a href="/live" className="btn btn--primary btn--md">
             Join the free live session <ArrowRight className="h-4 w-4" aria-hidden />
           </a>
           <button
@@ -316,12 +445,18 @@ export function RiskProfileQuiz() {
       </ol>
 
       <button
-        onClick={() => setSubmitted(true)}
+        onClick={() => setStage('lead')}
         disabled={!complete}
         className="btn btn--primary btn--lg mt-8 w-full disabled:cursor-not-allowed"
       >
         {complete ? 'See my risk profile' : `Answer all ${questions.length} questions to continue`}
       </button>
+
+      {complete && (
+        <p className="mt-3 text-center text-xs text-muted">
+          Next, your name and WhatsApp number so we can send the full blueprint.
+        </p>
+      )}
     </div>
   );
 }

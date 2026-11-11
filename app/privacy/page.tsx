@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <LegalPage title="Privacy policy" updated="2026-08-20">
+    <LegalPage title="Privacy policy" updated="2026-11-12">
       <p>
         This policy explains what {site.name} collects, why, and what you can ask us to do about it.
         We have tried to write it in plain language rather than the usual wall of defensive prose.
@@ -20,7 +20,14 @@ export default function PrivacyPage() {
       <h2>What we collect</h2>
       <h3>Information you give us</h3>
       <ul>
-        <li>Your email address, if you subscribe to the newsletter or request a tool result.</li>
+        <li>
+          Your email address, if you subscribe to the newsletter.
+        </li>
+        <li>
+          Your name, email address, and WhatsApp number, if you request a detailed tool result (the
+          risk profile or zakat sheet). The result itself is sent through WhatsApp, so the message
+          you send us contains the figures you entered.
+        </li>
         <li>
           Your name, email, optional WhatsApp number, and message, if you use the contact form.
         </li>
@@ -52,6 +59,7 @@ export default function PrivacyPage() {
       <h2>Why we use it</h2>
       <ul>
         <li>To reply to your enquiry.</li>
+        <li>To deliver the detailed tool result you requested.</li>
         <li>To deliver the course, live session, newsletter, or advisory service you requested.</li>
         <li>To send the newsletter, if you asked for it.</li>
         <li>To understand which pages are useful, so we can improve them.</li>
@@ -73,6 +81,7 @@ export default function PrivacyPage() {
       <ul>
         <li>Our website host, which processes requests and keeps server logs.</li>
         <li>Our email newsletter provider, which stores subscriber addresses.</li>
+        <li>Our email delivery provider, which forwards enquiries and tool results to our inbox.</li>
         <li>Our analytics provider, if you accepted cookies.</li>
         <li>WhatsApp, when you choose to message us, governed by WhatsApp’s own privacy terms.</li>
       </ul>
@@ -84,7 +93,7 @@ export default function PrivacyPage() {
       <h2>How long we keep it</h2>
       <ul>
         <li>Newsletter subscribers: until you unsubscribe.</li>
-        <li>Contact enquiries: up to two years, then deleted.</li>
+        <li>Contact enquiries and tool result requests: up to two years, then deleted.</li>
         <li>Client records: as long as needed for the engagement and any legal record-keeping.</li>
       </ul>
 

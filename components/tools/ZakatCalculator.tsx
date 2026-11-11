@@ -1,15 +1,25 @@
 'use client';
 
 import { useMemo, useState } from 'react';
-import { Info } from 'lucide-react';
+import { Info, Send } from 'lucide-react';
+
 import { ResultPanel, ToolFooter } from './CalculatorShell';
+import { LeadCapture } from './LeadCapture';
+import { whatsappLink } from '@/content/whatsapp';
 import { formatPKR } from '@/lib/format';
+import { zakatSheetMessage } from '@/lib/tool-result';
+import type { Lead } from '@/lib/lead';
 
 /**
  * Zakat calculator for an investment portfolio.
  *
  * Uses number inputs rather than sliders — these are amounts people look up
  * from statements, not values they explore.
+ *
+ * The inputs are always editable. The final liability sheet is the only gated
+ * part: it asks for a name, WhatsApp number, and email, then hands the sheet to
+ * WhatsApp so the visitor keeps a copy. Everything recalculates live after
+ * that, because the sheet is driven by the same state as the inputs.
  *
  * Deliberate design decisions:
  * - The nisab threshold is entered by the user, because it is derived from
@@ -45,6 +55,8 @@ export function ZakatCalculator() {
   const [values, setValues] = useState<Record<string, number>>({});
   const [liabilities, setLiabilities] = useState(0);
   const [nisab, setNisab] = useState(0);
+  const [lead, setLead] = useState<Lead | null>(null);
+  const [handoff, setHandoff] = useState<{ link: string; autoOpened: boolean } | null>(null);
 
   const set = (id: string, v: number) => setValues((prev) => ({ ...prev, [id]: v }));
 
@@ -56,8 +68,38 @@ export function ZakatCalculator() {
     return { assets, net, meetsNisab, zakat: net * RATE };
   }, [values, liabilities, nisab]);
 
+  const enteredAssets = useMemo(
+    () =>
+      assetFields
+        .map((field) => ({ label: field.label, value: values[field.id] || 0 }))
+        .filter((asset) => asset.value > 0),
+    [values]
+  );
+
   const inputClass =
     'mt-1.5 w-full rounded-xl border border-line bg-[#030604] px-4 py-2.5 text-sm text-ink outline-none transition-colors placeholder:text-low focus:border-sparkle-400 focus:ring-2 focus:ring-sparkle-400/15';
+
+  function buildMessage(person: Lead) {
+    return zakatSheetMessage({
+      lead: person,
+      assets: enteredAssets,
+      liabilities,
+      net: result.net,
+      nisab,
+      zakat: result.zakat,
+      meetsNisab: result.meetsNisab,
+    });
+  }
+
+  const status = !nisab
+    ? 'Nisab not entered'
+    : result.meetsNisab
+      ? 'At or above nisab'
+      : 'Below nisab';
+
+  // Rebuilt from the current inputs, not the values captured at unlock, so the
+  // WhatsApp hand-off always matches the sheet on screen.
+  const sheetLink = lead ? whatsappLink(buildMessage(lead)) : '';
 
   return (
     <div className="grid gap-4 lg:grid-cols-2">
@@ -130,36 +172,147 @@ export function ZakatCalculator() {
       </div>
 
       <div className="flex flex-col gap-5">
-        <ResultPanel
-          eyebrow="Zakat due"
-          headline={result.meetsNisab ? `PKR ${formatPKR(result.zakat)}` : '-'}
-          sub={
-            result.meetsNisab
-              ? `2.5% of PKR ${formatPKR(result.net)} net zakatable wealth.`
-              : nisab > 0
-                ? 'Your net zakatable wealth is below the nisab threshold you entered.'
-                : 'Enter the current nisab threshold to see whether zakat is due.'
-          }
-          rows={[
-            { label: 'Total assets', value: `PKR ${formatPKR(result.assets)}` },
-            { label: 'Net after liabilities', value: `PKR ${formatPKR(result.net)}`, accent: true },
-          ]}
-        />
+        {lead && handoff ? (
+          <>
+            <p className="animate-fade-in flex items-start gap-2 rounded-xl border border-green-500/25 bg-green-500/[0.06] p-3.5 text-xs leading-relaxed text-muted">
+              <Send className="mt-0.5 h-3.5 w-3.5 shrink-0 text-green-400" aria-hidden />
+              <span>
+                {handoff.autoOpened
+                  ? 'WhatsApp opened with your sheet ready to send. Press send there to keep a copy and get our reply.'
+                  : 'WhatsApp did not open automatically. Use the button below to send your sheet.'}
+                {!handoff.autoOpened && (
+                  <>
+                    {' '}
+                    <a
+                      href={sheetLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-medium text-green-300 underline decoration-green-300/30 underline-offset-2 hover:text-green-200"
+                    >
+                      Open WhatsApp
+                    </a>
+                  </>
+                )}
+              </span>
+            </p>
 
-        <div className="flex gap-3 rounded-2xl border border-sparkle-400/25 bg-sparkle-400/[0.05] p-5">
-          <Info className="mt-0.5 h-5 w-5 shrink-0 text-sparkle-300" aria-hidden />
-          <p className="text-sm leading-relaxed text-muted">
-            This calculates at 2.5%, the widely applied rate for a lunar year. It is a calculation
-            aid, not a religious ruling. Treatment of long-term holdings and deductible liabilities
-            varies between scholars. Where your situation is unusual or the amount is large, ask a
-            qualified scholar rather than relying on a calculator.
-          </p>
-        </div>
+            <ResultPanel
+              eyebrow="Zakat due"
+              headline={result.meetsNisab ? `PKR ${formatPKR(result.zakat)}` : '-'}
+              sub={
+                result.meetsNisab
+                  ? `2.5% of PKR ${formatPKR(result.net)} net zakatable wealth.`
+                  : nisab > 0
+                    ? 'Your net zakatable wealth is below the nisab threshold you entered.'
+                    : 'Enter the current nisab threshold to see whether zakat is due.'
+              }
+              rows={[
+                { label: 'Total assets', value: `PKR ${formatPKR(result.assets)}` },
+                {
+                  label: 'Net after liabilities',
+                  value: `PKR ${formatPKR(result.net)}`,
+                  accent: true,
+                },
+              ]}
+            />
 
-        <ToolFooter
-          calculatorName="Zakat Calculator"
-          disclaimer="We teach the calculation, not the ruling. Nothing here is a fatwa, and we do not take a position where scholars differ. Keep your working. Next year takes a fraction of the time when last year's method is written down."
-        />
+            <div className="animate-fade-in rounded-2xl border border-line bg-white p-5 md:p-6">
+              <div className="flex flex-wrap items-baseline justify-between gap-2">
+                <h2 className="font-sans text-base font-semibold text-ink">Zakat liability sheet</h2>
+                <span className="mono-label text-[10px]">2.5% lunar-year rate</span>
+              </div>
+
+              <dl className="mt-5 divide-y divide-line text-sm">
+                {enteredAssets.length > 0 ? (
+                  enteredAssets.map((asset) => (
+                    <div key={asset.label} className="flex items-start justify-between gap-4 py-2.5">
+                      <dt className="min-w-0 text-muted">{asset.label}</dt>
+                      <dd className="num shrink-0 text-ink">PKR {formatPKR(asset.value)}</dd>
+                    </div>
+                  ))
+                ) : (
+                  <div className="py-2.5 text-muted">No asset values entered yet.</div>
+                )}
+
+                <div className="flex items-center justify-between gap-4 py-2.5">
+                  <dt className="font-semibold text-ink">Total assets</dt>
+                  <dd className="num shrink-0 font-semibold text-ink">
+                    PKR {formatPKR(result.assets)}
+                  </dd>
+                </div>
+                <div className="flex items-center justify-between gap-4 py-2.5">
+                  <dt className="text-muted">Less liabilities</dt>
+                  <dd className="num shrink-0 text-ink">PKR {formatPKR(liabilities)}</dd>
+                </div>
+                <div className="flex items-center justify-between gap-4 py-2.5">
+                  <dt className="font-semibold text-ink">Net zakatable wealth</dt>
+                  <dd className="num shrink-0 font-semibold text-sparkle-300">
+                    PKR {formatPKR(result.net)}
+                  </dd>
+                </div>
+                <div className="flex items-center justify-between gap-4 py-2.5">
+                  <dt className="text-muted">Nisab threshold</dt>
+                  <dd className="num shrink-0 text-ink">
+                    {nisab > 0 ? `PKR ${formatPKR(nisab)}` : 'Not entered'}
+                  </dd>
+                </div>
+                <div className="flex items-center justify-between gap-4 py-2.5">
+                  <dt className="text-muted">Status</dt>
+                  <dd className="shrink-0 text-ink">{status}</dd>
+                </div>
+              </dl>
+
+              <div className="mt-4 flex items-center justify-between gap-4 rounded-xl border border-sparkle-400/25 bg-sparkle-400/[0.06] px-4 py-3.5">
+                <span className="text-sm font-semibold text-ink">Zakat due</span>
+                <span className="num text-base text-sparkle-300">
+                  PKR {formatPKR(result.meetsNisab ? result.zakat : 0)}
+                </span>
+              </div>
+
+              <p className="mt-4 text-xs leading-relaxed text-muted">
+                Calculated from the figures you entered, not from market data. Edit a field and
+                both this sheet and the WhatsApp button update with it.
+              </p>
+            </div>
+
+            <a
+              href={sheetLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn--secondary btn--md animate-fade-in"
+            >
+              <Send className="h-4 w-4 text-green-400" aria-hidden /> Send my sheet on WhatsApp
+            </a>
+
+            <div className="flex gap-3 rounded-2xl border border-sparkle-400/25 bg-sparkle-400/[0.05] p-5">
+              <Info className="mt-0.5 h-5 w-5 shrink-0 text-sparkle-300" aria-hidden />
+              <p className="text-sm leading-relaxed text-muted">
+                This calculates at 2.5%, the widely applied rate for a lunar year. It is a
+                calculation aid, not a religious ruling. Treatment of long-term holdings and
+                deductible liabilities varies between scholars. Where your situation is unusual or
+                the amount is large, ask a qualified scholar rather than relying on a calculator.
+              </p>
+            </div>
+
+            <ToolFooter
+              calculatorName="Zakat Calculator"
+              showWhatsapp={false}
+              disclaimer="We teach the calculation, not the ruling. Nothing here is a fatwa, and we do not take a position where scholars differ. Keep your working. Next year takes a fraction of the time when last year's method is written down."
+            />
+          </>
+        ) : (
+          <LeadCapture
+            tool="zakat"
+            title="Unlock your detailed zakat sheet"
+            description="Your inputs stay open and editable. Enter your details to see the full liability sheet, with every line item and the reasoning behind the total. We will open WhatsApp with a copy ready to send to our team."
+            submitLabel="Show my zakat sheet"
+            buildMessage={buildMessage}
+            onSubmit={(person, meta) => {
+              setLead(person);
+              setHandoff(meta);
+            }}
+          />
+        )}
       </div>
     </div>
   );

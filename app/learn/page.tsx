@@ -42,7 +42,7 @@ const categories = [
   {
     icon: Calculator,
     title: 'Free Tools',
-    detail: 'Calculators and a risk profile quiz. No signup, no cost, no catch.',
+    detail: 'Calculators and a risk profile quiz. Free to use, no account needed.',
     href: '/learn/tools',
   },
   {

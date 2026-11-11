@@ -8,7 +8,7 @@ import { PhilosophyStrip } from '@/components/PhilosophyStrip';
 export const metadata: Metadata = {
   title: 'Risk Profile Quiz | what kind of investor are you?',
   description:
-    'Eight questions that tell you what kind of investor you actually are, and what that means for how you should build a portfolio. Free, no signup.',
+    'Eight questions that tell you what kind of investor you actually are, plus an asset allocation blueprint to match. Free to use, with the full blueprint ready to send in WhatsApp.',
   alternates: { canonical: '/learn/tools/risk-profile' },
 };
 
@@ -19,7 +19,7 @@ export default function RiskProfilePage() {
         back={{ href: '/learn/tools', label: 'All free tools' }}
         eyebrow="Free tool"
         title="Risk Profile Quiz"
-        lede="Eight questions about your timeline, your temperament, and your finances. It takes about two minutes, and it will tell you honestly if the answer is “not yet”."
+        lede="Eight questions about your timeline, your temperament, and your finances. It takes about two minutes, and it will tell you honestly if the answer is “not yet”. You get a risk profile and an asset allocation blueprint, with the full result ready to send in WhatsApp."
       />
 
       <Section tone="paper">

@@ -11,7 +11,7 @@ import { tools } from '@/content/tools';
 export const metadata: Metadata = {
   title: 'Free tools | Calculators and a risk profile quiz',
   description:
-    'Free calculators and a risk profile quiz for Pakistani investors. No signup required, no cost, no catch.',
+    'Free calculators and a risk profile quiz for Pakistani investors. No cost and no account. The personalised risk profile and zakat sheet open in WhatsApp, ready to send.',
   alternates: { canonical: '/learn/tools' },
 };
 
@@ -21,7 +21,7 @@ export default function ToolsPage() {
       <PageHero
         eyebrow="Free tools"
         title="Work out the numbers before anyone sells you anything."
-        lede="Free to use, no account needed. We ask for your email only if you want the result sent to you, and you can ignore that and still keep the answer."
+        lede="Free to use, no account needed. The risk profile and zakat sheet ask for your name, WhatsApp number, and email before the full result, because the full result opens in WhatsApp, ready to send. Every other tool is open immediately."
       />
 
       <Section tone="paper">
