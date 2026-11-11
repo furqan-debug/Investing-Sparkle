@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import type { Metadata } from 'next';
 import {
   ArrowRight,
@@ -45,6 +46,17 @@ export default function HomePage() {
     <>
       {/* Hero */}
       <section className="hero-gradient relative overflow-hidden">
+        <div className="hero-art" aria-hidden>
+          <Image
+            src="/brand/hero-psx-bull.png"
+            alt=""
+            fill
+            priority
+            quality={82}
+            sizes="100vw"
+          />
+        </div>
+
         <div className="pointer-events-none absolute inset-0" aria-hidden>
           <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
           <div className="absolute -left-24 top-24 h-72 w-72 rounded-full border border-white/[0.04]" />
@@ -52,7 +64,7 @@ export default function HomePage() {
           <div className="absolute left-[42%] top-[12%] h-1.5 w-1.5 rounded-full bg-green-400/20" />
         </div>
 
-        <div className="container-page relative pb-16 pt-14 md:pb-24 md:pt-20">
+        <div className="container-page relative z-10 pb-16 pt-14 md:pb-24 md:pt-20">
           <div className="grid items-center gap-12 lg:grid-cols-[1.08fr_0.92fr] lg:gap-16">
             <div>
               <Link
@@ -89,7 +101,7 @@ export default function HomePage() {
               </ul>
             </div>
 
-            <aside className="glass relative rounded-[28px] p-6 animate-scale-in stagger-2 md:p-7">
+            <aside className="glass relative rounded-[28px] bg-[linear-gradient(180deg,rgba(8,14,10,0.88),rgba(3,6,4,0.95))] p-6 animate-scale-in stagger-2 md:p-7">
               <div className="flex items-center justify-between gap-4 border-b border-line pb-4">
                 <span className="mono-label text-sparkle-300">The path</span>
                 <span className="mono-label">04 steps</span>

@@ -591,6 +591,60 @@
       linear-gradient(180deg, #070c09, #040705);
   }
 
+  /*
+   * Home hero art. The PSX bull sits behind the hero on every screen, but the
+   * scrim does most of the work: near-black on the left so the headline keeps
+   * its contrast, opening up over the bull on wide screens. On small screens
+   * the same art is pushed darker and lower so it reads as atmosphere rather
+   * than competing with the copy.
+   */
+  .hero-art {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  .hero-art img {
+    opacity: 0.34;
+    object-position: 66% 22%;
+  }
+
+  .hero-art::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(4, 7, 5, 0.9) 0%, rgba(4, 7, 5, 0.82) 34%, rgba(4, 7, 5, 0.94) 62%, #040705 88%),
+      linear-gradient(90deg, rgba(4, 7, 5, 0.7) 0%, rgba(4, 7, 5, 0.3) 52%, rgba(4, 7, 5, 0.14) 100%);
+  }
+
+  @media (min-width: 768px) {
+    .hero-art img {
+      opacity: 0.55;
+      object-position: 64% 30%;
+    }
+
+    .hero-art::after {
+      background:
+        linear-gradient(180deg, rgba(4, 7, 5, 0.9) 0%, rgba(4, 7, 5, 0.66) 30%, rgba(4, 7, 5, 0.82) 66%, #040705 94%),
+        linear-gradient(90deg, rgba(4, 7, 5, 0.48) 0%, rgba(4, 7, 5, 0.18) 55%, rgba(4, 7, 5, 0.05) 100%);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .hero-art img {
+      opacity: 0.95;
+      object-position: 58% 50%;
+    }
+
+    .hero-art::after {
+      background:
+        linear-gradient(180deg, rgba(4, 7, 5, 0.92) 0%, rgba(4, 7, 5, 0.3) 14%, rgba(4, 7, 5, 0) 46%, rgba(4, 7, 5, 0.55) 86%, #040705 100%),
+        linear-gradient(90deg, #040705 0%, rgba(4, 7, 5, 0.95) 18%, rgba(4, 7, 5, 0.76) 36%, rgba(4, 7, 5, 0.42) 55%, rgba(4, 7, 5, 0.12) 74%, rgba(4, 7, 5, 0) 90%);
+    }
+  }
+
   /* ---------- Legacy goo hover (kept for key CTAs) ---------- */
   .goo-fill {
     position: absolute;
