@@ -179,7 +179,8 @@ Copy `.env.example` to `.env.local` and fill in what you use.
   2. Create credentials → OAuth client ID → **Web application**. Authorised
      JavaScript origins: `http://localhost:3000` and
      `https://investingsparkle.com`. No redirect URI is needed: the site uses
-     Google Identity Services, not a redirect flow.
+     Google Identity Services, not a redirect flow. The client secret is not
+     used and should not be added to the environment.
   3. Put the client ID in `.env.local` as `GOOGLE_CLIENT_ID`, then generate a
      session secret with
      `node -e "console.log(require('crypto').randomBytes(32).toString('base64'))"`
