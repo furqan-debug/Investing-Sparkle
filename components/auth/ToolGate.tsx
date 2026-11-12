@@ -15,7 +15,7 @@ import { GoogleSignInButton } from './GoogleSignInButton';
  * The tools are free, but they are not anonymous: a visitor signs in with
  * Google once and the calculators and quiz open. That replaces the old
  * name/WhatsApp/email form, so nobody has to type details that Google already
- * holds, and the same account works across all five tools for 30 days.
+ * holds, and the same account works across every tool for 30 days.
  *
  * Sign-in is checked against our own route on mount. Nothing is read from
  * localStorage, so signing out actually clears the session cookie server-side.
@@ -172,7 +172,7 @@ export function ToolGate({ children }: { children: React.ReactNode }) {
 
       <ul className="mt-5 space-y-2.5 text-sm text-ink">
         {[
-          'All five tools, at no cost',
+          'Every calculator, at no cost',
           'No details to type, no forms to repeat',
           'Sign out whenever you like',
         ].map((line) => (

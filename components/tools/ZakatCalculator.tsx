@@ -1,11 +1,12 @@
 'use client';
 
-import { useMemo, useState } from 'react';
-import { Info, Send } from 'lucide-react';
+import { useEffect, useMemo, useState } from 'react';
+import { Info, RefreshCw, Send } from 'lucide-react';
 
 import { ResultPanel, ToolFooter } from './CalculatorShell';
 import { whatsappLink } from '@/content/whatsapp';
 import { formatPKR } from '@/lib/format';
+import { nisabFromMetal } from '@/lib/tax';
 import { zakatSheetMessage } from '@/lib/tool-result';
 import { useAuth } from '@/components/auth/AuthProvider';
 
@@ -31,6 +32,21 @@ import { useAuth } from '@/components/auth/AuthProvider';
 
 const RATE = 0.025;
 
+type MetalQuote = {
+  goldPerGram: number;
+  silverPerGram: number;
+  goldPerTola: number;
+  silverPerTola: number;
+  goldUsdOz: number;
+  silverUsdOz: number;
+  usdPkr: number;
+  asOf: string;
+  source: string;
+  live: boolean;
+};
+
+type Metal = 'gold' | 'silver';
+
 type Field = { id: string; label: string; hint?: string };
 
 const assetFields: Field[] = [
@@ -55,8 +71,42 @@ export function ZakatCalculator() {
   const [values, setValues] = useState<Record<string, number>>({});
   const [liabilities, setLiabilities] = useState(0);
   const [nisab, setNisab] = useState(0);
+  const [metal, setMetal] = useState<MetalQuote | null>(null);
+  const [metalChoice, setMetalChoice] = useState<Metal>('silver');
+  const [feedFailed, setFeedFailed] = useState(false);
 
   const set = (id: string, v: number) => setValues((prev) => ({ ...prev, [id]: v }));
+
+  // The nisab is estimated from live metal prices once, then left alone if the
+  // visitor has typed their own figure.
+  useEffect(() => {
+    let cancelled = false;
+
+    fetch('/api/market/metal', { cache: 'no-store' })
+      .then((response) => {
+        if (!response.ok) throw new Error('feed failed');
+        return response.json() as Promise<MetalQuote>;
+      })
+      .then((quote) => {
+        if (cancelled) return;
+        setMetal(quote);
+        setNisab((current) => current || Math.round(nisabFromMetal(quote.silverPerGram, 'silver')));
+      })
+      .catch(() => {
+        if (!cancelled) setFeedFailed(true);
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  function applyMetal(next: Metal) {
+    setMetalChoice(next);
+    if (!metal) return;
+    const price = next === 'gold' ? metal.goldPerGram : metal.silverPerGram;
+    setNisab(Math.round(nisabFromMetal(price, next)));
+  }
 
   const result = useMemo(() => {
     const assets = assetFields.reduce((sum, f) => sum + (values[f.id] || 0), 0);
@@ -156,13 +206,93 @@ export function ZakatCalculator() {
               inputMode="decimal"
               value={nisab || ''}
               onChange={(e) => setNisab(Number(e.target.value) || 0)}
-              placeholder="Look up today's figure"
+              placeholder="Live estimate, or your own figure"
               className={inputClass}
             />
             <p className="mt-1.5 text-xs leading-relaxed text-muted">
-              Nisab is based on prevailing gold or silver prices, so it changes constantly. We do not
-              hardcode it. Look up the current figure from a source you trust and enter it here.
+              Nisab is based on prevailing gold or silver prices, so it changes constantly. The
+              estimate below uses live metal prices. Override it with a figure from a source you
+              trust if you prefer.
             </p>
+
+            <div className="mt-3 rounded-xl border border-line bg-[var(--bg-inset)] p-3.5">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <p className="mono-label text-[9px]">Live nisab estimate</p>
+                {metal ? (
+                  <span className="inline-flex items-center gap-1.5 text-[10px] text-muted">
+                    <span
+                      className={`h-1.5 w-1.5 rounded-full ${
+                        metal.live ? 'bg-green-400' : 'bg-warning'
+                      }`}
+                      aria-hidden
+                    />
+                    {metal.live ? 'Live feed' : 'Reference figure'}
+                  </span>
+                ) : feedFailed ? (
+                  <span className="inline-flex items-center gap-1.5 text-[10px] text-warning">
+                    <span className="h-1.5 w-1.5 rounded-full bg-warning" aria-hidden /> Feed
+                    unavailable
+                  </span>
+                ) : (
+                  <span className="inline-flex items-center gap-1.5 text-[10px] text-muted">
+                    <RefreshCw className="h-3 w-3 animate-spin" aria-hidden /> Fetching
+                  </span>
+                )}
+              </div>
+
+              {metal ? (
+                <>
+                  <div className="mt-3 grid gap-2 sm:grid-cols-2">
+                    {(
+                      [
+                        { key: 'silver' as Metal, label: 'Silver nisab', tola: '52.5 tola', perGram: metal.silverPerGram },
+                        { key: 'gold' as Metal, label: 'Gold nisab', tola: '7.5 tola', perGram: metal.goldPerGram },
+                      ]
+                    ).map((option) => {
+                      const active = metalChoice === option.key;
+                      const amount = nisabFromMetal(option.perGram, option.key);
+                      return (
+                        <button
+                          key={option.key}
+                          type="button"
+                          onClick={() => applyMetal(option.key)}
+                          aria-pressed={active}
+                          className={`rounded-lg border px-3 py-2.5 text-left transition-colors ${
+                            active
+                              ? 'border-sparkle-400/30 bg-sparkle-400/[0.08]'
+                              : 'border-line bg-white/[0.02] hover:border-white/20'
+                          }`}
+                        >
+                          <span className="block text-[11px] text-muted">
+                            {option.label} · {option.tola}
+                          </span>
+                          <span className="num mt-1 block text-xs text-ink">
+                            PKR {formatPKR(amount)}
+                          </span>
+                        </button>
+                      );
+                    })}
+                  </div>
+
+                  <p className="mt-3 text-[10px] leading-relaxed text-low">
+                    Gold ${metal.goldUsdOz.toFixed(0)}/oz, silver ${metal.silverUsdOz.toFixed(2)}
+                    /oz, USD/PKR {metal.usdPkr.toFixed(2)}. {metal.source}. Updated{' '}
+                    {new Date(metal.asOf).toLocaleDateString('en-GB', {
+                      day: 'numeric',
+                      month: 'short',
+                      year: 'numeric',
+                    })}
+                    . A local dealer’s rate can differ.
+                  </p>
+                </>
+              ) : (
+                <p className="mt-2 text-[11px] leading-relaxed text-muted">
+                  {feedFailed
+                    ? 'The metal feed did not respond. Enter the nisab from a source you trust.'
+                    : 'Checking the metal price feed.'}
+                </p>
+              )}
+            </div>
           </div>
         </div>
       </div>

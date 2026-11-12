@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next';
 import { site } from '@/content/site';
 import { articles } from '@/content/insights';
 import { courses } from '@/content/courses';
-import { tools } from '@/content/tools';
+import { tools, toolCategories } from '@/content/tools';
 import { services } from '@/content/services';
 import { caseStudies } from '@/content/case-studies';
 
@@ -60,6 +60,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     }));
 
+  const toolCategoryPages: MetadataRoute.Sitemap = toolCategories.map((category) => ({
+    url: `${base}/learn/tools/category/${category.slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly',
+    priority: 0.6,
+  }));
+
   const servicePages: MetadataRoute.Sitemap = services.map((s) => ({
     url: `${base}/services/${s.slug}`,
     lastModified: now,
@@ -80,6 +87,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...articlePages,
     ...coursePages,
     ...toolPages,
+    ...toolCategoryPages,
     ...servicePages,
     ...caseStudyPages,
   ];

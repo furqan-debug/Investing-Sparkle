@@ -5,6 +5,7 @@ import {
   ArrowRight,
   Calculator,
   Check,
+  Coins,
   Compass,
   GraduationCap,
   TrendingUp,
@@ -34,12 +35,26 @@ export const metadata: Metadata = {
   alternates: { canonical: '/' },
 };
 
-const toolIcons = [Compass, TrendingUp, Calculator];
+const toolIcons = [Compass, TrendingUp, Calculator, Coins];
+
+/**
+ * The home strip is ordered for variety rather than by registry order: one
+ * question about you, one about monthly investing, then the two tax figures
+ * people search for most.
+ */
+const homeToolSlugs = [
+  'risk-profile',
+  'sip-calculator',
+  'salary-income-tax-calculator',
+  'zakat-calculator',
+];
 
 const heroSignals = ['We never touch your money', 'Since May 2025', 'Karachi, Pakistan'];
 
 export default function HomePage() {
-  const featuredTools = tools.filter((t) => t.featured).slice(0, 3);
+  const featuredTools = homeToolSlugs
+    .map((slug) => tools.find((tool) => tool.slug === slug))
+    .filter((tool) => tool !== undefined);
   const latestArticles = publishedArticles.slice(0, 3);
 
   return (
@@ -236,7 +251,7 @@ export default function HomePage() {
           </div>
         </ScrollReveal>
 
-        <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {featuredTools.map((tool, i) => {
             const Icon = toolIcons[i % toolIcons.length];
             const isLive = tool.status === 'live';

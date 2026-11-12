@@ -27,7 +27,7 @@ export const faqGroups: FaqGroup[] = [
       },
       {
         q: 'Are the free tools really free?',
-        a: 'Yes. All five tools are free with a Google account, and there is no card and no charge at any point. Signing in with Google is how we keep them free without ads or a paywall. The risk profile and zakat sheet are also handed to WhatsApp, ready to send, so you keep a copy.',
+        a: 'Yes. Every calculator and the risk profile quiz are free with a Google account, and there is no card and no charge at any point. Signing in with Google is how we keep them free without ads or a paywall. The risk profile and zakat sheet are also handed to WhatsApp, ready to send, so you keep a copy.',
       },
     ],
   },

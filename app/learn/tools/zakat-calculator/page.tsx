@@ -32,12 +32,18 @@ export default function ZakatPage() {
 
       <Section tone="white">
         <div className="mx-auto max-w-2xl">
-          <SectionHeading eyebrow="How this works" title="Why we ask you for the nisab." />
+          <SectionHeading eyebrow="How this works" title="Why the nisab moves." />
           <div className="prose-article mt-6">
             <p>
-              Nisab is derived from prevailing gold or silver prices, so it moves constantly. A
-              calculator with the threshold baked in gives a confidently wrong answer the moment
-              prices shift, so we ask you to enter the current figure from a source you trust.
+              Nisab is derived from prevailing gold or silver prices, so it moves constantly. The
+              calculator estimates it from a live gold and silver feed, shows the timestamp, and
+              lets you override it with a local figure. A dealer’s rate can differ from the
+              international spot price, which is why the field stays editable.
+            </p>
+            <p>
+              Silver is the more inclusive nisab and the one most people use. Gold gives a much
+              higher threshold. The tool lets you switch between the two rather than choosing for
+              you.
             </p>
             <p>
               The rate applied is 2.5%, the widely used figure for a lunar year.
