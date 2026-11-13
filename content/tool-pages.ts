@@ -867,4 +867,219 @@ export const toolPages: Record<string, ToolPageContent> = {
       'Checked 13 November 2026. CPI base years have changed over time, so use two readings from the same series. Only the ratio matters, which means the base year cancels out.',
     related: ['lumpsum-calculator', 'cagr-calculator', 'swp-calculator'],
   },
+
+  'dividend-income-calculator': {
+    slug: 'dividend-income-calculator',
+    category: 'dividends-corporate-actions',
+    metaTitle: 'Dividend Income Calculator Pakistan | Net income after tax',
+    metaDescription:
+      'Add up dividend income across your PSX holdings, apply withholding tax, and see the net amount per payout and across the year.',
+    title: 'Dividend Income Calculator',
+    lede: 'A portfolio of dividend payers is an income plan only if you know what reaches the account. Add the holdings, set the withholding rate, and see the net figure.',
+    howTitle: 'Gross, tax, net, then the timing.',
+    howBody:
+      'Each holding contributes shares multiplied by dividend per share. The tool adds them, applies the withholding rate once across the total, and divides the net amount by the number of payouts you expect.',
+    sections: [
+      {
+        heading: 'Gross is not what arrives',
+        paragraphs: [
+          'Dividend withholding is deducted before the cash reaches your account. For a listed company the common rate is 15% for a filer and 30% for a non-filer, and the company deducts it at source.',
+          'The rate depends on the payer as well as on your status. An IPP pays 7.5% to a filer, a debt fund pays 25%, and a company with exempt income or losses pays 25%. A single rate across a mixed portfolio is a planning shortcut, not a tax return.',
+        ],
+      },
+      {
+        heading: 'A single rate is a planning shortcut',
+        paragraphs: [
+          'This tool applies one rate to the portfolio total. That is useful for a rough income plan and wrong for a mixed set of payers. If you hold IPPs, funds and listed companies together, run each dividend through the dividend tax calculator and add the net figures.',
+          'The same applies to your ATL status. It can change during the year, and the rate on the payment date is the one that counts.',
+        ],
+      },
+      {
+        heading: 'Dividends are not a salary',
+        paragraphs: [
+          'A company can cut, skip or pay a dividend in shares. A high yield can be a sign that the price has fallen because the market expects a cut. Build the plan on the lowest dividend you can defend, not the highest of the last five years.',
+          'The tool also assumes every holding pays the annual amount you enter. That is a useful baseline, but it is not a forecast, and it does not account for the timing of the cash within the year.',
+        ],
+      },
+    ],
+    sources: ['whtCard', 'financeAct2026', 'ordinance'],
+    sourceTitle: 'Rates and sources',
+    sourceIntro:
+      'Checked 13 November 2026. Section 150 of the Income Tax Ordinance sets withholding on dividends. The default is 15% for a listed company dividend for a filer.',
+    sourceExtra:
+      'A non-filer pays 30% on the same dividend. An IPP pays 7.5% to a filer, a debt fund 25%, and a company with exempt income or losses 25%. The dividend tax calculator covers each payer type.',
+    related: ['dividend-tax-calculator', 'dividend-yield-calculator', 'drip-calculator'],
+  },
+
+  'dividend-yield-calculator': {
+    slug: 'dividend-yield-calculator',
+    category: 'dividends-corporate-actions',
+    metaTitle: 'Dividend Yield Calculator PSX | Yield and yield on cost',
+    metaDescription:
+      'Calculate dividend yield from the share price and annual dividend, convert a PSX dividend declared as a percentage of face value, and see yield on your original cost.',
+    title: 'Dividend Yield Calculator',
+    lede: 'Yield is the annual dividend divided by the price. PSX companies often declare the dividend as a percentage of face value, which is a different number. This tool handles both.',
+    howTitle: 'Two prices, two yields.',
+    howBody:
+      'Current yield divides the annual dividend by today’s price. Yield on cost divides the same dividend by what you paid. The first tells you what a new buyer gets; the second tells you what your own holding earns.',
+    sections: [
+      {
+        heading: 'Face value is not market price',
+        paragraphs: [
+          'A 100% dividend on a Rs 10 face value share is Rs 10 per share. On a share trading at Rs 100 that is a 10% yield, not 100%. The percentage mode converts the declaration into rupees before calculating, so the two numbers do not get mixed up.',
+          'Most PSX shares have a face value of Rs 10, but check the company’s notice. A few have a different face value, and the conversion changes with it.',
+        ],
+      },
+      {
+        heading: 'Yield on cost and current yield diverge',
+        paragraphs: [
+          'If you bought at Rs 50 and the price is now Rs 100, an Rs 8 dividend is 16% on cost and 8% on the current price. Neither is wrong. The first describes your own result; the second describes what a new buyer would get.',
+          'Yield on cost is useful for reviewing a holding you already own. Current yield is useful for comparing two shares today. Do not use one to answer the other question.',
+        ],
+      },
+      {
+        heading: 'A high yield is a question, not an answer',
+        paragraphs: [
+          'The price may have fallen because the dividend is at risk. A yield of 20% on a company that is about to cut its payout is not income; it is a warning. Check the payout ratio, the earnings and the cash flow before treating the yield as a plan.',
+          'The tool uses the last declared annual dividend. It does not know whether the next one will be higher, lower or cancelled, and it does not deduct withholding tax from the cash you receive.',
+        ],
+      },
+    ],
+    sources: [],
+    sourceTitle: 'Method',
+    sourceIntro:
+      'Current yield is the annual dividend per share divided by the current price. Yield on cost uses the original cost per share as the denominator. The percentage mode multiplies face value by the declared percentage, then divides by 100.',
+    sourceExtra:
+      'No statutory or market rate is used. The result depends only on the price, the dividend and the cost you enter.',
+    related: ['dividend-income-calculator', 'dividend-tax-calculator', 'drip-calculator'],
+  },
+
+  'drip-calculator': {
+    slug: 'drip-calculator',
+    category: 'dividends-corporate-actions',
+    metaTitle: 'DRIP Calculator Pakistan | Dividend reinvestment compounding',
+    metaDescription:
+      'See how reinvesting dividends and growing payouts compounds a PSX holding, and what taking the cash instead would be worth.',
+    title: 'Dividend Reinvestment (DRIP) Calculator',
+    lede: 'Reinvesting a dividend buys more shares, and those shares pay the next dividend. The difference between reinvesting and taking the cash is small in year one and large in year fifteen.',
+    howTitle: 'Each payout buys shares at the price on the day.',
+    howBody:
+      'The net dividend is divided by the share price to buy more shares. The payout then grows at its own rate, the price grows at another, and the next dividend is paid on the larger share count.',
+    sections: [
+      {
+        heading: 'The share count does the work',
+        paragraphs: [
+          'A dividend that grows 5% on a fixed share count rises in a straight line. Reinvestment makes it compound, because each payout buys shares that pay the next payout. The later years contribute far more than the early ones.',
+          'That is why the comparison with taking the cash is worth seeing. The gap is not the total dividends received. It is the dividends those dividends would have earned if they had stayed invested.',
+        ],
+      },
+      {
+        heading: 'DRIP is not automatic on PSX',
+        paragraphs: [
+          'Most PSX companies pay cash rather than operating a reinvestment plan. You reinvest by buying more shares with the cash, and the brokerage commission on that purchase is not in this model. Some funds offer a reinvestment option; check the terms and any discount.',
+          'A real plan may buy whole shares and carry the remainder as cash. This model allows fractional shares, which slightly overstates the final share count for a small holding.',
+        ],
+      },
+      {
+        heading: 'The assumptions are doing a lot',
+        paragraphs: [
+          'Constant dividend growth, constant price growth, no fees and no taxes beyond withholding. Change one of those and the result moves, often by more than people expect. The tool is for comparing scenarios, not for predicting a balance.',
+          'A dividend cut is the assumption that matters most. If the payout falls in year three, the later reinvestment never happens, and no growth rate in the model can repair it.',
+        ],
+      },
+    ],
+    sources: ['whtCard', 'financeAct2026', 'ordinance'],
+    sourceTitle: 'Rates and sources',
+    sourceIntro:
+      'Checked 13 November 2026. Section 150 sets withholding on dividends. The default is 15% for a listed company dividend for a filer.',
+    sourceExtra:
+      'The tax rate is editable because the payer and your ATL status change it. The model reinvests the net dividend, not the gross amount.',
+    related: ['dividend-income-calculator', 'dividend-yield-calculator', 'compounding-calculator'],
+  },
+
+  'right-shares-calculator': {
+    slug: 'right-shares-calculator',
+    category: 'dividends-corporate-actions',
+    metaTitle: 'Right Shares Calculator PSX | Ex-rights price and subscription cost',
+    metaDescription:
+      'Calculate the theoretical ex-rights price, the cost of subscribing and the value of the rights from the company’s rights issue terms.',
+    title: 'Right Shares Calculator',
+    lede: 'A rights issue offers you new shares below the market price. The old shares adjust down by roughly the value of the rights, so the arithmetic is a transfer, not a windfall.',
+    howTitle: 'Old value plus new money, divided by the larger share count.',
+    howBody:
+      'Add the market value of your existing holding to the cash you would pay for the new shares, then divide by the total shares after the issue. That is the theoretical ex-rights price.',
+    sections: [
+      {
+        heading: 'Why the price falls on the ex-rights date',
+        paragraphs: [
+          'The company now has more shares and the new cash. The theoretical price reflects both. The fall is not a loss; it is the value of the rights separating from the old share.',
+          'The value of the rights is the difference between the cum-rights price and the theoretical ex-rights price. It belongs to the holder on the record date, whether or not they subscribe.',
+        ],
+      },
+      {
+        heading: 'Exercise or sell the rights',
+        paragraphs: [
+          'Before costs and tax, exercising and selling the rights are theoretically equivalent. Exercising puts more money into the same company and preserves your ownership share. Selling takes the value in cash and leaves you with a smaller stake.',
+          'The real question is whether the company can use the new money well. A rights issue at a deep discount can still be a poor investment if the proceeds fund a business that does not earn a return.',
+        ],
+      },
+      {
+        heading: 'The theoretical price is not the market price',
+        paragraphs: [
+          'The market can price the new money differently, especially when the use of the proceeds is uncertain. The actual ex-rights price may be above or below the theoretical figure.',
+          'The record date, renunciation, brokerage fees and the tax treatment of any gain are outside this calculation. Read the company’s rights notice for the binding terms.',
+        ],
+      },
+    ],
+    sources: [],
+    sourceTitle: 'Method',
+    sourceIntro:
+      'The theoretical ex-rights price is the existing holding value plus the subscription cost, divided by the total shares after the issue. The value of the rights is the cum-rights price minus the theoretical ex-rights price, multiplied by the shares held.',
+    sourceExtra:
+      'No statutory rate is used. The result depends on the issue terms and the market price you enter.',
+    related: ['bonus-split-calculator', 'stock-average-price-calculator', 'dividend-yield-calculator'],
+  },
+
+  'bonus-split-calculator': {
+    slug: 'bonus-split-calculator',
+    category: 'dividends-corporate-actions',
+    metaTitle: 'Bonus Shares & Stock Split Calculator PSX | Adjusted price and cost',
+    metaDescription:
+      'Calculate the new share count, adjusted price and adjusted average cost after a bonus issue or stock split.',
+    title: 'Bonus Shares & Stock Split Calculator',
+    lede: 'A bonus issue gives you more shares. A split replaces each share with several. In both cases the price adjusts, and the value of the holding does not change on the day.',
+    howTitle: 'More shares, lower price, same value.',
+    howBody:
+      'Multiply the share count by the adjustment factor and divide the price by the same factor. The total cost stays the same, so the average cost per share falls in proportion.',
+    sections: [
+      {
+        heading: 'A bonus issue is not free money',
+        paragraphs: [
+          'The company converts reserves into shares. The share count rises, the price adjusts, and the total value is unchanged. Treating the new shares as a gain is the most common mistake in the category.',
+          'What does change is the number of units that will receive future dividends. A larger share count at a lower price can produce the same total income, not more.',
+        ],
+      },
+      {
+        heading: 'Splits and bonuses are the same arithmetic',
+        paragraphs: [
+          'A two for one split is a factor of 2. A one for five bonus is a factor of 1.2. The labels differ, and the accounting behind them differs, but the effect on your holding is the same: more shares, a lower price, the same value.',
+          'The tool does not round to whole shares. A bonus ratio that produces a fraction is left as a fraction, because the company’s own rounding rule is not part of the arithmetic.',
+        ],
+      },
+      {
+        heading: 'What changes is the cost basis',
+        paragraphs: [
+          'Your total cost stays the same, spread over more shares. That matters when you sell, because capital gains are calculated from the adjusted cost per share. The tool shows the adjusted figure but does not calculate the tax.',
+          'Keep the company’s notice with your records. A future sale may need the original cost, the event date and the ratio to reconstruct the adjusted cost basis.',
+        ],
+      },
+    ],
+    sources: [],
+    sourceTitle: 'Method',
+    sourceIntro:
+      'The adjustment factor is the number of shares after the event for each share held before it. For a bonus issue it is one plus the bonus ratio; for a split it is the new shares per old share. The price and the cost per share are divided by that factor.',
+    sourceExtra:
+      'No statutory rate is used. The result depends only on the shares, prices and ratio you enter.',
+    related: ['right-shares-calculator', 'stock-average-price-calculator', 'psx-capital-gains-tax-calculator'],
+  },
 };

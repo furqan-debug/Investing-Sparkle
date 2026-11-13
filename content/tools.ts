@@ -386,10 +386,9 @@ export const tools: Tool[] = [
     blurb:
       'Net dividend income after withholding tax, per payout and across the year.',
     outcome: 'Gross, tax withheld and the cash that actually reaches your account.',
-    status: 'soon',
+    status: 'live',
     category: 'dividends-corporate-actions',
     featured: true,
-    phase: 4,
   },
   {
     slug: 'dividend-yield-calculator',
@@ -397,9 +396,8 @@ export const tools: Tool[] = [
     blurb:
       'Dividend yield and yield on cost for any PSX stock from its latest annual payout.',
     outcome: 'Current yield, yield on your original cost and income per share.',
-    status: 'soon',
+    status: 'live',
     category: 'dividends-corporate-actions',
-    phase: 4,
   },
   {
     slug: 'drip-calculator',
@@ -407,9 +405,8 @@ export const tools: Tool[] = [
     blurb:
       'How reinvesting dividends and growing payouts compounds a PSX holding over time.',
     outcome: 'Share count, income growth and the value of reinvesting versus taking cash.',
-    status: 'soon',
+    status: 'live',
     category: 'dividends-corporate-actions',
-    phase: 4,
   },
   {
     slug: 'right-shares-calculator',
@@ -417,9 +414,8 @@ export const tools: Tool[] = [
     blurb:
       'Theoretical ex-right price, subscription cost and the value of the rights.',
     outcome: 'Ex-right price, what the issue costs and whether the rights are worth taking.',
-    status: 'soon',
+    status: 'live',
     category: 'dividends-corporate-actions',
-    phase: 4,
   },
   {
     slug: 'bonus-split-calculator',
@@ -427,9 +423,8 @@ export const tools: Tool[] = [
     blurb:
       'New share count, adjusted price and average cost after a bonus issue or split.',
     outcome: 'Share count, adjusted cost per share and the value that did not change.',
-    status: 'soon',
+    status: 'live',
     category: 'dividends-corporate-actions',
-    phase: 4,
   },
 
   // -------------------------------------------------------------- Stock Valuation

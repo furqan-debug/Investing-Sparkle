@@ -139,10 +139,13 @@ throughout.
   calculators, plus seven 2026-27 tax tools (salary, business and freelancer,
   rental, PSX capital gains, dividend, property transfer and dividend
   purification), seven PSX trading tools (brokerage, average price, position
-  size, risk to reward, pivots, Fibonacci and daily locks) and six returns tools
-  (lumpsum, CAGR, XIRR, rule of 72, SWP and inflation). Each shows its working
-  and states what it does not account for. The directory plans 56 tools across
-  nine categories, with 25 live and the rest marked Soon.
+  size, risk to reward, pivots, Fibonacci and daily locks), six returns tools
+  (lumpsum, CAGR, XIRR, rule of 72, SWP and inflation) and five dividend and
+  corporate action tools (dividend income, dividend yield, DRIP, rights and
+  bonus/split). Each shows its working and states what it does not account for.
+  The directory plans 56 tools across nine categories, with 30 live and the
+  rest marked Soon. The two PSX historical-return tools stay Soon until a
+  licensed source for past prices and index levels is in place.
 - **Advisory detail pages** at `/services/[slug]` — fit check, step-by-step
   process, deliverables, and a per-service FAQ.
 - **Worked examples** at `/case-studies` — three illustrative scenarios showing
