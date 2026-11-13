@@ -1082,4 +1082,262 @@ export const toolPages: Record<string, ToolPageContent> = {
       'No statutory rate is used. The result depends only on the shares, prices and ratio you enter.',
     related: ['right-shares-calculator', 'stock-average-price-calculator', 'psx-capital-gains-tax-calculator'],
   },
+
+  'dcf-calculator': {
+    slug: 'dcf-calculator',
+    category: 'stock-valuation',
+    metaTitle: 'DCF Calculator Pakistan | Intrinsic value per share',
+    metaDescription:
+      'Value a PSX stock with discounted free cash flow, a terminal growth rate and net debt, and see the margin of safety against the market price.',
+    title: 'Intrinsic Value (DCF) Calculator',
+    lede: 'A DCF turns a cash-flow forecast into a value per share. The arithmetic is simple; the assumptions are the hard part. Change them and watch the answer move.',
+    howTitle: 'Forecast the cash, discount it, then subtract net debt.',
+    howBody:
+      'Each year of free cash flow to the firm is discounted at the rate you require. The final year is grown once more at terminal growth and valued as a perpetuity. Enterprise value less net debt is equity value, divided by the shares.',
+    sections: [
+      {
+        heading: 'The discount rate does most of the work',
+        paragraphs: [
+          'A discount rate is the return you demand for waiting and for risk. Move it by one percentage point and the value can change by 10% or more. A rate that looks conservative because it is low is not conservative at all; it is a larger assumption about the future.',
+          'Use a rate you can defend against alternatives. For a listed company, the weighted average cost of capital is the usual starting point, and the cost of equity is the right rate when you are valuing the shares rather than the whole business.',
+        ],
+      },
+      {
+        heading: 'The terminal value is most of the answer',
+        paragraphs: [
+          'In a five-year forecast, the terminal value often carries 60% to 80% of the total. It assumes the business grows at a constant rate forever, which is a strong claim about a company that has not yet survived the next five years.',
+          'Terminal growth should sit below long-run nominal growth in the economy. If the model needs a high terminal rate to produce a reasonable value, the answer is telling you that the explicit forecast is doing too little work.',
+        ],
+      },
+      {
+        heading: 'What a DCF cannot see',
+        paragraphs: [
+          'It does not price optionality, a turn in the cycle, a change in the capital structure or the quality of the accounting. It also cannot tell you whether the cash flow is sustainable, because that is a question about the business rather than the formula.',
+          'Treat the output as a range, not a price target. Run a lower growth case and a higher discount rate, and ask whether the stock still looks attractive at the bottom of the range.',
+        ],
+      },
+    ],
+    sources: [],
+    sourceTitle: 'Method',
+    sourceIntro:
+      'Free cash flow to the firm is discounted at the chosen rate. The terminal value uses the final forecast year, grown once at terminal growth, and is discounted back. Equity value is enterprise value less net debt.',
+    sourceExtra:
+      'No market or statutory rate is used. The result depends only on the cash flow, growth, discount rate, terminal growth, net debt and share count you enter.',
+    related: ['graham-number-calculator', 'pe-ratio-calculator', 'dividend-discount-calculator'],
+  },
+
+  'graham-number-calculator': {
+    slug: 'graham-number-calculator',
+    category: 'stock-valuation',
+    metaTitle: 'Graham Number Calculator PSX | EPS and book value',
+    metaDescription:
+      'Calculate Benjamin Graham’s number from earnings and book value per share, and see the upside or downside against the current PSX price.',
+    title: 'Graham Number Calculator',
+    lede: 'The Graham number is a ceiling built from two conservative rules: no more than 15 times earnings and no more than 1.5 times book value. It is a screen, not a verdict.',
+    howTitle: 'Two ceilings, one geometric mean.',
+    howBody:
+      'Multiply 15 times earnings per share and 1.5 times book value per share, multiply the two results together, and take the square root. The answer sits between the two ceilings.',
+    sections: [
+      {
+        heading: 'What the number is trying to do',
+        paragraphs: [
+          'Benjamin Graham wanted a defensive investor to buy a company at a price that already allowed for error. The 15 times earnings limit and the 1.5 times book value limit are two ways of asking for that room.',
+          'The square root combines them, so a stock is below the Graham number only when it is cheap on both earnings and book value at the same time. A low P/E alone does not qualify.',
+        ],
+      },
+      {
+        heading: 'Why it can mislead on PSX',
+        paragraphs: [
+          'Book value is an accounting figure. For an asset-light business, it can be tiny and the Graham number will be low even when the company is excellent. For a company with old property, book value can be far below the market value of the assets.',
+          'One-off earnings also distort the result. A gain on a property sale or a favourable exchange-rate movement can make a single year look cheap. Use a representative year, and check that the equity on the balance sheet is real.',
+        ],
+      },
+      {
+        heading: 'Use it as a first filter',
+        paragraphs: [
+          'The Graham number says nothing about debt, cash flow, competitive advantage or management. It is a quick way to find companies that are not obviously expensive on two old measures, not a reason to buy any of them.',
+          'Pair it with the DCF and the comparison tool, and read the latest accounts. A stock below the Graham number can still be a value trap.',
+        ],
+      },
+    ],
+    sources: [],
+    sourceTitle: 'Method',
+    sourceIntro:
+      'The Graham number is the square root of 22.5 times earnings per share times book value per share, where 22.5 is 15 times 1.5. The current P/E and P/B use the price you enter.',
+    sourceExtra:
+      'No statutory rate is used. The result depends only on the earnings, book value and price you enter.',
+    related: ['dcf-calculator', 'pe-ratio-calculator', 'compare-psx-stocks'],
+  },
+
+  'pe-ratio-calculator': {
+    slug: 'pe-ratio-calculator',
+    category: 'stock-valuation',
+    metaTitle: 'P/E Ratio Calculator Pakistan | Fair price and PEG',
+    metaDescription:
+      'Calculate P/E, earnings yield, PEG and the share price implied by a target P/E for a PSX stock.',
+    title: 'P/E Ratio & Fair Price Calculator',
+    lede: 'P/E is the price you pay for one rupee of annual earnings. It is useful only when you know what the earnings are and what growth you are paying for.',
+    howTitle: 'Invert the multiple, then put it next to growth.',
+    howBody:
+      'P/E is price divided by earnings per share. The earnings yield is the inverse. PEG divides the P/E by the expected growth rate, and the target multiple turns earnings into a price.',
+    sections: [
+      {
+        heading: 'Cheap and expensive are relative',
+        paragraphs: [
+          'A P/E of 8 is cheap for a fast-growing consumer business and expensive for a cyclical steel producer at the top of its cycle. The multiple has to be read against the sector, the growth, the debt and the quality of the earnings.',
+          'A low P/E can be a warning that the market expects the earnings to fall. A high P/E can be a claim that the earnings will grow into the price. Neither is a conclusion on its own.',
+        ],
+      },
+      {
+        heading: 'Earnings are an accounting number',
+        paragraphs: [
+          'Depreciation, one-off gains, related-party transactions and changes in accounting policy all move earnings per share. A P/E built on a flattered year is lower than it looks.',
+          'Use a normalised figure where you can, and check the cash flow statement. If the company reports profits but no cash, the multiple is not measuring what you think it is.',
+        ],
+      },
+      {
+        heading: 'The target multiple is your assumption',
+        paragraphs: [
+          'The fair value in this tool is earnings per share times the target P/E you choose. The range around it is a 10% band, not a confidence interval. The market can pay a different multiple for years.',
+          'PEG is a shortcut, not a law. It assumes growth is the only thing that matters, and it treats a high growth rate as durable. Use it to compare companies, not to certify one.',
+        ],
+      },
+    ],
+    sources: [],
+    sourceTitle: 'Method',
+    sourceIntro:
+      'P/E is the share price divided by earnings per share. Earnings yield is EPS divided by price. PEG is P/E divided by the expected annual growth rate as a percentage. Fair value is EPS times the target P/E.',
+    sourceExtra:
+      'No statutory or market rate is used. The result depends only on the price, earnings, growth and target multiple you enter.',
+    related: ['graham-number-calculator', 'dcf-calculator', 'compare-psx-stocks'],
+  },
+
+  'dividend-discount-calculator': {
+    slug: 'dividend-discount-calculator',
+    category: 'stock-valuation',
+    metaTitle: 'Dividend Discount Model Calculator Pakistan | Gordon and two-stage',
+    metaDescription:
+      'Value a dividend-paying PSX stock with Gordon growth and a two-stage dividend discount model, and see the return implied by the current price.',
+    title: 'Dividend Discount Model Calculator',
+    lede: 'A dividend discount model values a stock as the present value of the dividends it will pay. Gordon growth assumes one rate forever; the two-stage model gives the payout a faster start.',
+    howTitle: 'Discount the dividends, then value the perpetuity.',
+    howBody:
+      'The first stage grows the dividend at the high rate for a set number of years and discounts each payment. The remaining stream is valued as a growing perpetuity at stable growth and discounted back to today.',
+    sections: [
+      {
+        heading: 'The model is a perpetuity, not a forecast',
+        paragraphs: [
+          'The terminal value usually carries most of the answer, and it assumes the dividend grows at a constant rate forever. Small changes in the required return or stable growth move the value a long way.',
+          'The required return must be above stable growth. At or below it, the perpetuity has no finite value, which is the arithmetic telling you the assumptions are not sustainable.',
+        ],
+      },
+      {
+        heading: 'Dividends are a board decision',
+        paragraphs: [
+          'A company can cut or skip a dividend. The model treats the payout as a smooth stream, but real boards respond to cash flow, debt covenants and the investment opportunities in front of them.',
+          'Check the payout ratio and the cash flow that supports it. A high dividend yield can be a sign that the market expects a cut, not a gift.',
+        ],
+      },
+      {
+        heading: 'What the model leaves out',
+        paragraphs: [
+          'Buybacks, special dividends, withholding tax and a control premium are outside the arithmetic. So is the possibility that the company retains cash and reinvests it at a return above the cost of equity.',
+          'The model fits stable, mature payers best. For a company that pays no dividend, or one whose payout is about to change, use a cash-flow model instead.',
+        ],
+      },
+    ],
+    sources: [],
+    sourceTitle: 'Method',
+    sourceIntro:
+      'Gordon growth value is the current dividend times one plus stable growth, divided by the required return minus stable growth. The two-stage model discounts the high-growth dividends and adds the present value of the terminal perpetuity. Implied returns are solved from the current price.',
+    sourceExtra:
+      'No statutory or market rate is used. The result depends only on the dividend, price, required return and growth rates you enter.',
+    related: ['dividend-yield-calculator', 'dcf-calculator', 'dividend-income-calculator'],
+  },
+
+  'shariah-compliance-checker': {
+    slug: 'shariah-compliance-checker',
+    category: 'stock-valuation',
+    metaTitle: 'Shariah Compliance Checker PSX | Screening ratios',
+    metaDescription:
+      'Test a PSX company against the published Shariah financial screens: debt, non-compliant investments and income, illiquid assets and net liquid assets per share.',
+    title: 'Shariah Compliance Checker',
+    lede: 'A Shariah screen is two tests: what the company does, and whether its balance sheet stays within the published financial limits. This tool applies the PSX criteria to the figures you enter.',
+    howTitle: 'The business screen first, then five financial ratios.',
+    howBody:
+      'The core activity must be permissible. Then interest-bearing debt, non-compliant investments, non-compliant income, illiquid assets and the price against net liquid assets per share are each tested against the published threshold.',
+    sections: [
+      {
+        heading: 'The thresholds are published, not invented',
+        paragraphs: [
+          'PSX publishes five financial screens under the SECP-approved methodology: interest-bearing debt below 33% of total assets, non-compliant investments below 33% of total assets, non-compliant income below 5% of total revenue, illiquid assets at least 25% of total assets, and the share price at or above net liquid assets per share.',
+          'The compliant list is revised twice a year, on 15 May and 15 November. A newly listed company that meets the criteria joins from its listing date, so the published list can change between reviews.',
+        ],
+      },
+      {
+        heading: 'A screen is not a fatwa',
+        paragraphs: [
+          'The tool applies arithmetic to the figures you enter. It does not verify the business description, the accounting treatment or the source of every income line. Those are judgements, and the company’s disclosures and the PSX list are the authoritative sources.',
+          'A company can pass every ratio and still be excluded because of its core activity. The business screen is not a formality; it is the first test.',
+        ],
+      },
+      {
+        heading: 'What to do with the result',
+        paragraphs: [
+          'If a company fails a financial screen, the usual response is to avoid adding to the position and to review the holding. If it passes, the non-compliant income share is the figure used to purify the dividend.',
+          'Purification is a separate calculation: the non-compliant income ratio multiplied by the dividend received. The dividend purification calculator does that step, and the PSX index notice publishes the ratio for each company.',
+        ],
+      },
+    ],
+    sources: ['psxShariah'],
+    sourceTitle: 'Screening criteria and source',
+    sourceIntro:
+      'Checked 13 November 2026. The thresholds are the PSX financial screens under the SECP-approved methodology: interest-bearing debt below 33% of total assets, non-compliant investments below 33%, non-compliant income below 5% of total revenue, illiquid assets at least 25%, and price at or above net liquid assets per share.',
+    sourceExtra:
+      'PSX revises the Shariah-compliant list twice a year, on 15 May and 15 November. A company can pass the ratios and still fail the business screen, and the published list is the authoritative source.',
+    related: ['dividend-purification-calculator', 'compare-psx-stocks', 'dcf-calculator'],
+  },
+
+  'compare-psx-stocks': {
+    slug: 'compare-psx-stocks',
+    category: 'stock-valuation',
+    metaTitle: 'Compare PSX Stocks | P/E, P/B, yield and ROE side by side',
+    metaDescription:
+      'Compare two to four PSX stocks on P/E, P/B, dividend yield and return on equity using the figures you enter.',
+    title: 'Compare PSX Stocks',
+    lede: 'A comparison is only useful when the numbers are on the same basis. Put two to four companies side by side on the four measures that matter most, and see which one leads each.',
+    howTitle: 'Four ratios, one table.',
+    howBody:
+      'P/E and P/B compare the price with earnings and book value. Dividend yield compares the payout with the price. Return on equity compares earnings with the capital shareholders have left in the business.',
+    sections: [
+      {
+        heading: 'Lower is not always better',
+        paragraphs: [
+          'A lower P/E or P/B is cheaper on that measure, and a higher dividend yield or return on equity is stronger. But a low multiple can signal that the market expects the earnings to fall, and a high yield can signal that the dividend is about to be cut.',
+          'The table marks the best value in each row. It does not tell you which stock is the better investment, because the cheapest company can be cheap for a reason.',
+        ],
+      },
+      {
+        heading: 'The inputs have to be comparable',
+        paragraphs: [
+          'Use the same period for every company. A trailing P/E for one stock and a forward P/E for another is not a comparison. Use the same share count and the same accounting basis, and normalise one-off items where you can.',
+          'A negative EPS or book value makes the ratio unavailable, not zero. The tool shows n/a rather than a misleading number.',
+        ],
+      },
+      {
+        heading: 'A table is a starting point',
+        paragraphs: [
+          'Debt, cash, growth, competitive position and management quality are not in these four ratios. A company can lead on every row and still be the wrong investment at the current price.',
+          'Use the comparison to decide which companies deserve more work, then read the accounts and run a cash-flow model. The tool compares only the figures you enter; it does not fetch live prices or reported statements.',
+        ],
+      },
+    ],
+    sources: [],
+    sourceTitle: 'Method',
+    sourceIntro:
+      'P/E is price divided by EPS, P/B is price divided by book value per share, dividend yield is dividend per share divided by price, and return on equity is EPS divided by book value per share. The best value in each row is marked.',
+    sourceExtra:
+      'No market or statutory rate is used. The comparison depends only on the figures you enter for each stock.',
+    related: ['pe-ratio-calculator', 'graham-number-calculator', 'dividend-yield-calculator'],
+  },
 };

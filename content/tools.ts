@@ -434,10 +434,9 @@ export const tools: Tool[] = [
     blurb:
       'Discounted cash-flow value per share, with a margin of safety and editable assumptions.',
     outcome: 'Intrinsic value, the gap to price and the margin of safety.',
-    status: 'soon',
+    status: 'live',
     category: 'stock-valuation',
     featured: true,
-    phase: 5,
   },
   {
     slug: 'graham-number-calculator',
@@ -445,9 +444,8 @@ export const tools: Tool[] = [
     blurb:
       'Benjamin Graham’s fair value from EPS and book value per share for PSX stocks.',
     outcome: 'The Graham number, the upside or downside, and the inputs used.',
-    status: 'soon',
+    status: 'live',
     category: 'stock-valuation',
-    phase: 5,
   },
   {
     slug: 'pe-ratio-calculator',
@@ -455,9 +453,8 @@ export const tools: Tool[] = [
     blurb:
       'P/E, earnings yield, PEG ratio and the share price implied by a target P/E.',
     outcome: 'Where the stock trades, what growth it implies, and a target-price range.',
-    status: 'soon',
+    status: 'live',
     category: 'stock-valuation',
-    phase: 5,
   },
   {
     slug: 'dividend-discount-calculator',
@@ -465,20 +462,18 @@ export const tools: Tool[] = [
     blurb:
       'Value dividend-paying PSX stocks with Gordon growth and a two-stage model.',
     outcome: 'Model value per share under both methods and the implied return.',
-    status: 'soon',
+    status: 'live',
     category: 'stock-valuation',
-    phase: 5,
   },
   {
     slug: 'shariah-compliance-checker',
     name: 'Shariah Compliance Checker',
     blurb:
-      'Test a company against the KMI Shariah screening financial ratios.',
+      'Test a company against the published PSX Shariah screening financial ratios.',
     outcome: 'Pass or fail on each ratio, the non-compliant income share and what to do next.',
-    status: 'soon',
+    status: 'live',
     category: 'stock-valuation',
     featured: true,
-    phase: 5,
   },
   {
     slug: 'compare-psx-stocks',
@@ -486,9 +481,8 @@ export const tools: Tool[] = [
     blurb:
       'Compare two to four PSX stocks across price, returns, valuation, dividends and profitability.',
     outcome: 'A side-by-side table with the strongest and weakest metric for each stock.',
-    status: 'soon',
+    status: 'live',
     category: 'stock-valuation',
-    phase: 5,
   },
 
   // ------------------------------------------------------------ Savings & Bonds

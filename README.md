@@ -140,12 +140,14 @@ throughout.
   rental, PSX capital gains, dividend, property transfer and dividend
   purification), seven PSX trading tools (brokerage, average price, position
   size, risk to reward, pivots, Fibonacci and daily locks), six returns tools
-  (lumpsum, CAGR, XIRR, rule of 72, SWP and inflation) and five dividend and
+  (lumpsum, CAGR, XIRR, rule of 72, SWP and inflation), five dividend and
   corporate action tools (dividend income, dividend yield, DRIP, rights and
-  bonus/split). Each shows its working and states what it does not account for.
-  The directory plans 56 tools across nine categories, with 30 live and the
-  rest marked Soon. The two PSX historical-return tools stay Soon until a
-  licensed source for past prices and index levels is in place.
+  bonus/split) and six stock valuation tools (DCF, Graham number, P/E and fair
+  price, dividend discount, Shariah screening and a four-stock comparison).
+  Each shows its working and states what it does not account for. The
+  directory plans 56 tools across nine categories, with 36 live and the rest
+  marked Soon. The two PSX historical-return tools stay Soon until a licensed
+  source for past prices and index levels is in place.
 - **Advisory detail pages** at `/services/[slug]` — fit check, step-by-step
   process, deliverables, and a per-service FAQ.
 - **Worked examples** at `/case-studies` — three illustrative scenarios showing

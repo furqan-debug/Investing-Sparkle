@@ -69,6 +69,11 @@ export const taxSources = {
     url: 'https://www.pbs.gov.pk/price-statistics/',
     note: 'Monthly CPI releases. The calculator does not bundle a CPI series; it uses the two index readings you enter.',
   },
+  psxShariah: {
+    label: 'PSX Shariah-compliant equity screening criteria',
+    url: 'https://www.psx.com.pk/psx/resources-and-tools/islamic-capital-market',
+    note: 'Financial screens under the SECP-approved methodology: interest-bearing debt below 33% of total assets, non-compliant investments below 33%, non-compliant income below 5% of total revenue, illiquid assets at least 25%, and price at or above net liquid assets per share.',
+  },
 } satisfies Record<string, TaxSource>;
 
 export type SourceKey = keyof typeof taxSources;
