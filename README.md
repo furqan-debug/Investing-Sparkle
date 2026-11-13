@@ -142,10 +142,12 @@ throughout.
   size, risk to reward, pivots, Fibonacci and daily locks), six returns tools
   (lumpsum, CAGR, XIRR, rule of 72, SWP and inflation), five dividend and
   corporate action tools (dividend income, dividend yield, DRIP, rights and
-  bonus/split) and six stock valuation tools (DCF, Graham number, P/E and fair
-  price, dividend discount, Shariah screening and a four-stock comparison).
+  bonus/split), six stock valuation tools (DCF, Graham number, P/E and fair
+  price, dividend discount, Shariah screening and a four-stock comparison) and
+  four savings tools (National Savings, T-bills, PIB bond yield and bank term
+  deposits).
   Each shows its working and states what it does not account for. The
-  directory plans 56 tools across nine categories, with 36 live and the rest
+  directory plans 56 tools across nine categories, with 40 live and the rest
   marked Soon. The two PSX historical-return tools stay Soon until a licensed
   source for past prices and index levels is in place.
 - **Advisory detail pages** at `/services/[slug]` — fit check, step-by-step

@@ -1340,4 +1340,176 @@ export const toolPages: Record<string, ToolPageContent> = {
       'No market or statutory rate is used. The comparison depends only on the figures you enter for each stock.',
     related: ['pe-ratio-calculator', 'graham-number-calculator', 'dividend-yield-calculator'],
   },
+
+  'nss-profit-calculator': {
+    slug: 'nss-profit-calculator',
+    category: 'savings-bonds',
+    metaTitle: 'NSS Profit Calculator 2026 | National Savings after tax',
+    metaDescription:
+      'After-tax profit on Behbood, Regular Income, Special Savings, Defence and Short Term certificates, using the official CDNS rates effective 21 October 2026.',
+    title: 'National Savings Profit Calculator',
+    lede: 'National Savings is not one product. The payout schedule, the term and even the rate change with the certificate, and withholding takes 15% or 30% of every profit payment. This tool does the arithmetic for the certificate you are actually buying.',
+    howTitle: 'Each certificate pays differently.',
+    howBody:
+      'Behbood, Pensioners and Shuhada pay profit monthly. Regular Income pays monthly over five years. Special Savings pays every six months, with a higher final payment. Defence compounds and pays once at maturity. Short Term pays at maturity at a rate set by the tenor.',
+    sections: [
+      {
+        heading: 'The rate is administrative, not a market price',
+        paragraphs: [
+          'CDNS sets National Savings rates by notification, with an effective date. The schedule used here took effect on 21 October 2026. It does not move with Treasury bill yields or KIBOR every day, and it can change without a market event.',
+          'That is why the page shows the effective date next to the rate. A rate copied from an old article can be months out of date, and the certificate you buy will use the schedule in force on the day of purchase.',
+        ],
+      },
+      {
+        heading: 'Withholding is taken from the profit, not the principal',
+        paragraphs: [
+          'A filer pays 15% and a non-filer pays 30% on the profit. The principal is returned in full at maturity, so the deduction reduces the return rather than the amount you get back. Zakat at 2.5% may also be deducted where it applies.',
+          'The tool applies withholding to each payment and shows both the gross and net figures. A non-filer paying 30% keeps roughly seven tenths of the profit, which is a large difference on a five-year certificate.',
+        ],
+      },
+      {
+        heading: 'Where the arithmetic stops',
+        paragraphs: [
+          'The calculator assumes the certificate is held to maturity and the profit is paid out rather than reinvested. Early encashment usually pays a lower rate or a penalty, and the rules differ by certificate.',
+          'Defence Savings use the official maturity factor of 3.15, so Rs 100,000 becomes Rs 315,000 after ten years. That is the table figure, not a compounded 11.94%, and the tool uses the table because it is the amount CDNS actually pays.',
+        ],
+      },
+    ],
+    sources: ['cdnsRates', 'whtCard'],
+    sourceTitle: 'Rates and source',
+    sourceIntro:
+      'Official CDNS profit rates effective 21 October 2026, checked 13 November 2026. The same page states 15% filer and 30% non-filer withholding on National Savings profit, and 2.5% zakat where applicable.',
+    sourceExtra:
+      'CDNS changes these rates by notification, not on a market schedule. Check the official page before you invest. Early encashment, zakat and product-specific rules are outside the arithmetic.',
+    related: ['bank-term-deposit-calculator', 't-bill-calculator', 'pib-bond-yield-calculator'],
+  },
+
+  't-bill-calculator': {
+    slug: 't-bill-calculator',
+    category: 'savings-bonds',
+    metaTitle: 'T-Bill Calculator Pakistan | Price, yield and after-tax profit',
+    metaDescription:
+      'Calculate the discounted price, gain at maturity and after-tax return on Pakistan Treasury Bills using the latest SBP auction cut-off yields.',
+    title: 'T-Bill Calculator',
+    lede: 'A Treasury bill is bought below face value and repaid at face value. The gap is the return, and it is taxed as profit on debt. This tool reads the latest SBP auction cut-off and turns it into the cash you pay and the cash you keep.',
+    howTitle: 'Discount pricing on a 365-day year.',
+    howBody:
+      'The price is 100 divided by one plus the cut-off yield times the day count over 365. The gain is face value minus the amount invested, and withholding applies to the gain rather than the face value.',
+    sections: [
+      {
+        heading: 'Where the yield comes from',
+        paragraphs: [
+          'SBP publishes a market Treasury bills auction result as a PDF after each auction. The tool reads the cut-off yields for the 1, 3, 6 and 12 month tenors from that file and shows the auction date.',
+          'If the file cannot be read, the tool falls back to a dated snapshot and labels it. The yield is editable either way, so you can model a secondary-market price or an older auction.',
+        ],
+      },
+      {
+        heading: 'The day count moves the price',
+        paragraphs: [
+          'The calculator uses 30, 91, 182 and 365 days for the four tenors. Actual settlement dates shift by a day or two, so SBP’s published price can differ from this one by a few paisa.',
+          'The difference is small, but it is the reason the tool shows the day count it used rather than presenting the price as exact to the last decimal.',
+        ],
+      },
+      {
+        heading: 'Tax depends on who holds the bill',
+        paragraphs: [
+          'An individual pays 15% as a filer and 30% as a non-filer on profit from government securities. A company pays 20% or 40%. The rate comes from section 151 of the Income Tax Ordinance.',
+          'The bill is a discount instrument, so the whole gain is profit on debt. Selling before maturity can create a capital gain or loss that is treated differently, and the secondary-market yield may not match the auction cut-off.',
+        ],
+      },
+    ],
+    sources: ['sbpTbills', 'whtCard'],
+    sourceTitle: 'Yields and tax',
+    sourceIntro:
+      'Cut-off yields are read from the latest SBP Market Treasury Bills auction result and the auction date is shown on the page. Withholding follows section 151 of the Income Tax Ordinance.',
+    sourceExtra:
+      'The price uses a 365-day year and the day count shown. It ignores transaction costs, early sale, secondary-market pricing and any zakat deduction.',
+    related: ['pib-bond-yield-calculator', 'nss-profit-calculator', 'bank-term-deposit-calculator'],
+  },
+
+  'pib-bond-yield-calculator': {
+    slug: 'pib-bond-yield-calculator',
+    category: 'savings-bonds',
+    metaTitle: 'PIB Bond Yield Calculator | YTM, clean and dirty price',
+    metaDescription:
+      'Yield to maturity on coupon-paying Pakistan Investment Bonds from the clean price, with accrued interest, coupon income and withholding tax.',
+    title: 'PIB and Bond Yield Calculator',
+    lede: 'A bond is quoted at a clean price, but you pay the clean price plus the interest that has built up since the last coupon. This tool solves the yield from that dirty price, so the number matches the cash that leaves your account.',
+    howTitle: 'Price is quoted. Yield is solved.',
+    howBody:
+      'There is no closed form once the first coupon period is partial, so the yield is found by bisection: the rate that makes the present value of the remaining coupons and the face value equal the dirty price.',
+    sections: [
+      {
+        heading: 'Clean price, dirty price and accrued interest',
+        paragraphs: [
+          'The clean price excludes the interest earned since the last coupon. The seller is owed that interest, so the buyer pays the clean price plus accrued interest, which is the dirty price.',
+          'The next coupon then comes to the buyer in full. That is why a bond bought between coupon dates costs more than its quoted price, and why the yield has to be solved from the dirty price rather than the clean one.',
+        ],
+      },
+      {
+        heading: 'Why the 2-year and 15-year PIBs are not here',
+        paragraphs: [
+          'SBP also auctions zero-coupon PIBs at 2 and 15 years. They pay no coupon, so their price and yield use a different convention from the coupon-paying 3, 5 and 10 year bonds.',
+          'Mixing the two in one calculator would produce a number that looks comparable but is not. This tool prices coupon-paying bonds only, and the reference rows come from the fixed-rate auction result.',
+        ],
+      },
+      {
+        heading: 'The tax is on the coupons',
+        paragraphs: [
+          'Withholding applies to each coupon: 15% or 30% for an individual, 20% or 40% for a company, under section 151. The face value returned at maturity is not taxed again.',
+          'If the bond is sold before maturity, the difference between the sale price and the purchase price is a capital gain or loss with its own treatment. The calculator assumes the bond is held to maturity.',
+        ],
+      },
+    ],
+    sources: ['sbpPibs', 'whtCard'],
+    sourceTitle: 'Prices and tax',
+    sourceIntro:
+      'Reference prices, coupons and cut-off yields are read from the latest SBP fixed-rate PIB auction result and the auction date is shown on the page. Withholding follows section 151 of the Income Tax Ordinance.',
+    sourceExtra:
+      'The calculator assumes the bond is held to maturity with every coupon paid on time, uses a 365-day year, and ignores transaction costs, early sale, secondary-market pricing, zakat and any capital gain treatment. SBP computes its published cut-off yield with its own day-count convention, so a yield solved here from the same price can differ by a few basis points.',
+    related: ['t-bill-calculator', 'nss-profit-calculator', 'bank-term-deposit-calculator'],
+  },
+
+  'bank-term-deposit-calculator': {
+    slug: 'bank-term-deposit-calculator',
+    category: 'savings-bonds',
+    metaTitle: 'Bank Term Deposit Calculator Pakistan | After-tax profit',
+    metaDescription:
+      'Calculate profit after withholding tax on a bank term deposit or savings account, with monthly, quarterly or annual crediting and reinvested or paid-out profit.',
+    title: 'Bank Term Deposit Calculator',
+    lede: 'A bank deposit is the simplest savings product and the easiest to misread. The quoted rate is annual, the profit may be credited monthly or at maturity, and withholding takes 20% or 40% before the money reaches you.',
+    howTitle: 'The rate is annual. The crediting is not.',
+    howBody:
+      'When profit is reinvested it compounds at the after-tax rate. When it is paid out the principal stays flat and the return is simple. Both are shown as an effective annual figure so they can be compared on the same basis.',
+    sections: [
+      {
+        heading: 'Banks set their own rates',
+        paragraphs: [
+          'The SBP policy rate is a benchmark, not a deposit rate. It was 12.00% on 13 November 2026, and banks price deposits above or below it depending on their funding needs and the tenor.',
+          'The rate field starts at the policy rate so the tool is not blank, but the figure that matters is the one on your bank’s rate sheet or your statement. Replace it before you rely on the result.',
+        ],
+      },
+      {
+        heading: 'Withholding here is higher than on National Savings',
+        paragraphs: [
+          'Profit on a bank account or deposit is taxed at 20% for a filer and 40% for a non-filer under section 151 clause (a). National Savings and other profit on debt are taxed at 15% and 30%.',
+          'That difference is easy to miss when comparing a bank deposit with a certificate. A deposit paying the same gross rate as a certificate can return less after tax.',
+        ],
+      },
+      {
+        heading: 'What the effective rate tells you',
+        paragraphs: [
+          'Monthly crediting compounds within the tenor, so the effective annual return is higher than the quoted rate. Annual crediting does not, so the two are not the same even at the same headline rate.',
+          'The tool shows both the effective rate and a simple annual figure. The simple figure is the one to compare with a certificate that pays profit out, because it ignores compounding.',
+        ],
+      },
+    ],
+    sources: ['sbpPolicy', 'whtCard'],
+    sourceTitle: 'Benchmark and tax',
+    sourceIntro:
+      'The policy rate is 12.00% as on 13 November 2026 and is used only as a labelled starting point. Withholding on bank deposit profit is 20% for a filer and 40% for a non-filer under section 151 clause (a).',
+    sourceExtra:
+      'Banks set their own deposit rates and can change them. The calculator assumes the rate stays fixed for the full tenor and ignores early withdrawal penalties, minimum balances, zakat and bank-specific charges.',
+    related: ['nss-profit-calculator', 't-bill-calculator', 'pib-bond-yield-calculator'],
+  },
 };

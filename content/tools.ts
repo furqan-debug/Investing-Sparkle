@@ -492,10 +492,9 @@ export const tools: Tool[] = [
     blurb:
       'After-tax profit on Behbood, Defence, Regular Income, Special and Short Term certificates.',
     outcome: 'Maturity value, profit after tax and the effective annual return.',
-    status: 'soon',
+    status: 'live',
     category: 'savings-bonds',
     featured: true,
-    phase: 6,
   },
   {
     slug: 't-bill-calculator',
@@ -503,29 +502,26 @@ export const tools: Tool[] = [
     blurb:
       'Price, yield and after-tax profit on Pakistan Treasury Bills using recent auction yields.',
     outcome: 'The discounted price, the gain at maturity and the annualised yield.',
-    status: 'soon',
+    status: 'live',
     category: 'savings-bonds',
-    phase: 6,
   },
   {
     slug: 'pib-bond-yield-calculator',
     name: 'PIB & Bond Yield Calculator',
     blurb:
-      'Yield to maturity, price and coupon income on PIBs, Sukuk and TFCs.',
+      'Yield to maturity, accrued interest and coupon income on coupon-paying Pakistan Investment Bonds.',
     outcome: 'YTM, clean and dirty price, and the income across the remaining life.',
-    status: 'soon',
+    status: 'live',
     category: 'savings-bonds',
-    phase: 6,
   },
   {
     slug: 'bank-term-deposit-calculator',
     name: 'Bank Term Deposit Calculator',
     blurb:
-      'Monthly or maturity profit on bank term deposits and savings accounts after withholding tax.',
+      'Profit after withholding tax on a bank term deposit, with monthly, quarterly or annual crediting.',
     outcome: 'Profit after tax, maturity value and the effective annual rate.',
-    status: 'soon',
+    status: 'live',
     category: 'savings-bonds',
-    phase: 6,
   },
 
   // --------------------------------------------------------- Planning & Retirement

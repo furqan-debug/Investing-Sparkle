@@ -74,6 +74,26 @@ export const taxSources = {
     url: 'https://www.psx.com.pk/psx/resources-and-tools/islamic-capital-market',
     note: 'Financial screens under the SECP-approved methodology: interest-bearing debt below 33% of total assets, non-compliant investments below 33%, non-compliant income below 5% of total revenue, illiquid assets at least 25%, and price at or above net liquid assets per share.',
   },
+  cdnsRates: {
+    label: 'National Savings profit rates (effective 21 October 2026)',
+    url: 'https://savings.gov.pk/latest-profit-rates/',
+    note: 'Official CDNS rates for Behbood, Pensioners, Shuhada, Regular Income, Special Savings, Defence, Short Term and the Savings Account. The page also states 15% filer and 30% non-filer withholding on NSS profit.',
+  },
+  sbpTbills: {
+    label: 'SBP Market Treasury Bills auction result',
+    url: 'https://www.sbp.org.pk/assets/document/auction-tbills.pdf',
+    note: 'The latest auction result PDF. The calculator reads the cut-off yields from this file and falls back to a dated snapshot if the file cannot be read.',
+  },
+  sbpPibs: {
+    label: 'SBP Pakistan Investment Bonds auction result',
+    url: 'https://www.sbp.org.pk/assets/document/Auction-Investment.pdf',
+    note: 'The latest fixed-rate PIB auction result PDF, with cut-off prices and yields.',
+  },
+  sbpPolicy: {
+    label: 'SBP policy rate and interest rate corridor',
+    url: 'https://www.sbp.org.pk/our-operations/monetary-policy',
+    note: 'Policy rate 12.00% as on 13 November 2026. Used only as a labelled benchmark for deposit rates, which each bank sets itself.',
+  },
 } satisfies Record<string, TaxSource>;
 
 export type SourceKey = keyof typeof taxSources;
