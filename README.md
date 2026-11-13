@@ -136,11 +136,12 @@ throughout.
 - **22 articles** across Beginner, Intermediate, and Advisory, with category
   filtering, search, and curated related-article links.
 - **Free tools live** — risk profile quiz, compounding, SIP, zakat and ROI
-  calculators, plus seven 2026-27 tax tools: salary, business and freelancer,
+  calculators, plus seven 2026-27 tax tools (salary, business and freelancer,
   rental, PSX capital gains, dividend, property transfer and dividend
-  purification. Each shows its working and states what it does not account for.
-  The directory plans 56 tools across nine categories, with the rest marked
-  Soon.
+  purification) and seven PSX trading tools (brokerage, average price, position
+  size, risk to reward, pivots, Fibonacci and daily locks). Each shows its
+  working and states what it does not account for. The directory plans 56 tools
+  across nine categories, with the rest marked Soon.
 - **Advisory detail pages** at `/services/[slug]` — fit check, step-by-step
   process, deliverables, and a per-service FAQ.
 - **Worked examples** at `/case-studies` — three illustrative scenarios showing

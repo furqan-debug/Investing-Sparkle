@@ -49,6 +49,21 @@ export const taxSources = {
     url: 'https://fbr.gov.pk/Budget2026-27/SalientFeatures/Salient-Feature.pdf',
     note: 'Budget-stage summary. The enacted Finance Act prevails where figures differ.',
   },
+  psxSchedule: {
+    label: 'PSX Schedule of Charges (updated 18 December 2024)',
+    url: 'https://www.psx.com.pk/psx/themes/psx/uploads/Schedule-of-Charges-Updated-as-on-December-18-2024.pdf',
+    note: 'Trading fee, regulatory fee, SECP levy and the sales tax basis for the ready market.',
+  },
+  psxRegulations: {
+    label: 'PSX Regulations (September 2026)',
+    url: 'https://www.psx.com.pk/psx/themes/psx/uploads/PSX-Regulations-September-23-2026.pdf',
+    note: 'Annexure III sets the standard range for brokerage commission. Regulation 19.3 sets the scrip-wise circuit breaker.',
+  },
+  psxTradingInfo: {
+    label: 'PSX guide to opening an account',
+    url: 'https://www.psx.com.pk/psx/resources-and-tools/investors/open-an-account-invest',
+    note: 'PSX summary of the taxes and charges that apply to share trading.',
+  },
 } satisfies Record<string, TaxSource>;
 
 export type SourceKey = keyof typeof taxSources;

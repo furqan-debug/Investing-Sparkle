@@ -203,9 +203,9 @@ export const tools: Tool[] = [
     slug: 'psx-brokerage-calculator',
     name: 'PSX Brokerage & Trading Profit Calculator',
     blurb:
-      'Every fee on a PSX trade: commission, sales tax, CDC, NCCPL and SECP, then net profit.',
+      'Every fee on a PSX trade: commission, sales tax, PSX levies and SECP, then net profit.',
     outcome: 'Round-trip cost, net profit, break-even price and the move you need.',
-    status: 'soon',
+    status: 'live',
     category: 'psx-trading',
     featured: true,
     phase: 2,
@@ -216,7 +216,7 @@ export const tools: Tool[] = [
     blurb:
       'Average cost across multiple buys, plus the shares needed to reach a target average.',
     outcome: 'Weighted average cost and the capital required to average down or up.',
-    status: 'soon',
+    status: 'live',
     category: 'psx-trading',
     phase: 2,
   },
@@ -226,7 +226,7 @@ export const tools: Tool[] = [
     blurb:
       'How many shares to buy from your account size, risk budget and stop-loss level.',
     outcome: 'Share quantity, capital at risk and the position value at your entry.',
-    status: 'soon',
+    status: 'live',
     category: 'psx-trading',
     featured: true,
     phase: 2,
@@ -237,7 +237,7 @@ export const tools: Tool[] = [
     blurb:
       'Risk-to-reward ratio, stop and target prices, and the win rate the setup needs.',
     outcome: 'Reward per rupee risked and the minimum hit rate to break even.',
-    status: 'soon',
+    status: 'live',
     category: 'psx-trading',
     phase: 2,
   },
@@ -247,7 +247,7 @@ export const tools: Tool[] = [
     blurb:
       'Classic, Fibonacci, Camarilla, Woodie and DeMark pivot levels from one day of prices.',
     outcome: 'Support and resistance levels for the next session, in one table.',
-    status: 'soon',
+    status: 'live',
     category: 'psx-trading',
     phase: 2,
   },
@@ -257,7 +257,7 @@ export const tools: Tool[] = [
     blurb:
       'Retracement and extension levels between any swing high and swing low.',
     outcome: 'Every key Fibonacci level with the price and distance from the swing.',
-    status: 'soon',
+    status: 'live',
     category: 'psx-trading',
     phase: 2,
   },
@@ -267,7 +267,7 @@ export const tools: Tool[] = [
     blurb:
       'Daily circuit breaker limits for a PSX stock, calculated from the previous close.',
     outcome: 'Upper and lower lock prices and the rupee range for the session.',
-    status: 'soon',
+    status: 'live',
     category: 'psx-trading',
     phase: 2,
   },

@@ -308,4 +308,305 @@ export const toolPages: Record<string, ToolPageContent> = {
       'The calculator follows the common ratio method. It does not issue a fatwa or decide whether a stock is compliant. Ask a qualified scholar where the amount is material or the disclosure is unclear.',
     related: ['zakat-calculator', 'shariah-compliance-checker', 'dividend-tax-calculator'],
   },
+
+  'psx-brokerage-calculator': {
+    slug: 'psx-brokerage-calculator',
+    category: 'psx-trading',
+    metaTitle: 'PSX Brokerage & Trading Profit Calculator | Fees and break-even',
+    metaDescription:
+      'Work out every charge on a PSX round trip: broker commission, sales tax, PSX trading and regulatory fees and the SECP levy. See net profit, break-even price and the move you need.',
+    title: 'PSX Brokerage & Trading Profit Calculator',
+    lede: 'A trade has to clear its own costs before it makes you anything. Enter the prices you dealt at and the rates on your contract note, and see the rupee figure that actually lands.',
+    howTitle: 'Two sides, four charges, one net figure.',
+    howBody:
+      'Each side of the trade carries a broker commission, sales tax on that commission, and three small exchange and regulator levies. The tool charges both sides, subtracts the total from the gross profit, and solves for the sale price that only breaks even.',
+    sections: [
+      {
+        heading: 'Why the break-even price is not your buy price',
+        paragraphs: [
+          'You pay commission when you buy and again when you sell, and the exchange levies are charged on both sides. A stock bought at Rs 100 therefore has to be sold above Rs 100 before the trade is flat, and the gap widens when the commission has a per-share floor.',
+          'The floor is why small trades cost proportionally more. At 3 paisa a share, a 100-share trade pays at least Rs 3 in commission, which is a much larger percentage of a Rs 10,000 trade than of a Rs 1,000,000 one.',
+        ],
+      },
+      {
+        heading: 'The commission is yours to negotiate',
+        paragraphs: [
+          'PSX publishes a standard range for commission rather than a single price. The common shape is 0.15% of value or 3 paisa a share, whichever is higher, on each side, and some brokers charge more or apply a different floor. Your broker\'s written tariff is the binding document.',
+          'Sales tax on the commission depends on where the broker is registered: 15% in Sindh, 16% in Punjab and Islamabad. The tool applies the same rate to the exchange levies because the schedule treats them the same way. If your contract note says otherwise, change the rate.',
+        ],
+      },
+      {
+        heading: 'What is not in this number',
+        paragraphs: [
+          'Capital gains tax is separate. For shares bought on or after 1 July 2025 the rate is 15% for both filers and non-filers, and NCCPL deducts it from the sale proceeds before settlement. A profitable trade therefore nets less than this calculator shows.',
+          'Account maintenance fees, annual NCCPL charges, margin financing cost and slippage are also outside the figure. Some brokers quote an all-in commission that already includes the levies. If yours does, set the levy fields to zero so the cost is not counted twice.',
+        ],
+      },
+    ],
+    sources: ['psxSchedule', 'psxRegulations', 'psxTradingInfo'],
+    sourceTitle: 'Rates and sources',
+    sourceIntro:
+      'Checked 13 November 2026. The exchange levies come from the PSX schedule of charges. Commission and sales tax are editable because they depend on your broker and on the province the broker is registered in.',
+    sourceExtra:
+      'The schedule lists Rs 3.50 per Rs 100,000 as the ready-market trading fee, Rs 0.62084 per Rs 100,000 as the regulatory fee, and a SECP levy of 0.00065%. Your broker passes these through on the contract note, sometimes under different labels.',
+    related: ['psx-capital-gains-tax-calculator', 'position-size-calculator', 'psx-circuit-lock-calculator'],
+  },
+
+  'stock-average-price-calculator': {
+    slug: 'stock-average-price-calculator',
+    category: 'psx-trading',
+    metaTitle: 'Stock Average Price Calculator | Weighted cost across several buys',
+    metaDescription:
+      'Calculate the weighted average cost of a PSX holding across several buys, and the number of shares needed at a given price to reach a target average.',
+    title: 'Stock Average Price Calculator',
+    lede: 'Your average cost is not the average of the prices you remember. It is weighted by shares, and it moves every time you add to a position.',
+    howTitle: 'Weighted by shares, not by the number of buys.',
+    howBody:
+      'Each purchase contributes in proportion to the number of shares bought, so a large buy at one price outweighs a small buy at another. The tool adds the lots, divides total cost by total shares, and then solves for the shares needed to reach a target average.',
+    sections: [
+      {
+        heading: 'The average is a cost, not a target',
+        paragraphs: [
+          'A lower average reduces the price at which the position breaks even, but it does not change the business, the earnings or the reason you bought. It only changes how much money is exposed and at what price.',
+          'This matters when averaging down into a falling stock. The average falls because you bought more at a lower price, not because the position became safer. The amount at risk has usually gone up.',
+        ],
+      },
+      {
+        heading: 'When the target cannot be reached',
+        paragraphs: [
+          'To pull an average towards a target, the new price has to sit on the other side of that target. If you are averaging down, the new price must be below the target. If it is above, every new share pulls the average up, not down.',
+          'A target equal to the new price can never be reached. Each purchase moves the average towards that price without arriving, so the solver returns no answer rather than a very large number.',
+        ],
+      },
+      {
+        heading: 'What the average leaves out',
+        paragraphs: [
+          'Commission, sales tax and the exchange levies are not included. If you want the all-in cost per share, add the per-share charges to each price before entering it, or run the trade through the brokerage calculator first.',
+          'Corporate actions change the arithmetic. A bonus issue increases the share count at no cost, and a split multiplies shares while dividing price. Adjust the lots for the action before comparing an old average with a new price.',
+        ],
+      },
+    ],
+    sources: [],
+    sourceTitle: 'Method',
+    sourceIntro:
+      'A weighted arithmetic mean of the prices paid, using the number of shares in each lot as the weight. The target-average solver rearranges the same equation for the unknown share count.',
+    sourceExtra:
+      'No statutory or exchange rate is used on this page. The result depends only on the prices and quantities you enter.',
+    related: ['position-size-calculator', 'psx-brokerage-calculator', 'risk-reward-calculator'],
+  },
+
+  'position-size-calculator': {
+    slug: 'position-size-calculator',
+    category: 'psx-trading',
+    metaTitle: 'Position Size Calculator | Risk per trade and stop-loss distance',
+    metaDescription:
+      'Work out how many PSX shares to buy from your account size, your risk budget and the distance to your stop. See the capital at risk and the position value.',
+    title: 'Position Size Calculator',
+    lede: 'The number of shares should come from the distance to your stop, not from how strongly you feel about the trade. Enter three figures and the size decides itself.',
+    howTitle: 'The stop decides the size.',
+    howBody:
+      'Divide the amount you are willing to lose by the distance between your entry and your stop. That gives the number of shares at which hitting the stop costs exactly your risk budget, no more.',
+    sections: [
+      {
+        heading: 'Risk is not the amount invested',
+        paragraphs: [
+          'A Rs 200,000 position with a stop 2% below the entry risks about Rs 4,000. The same Rs 200,000 with a stop 20% below risks Rs 40,000. The position value is identical and the risk is ten times larger.',
+          'That is why sizing from position value alone goes wrong. The stop is the part of the trade that converts a price into a rupee loss, and it has to be chosen before the share count.',
+        ],
+      },
+      {
+        heading: 'Why one and two per cent is the usual range',
+        paragraphs: [
+          'At 1% risk, ten consecutive losses cost about a tenth of the account. At 10% risk, the same run costs two thirds, and recovering from that needs a much larger gain than the one that was lost.',
+          'The right number depends on how often the method wins and on how much the account can lose without changing your behaviour. A smaller size that you can hold through a drawdown beats a larger one you abandon at the bottom.',
+        ],
+      },
+      {
+        heading: 'Gaps, locks and slippage',
+        paragraphs: [
+          'A stop is an instruction to your broker, not a guaranteed price. An opening gap can fill well below it, and a stock at its lower lock can have no buyers at all, which means the loss can exceed the risk budget.',
+          'Size the position so that a worse exit than the one modelled is still survivable. The calculator shows the loss at the stop; the market decides whether you get that price.',
+        ],
+      },
+    ],
+    sources: [],
+    sourceTitle: 'Method',
+    sourceIntro:
+      'Fixed-fractional sizing: the share count is the risk budget divided by the entry-to-stop distance, rounded down so the position never risks more than the budget.',
+    sourceExtra:
+      'Commission, sales tax and slippage are excluded. The PSX daily band of 10% or one rupee, whichever is higher, is described on the lock calculator.',
+    related: ['risk-reward-calculator', 'psx-brokerage-calculator', 'stock-average-price-calculator'],
+  },
+
+  'risk-reward-calculator': {
+    slug: 'risk-reward-calculator',
+    category: 'psx-trading',
+    metaTitle: 'Risk Reward & Stop Loss Calculator | Break-even win rate',
+    metaDescription:
+      'Calculate the risk-to-reward ratio of a PSX trade, the win rate it needs to break even, and its expectancy at your own hit rate.',
+    title: 'Risk Reward & Stop Loss Calculator',
+    lede: 'A two-to-one trade sounds good until you notice it only works one time in four. This tool puts the ratio and the hit rate it needs on the same screen.',
+    howTitle: 'A ratio means nothing without a hit rate.',
+    howBody:
+      'The reward-to-risk ratio sets the minimum share of trades that must reach the target for the strategy to break even. Above that rate the setup makes money over many trades. Below it, the ratio is decoration.',
+    sections: [
+      {
+        heading: 'The break-even hit rate',
+        paragraphs: [
+          'A 1:1 trade needs a 50% hit rate to break even. A 2:1 trade needs about 33%, and a 3:1 trade needs 25%. The formula is one divided by one plus the ratio, and it assumes every winner reaches the target and every loser exits at the stop.',
+          'This is the number to compare with your actual record. If your last fifty trades reached the target less often than the break-even rate, the setup was losing money even when the ratio looked attractive.',
+        ],
+      },
+      {
+        heading: 'Expectancy turns the ratio into rupees',
+        paragraphs: [
+          'Expectancy is the average result per trade: the hit rate multiplied by the reward, minus the loss rate multiplied by the risk. A positive expectancy means the method makes money over a large number of trades, not that the next trade will.',
+          'Multiplying expectancy by the rupee risk per trade gives an average profit or loss in rupees. That figure is more useful than a win rate on its own, because it combines both sides of the trade.',
+        ],
+      },
+      {
+        heading: 'Costs move the break-even point',
+        paragraphs: [
+          'Commission, sales tax and the exchange levies reduce every winner and increase every loser. A 2:1 ratio before costs can be closer to 1.8:1 after them, which raises the hit rate needed to break even.',
+          'Capital gains tax applies to the profitable trades, so the net expectancy is lower again for a taxable account. Run the profit through the brokerage and CGT calculators before treating a ratio as real.',
+        ],
+      },
+    ],
+    sources: [],
+    sourceTitle: 'Method',
+    sourceIntro:
+      'Break-even hit rate is 1 divided by 1 plus the reward-to-risk ratio. Expectancy is the hit rate times the ratio, minus the loss rate. Both are arithmetic, not forecasts.',
+    sourceExtra:
+      'No exchange or tax rate is used here. Costs and capital gains tax are described but not deducted.',
+    related: ['position-size-calculator', 'psx-brokerage-calculator', 'pivot-point-calculator'],
+  },
+
+  'pivot-point-calculator': {
+    slug: 'pivot-point-calculator',
+    category: 'psx-trading',
+    metaTitle: 'Pivot Point Calculator | Classic, Fibonacci, Camarilla, Woodie, DeMark',
+    metaDescription:
+      'Calculate PSX pivot points from the previous session high, low, close and open. Compare classic, Fibonacci, Camarilla, Woodie and DeMark levels.',
+    title: 'Pivot Point Calculator',
+    lede: 'One session of prices, five families of support and resistance. Pick the method your desk uses and see where the next session starts.',
+    howTitle: 'Five families, one session of prices.',
+    howBody:
+      'Classic, Fibonacci and Woodie build on the average of high, low and close. Camarilla anchors to the close. DeMark chooses its formula from the relationship between the open and the close. The same inputs therefore produce different ladders.',
+    sections: [
+      {
+        heading: 'What a pivot actually is',
+        paragraphs: [
+          'A pivot is a central price derived from the previous session, with levels projected above and below it. The idea is that the market often pauses or reverses near these levels because many participants are watching the same arithmetic.',
+          'It is a description of where the last session traded, not a forecast. A pivot that holds is information. A pivot that fails is also information, and often the more useful of the two.',
+        ],
+      },
+      {
+        heading: 'Why the methods disagree',
+        paragraphs: [
+          'Camarilla uses the close as its centre and a much tighter set of levels, designed for mean-reversion trading within the session. DeMark produces a single resistance and a single support, and ignores the open unless it is needed to choose the formula.',
+          'Mixing methods on one chart produces a crowd of lines that all look important and none of which are. Choose one family, apply it consistently, and judge it on a record rather than on a single session.',
+        ],
+      },
+      {
+        heading: 'How levels are used in practice',
+        paragraphs: [
+          'A common use is to frame a stop or a target: a long entered above the pivot might use the pivot itself or the first support as a reference for where the idea is wrong. The level is a decision point, not an entry signal.',
+          'PSX prices are quoted in rupees and paisa, so a calculated level between ticks is not directly tradeable. Round it and treat the rounded price as the reference.',
+        ],
+      },
+    ],
+    sources: [],
+    sourceTitle: 'Method',
+    sourceIntro:
+      'The five formulas are the published definitions. No adjustment is made for gaps, corporate actions or the tick size, other than rounding the displayed price to the nearest paisa.',
+    sourceExtra:
+      'Pivot levels are conventions, not regulatory figures. Different charting platforms can round or smooth them slightly differently.',
+    related: ['fibonacci-retracement-calculator', 'psx-circuit-lock-calculator', 'risk-reward-calculator'],
+  },
+
+  'fibonacci-retracement-calculator': {
+    slug: 'fibonacci-retracement-calculator',
+    category: 'psx-trading',
+    metaTitle: 'Fibonacci Retracement Calculator | PSX swing levels and extensions',
+    metaDescription:
+      'Calculate Fibonacci retracement and extension levels between any swing high and low, with the distance from the current price.',
+    title: 'Fibonacci Retracement Calculator',
+    lede: 'Two turning points and a direction. The tool measures the swing, lays out the conventional ratios, and shows how far each level sits from the market.',
+    howTitle: 'A proportion of the swing, measured from the end of the move.',
+    howBody:
+      'Retracement levels divide the swing range into the conventional proportions and measure back from the end of the move. Extensions project the same range beyond the swing in the direction of the trend.',
+    sections: [
+      {
+        heading: 'Choosing the swing is the whole exercise',
+        paragraphs: [
+          'A Fibonacci tool does not decide which high and low matter. Two analysts can draw different swings on the same chart and both be internally consistent, which is why the levels are better treated as a shared language than as a discovery.',
+          'Pick the swing that matches your holding period, and keep it fixed while the trade is open. Redrawing the swing after the price moves turns the tool into a way of justifying a position rather than measuring it.',
+        ],
+      },
+      {
+        heading: 'Retracement and extension are different questions',
+        paragraphs: [
+          'Retracement asks how much of the move has been given back, and the common answers are 38.2%, 50% and 61.8%. Extension asks where the next leg might reach if the trend continues, using 127.2%, 161.8% and beyond.',
+          'The 50% level is not a Fibonacci ratio at all. It is included because traders watch it and because it is the midpoint of the swing, which makes it useful as a reference even for people who do not use the rest of the ladder.',
+        ],
+      },
+      {
+        heading: 'What the levels are not',
+        paragraphs: [
+          'They are not support or resistance in any mechanical sense. A price can pass through every level without pausing, and a level that held once can fail the next time. The ratios describe the swing, not the order book.',
+          'PSX tick sizes mean a level between ticks is not directly tradeable. Round the level and use it to frame a decision, rather than placing an order exactly on a calculated price.',
+        ],
+      },
+    ],
+    sources: [],
+    sourceTitle: 'Method',
+    sourceIntro:
+      'Retracements are the swing range multiplied by the conventional ratios and measured back from the end of the move. Extensions use ratios above one and project beyond the swing.',
+    sourceExtra:
+      'The ratios are a convention, not a regulatory or statistical standard. Results depend entirely on the swing you choose.',
+    related: ['pivot-point-calculator', 'risk-reward-calculator', 'position-size-calculator'],
+  },
+
+  'psx-circuit-lock-calculator': {
+    slug: 'psx-circuit-lock-calculator',
+    category: 'psx-trading',
+    metaTitle: 'PSX Upper & Lower Lock Calculator | Daily circuit breaker limits',
+    metaDescription:
+      'Calculate the PSX upper and lower lock for a stock from its previous close, using the daily price band and the rupee floor.',
+    title: 'PSX Upper & Lower Lock Calculator',
+    lede: 'The exchange puts a ceiling and a floor on each stock every session. Enter the previous close and see exactly where they sit, in rupees.',
+    howTitle: 'A percentage of the close, with a rupee floor.',
+    howBody:
+      'The band is a percentage of the previous closing price. If the percentage produces a move smaller than the floor, the floor applies instead. That is why a very cheap stock can move by more than the stated percentage.',
+    sections: [
+      {
+        heading: 'Why there is a floor',
+        paragraphs: [
+          'On a stock trading at Rs 3, a 10% band is 30 paisa. Without a floor, the price could be pinned by a single small order, so the Exchange applies a minimum rupee move as well as the percentage.',
+          'The ready market uses a one-rupee floor and the odd lot market uses two rupees. Both use the same percentage band, which is 10% since July 2024. The band was raised in half-point steps from 7.5% over the preceding weeks.',
+        ],
+      },
+      {
+        heading: 'Upper lock and lower lock in practice',
+        paragraphs: [
+          'At the upper lock the price cannot rise further for the session, so buyers queue and sellers have little reason to sell. At the lower lock the reverse happens, and a position can be impossible to exit at any price.',
+          'This is why a stop-loss is not a guarantee. If a stock opens at the lower lock, the stop can be filled far below the level you set, or not filled at all.',
+        ],
+      },
+      {
+        heading: 'The market-wide halt is separate',
+        paragraphs: [
+          'Scrip-wise locks apply to individual stocks. Separately, PSX can halt the whole market when the KSE-30 index moves 5% and holds that move for five minutes. The halt length and the reopening process are set by the Exchange.',
+          'A halt does not change the lock prices. When trading resumes, each stock is still inside the band calculated from the same previous close.',
+        ],
+      },
+    ],
+    sources: ['psxRegulations'],
+    sourceTitle: 'Rates and sources',
+    sourceIntro:
+      'Checked 13 November 2026. Regulation 19.3 of the PSX Regulations sets the scrip-wise circuit breaker. The band reached 10% on 22 July 2024 after a phased increase from 7.5%.',
+    sourceExtra:
+      'The Exchange can change the band and applies different treatment to some products, including exchange traded funds and the first trading day of a rights allotment. Confirm the current band on PSX before relying on a lock price.',
+    related: ['psx-brokerage-calculator', 'position-size-calculator', 'pivot-point-calculator'],
+  },
 };
