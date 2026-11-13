@@ -47,9 +47,11 @@ export function ToolPage({
         lede={content.lede}
       >
         <div className="flex flex-wrap items-center gap-2 text-xs text-muted">
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-line bg-white/[0.02] px-2.5 py-1">
-            <Check className="h-3 w-3 text-green-400" aria-hidden /> Tax year {TAX_YEAR}
-          </span>
+          {category?.slug === 'tax-zakat' && (
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-line bg-white/[0.02] px-2.5 py-1">
+              <Check className="h-3 w-3 text-green-400" aria-hidden /> Tax year {TAX_YEAR}
+            </span>
+          )}
           <span className="inline-flex items-center gap-1.5 rounded-full border border-line bg-white/[0.02] px-2.5 py-1">
             Verified {formatDate(VERIFIED_ON)}
           </span>

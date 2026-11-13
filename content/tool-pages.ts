@@ -609,4 +609,262 @@ export const toolPages: Record<string, ToolPageContent> = {
       'The Exchange can change the band and applies different treatment to some products, including exchange traded funds and the first trading day of a rights allotment. Confirm the current band on PSX before relying on a lock price.',
     related: ['psx-brokerage-calculator', 'position-size-calculator', 'pivot-point-calculator'],
   },
+
+  'lumpsum-calculator': {
+    slug: 'lumpsum-calculator',
+    category: 'returns-growth',
+    metaTitle: 'Lumpsum Investment Calculator | Future value and real value',
+    metaDescription:
+      'See what a one-time investment becomes at a chosen return, how much of it is growth, and what the final figure is worth after inflation.',
+    title: 'Lumpsum Investment Calculator',
+    lede: 'One amount, invested once and left alone. The tool shows the nominal result, the growth inside it, and what the money is worth in today’s prices.',
+    howTitle: 'Compounding is the whole mechanism.',
+    howBody:
+      'The balance earns a return, and the following year that return earns a return as well. The frequency decides how often the addition happens inside the year, and the inflation rate converts the final figure back into today’s purchasing power.',
+    sections: [
+      {
+        heading: 'Nominal and real are different answers',
+        paragraphs: [
+          'A 12% return during a year of 7% inflation is a real return of about 4.7%. The nominal figure is what the statement shows. The real figure is what the money can buy, and it is the one that matters when the goal is a house, an education or an income you can live on.',
+          'The gap widens quickly. Over ten years, 7% inflation raises prices by about 97%, so a nominal doubling in that period is close to standing still in purchasing power. The calculator shows both numbers side by side because a single future value hides that.',
+        ],
+      },
+      {
+        heading: 'Frequency matters less than the rate',
+        paragraphs: [
+          'At 12% a year over ten years, monthly compounding produces about 6% more than annual compounding on the same starting amount. That is real, but it is small next to the difference between a 10% and a 12% return, which is closer to 22%.',
+          'Most long-term projections use annual compounding because it is easier to compare. Use monthly when the product actually credits interest monthly, such as a savings account or a money market fund.',
+        ],
+      },
+      {
+        heading: 'What the figure leaves out',
+        paragraphs: [
+          'Tax, platform fees, fund expense ratios and exit loads all reduce the result. A 12% gross return can become a materially lower net return once those are deducted, and the drag compounds in the same way the return does.',
+          'The path also matters. A constant 12% is a convenient average, but real returns arrive unevenly, and a large fall in the early years leaves less money working for the rest of the period. Treat the output as an illustration of the arithmetic, not a promise about a portfolio.',
+        ],
+      },
+    ],
+    sources: [],
+    sourceTitle: 'Method',
+    sourceIntro:
+      'Future value is the starting amount multiplied by one plus the periodic rate, raised to the number of periods. The real value divides that result by one plus inflation, raised to the number of years.',
+    sourceExtra:
+      'No statutory or market rate is used on this page. The return and inflation figures are the ones you enter.',
+    related: ['compounding-calculator', 'cagr-calculator', 'inflation-calculator'],
+  },
+
+  'cagr-calculator': {
+    slug: 'cagr-calculator',
+    category: 'returns-growth',
+    metaTitle: 'CAGR Calculator | Compound annual growth rate and projections',
+    metaDescription:
+      'Calculate the compound annual growth rate between two values, project a future value from a target CAGR, or find the years needed to reach a target.',
+    title: 'CAGR Calculator',
+    lede: 'CAGR is the steady yearly rate that would take you from the first value to the last. It is a summary of the endpoints, not a description of the road between them.',
+    howTitle: 'One rate that connects two endpoints.',
+    howBody:
+      'Divide the final value by the initial value, take the nth root for the number of years, and subtract one. The result is the constant rate that reproduces the end value, whatever happened in between.',
+    sections: [
+      {
+        heading: 'It hides the path',
+        paragraphs: [
+          'A fund that goes from 100 to 50 and then to 200 has the same CAGR as one that climbs smoothly from 100 to 200. The ending value is identical. The experience is not, and neither is the drawdown an investor had to sit through.',
+          'That is why CAGR is a comparison tool rather than a risk measure. Two investments with the same CAGR are not interchangeable if one took twice the fall to get there.',
+        ],
+      },
+      {
+        heading: 'CAGR is not your return',
+        paragraphs: [
+          'CAGR assumes a single amount at the start and a single amount at the end. If you added money every month, or took some out, the rate says nothing about the timing of those flows. XIRR is the measure for a portfolio with contributions.',
+          'For a single buy and a single sell with no dividends in between, CAGR and XIRR agree. Once cash moves at different dates, they diverge, and the divergence can be large.',
+        ],
+      },
+      {
+        heading: 'Using it to compare',
+        paragraphs: [
+          'CAGR is most useful when the endpoints are clean and the periods are the same. Compare a fund with its benchmark over the same years, or compare a property with an equity portfolio over the same holding period.',
+          'Then compare the result with inflation. A 15% CAGR over ten years during 10% inflation is about 4.5% real, which is a very different achievement from 15% during 4% inflation.',
+        ],
+      },
+    ],
+    sources: [],
+    sourceTitle: 'Method',
+    sourceIntro:
+      'CAGR is the final value divided by the initial value, raised to the power of one over the number of years, minus one. The projection and years-needed modes rearrange the same equation.',
+    sourceExtra:
+      'No statutory rate is used. The result depends only on the two values and the holding period you enter.',
+    related: ['xirr-calculator', 'lumpsum-calculator', 'rule-of-72-calculator'],
+  },
+
+  'xirr-calculator': {
+    slug: 'xirr-calculator',
+    category: 'returns-growth',
+    metaTitle: 'XIRR Calculator | Money-weighted return on dated cashflows',
+    metaDescription:
+      'Calculate XIRR from irregular investments, dividends and sales. Enter each dated cashflow and get the annualised money-weighted return.',
+    title: 'XIRR Calculator',
+    lede: 'XIRR is the annualised rate that makes the present value of every dated cashflow add up to zero. It is the return you actually earned, given when you put money in and when you took it out.',
+    howTitle: 'Every cashflow is discounted to the same day.',
+    howBody:
+      'Each amount is moved back to the start date using its exact number of days and a trial rate. The solver searches for the rate at which money in equals money out in present-value terms. That rate is the XIRR.',
+    sections: [
+      {
+        heading: 'Why the simple return misleads',
+        paragraphs: [
+          'Put in 150,000 across two years, then take out 180,000 at the end of the third, and the simple return is 20%. Because the later contributions had much less time to work, the annualised return is closer to 7.4%.',
+          'XIRR accounts for that timing. It is the number to compare with a savings rate, a fund’s published return or the inflation rate, because all of those are annual figures.',
+        ],
+      },
+      {
+        heading: 'The sign convention',
+        paragraphs: [
+          'Money leaving your pocket is negative: a purchase, a fee, a monthly contribution. Money arriving is positive: a sale, a dividend, a withdrawal. At least one of each is needed, otherwise there is no return to solve for.',
+          'Enter the amount on the date it actually moved. A dividend received in March and reinvested in April is two cashflows, not one, and the difference changes the answer slightly.',
+        ],
+      },
+      {
+        heading: 'What XIRR cannot do',
+        paragraphs: [
+          'It ignores tax unless you include the tax in the cashflow. It is sensitive to dates, so a typo in a year can move the result by a lot. And with cashflows that alternate between positive and negative many times, more than one rate can satisfy the equation; the tool returns one of them.',
+          'For a simple buy and hold with no income, use CAGR. For anything with contributions, dividends or partial sales, XIRR is the honest measure.',
+        ],
+      },
+    ],
+    sources: [],
+    sourceTitle: 'Method',
+    sourceIntro:
+      'XIRR is solved by bisection on the net present value of the dated cashflows, using exact day counts and a 365-day year. The search runs between minus 99.99% and 1,000%.',
+    sourceExtra:
+      'No statutory rate is used. The result depends only on the dates and amounts you enter.',
+    related: ['cagr-calculator', 'roi-calculator', 'swp-calculator'],
+  },
+
+  'rule-of-72-calculator': {
+    slug: 'rule-of-72-calculator',
+    category: 'returns-growth',
+    metaTitle: 'Rule of 72 Calculator | Doubling time and required return',
+    metaDescription:
+      'How long an investment takes to double at a given return, the rate needed to double in a set number of years, and how far the rule of 72 drifts from the exact answer.',
+    title: 'Rule of 72 Calculator',
+    lede: 'Divide 72 by the annual return and you get the approximate number of years to double. The exact answer comes from logarithms, and the gap between the two is worth knowing.',
+    howTitle: 'A shortcut with a known error.',
+    howBody:
+      'The exact doubling time is the natural logarithm of two divided by the logarithm of one plus the rate. The rule of 72 replaces that with a division, which is close around 6% to 10% and drifts as the rate moves away.',
+    sections: [
+      {
+        heading: 'Where the 72 comes from',
+        paragraphs: [
+          'Seventy-two has many divisors, including 1, 2, 3, 4, 6, 8, 9 and 12, so the division is easy without a calculator. That convenience is the only reason it is 72 rather than a more precise constant.',
+          'The mathematically derived constant for continuous compounding is about 69.3. Using 72 instead corrects for the discrete annual compounding people usually mean, and it happens to be more accurate around the rates most savers actually see.',
+        ],
+      },
+      {
+        heading: 'When it drifts',
+        paragraphs: [
+          'At 2% a year, the exact doubling time is 35.0 years and the rule gives 36. At 20%, the exact figure is 3.8 years and the rule gives 3.6. At 50%, the exact figure is 1.7 years and the rule gives 1.4.',
+          'The error is small in the middle of the range and grows at both ends. Use the shortcut for a quick sense of scale, and the exact figure when the number is going into a plan.',
+        ],
+      },
+      {
+        heading: 'Doubling is not the whole story',
+        paragraphs: [
+          'Two doublings is four times your money, and three is eight times. At 12% a year, money doubles in about 6.1 years, so 18 years is roughly eight times the starting amount before inflation and costs.',
+          'Inflation doubles prices on the same arithmetic. If prices double in the time your money doubles, the real gain is zero. That is why the real doubling time, using the return after inflation, is usually the more useful number.',
+        ],
+      },
+    ],
+    sources: [],
+    sourceTitle: 'Method',
+    sourceIntro:
+      'Exact doubling time is ln(2) divided by ln(1 plus the rate). The rule of 72 estimate is 72 divided by the percentage rate, and the rule of 69.3 estimate is 69.3 divided by the percentage rate.',
+    sourceExtra:
+      'No statutory rate is used. The rule of 72 is a convention, not a regulatory or statistical standard.',
+    related: ['cagr-calculator', 'lumpsum-calculator', 'inflation-calculator'],
+  },
+
+  'swp-calculator': {
+    slug: 'swp-calculator',
+    category: 'returns-growth',
+    metaTitle: 'SWP Calculator | Systematic withdrawals and corpus longevity',
+    metaDescription:
+      'Work out how long a corpus lasts when you withdraw a fixed amount every month, how much you can withdraw safely, and the balance path year by year.',
+    title: 'SWP Calculator',
+    lede: 'A systematic withdrawal plan turns a corpus into a monthly income. The question is not whether it works this year, but whether it still works in year fifteen.',
+    howTitle: 'Each month, return first, withdrawal second.',
+    howBody:
+      'The balance earns one month of the annual return, then the withdrawal leaves. The tool applies that order consistently, stops when the balance reaches zero, and also reports the fixed withdrawal that would exactly exhaust the corpus at the horizon.',
+    sections: [
+      {
+        heading: 'Sequence risk',
+        paragraphs: [
+          'A bad market early in a drawdown hurts more than the same bad market later, because withdrawals during the fall lock in the loss and leave fewer units to recover. A constant return assumption cannot show that, and it makes every plan look smoother than it will be.',
+          'This is why a plan that survives on a 10% average can still fail. The average is not the problem. The order of the returns is.',
+        ],
+      },
+      {
+        heading: 'The sustainable withdrawal',
+        paragraphs: [
+          'For a 5 million corpus at 10% over 20 years, the fixed monthly amount that exactly exhausts the money is about 46,800. Withdraw more and the balance runs out early. Withdraw less and something remains at the end.',
+          'The sustainable figure is not a recommendation. It is the break-even point of one assumption set. Change the return or the horizon and it moves, often by more than people expect.',
+        ],
+      },
+      {
+        heading: 'Inflation is the missing variable',
+        paragraphs: [
+          'A fixed withdrawal loses purchasing power every year. At 7% inflation, 50,000 a month is worth about 25,000 in today’s terms after ten years, even though the bank credit stays the same.',
+          'Real plans either raise the withdrawal each year or start below the sustainable figure to leave room for that increase. The tool models the fixed case, so treat the surplus it shows as the budget for those raises.',
+        ],
+      },
+    ],
+    sources: [],
+    sourceTitle: 'Method',
+    sourceIntro:
+      'The simulation compounds the balance by the monthly equivalent of the annual return, subtracts the withdrawal, and repeats until the balance reaches zero or the horizon ends. The sustainable withdrawal is the closed-form inverse of that process.',
+    sourceExtra:
+      'No statutory rate is used. The monthly return is derived from the annual figure you enter, and tax, fees and inflation are not deducted.',
+    related: ['sip-calculator', 'lumpsum-calculator', 'inflation-calculator'],
+  },
+
+  'inflation-calculator': {
+    slug: 'inflation-calculator',
+    category: 'returns-growth',
+    metaTitle: 'Inflation Calculator Pakistan | Future cost and purchasing power',
+    metaDescription:
+      'Move an amount forward at a chosen inflation rate, discount a future amount back to today, or convert between two CPI index readings from Pakistan.',
+    title: 'Inflation Calculator Pakistan',
+    lede: 'Inflation is the rate at which the same basket of goods costs more. This tool moves an amount forward at a rate you choose, or between two CPI readings you supply.',
+    howTitle: 'A ratio, applied in one direction or the other.',
+    howBody:
+      'At a constant rate, an amount grows by one plus the rate each year. Discounting reverses it. With CPI numbers, the ratio of the two index readings does the same job, and the base year cancels out.',
+    sections: [
+      {
+        heading: 'The rate is an assumption',
+        paragraphs: [
+          'Pakistan’s inflation has ranged widely, and a single rate cannot describe a decade. The tool does not forecast it. Use a rate you can defend, then test a higher one to see how much the answer moves.',
+          'For a long plan, a range is more honest than a point estimate. The difference between 7% and 10% over twenty years is large enough to change what you can afford.',
+        ],
+      },
+      {
+        heading: 'CPI readings, not percentages',
+        paragraphs: [
+          'The CPI mode needs two index numbers from the same series, not two year-on-year percentages. Copy the index from the monthly release and enter both readings. Only the ratio matters, so the base year cancels out.',
+          'The Pakistan Bureau of Statistics publishes the monthly CPI and the index numbers behind it. The calculator does not bundle a series, because a stale copy would be worse than no copy at all.',
+        ],
+      },
+      {
+        heading: 'Why the basket matters',
+        paragraphs: [
+          'CPI is an average across households. Your personal inflation depends on what you buy: food, rent, school fees, fuel and health can move differently from the headline, and the weights change over time.',
+          'Use the headline as a starting point, not a verdict. If your large costs are rising faster than the index, plan with a higher rate than the one in the news.',
+        ],
+      },
+    ],
+    sources: ['pbsCpi'],
+    sourceTitle: 'Rates and sources',
+    sourceIntro:
+      'The calculator does not bundle a CPI series. It uses the two index numbers you enter, taken from the monthly releases published by the Pakistan Bureau of Statistics.',
+    sourceExtra:
+      'Checked 13 November 2026. CPI base years have changed over time, so use two readings from the same series. Only the ratio matters, which means the base year cancels out.',
+    related: ['lumpsum-calculator', 'cagr-calculator', 'swp-calculator'],
+  },
 };

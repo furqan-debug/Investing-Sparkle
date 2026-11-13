@@ -290,9 +290,8 @@ export const tools: Tool[] = [
     blurb:
       'Future value of a one-time investment, before and after inflation.',
     outcome: 'Nominal value, real value and the growth split.',
-    status: 'soon',
+    status: 'live',
     category: 'returns-growth',
-    phase: 3,
   },
   {
     slug: 'compounding-calculator',
@@ -310,9 +309,8 @@ export const tools: Tool[] = [
     blurb:
       'Compound annual growth rate between two values, or the future value from a target CAGR.',
     outcome: 'The annualised return and the years or value you need to get there.',
-    status: 'soon',
+    status: 'live',
     category: 'returns-growth',
-    phase: 3,
   },
   {
     slug: 'xirr-calculator',
@@ -320,10 +318,9 @@ export const tools: Tool[] = [
     blurb:
       'Annualised return on irregular buys, sells and dividends using exact dates.',
     outcome: 'Money-weighted return for a real portfolio, not a smoothed average.',
-    status: 'soon',
+    status: 'live',
     category: 'returns-growth',
     featured: true,
-    phase: 3,
   },
   {
     slug: 'psx-stock-return-calculator',
@@ -349,11 +346,10 @@ export const tools: Tool[] = [
     slug: 'inflation-calculator',
     name: 'Inflation Calculator Pakistan',
     blurb:
-      'Convert rupees from any year into today’s value using Pakistan’s CPI history.',
-    outcome: 'What an old amount is worth now, and what today’s amount was worth then.',
-    status: 'soon',
+      'Move an amount forward at a chosen inflation rate, or convert between two CPI index readings.',
+    outcome: 'Future cost, today’s value and the purchasing power change.',
+    status: 'live',
     category: 'returns-growth',
-    phase: 3,
   },
   {
     slug: 'rule-of-72-calculator',
@@ -361,9 +357,8 @@ export const tools: Tool[] = [
     blurb:
       'How many years an investment takes to double at a given return, and the rate needed.',
     outcome: 'Doubling time and the return required to hit a target date.',
-    status: 'soon',
+    status: 'live',
     category: 'returns-growth',
-    phase: 3,
   },
   {
     slug: 'swp-calculator',
@@ -371,9 +366,8 @@ export const tools: Tool[] = [
     blurb:
       'Systematic monthly withdrawals from an investment and how long the balance lasts.',
     outcome: 'Withdrawal schedule, balance path and the month the money runs out.',
-    status: 'soon',
+    status: 'live',
     category: 'returns-growth',
-    phase: 3,
   },
   {
     slug: 'roi-calculator',

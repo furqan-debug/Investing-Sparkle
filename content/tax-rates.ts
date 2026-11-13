@@ -64,6 +64,11 @@ export const taxSources = {
     url: 'https://www.psx.com.pk/psx/resources-and-tools/investors/open-an-account-invest',
     note: 'PSX summary of the taxes and charges that apply to share trading.',
   },
+  pbsCpi: {
+    label: 'Pakistan Bureau of Statistics, price statistics',
+    url: 'https://www.pbs.gov.pk/price-statistics/',
+    note: 'Monthly CPI releases. The calculator does not bundle a CPI series; it uses the two index readings you enter.',
+  },
 } satisfies Record<string, TaxSource>;
 
 export type SourceKey = keyof typeof taxSources;
